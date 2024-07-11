@@ -2,7 +2,7 @@
 title: Vim
 description: Vim est un éditeur de texte, c’est-à-dire un logiciel permettant la manipulation de fichiers texte.
 published: true
-date: 2024-04-17T06:58:06.732Z
+date: 2024-07-11T09:10:18.882Z
 tags: outil, linux
 editor: markdown
 dateCreated: 2024-04-15T06:57:26.511Z
@@ -12,7 +12,7 @@ dateCreated: 2024-04-15T06:57:26.511Z
 
 Vim est un puissant éditeur de texte, il est utile de connaitre cet outil puisqu'il est présent sur la plupart des distributions linux par défaut.
 
-# Synopsis
+# Syntaxe
 
 `vim [options] [fichier]`
 
@@ -20,10 +20,10 @@ Vim est un puissant éditeur de texte, il est utile de connaitre cet outil puisq
 
 Vim étant utilisé en ligne de commande, il est utilisé avec des raccourcis clavier.
 
-| Raccourci | Description                             |
-| --------- | --------------------------------------- |
-| ESC       | Passer en mode normal                   |
-| I         | Passer en mode insertion                |
+| Raccourci | Description              |
+| --------- | ------------------------ |
+| ESC       | Passer en mode normal    |
+| I         | Passer en mode insertion |
 
 Les raccourcis en mode normal sont les suivants.
 
@@ -39,4 +39,18 @@ Les raccourcis en mode normal sont les suivants.
 | :w        | Ecrire le fichier                       |
 | :q        | Quitter                                 |
 | :q!       | Quitter sans écrire le fichier (forcer) |
-| :wq       | Ecrire le fichier et quitter            |
+
+Il est possible de combiner certains raccourcis, pour ne pas avoir à passer en mode normal plusieures fois.
+
+| Raccourci | Description                  |
+| --------- | ---------------------------- |
+| :wq       | Ecrire le fichier et quitter |
+
+# Exemples
+
+Éditer un fichier
+
+`vim monfichier.conf`
+
+> Si le fichier spécifié n'éxiste pas, il sera créer après son enregistrement.
+> {.is-info}
