@@ -2,7 +2,7 @@
 title: Netcat
 description: Netcat est un utilitaire permettant d'ouvrir des connexions réseau, cet outil peut être utilisé pour de nombreux usages
 published: true
-date: 2024-07-11T09:18:49.332Z
+date: 2024-07-11T09:38:45.590Z
 tags: outil, linux
 editor: markdown
 dateCreated: 2024-04-15T06:48:30.391Z
@@ -18,12 +18,12 @@ Netcat est un puissant outil permetttant l'écoute de ports ou encore l'ouvertur
 
 # Options
 
-| Raccourci | Description                                                              |
-| --------- | ------------------------------------------------------------------------ |
-| `-l`      | Mode écoute (listen), attendre une connexion entrante                    |
-| `-v`      | Mode verbose, affiche des informations supplémentaires                   |
-| `-n`      | Désactive la résolution DNS (permet d'augmenter la vitesse de connexion) |
-| `-p`      | Spécifie un port d'écoute et aussi là où la connexion est transmise      |
+| Option | Description                                                              |
+| ------ | ------------------------------------------------------------------------ |
+| `-l`   | Mode écoute (listen), attendre une connexion entrante                    |
+| `-v`   | Mode verbose, affiche des informations supplémentaires                   |
+| `-n`   | Désactive la résolution DNS (permet d'augmenter la vitesse de connexion) |
+| `-p`   | Spécifie un port d'écoute et aussi là où la connexion est transmise      |
 
 # Exemples
 
