@@ -2,7 +2,7 @@
 title: Get-AppLockerPolicy
 description: Voir la politique AppLocker locale, effective ou du domaine
 published: true
-date: 2024-07-11T10:24:31.462Z
+date: 2024-07-11T10:26:20.798Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-07-11T10:23:43.013Z
@@ -10,7 +10,7 @@ dateCreated: 2024-07-11T10:23:43.013Z
 
 # Introduction
 
-la commande Get-AppLockerPolicy permet de voir la politique AppLocker, AppLocker permet de limiter les fichiers que les utilisateurs ou groupes sont autorisés à exécuter.
+La commande Get-AppLockerPolicy permet de voir la politique AppLocker, AppLocker permet de limiter les fichiers que les utilisateurs ou groupes sont autorisés à exécuter.
 
 # Syntaxe
 
