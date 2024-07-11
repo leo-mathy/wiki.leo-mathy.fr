@@ -2,7 +2,7 @@
 title: xfreerdp
 description: xfreerdp est un client RDP (Remote Desktop Protocol), ce qui permet de se connecter sur des machines windows depuis des machines linux
 published: true
-date: 2024-07-11T09:03:21.529Z
+date: 2024-07-11T09:37:26.641Z
 tags: outil, linux
 editor: markdown
 dateCreated: 2024-04-14T16:36:19.842Z
@@ -21,7 +21,7 @@ xfreerdp est un client RDP (Remote Desktop Protocol), ce qui permet de se connec
 > Par défaut le port est le 3389 si il n'est pas précisé.
 > {.is-info}
 
-| Raccourci          | Description                               |
+| Option             | Description                               |
 | ------------------ | ----------------------------------------- |
 | `/v:[serveur]`     | Spécifie le serveur RDP                   |
 | `/u:[UTILISATEUR]` | Spécifie le nom de l'utilisateur          |
