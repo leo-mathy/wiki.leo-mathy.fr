@@ -2,7 +2,7 @@
 title: tasklist
 description: Affiche une liste des processus actuellement en cours sur un ordinateur local ou un ordinateur distant
 published: true
-date: 2024-07-11T11:02:11.117Z
+date: 2024-07-11T11:08:27.031Z
 tags: cmd, windows
 editor: markdown
 dateCreated: 2024-07-11T11:01:52.293Z
@@ -11,6 +11,11 @@ dateCreated: 2024-07-11T11:01:52.293Z
 # Introduction
 
 La commande tasklist permet d'afficher la liste des processus en cours sur le système.
+
+pour rappel,
+- Une application est un programme avec lequel on interagit par le bureau.
+- Un processus est une instance d'un éxecutable (il est possible d'avoir plusieurs processus pour un seul éxecutable, une instance.)
+- Un service est un processus qui est actif en arrière plan et qui n'interagi pas avec le bureau.
 
 # Syntaxe
 
