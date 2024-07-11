@@ -2,7 +2,7 @@
 title: tasklist
 description: Affiche une liste des processus actuellement en cours sur un ordinateur local ou un ordinateur distant
 published: true
-date: 2024-07-11T11:01:52.293Z
+date: 2024-07-11T11:02:11.117Z
 tags: cmd, windows
 editor: markdown
 dateCreated: 2024-07-11T11:01:52.293Z
@@ -18,11 +18,11 @@ La commande tasklist permet d'afficher la liste des processus en cours sur le sy
 
 # Options
 
-| Option   | Description                          |
-| -------- | ------------------------------------ |
-| `/S` | Spécifie le système auquel se connecter |
-| `/SVC` | Affiche les services hébergés dans chaque processus |
-| `/FI [filtre]` | Utilise un filtre personnalisé |
+| Option         | Description                                         |
+| -------------- | --------------------------------------------------- |
+| `/S`           | Spécifie le système auquel se connecter             |
+| `/SVC`         | Affiche les services hébergés dans chaque processus |
+| `/FI [filtre]` | Utilise un filtre personnalisé                      |
 
 # Exemples
 
@@ -41,6 +41,3 @@ Affiche les processus et les services dont le Process ID (PID) est 2800
 Affiche les processus et les services dont le nom du service est "Dhcp"
 
 `tasklist /SVC /FI "SERVICES eq Dhcp"`
-
-
-
