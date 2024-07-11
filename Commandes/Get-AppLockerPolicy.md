@@ -2,7 +2,7 @@
 title: Get-AppLockerPolicy
 description: Voir la politique AppLocker locale, effective ou du domaine
 published: true
-date: 2024-07-11T10:23:43.013Z
+date: 2024-07-11T10:24:31.462Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-07-11T10:23:43.013Z
@@ -14,16 +14,16 @@ la commande Get-AppLockerPolicy permet de voir la politique AppLocker, AppLocker
 
 # Syntaxe
 
-`Get-AppLockerPolicy [Poliptions]`
+`Get-AppLockerPolicy [politique] [options]`
 
 # Options
 
-| Option             | Description                               |
-| ------------------ | ----------------------------------------- |
-| `-Local`     | Renvoi la politique AppLocker locale                   |
-| `-Domain -LDAP [chemin de la GPO]`     | Renvoi la politique AppLocker du domaine pour une GPO en particulier                 |
-| `-Effective`     | Renvoi la politique AppLocker effective                  |
-| `-Xml`     | Affiche la sortie au format XML            |
+| Option                             | Description                                                          |
+| ---------------------------------- | -------------------------------------------------------------------- |
+| `-Local`                           | Renvoi la politique AppLocker locale                                 |
+| `-Domain -LDAP [chemin de la GPO]` | Renvoi la politique AppLocker du domaine pour une GPO en particulier |
+| `-Effective`                       | Renvoi la politique AppLocker effective                              |
+| `-Xml`                             | Affiche la sortie au format XML                                      |
 
 # Exemples
 
