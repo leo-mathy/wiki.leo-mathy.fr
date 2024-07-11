@@ -2,7 +2,7 @@
 title: Vim
 description: Vim est un éditeur de texte, c’est-à-dire un logiciel permettant la manipulation de fichiers texte.
 published: true
-date: 2024-07-11T09:10:18.882Z
+date: 2024-07-11T09:37:52.078Z
 tags: outil, linux
 editor: markdown
 dateCreated: 2024-04-15T06:57:26.511Z
@@ -16,7 +16,7 @@ Vim est un puissant éditeur de texte, il est utile de connaitre cet outil puisq
 
 `vim [options] [fichier]`
 
-# Options
+# Raccourcis
 
 Vim étant utilisé en ligne de commande, il est utilisé avec des raccourcis clavier.
 
