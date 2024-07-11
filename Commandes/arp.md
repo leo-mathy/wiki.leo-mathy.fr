@@ -2,7 +2,7 @@
 title: arp
 description: Affiche et modifie les tables de traduction d'adresses IP en adresses physiques utilisées par le protocole de résolution d'adresses ARP
 published: true
-date: 2024-07-11T09:28:25.608Z
+date: 2024-07-11T09:28:47.623Z
 tags: cmd, windows
 editor: markdown
 dateCreated: 2024-04-28T13:43:58.681Z
@@ -19,7 +19,7 @@ physiques utilisées par le protocole de résolution d'adresses ARP.
 
 # Options
 
-| Options                           | Description                     |
+| Option                            | Description                     |
 | --------------------------------- | ------------------------------- |
 | `-a`                              | Affiche les entrées ARP actives |
 | `-s [addresse ip] [addresse MAC]` | Ajoute une entrée statique      |
