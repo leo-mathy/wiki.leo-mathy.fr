@@ -2,7 +2,7 @@
 title: Tmux (Terminal Multiplexer)
 description: tmux est un multiplexeur de terminaux libre en mode texte. Il permet d'utiliser plusieurs terminaux virtuels dans une seule fenêtre de terminal ou une session sur un terminal
 published: true
-date: 2024-07-11T09:13:01.851Z
+date: 2024-07-11T09:38:23.479Z
 tags: outil, linux
 editor: markdown
 dateCreated: 2024-04-15T06:39:11.320Z
@@ -16,7 +16,7 @@ Tmux est un multiplexeur de terminal, c'est à dire qu'il est possible avec un s
 
 `tmux [paramètres]`
 
-# Options
+# Raccourcis
 
 > le préfixe de commande est CTRL + B , c'est à dire que pour gérer tmux, il faut tout d'abord presser ces touches.
 > {.is-info}
