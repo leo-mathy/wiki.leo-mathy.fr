@@ -2,7 +2,7 @@
 title: ipconfig
 description: Commande permettant d'afficher la configuration de carte(s) réseau
 published: true
-date: 2024-07-11T09:35:47.893Z
+date: 2024-07-11T09:36:18.341Z
 tags: cmd, windows
 editor: markdown
 dateCreated: 2024-04-28T13:32:25.385Z
@@ -35,6 +35,6 @@ Affiche toutes les informations de toutes les cartes réseau
 
 `ipconfig /all`
 
-Libère l'addresse IP sur toutes les cartes configurés dynamiquement et en redemande une nouvelle.
+Libère le bail DHCP et redemande une autre addresse IP via le protocole DHCP, sur toutes les cartes
 
 `ipconfig /renew`
