@@ -2,7 +2,7 @@
 title: query
 description: Affiche des informations sur les processus, sessions et serveurs hôtes de session Bureau à distance.
 published: true
-date: 2024-07-11T12:15:29.849Z
+date: 2024-07-11T12:20:01.849Z
 tags: cmd, windows
 editor: markdown
 dateCreated: 2024-07-11T12:15:29.849Z
@@ -18,7 +18,7 @@ query [ PROCESS / SESSION / TERMSERVER / USER ]
 
 # Options
 
-| Raccourci           | Description                    |
+| Option              | Description                    |
 | ------------------- | ------------------------------ |
 | `/SERVER:[serveur]` | Défini le serveur à interroger |
 
