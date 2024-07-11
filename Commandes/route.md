@@ -2,7 +2,7 @@
 title: route
 description: Permet d'afficher ou modifier la table de routage
 published: true
-date: 2024-07-11T09:58:21.136Z
+date: 2024-07-11T09:59:23.790Z
 tags: cmd, windows
 editor: markdown
 dateCreated: 2024-07-11T09:57:49.944Z
@@ -10,7 +10,7 @@ dateCreated: 2024-07-11T09:57:49.944Z
 
 # Introduction
 
-La commande route permet d'afficher la table de routage, cela est utile pour voir les passerelles actives.
+La commande route permet d'afficher ou modifier la table de routage, cela est utile pour voir les passerelles actives ou ajouter une nouvelle route par défaut.
 
 # Syntaxe
 
