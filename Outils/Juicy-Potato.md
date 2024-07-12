@@ -2,7 +2,7 @@
 title: Juicy Potato
 description: Version améliorée de RottenPotatoNG, permet d'utiliser les privilèges SeImpersonate et/ou SeAssignPrimaryToken pour escalader les privilèges jusqu'au compte NT AUTHORITY\SYSTEM
 published: true
-date: 2024-07-12T17:08:28.859Z
+date: 2024-07-12T17:08:36.726Z
 tags: outil, windows, élévation des privilèges
 editor: markdown
 dateCreated: 2024-07-12T15:45:18.846Z
@@ -16,8 +16,7 @@ Juicy Potato est une version améliorée de RottenPotatoNG, Cet outil permet d'u
 > {.is-info}
 
 > JuicyPotato ne fonctionne pas sur les versions après Windows Server 2019 et Windows 10 build 1809, du fait que DCOM ne rentre plus en communication avec le serveur COM MITM, de plus, le client ne négocie plus une authentification si les données ont étés transferés.
-{.is-danger}
-
+> {.is-danger}
 
 # Syntaxe
 
