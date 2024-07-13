@@ -2,7 +2,7 @@
 title: Juicy Potato
 description: Version améliorée de RottenPotatoNG, permet d'utiliser les privilèges SeImpersonate et/ou SeAssignPrimaryToken pour escalader les privilèges jusqu'au compte NT AUTHORITY\SYSTEM
 published: true
-date: 2024-07-12T17:08:36.726Z
+date: 2024-07-13T08:49:25.252Z
 tags: outil, windows, élévation des privilèges
 editor: markdown
 dateCreated: 2024-07-12T15:45:18.846Z
@@ -32,7 +32,8 @@ Juicy Potato est une version améliorée de RottenPotatoNG, Cet outil permet d'u
 | `-a`         | Argument à passer au programme                                                                                         |
 | `-c`         | Précise le CLSID utilsé (par defaut, celui du Service de transfert intelligent en arrière-plan (BITS) est utilisé)     |
 
-Pourquoi le CLSID du Service de transfert intelligent en arrière-plan (BITS) est utilisé par défaut? C'est simple, le CLSID de BITS est le même entre chaque machine.
+> Pourquoi le CLSID du Service de transfert intelligent en arrière-plan (BITS) est utilisé par défaut? C'est simple, le CLSID de BITS est le même entre chaque machine. Il est possible de préciser d'autres CLSID pour utiliser d'autres token
+> {.is-info}
 
 # Exemples
 
