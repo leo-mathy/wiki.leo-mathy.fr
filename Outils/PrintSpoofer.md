@@ -2,7 +2,7 @@
 title: PrintSpoofer
 description: Permet de créer un processus SYSTEM dans la console, utilise le privilège SeImpersonate pour escalader les privilèges jusqu'au compte NT AUTHORITY\SYSTEM
 published: true
-date: 2024-07-13T10:26:57.386Z
+date: 2024-07-13T10:27:52.898Z
 tags: outil, windows, élévation des privilèges
 editor: markdown
 dateCreated: 2024-07-13T10:26:57.386Z
@@ -10,7 +10,7 @@ dateCreated: 2024-07-13T10:26:57.386Z
 
 # Introduction
 
-PrintSpoofer permet de créer un processus SYSTEM dans la console à l'aide des Cannaux Nommés, utilise le privilège SeImpersonate pour escalader les privilèges jusqu'au compte NT AUTHORITY\SYSTEM.
+PrintSpoofer permet de créer un processus SYSTEM dans la console à l'aide des Canaux Nommés, utilise le privilège SeImpersonate pour escalader les privilèges jusqu'au compte NT AUTHORITY\SYSTEM.
 
 > PrintSpoofer est disponible au téléchargement ici: https://github.com/itm4n/PrintSpoofer
 > {.is-info}
@@ -26,8 +26,8 @@ PrintSpoofer permet de créer un processus SYSTEM dans la console à l'aide des 
 
 | Option          | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
-| `-c [commande]` | Spécifie la commande à éxecuter                                   |
-| `-i`            | Intéragir avec le processus créer dans la ligne de commande       |
+| `-c [commande]` | Spécifie la commande à exécuter                                   |
+| `-i`            | Interagir avec le processus créer dans la ligne de commande       |
 | `-d [ID]`       | Créer le processus dans le bureau correspondant à l'ID de session |
 
 # Exemples
@@ -36,7 +36,7 @@ Lance une console cmd sur le bureau correspondant à la session 1
 
 `PrintSpoofer.exe -d 1 -c cmd.exe`
 
-Lancer powershell dans la console actuelle en tant que SYSTEM
+Lancer PowerShell dans la console actuelle en tant que SYSTEM
 
 `PrintSpoofer.exe -i -c powershell.exe`
 
