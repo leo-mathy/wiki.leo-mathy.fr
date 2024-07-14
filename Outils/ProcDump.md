@@ -2,7 +2,7 @@
 title: ProcDump
 description: Outil permettant de créer un fichier de vidage contenant la mémoire d'un processus
 published: true
-date: 2024-07-14T12:42:37.505Z
+date: 2024-07-14T13:49:21.172Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-14T12:42:37.505Z
@@ -14,6 +14,9 @@ ProcDump est un outil de la suite Sysinternals de Microsoft permettant de créer
 
 > ProcDump est disponible au téléchargement ici: https://learn.microsoft.com/fr-fr/sysinternals/downloads/procdump
 > {.is-info}
+
+> Si pour une raison quelconque, il est impossible d'avoir accès à cet outil, il est possible d'effectuer un vidage depuis le gestionnaire de tâches (Details>processus>Créer un fichier de vidage).
+> {.is-success}
 
 # Syntaxe
 
