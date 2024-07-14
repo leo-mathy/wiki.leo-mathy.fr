@@ -2,7 +2,7 @@
 title: psgetsystem
 description: Module Powershell qui permet d'utiliser le privilège SeDebugPrivilege pour élever les privilèges. lancer un processus enfant privilégié, parent d'un processus SYSTEM.
 published: true
-date: 2024-07-14T14:11:03.531Z
+date: 2024-07-14T20:15:03.969Z
 tags: outil, windows, powershell, élévation des privilèges
 editor: markdown
 dateCreated: 2024-07-14T14:11:03.531Z
@@ -10,7 +10,7 @@ dateCreated: 2024-07-14T14:11:03.531Z
 
 # Introduction
 
-psgetsystem est un module Powershell qui permet d'utiliser le privilège SeDebugPrivilege pour élever les privilèges.
+Psgetsystem est un module Powershell qui permet d'utiliser le privilège SeDebugPrivilege pour élever les privilèges.
 Le script powershell va lancer un processus enfant, parent d'un processus SYSTEM précisé, le processus enfant héritant du token du processus parent, il est maintenant possible d'utiliser ce token grace au privilège SeDebugPrivilege, pour exécuter des commandes en tant que l'utilisateur du processus parent.
 
 > psgetsystem est disponible au téléchargement ici: https://github.com/decoder-it/psgetsystem/
