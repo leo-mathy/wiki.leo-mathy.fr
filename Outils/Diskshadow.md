@@ -2,7 +2,7 @@
 title: Diskshadow
 description: Commande permettant d'interagir avec le service VSS (Volume Shadow Copy Service), cela permet d'effectuer des sauvegardes de disques ou fichiers même si ils sont en cours d'utilisation
 published: true
-date: 2024-07-15T11:36:55.305Z
+date: 2024-07-15T11:44:21.382Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-15T11:23:06.422Z
@@ -64,6 +64,21 @@ Diskshadow est une commande permettant d'interagir avec le service VSS (Volume S
 | `expose [ShadowID/Alias] [disque]`           | Expose le cliché instantané sous forme de disque (par exemple E:)                      |
 | `expose [ShadowID/Alias] [disque]`           | Expose le cliché instantané sous forme de partage (par exemple \\\share)               |
 | `expose [ShadowID/Alias] [point de montage]` | Expose le cliché instantané sous forme de point de montage (par exemple c:\shadowcopy) |
+
+# Exemples
+
+Créer un cliché instantané en mode verbose du volume C: sous alias cdrive, persistent et accessible au client, en stockant les méta-données dans C:\Windows\Temp\meta.cab et en exposant le cliché sous le disque E:.
+
+`set verbose on`
+`set metadata C:\Windows\Temp\meta.cab`
+`set context persistent`
+`set context clientaccessible`
+`begin backup`
+`add volume C: alias cdrive`
+`create`
+`expose %cdrive% E:`
+`end backup`
+`exit`
 
 # Voir aussi
 
