@@ -2,7 +2,7 @@
 title: whoami
 description: Cette commande peut être employé pour obtenir le nom d’utilisateur, les informations de groupe ainsi que les identificateurs de sécurité (SID)
 published: true
-date: 2024-07-11T12:25:15.553Z
+date: 2024-07-15T10:20:46.464Z
 tags: cmd, windows
 editor: markdown
 dateCreated: 2024-07-11T12:25:15.553Z
@@ -32,3 +32,14 @@ whoami [options]
 Affiche les privilèges de l'utilisateur dans le contexte actuel
 
 `whoami /priv`
+
+# Voir aussi
+
+Liste des privilèges et leurs fonctions sur Windows:
+https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/appendix-b--privileged-accounts-and-groups-in-active-directory#table-b-1-user-rights-and-privileges
+
+Liste des groupes Windows par défaut et leurs Privilèges:
+https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/appendix-b--privileged-accounts-and-groups-in-active-directory#table-b-1-built-in-and-default-accounts-and-groups-in-active-directory
+
+Groupes d'identité spéciale sur Windows:
+https://learn.microsoft.com/fr-fr/windows-server/identity/ad-ds/manage/understand-special-identities-groups#default-special-identity-groups
