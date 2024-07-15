@@ -2,7 +2,7 @@
 title: Get-ADDBAccount
 description: Lis les informations concernant les comptes depuis la base ntds.dit
 published: true
-date: 2024-07-15T12:25:51.477Z
+date: 2024-07-15T13:02:37.038Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-07-15T12:25:51.477Z
@@ -47,4 +47,4 @@ Récupère le compte où le nom SAM est Administrateur
 
 Récupère tous les comptes et déchiffre les valeurs des attribus secrets avec la clé de démarrage
 
-`Get-ADDBAccount -DatabasePath ./ntds.dit -All -BootKey acdba64a3929261b04e5270c3ef973cf
+`Get-ADDBAccount -DatabasePath ./ntds.dit -All -BootKey acdba64a3929261b04e5270c3ef973cf`
