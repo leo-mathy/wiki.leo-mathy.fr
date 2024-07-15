@@ -2,7 +2,7 @@
 title: secretsdump
 description: Lis les informations concernant les comptes depuis la base ntds.dit
 published: true
-date: 2024-07-15T12:49:07.492Z
+date: 2024-07-15T12:56:05.652Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-15T12:49:07.492Z
@@ -17,7 +17,7 @@ secretsdump est un script python de la suite Impacket, ce script permet de récu
 
 # Syntaxe
 
-`Get-ADDBAccount -DatabasePath [fichier ntds.dit] [options]`
+`impacket-secretsdump [options] [targert
 
 # Options
 
@@ -32,20 +32,12 @@ secretsdump est un script python de la suite Impacket, ce script permet de récu
 | `-just-dc-user [Nom SAM]`        | Spécifie quel compte récupérer en fonction du nom SAM (Security Account Manager) depuis la base de données                                     |
 | `-ldapfilter [Nom distinct]`        | Spécifie quel compte récupérer en fonction du DN (nom distinct) depuis la base de données                                      |
 | `-just-dc`        | Extrait uniquement les hashs NTML et clés kerberos |
+| `-just-dc-ntlm`        | Extrait uniquement les hashs NTML |
+| `-pwd-last-set`        | Affiche l'attribut pwdLastSet pour chaque compte
+| `-user-status`        | Affiche si l'utilisateur est désactivé ou non
+| `-history`        | Affiche l'historique de mot de passe et la dernière valeur du secret LSA (oldVal)
+| `-hashes LMHASH:NTHASH`        | change le format des hashs NTML pour LMHASH:NTHASH (et non NTHASH:LMHASH)
 
-
-
-
-
-
-| `-DistinguishedName [Nom distinct]`       | Spécifie quel compte récupérer en fonction du DN (nom distinct) depuis la base de données                  |
-| `-ObjectGuid [Identifiant unique global]` | Spécifie quel compte récupérer en fonction du GUID (Identifiant unique global) depuis la base de données   |
-| `-ObjectSid [Identifiant de sécurité]`    | Spécifie quel compte récupérer en fonction du SID (Identifiant de sécurité) depuis la base de données      |
-| `-SamAccountName [Nom SAM]`               | Spécifie quel compte récupérer en fonction du nom SAM (Security Account Manager) depuis la base de données |
-| `-DistinguishedName [Nom distinct]`       | Spécifie quel compte récupérer depuis la base de données                                                   |
-
-> Il est possible d'utiliser l'applet Get-BootKey inclus dans la module DSInternals pour récupérer la clé de démarrage (ou clé système)
-> {.is-info}
 
 # Exemples
 
