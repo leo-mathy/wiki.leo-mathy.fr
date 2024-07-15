@@ -2,7 +2,7 @@
 title: SeBackupPrivilege
 description: Module powershell permettant d'activer le privilège SeBackupPrivilege (désactivé par défaut sur les comptes ayant le privilège d'assigné)
 published: true
-date: 2024-07-15T10:52:35.143Z
+date: 2024-07-15T10:56:07.999Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-07-15T10:52:35.143Z
@@ -34,6 +34,9 @@ Après avoir importer les deux modules, il est possible d'utiliser les commandes
 
 > Avec le privilège d'activé, il est possible de lister tous les repertoires (avec dir / Get-ChildItem), mais pour avoir accès au données des fichiers, la commande Get-Content ou copy ne fonctionnent pas, en effet il faut utiliser la fonction CreateFileA de Microsoft et préciser le drapeau FILE_FLAG_BACKUP_SEMANTICS pour indiquer que l'opération est une opération de sauvegarde. C'est pour cela que la command Copy-FileSeBackupPrivilege est disponible dans le module.
 > {.is-info}
+
+> Si le fichier ou dossier à une permission de refus explicite pour l'utilisateur, utiliser le privilège ne fonctionnera pas.
+> {.is-danger}
 
 # Exemples
 
