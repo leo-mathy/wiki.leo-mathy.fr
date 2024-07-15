@@ -2,7 +2,7 @@
 title: reg
 description: Permet d'effectuer des opérations sur le registre Windows
 published: true
-date: 2024-07-15T11:58:30.391Z
+date: 2024-07-15T11:58:59.963Z
 tags: cmd, windows
 editor: markdown
 dateCreated: 2024-07-15T11:58:30.391Z
@@ -21,7 +21,7 @@ Reg permet d'effectuer des opérations sur le registre Windows
 | Commande                       | Description                                                                                            |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------ |
 | `reg query [chemin de la clé]` | retourne la liste des sous-clés                                                                        |
-| `reg save [chemin de la clé]`  | Sauvegarde la clés et sous-clés dans un fichier au format .hiv (préserve les ACL et les propriétaires) |
+| `reg save [chemin de la clé] [fichier au format .hiv]`  | Sauvegarde la clés et sous-clés dans un fichier au format .hiv (préserve les ACL et les propriétaires) |
 
 # Exemples
 
