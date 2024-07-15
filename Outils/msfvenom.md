@@ -2,7 +2,7 @@
 title: msfvenom
 description: Permet de générer des charges utiles (payloads) de toutes sortes
 published: true
-date: 2024-07-15T20:08:55.994Z
+date: 2024-07-15T20:09:37.279Z
 tags: outil, linux
 editor: markdown
 dateCreated: 2024-07-15T20:08:55.994Z
@@ -34,8 +34,6 @@ msfvenom est un outil de la suite Metasploit, cet outil permet de générer des 
 | `--encrypt-key [clé]`             | Clé à utiliser avec le chiffrement                                                                                  |
 | `-a [architecture]`               | Spécifie l'architecture souhaitée pour la génération du payload et l'encodage                                       |
 | `-o [sortie]`                     | Sauvegarde le payload vers un fichier                                                                               |
-| `--smallest [nom]`                | Génere le payload le plus petit possible avec tous les encodeurs disponibles                                        |
-| `--smallest [nom]`                | Génere le payload le plus petit possible avec tous les encodeurs disponibles                                        |
 
 # Exemples
 
