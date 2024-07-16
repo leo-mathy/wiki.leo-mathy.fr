@@ -2,7 +2,7 @@
 title: Test-AppLockerPolicy
 description: Tester une politique AppLocker
 published: true
-date: 2024-07-11T10:45:42.732Z
+date: 2024-07-16T16:57:14.677Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-07-11T10:33:18.189Z
