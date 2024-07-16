@@ -2,8 +2,8 @@
 title: query
 description: Affiche des informations sur les processus, sessions et serveurs hôtes de session Bureau à distance.
 published: true
-date: 2024-07-11T12:20:01.849Z
-tags: cmd, windows
+date: 2024-07-16T16:52:10.960Z
+tags: cmd, windows, powershell
 editor: markdown
 dateCreated: 2024-07-11T12:15:29.849Z
 ---
