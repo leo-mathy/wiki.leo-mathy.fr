@@ -2,8 +2,8 @@
 title: robocopy
 description: permet de copier des fichiers et dossiers d'un emplacement à un autre
 published: true
-date: 2024-07-15T13:16:58.176Z
-tags: cmd, windows
+date: 2024-07-16T16:53:36.131Z
+tags: cmd, windows, powershell
 editor: markdown
 dateCreated: 2024-07-15T13:16:58.176Z
 ---
