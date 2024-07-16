@@ -2,8 +2,8 @@
 title: DNS (Domain Name System)
 description: Le protocole DNS permet de traduire les noms de domaine en adresses IP
 published: true
-date: 2024-04-15T10:11:32.308Z
-tags: protocole de couche 7, protocole
+date: 2024-07-16T17:16:06.826Z
+tags: protocole
 editor: markdown
 dateCreated: 2024-04-14T15:37:16.605Z
 ---
