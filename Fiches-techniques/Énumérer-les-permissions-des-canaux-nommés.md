@@ -2,7 +2,7 @@
 title: Énumérer les permissions des canaux nommés
 description: Les canaux sont utilisés pour la communication entre deux applications ou processus en utilisant de la mémoire partagée.
 published: true
-date: 2024-07-11T16:57:58.359Z
+date: 2024-07-16T17:00:27.611Z
 tags: cmd, windows, powershell, fiche technique
 editor: markdown
 dateCreated: 2024-07-11T16:57:58.359Z
