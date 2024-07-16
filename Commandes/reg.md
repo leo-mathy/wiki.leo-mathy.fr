@@ -2,8 +2,8 @@
 title: reg
 description: Permet d'effectuer des opérations sur le registre Windows
 published: true
-date: 2024-07-15T11:58:59.963Z
-tags: cmd, windows
+date: 2024-07-16T16:52:52.692Z
+tags: cmd, windows, powershell
 editor: markdown
 dateCreated: 2024-07-15T11:58:30.391Z
 ---
