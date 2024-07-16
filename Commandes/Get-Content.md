@@ -2,7 +2,7 @@
 title: Get-Content
 description: Permet d'afficher le contenu d'un fichier
 published: true
-date: 2024-07-13T10:11:38.720Z
+date: 2024-07-16T16:46:51.036Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-07-13T10:11:38.720Z
