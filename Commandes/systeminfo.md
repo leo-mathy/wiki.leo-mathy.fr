@@ -2,8 +2,8 @@
 title: systeminfo
 description: Affiche les informations de configuration du système d’exploitation
 published: true
-date: 2024-07-11T11:21:37.863Z
-tags: cmd, windows
+date: 2024-07-16T16:55:34.416Z
+tags: cmd, windows, powershell
 editor: markdown
 dateCreated: 2024-07-11T11:21:37.863Z
 ---
