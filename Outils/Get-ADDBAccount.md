@@ -2,8 +2,8 @@
 title: Get-ADDBAccount
 description: Lis les informations concernant les comptes depuis la base ntds.dit
 published: true
-date: 2024-07-15T13:02:37.038Z
-tags: outil, windows, powershell
+date: 2024-07-16T17:03:52.015Z
+tags: outil, cmd, windows, powershell
 editor: markdown
 dateCreated: 2024-07-15T12:25:51.477Z
 ---
