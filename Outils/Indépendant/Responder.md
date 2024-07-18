@@ -2,7 +2,7 @@
 title: Responder
 description: Permet d'empoisonner certains protocoles (LLMNR;NBT-NS;MDNS) et permet la création de serveurs rogue (proxy WPAD, HTTP) pour la récupération d'identifiants
 published: true
-date: 2024-07-18T14:53:24.803Z
+date: 2024-07-18T15:20:50.784Z
 tags: outil
 editor: markdown
 dateCreated: 2024-07-18T14:53:24.803Z
@@ -13,32 +13,33 @@ dateCreated: 2024-07-18T14:53:24.803Z
 Permet d'empoisonner certains protocoles (LLMNR;NBT-NS;MDNS) et permet la création de serveurs rogue (proxy WPAD, HTTP) pour la récupération d'identifiants
 
 > Responder est disponible au téléchargement ici: https://github.com/lgandx/Responder
-{.is-info}
-
+> {.is-info}
 
 # Syntaxe
 
-`Set-DnsServerGlobalQueryBlockList [options]`
+`Responder.py -I [interface] [options]`
 
 # Options
 
-| Option                             | Description                                                                                          |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `-AsJob`                           | Exécute la commande en arrière-plan                                                                  |
-| `-CimSession [Session/ordinateur]` | Exécute la commande sur une session spécifique ou un ordinateur                                      |
-| `-ComputerName [ordinateur]`       | Spécifie l'ordinateur distant                                                                        |
-| `-Confirm`                         | Demande une confirmation avant d'exécuter la commande                                                |
-| `-Enable [True/False]`             | Active ou désactive la liste globale de requêtes bloquées sur un serveur DNS                         |
-| `-List [noms]`                     | Modifie les entrées bloqués                                                                          |
-| `-PassThru`                        | Affiche la liste globale de requêtes bloquées sur un serveur DNS après l'exécution de la commande |
-| `-WhatIf`                          | N'exécute pas la commande mais indique ce qui se passerai si la commande était exécuté               |
+| Option               | Description                                                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `--version`          | Affiche la version de Responder                                                                                                   |
+| `-h`                 | Affiche la page d'aide                                                                                                            |
+| `-A`                 | Mode d'analyse, ne répond pas aux requètes                                                                                        |
+| `-e [Addresse Ipv4]` | Utilise une addresse Ipv4 différente pour les réponses que cette de Responder                                                     |
+| `-b`                 | Retourne les informations d'authentification basic HTTP à la place du hash NTLM                                                   |
+| `-d`                 | Active le serveur DHCP et injecte un serveur WPAD dans les réponses                                                               |
+| `-D`                 | Injecte un serveur DNS dans les réponses du serveur DHCP                                                                          |
+| `-w`                 | Active le serveur rogue WPAD (qui envoi le fichier wpad.dat aux clients)                                                          |
+| `-u [[hôte:port]`    | Spécifie un serveur proxy externe pour les requètes sortantes                                                                     |
+| `-F`                 | Force une demande d'authentification lorsque le fichier wpad.dat est récupéré (cela peut afficher une fenêtre d'authentification) |
+| `-P`                 | Force une demande d'authentification lors des connexions au proxy (cela peut afficher une fenêtre d'authentification)             |
+| `-lm`                | Active la rétrogradation des hashs LM lors de la réception (valide pour NTLMv1)                                                   |
+| `--disable-ess`      | Force la désactivation de la mesure de sécurité ESS (Extended Session Support)                                                    |
+| `-v`                 | Active le mode verbose                                                                                                            |
 
 # Exemples
 
-Modifie la liste globale de requête bloquées sur le serveur DNS 10.10.10.1, pour que le serveur ignore les requètes vers le nom ISATAP.
+Active Responder sur l'interface eth0 avec le serveur rogue WPAD activé et force la demande d'authentification.
 
-`Set-DnsServerGlobalQueryBlockList -ComputerName 10.10.10.1 -List "ISATAP"`
-
-Désactive la liste globale de requêtes bloquées sur le serveur DNS.
-
-`Set-DnsServerGlobalQueryBlockList -Enable False`
+`Responder.py -I eth0 -w -F`
