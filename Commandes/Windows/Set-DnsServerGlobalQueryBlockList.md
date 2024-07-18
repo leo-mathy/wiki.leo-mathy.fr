@@ -2,7 +2,7 @@
 title: Set-DnsServerGlobalQueryBlockList
 description: Modifie la liste globale de requêtes bloquées sur un serveur DNS. Le serveur DNS ignore les requêtes dont le nom est dans la liste
 published: true
-date: 2024-07-18T14:20:08.293Z
+date: 2024-07-18T15:28:06.862Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-07-16T18:11:24.036Z
@@ -27,7 +27,7 @@ L'applet Powershell Set-DnsServerGlobalQueryBlockList permet de modifier la list
 | `-CimSession [Session/ordinateur]` | Exécute la commande sur une session spécifique ou un ordinateur                                      |
 | `-ComputerName [ordinateur]`       | Spécifie l'ordinateur distant                                                                        |
 | `-Confirm`                         | Demande une confirmation avant d'exécuter la commande                                                |
-| `-Enable [True/False]`             | Active ou désactive la liste globale de requêtes bloquées sur un serveur DNS                         |
+| `-Enable [$True/$False]`             | Active ou désactive la liste globale de requêtes bloquées sur un serveur DNS                         |
 | `-List [noms]`                     | Modifie les entrées bloqués                                                                          |
 | `-PassThru`                        | Affiche la liste globale de requêtes bloquées sur un serveur DNS après l'exécution de la commande |
 | `-WhatIf`                          | N'exécute pas la commande mais indique ce qui se passerai si la commande était exécuté               |
