@@ -1,32 +1,43 @@
 ---
 title: Set-DnsServerGlobalQueryBlockList
-description: 
+description: Modifie la liste globale de requêtes bloquées sur un serveur DNS. Le serveur DNS ignore les requêtes dont le nom est dans la liste
 published: true
-date: 2024-07-18T13:40:05.766Z
-tags: windows, powershell, rédaction incomplète
+date: 2024-07-18T14:20:08.293Z
+tags: windows, powershell
 editor: markdown
 dateCreated: 2024-07-16T18:11:24.036Z
 ---
 
 # Introduction
 
-L'applet powerhsell Get-Content permet d'afficher le contenu d'un fichier
+L'applet Powershell Set-DnsServerGlobalQueryBlockList permet de modifier la liste globale de requêtes bloquées sur un serveur DNS. Le serveur DNS ignore les requêtes dont le nom est dans la liste.
+
+> Par défaut, les entrées ISATAP et WPAD sont dans la liste
+> {.is-info}
 
 # Syntaxe
 
-`Get-Content [options/fichier]`
+`Set-DnsServerGlobalQueryBlockList [options]`
 
 # Options
 
-| Option                         | Description                                       |
-| ------------------------------ | ------------------------------------------------- |
-| `-Encoding [encodage]`         | Spécifie le type d'encodage (ascii;ansi;utf8...)  |
-| `-Exclude [élement ou modèle]` | Exclu un élement ou modèle, par exemple \*.txt    |
-| `-Path [repertoire]`           | Spécifie le repertoire à utiliser                 |
-| `-Filter`                      | Spécifie le filtre à utiliser, par exemple \*.txt |
+| Option                             | Description                                                                                          |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `-AsJob`                           | Exécute la commande en arrière-plan                                                                  |
+| `-CimSession [Session/ordinateur]` | Exécute la commande sur une session spécifique ou un ordinateur                                      |
+| `-ComputerName [ordinateur]`       | Spécifie l'ordinateur distant                                                                        |
+| `-Confirm`                         | Demande une confirmation avant d'exécuter la commande                                                |
+| `-Enable [True/False]`             | Active ou désactive la liste globale de requêtes bloquées sur un serveur DNS                         |
+| `-List [noms]`                     | Modifie les entrées bloqués                                                                          |
+| `-PassThru`                        | Affiche la liste globale de requêtes bloquées sur un serveur DNS après l'exécution de la commande |
+| `-WhatIf`                          | N'exécute pas la commande mais indique ce qui se passerai si la commande était exécuté               |
 
 # Exemples
 
-Affiche le contenu des fichiers .txt dans le repertoire C:\Temp\ tout en excluant les fichiers .log
+Modifie la liste globale de requête bloquées sur le serveur DNS 10.10.10.1, pour que le serveur ignore les requètes vers le nom ISATAP.
 
-`Get-Content -Path C:\Temp\* -Filter *.txt -Exclude *.log`
+`Set-DnsServerGlobalQueryBlockList -ComputerName 10.10.10.1 -List "ISATAP"`
+
+Désactive la liste globale de requêtes bloquées sur le serveur DNS.
+
+`Set-DnsServerGlobalQueryBlockList -Enable False`
