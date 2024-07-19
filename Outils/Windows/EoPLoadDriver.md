@@ -2,7 +2,7 @@
 title: EoPLoadDriver
 description: Active et utilise le privilège SeLoadDriverPrivilege dans le processus, puis créer les clés de registre et charge le driver en utilisant la fonction NTLoadDriver.
 published: true
-date: 2024-07-19T11:50:15.517Z
+date: 2024-07-19T11:52:50.549Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-19T11:50:15.517Z
@@ -17,6 +17,9 @@ Active et utilise le privilège SeLoadDriverPrivilege dans le processus, puis cr
 
 > Il ne faut pas oublier que le code source C++ doit être compilé
 > {.is-warning}
+
+> Depuis Windows 10 Version 1803, le privilège SeLoadDriverPrivilege n'est plus exploitable, depuis qu'il n'est plus possible d'inclure des references aux clés de registre depuis HKEY_CURRENT_USER (HKCU)
+> {.is-danger}
 
 # Syntaxe
 
