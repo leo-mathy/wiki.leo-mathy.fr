@@ -1,8 +1,8 @@
 ---
-title: EnableSeLoadDriverPrivilege
+title: Exploitation 
 description: Active le privilège SeLoadDriverPrivilege dans le processus en cours et charge le driver Capcom.sys dans le kernel
 published: true
-date: 2024-07-19T11:04:55.005Z
+date: 2024-07-19T11:09:52.257Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-19T11:04:55.005Z
