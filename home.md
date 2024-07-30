@@ -2,7 +2,7 @@
 title: Accueil
 description: Page principale d'arrivée par défaut
 published: true
-date: 2024-07-30T19:05:40.573Z
+date: 2024-07-30T19:38:40.209Z
 tags: 
 editor: markdown
 dateCreated: 2024-04-14T15:03:48.620Z
@@ -20,3 +20,11 @@ Les liens externes contenus dans les publications sont fournis à titre informat
 **Contact**
 
 Pour tout problème sur le site ou toute demande, vous pouvez me contacter à l'addresse suivante: contact@leo-mathy.fr
+
+**Syntaxe**
+
+Syntaxe basique utilisée lors de la rédaction
+
+| --- | ------------------- |
+| `[exemple]` | élément obligatoire |
+| `<exemple>` | élément facultatif |
