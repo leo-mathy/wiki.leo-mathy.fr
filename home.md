@@ -2,7 +2,7 @@
 title: Accueil
 description: Page principale d'arrivée par défaut
 published: true
-date: 2024-07-30T19:38:40.209Z
+date: 2024-07-31T17:37:52.782Z
 tags: 
 editor: markdown
 dateCreated: 2024-04-14T15:03:48.620Z
@@ -14,7 +14,9 @@ Bienvenue sur le wiki de Léo MATHY, cet endroit regroupe différentes procédur
 
 **Mentions**
 
-Les publications sur ce site peuvent contenir des fautes, des incohérences, des erreurs et ne sont pas toujours complètes ou terminées. Pour toute demande de contribution, merci de me contacter pour obtenir un accès.
+Les publications sur ce site peuvent contenir des fautes, des incohérences, des erreurs et ne sont pas toujours complètes ou terminées. 
+De plus, certaines définitions, explications ou descriptions peuvent être reprises depuis les documentations officielles (qui sont déjà rédigées de la meilleure façon possible).
+Pour toute demande de contribution, merci de me contacter pour obtenir un accès.
 Les liens externes contenus dans les publications sont fournis à titre informatif. Nous ne sommes pas responsables de leur contenu. Utilisez-les à vos risques. Merci de votre compréhension.
 
 **Contact**
