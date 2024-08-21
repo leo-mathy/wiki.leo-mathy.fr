@@ -2,7 +2,7 @@
 title: Accueil
 description: Page principale d'arrivée par défaut
 published: true
-date: 2024-07-31T17:38:11.971Z
+date: 2024-08-21T16:31:39.027Z
 tags: 
 editor: markdown
 dateCreated: 2024-04-14T15:03:48.620Z
@@ -30,5 +30,5 @@ Pour tout problème sur le site ou toute demande, vous pouvez me contacter à l'
 Syntaxe basique utilisée lors de la rédaction
 
 | --- | ------------------- |
-| `[exemple]` | élément obligatoire |
-| `<exemple>` | élément facultatif |
+| `<Élément>` | Élément requis |
+| `[Élément]` | Élément optionnel |
