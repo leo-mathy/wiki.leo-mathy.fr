@@ -2,7 +2,7 @@
 title: SharpUp
 description: Portage des fonctionnalités de PowerUp en C#. Permet d'effectuer des vérifications basiques comme les permissions sur les exécutables de services.
 published: true
-date: 2024-08-21T17:00:30.061Z
+date: 2024-08-21T17:06:02.876Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-08-21T16:58:16.910Z
@@ -17,7 +17,7 @@ SharpUp est un outil utilisant le langage C#, basé sur les fonctionnalités de 
 
 # Syntaxe
 
-`SharpUp.exe [audit] [Vérification 1] [Autres vérifications]`
+`SharpUp.exe <[audit] [Vérification 1]> [Autres vérifications]`
 
 # Paramètres
 
