@@ -2,7 +2,7 @@
 title: AccessChk
 description: Afficher les droits des groupes ou des utilisateurs sur des fichiers, répertoires, clés de registre, objets globaux et services ainsi que les privilèges des groupes ou des utilisateurs.
 published: true
-date: 2024-08-22T16:00:46.271Z
+date: 2024-08-22T16:11:47.955Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-31T17:24:12.539Z
@@ -63,5 +63,4 @@ Affiche les permissions du répertoire "Test".
 
 # Voir aussi
 
-Explications sur le Contrôle d’intégrité obligatoire (lien avec -e):
-https://learn.microsoft.com/fr-fr/windows/win32/secauthz/mandatory-integrity-control
+[Explications sur le Contrôle d’intégrité obligatoire (en lien avec le paramètre -e)](https://learn.microsoft.com/fr-fr/windows/win32/secauthz/mandatory-integrity-control)
