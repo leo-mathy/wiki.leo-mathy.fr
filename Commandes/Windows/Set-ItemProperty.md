@@ -2,7 +2,7 @@
 title: Set-ItemProperty
 description: Crée ou modifie la valeur d'une propriété d'un élément ou de clés de registre.
 published: true
-date: 2024-08-22T16:45:17.545Z
+date: 2024-08-22T16:46:09.303Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-07-31T17:34:17.193Z
@@ -37,7 +37,7 @@ Créer une entrée nommé "Numéro" dans la clé "Exemple" avec comme valeur 500
 
 `Set-ItemProperty -Path "HKLM:\Software\Exemple" -Name "Numéro" -Value 500`
 
-Modifier la valeur de la propriété "CreationTime" (date de création) du fichier pour "01/01/2000 00:00:01"
+Modifier la valeur de la propriété "CreationTime" (date de création) du fichier pour "01/01/2000 00:00:01".
 
 `Set-ItemProperty C:\temp\exemple.txt CreationTime "01/01/2000 00:00:01"`
 
