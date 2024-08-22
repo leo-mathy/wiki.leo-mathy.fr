@@ -2,7 +2,7 @@
 title: Page d'exemple
 description: 
 published: true
-date: 2024-08-22T12:06:57.355Z
+date: 2024-08-22T12:09:47.545Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-22T12:00:58.913Z
@@ -14,6 +14,8 @@ dateCreated: 2024-08-22T12:00:58.913Z
 {.is-info}
 
 # Syntaxe
+
+`...`
 
 # Paramètres
 
