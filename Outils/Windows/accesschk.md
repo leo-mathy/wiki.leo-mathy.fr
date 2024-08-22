@@ -2,7 +2,7 @@
 title: AccessChk
 description: Afficher les droits des groupes ou des utilisateurs sur des fichiers, répertoires, clés de registre, objets globaux et services ainsi que les privilèges des groupes ou des utilisateurs.
 published: true
-date: 2024-08-22T13:42:36.742Z
+date: 2024-08-22T16:00:46.271Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-31T17:24:12.539Z
@@ -55,11 +55,11 @@ Affiche les droits d'écriture uniquement sur la clé de registre "services", en
 
 Affiche tous les services où le groupe "users" a un accès en écriture.
 
-`accesschk users -cw *`
+`accesschk.exe users -cw *`
 
 Affiche les permissions du répertoire "Test".
 
-`accesschk -d "C:\Windows`
+`accesschk.exe -d "C:\Windows`
 
 # Voir aussi
 
