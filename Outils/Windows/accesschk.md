@@ -2,7 +2,7 @@
 title: AccessChk
 description: Afficher les droits des groupes ou des utilisateurs sur des fichiers, répertoires, clés de registre, objets globaux et services ainsi que les privilèges des groupes ou des utilisateurs.
 published: true
-date: 2024-08-22T13:02:39.497Z
+date: 2024-08-22T13:08:57.312Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-31T17:24:12.539Z
@@ -31,9 +31,9 @@ AccessChk est un outil de la suite Sysinternals de Microsoft. Cet outil permet d
 | ` -p <nom du processus|PID>`     | Affiche les droits assignés du processus.        |
 | `-h <partage de fichier ou d'imprimante|*>`     | Affiche les droits assignés au partage de fichier ou d'imprimante indiqué. Il est possible d'utiliser une wildcard pour afficher tous les partage de fichier ou d'imprimante.         |
 | `-i`     | 	Ignorer les objets avec uniquement des ACE héritées (afficher les objets avec des ACE explicites).         |
-| `...`     | ...         |
-| `...`     | ...         |
-| `...`     | ...         |
+| `-k`     | L'élément est une clé de registre.         |
+| `-l`     | Afficher le descripteur de sécurité complet (C'est le Security Descriptor, qui contient les DACL,SACL,Propriétaire,Groupe)         |
+| `-n`     | Afficher uniquement les objets ou il n'y a pas d'accès.       |
 | `...`     | ...         |
 
 # Exemples
