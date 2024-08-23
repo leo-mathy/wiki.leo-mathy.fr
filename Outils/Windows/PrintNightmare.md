@@ -2,7 +2,7 @@
 title: PrintNightmare
 description: Version PowerShell de l'exploit. Qui permet à n'importe quel utilisateur sans le privilège, d'ajouter des drivers d'impression à un système, et par conséquent d'exécuter du code en tant que NT AUTHORITY\SYSTEM.
 published: true
-date: 2024-08-23T14:35:26.596Z
+date: 2024-08-23T14:36:09.774Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-08-23T14:32:14.312Z
@@ -44,3 +44,6 @@ Lancement avec mot de passe par "t00r_secure".
 
 le DLL par défaut utilisé pour ajouter un utilisateur:
 https://github.com/calebstewart/CVE-2021-1675/blob/main/nightmare-dll/nightmare/dllmain.cpp
+
+Fonction RpcAddPrinterDriver:
+https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/f23a7519-1c77-4069-9ace-a6d8eae47c22
