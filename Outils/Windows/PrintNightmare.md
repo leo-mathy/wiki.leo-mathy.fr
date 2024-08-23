@@ -1,8 +1,8 @@
 ---
 title: PrintNightmare
-description: Version PowerShell de l'exploit. Utilisant une faille qui permet à n'importe quel utilisateur sans le privilège, d'ajouter des drivers d'impression à un système, et par conséquent d'exécuter du code en tant que NT AUTHORITY\SYSTEM.
+description: Version PowerShell de l'exploit. Qui permet à n'importe quel utilisateur sans le privilège, d'ajouter des drivers d'impression à un système, et par conséquent d'exécuter du code en tant que NT AUTHORITY\SYSTEM.
 published: true
-date: 2024-08-23T14:34:59.565Z
+date: 2024-08-23T14:35:26.596Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-08-23T14:32:14.312Z
