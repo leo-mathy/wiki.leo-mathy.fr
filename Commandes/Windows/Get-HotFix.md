@@ -2,7 +2,7 @@
 title: Get-HotFix
 description: Permet d'afficher les patchs Windows
 published: true
-date: 2024-07-16T16:47:09.893Z
+date: 2024-08-23T15:01:22.532Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-07-11T11:40:30.157Z
@@ -28,3 +28,8 @@ Get-HotFix [options]
 Affiche les patchs de sécurité
 
 `Get-HotFix -Description Security*`
+
+# Voir aussi
+
+Consulter les patchs en détails avec leurs dates, taille ou encore classification.
+https://www.catalog.update.microsoft.com/
