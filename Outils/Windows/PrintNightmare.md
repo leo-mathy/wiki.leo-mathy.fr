@@ -2,7 +2,7 @@
 title: PrintNightmare
 description: Version PowerShell de l'exploit en local uniquement. Qui permet à n'importe quel utilisateur sans le privilège, d'ajouter des drivers d'impression à un système, et par conséquent d'exécuter du code en tant que NT AUTHORITY\SYSTEM.
 published: true
-date: 2024-08-23T14:43:47.247Z
+date: 2024-08-23T14:44:37.849Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-08-23T14:32:14.312Z
@@ -15,7 +15,7 @@ Version PowerShell de l'exploit PrintNightmare en local uniquement. Utilisant un
 > La fonction RpcAddPrinterDriver permet aux utilisateurs avec le privilège SeLoadDriverPrivilege d'ajouter des drivers sur des spouleurs distants.
 > {.is-info}
 
-> La version PowerShell de PrintNightmare est disponible au téléchargement [ici](https://leo-mathy.fr)
+> La version PowerShell de PrintNightmare est disponible au téléchargement [ici](https://github.com/calebstewart/CVE-2021-1675)
 > {.is-info}
 
 # Syntaxe
