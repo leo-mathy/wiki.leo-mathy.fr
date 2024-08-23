@@ -1,8 +1,8 @@
 ---
 title: PrintNightmare
-description: Version PowerShell de l'exploit. Qui permet à n'importe quel utilisateur sans le privilège, d'ajouter des drivers d'impression à un système, et par conséquent d'exécuter du code en tant que NT AUTHORITY\SYSTEM.
+description: Version PowerShell de l'exploit en local uniquement. Qui permet à n'importe quel utilisateur sans le privilège, d'ajouter des drivers d'impression à un système, et par conséquent d'exécuter du code en tant que NT AUTHORITY\SYSTEM.
 published: true
-date: 2024-08-23T14:36:09.774Z
+date: 2024-08-23T14:37:26.357Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-08-23T14:32:14.312Z
@@ -10,7 +10,7 @@ dateCreated: 2024-08-23T14:32:14.312Z
 
 # Introduction
 
-Version PowerShell de l'exploit. Utilisant une faille dans la fonction RpcAddPrinterDriver,qui permet à n'importe quel utilisateur sans le privilège, d'ajouter des drivers d'impression à un système, et par conséquent d'exécuter du code en tant que NT AUTHORITY\SYSTEM.
+Version PowerShell de l'exploit en local uniquement. Utilisant une faille dans la fonction RpcAddPrinterDriver,qui permet à n'importe quel utilisateur sans le privilège, d'ajouter des drivers d'impression à un système, et par conséquent d'exécuter du code en tant que NT AUTHORITY\SYSTEM.
 
 > La fonction RpcAddPrinterDriver permet aux utilisateurs avec le privilège SeLoadDriverPrivilege d'ajouter des drivers sur des spouleurs distants.
 > {.is-info}
