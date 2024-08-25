@@ -2,7 +2,7 @@
 title: PrintNightmare
 description: Version PowerShell de l'exploit en local uniquement. Qui permet à n'importe quel utilisateur sans le privilège SeLoadDriverPrivilege, d'ajouter des drivers d'impression à un système, et par conséquent d'exécuter du code en tant que NT AUTHORITY\SYSTEM.
 published: true
-date: 2024-08-23T14:58:32.124Z
+date: 2024-08-25T12:46:47.310Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-08-23T14:32:14.312Z
@@ -16,6 +16,9 @@ Version PowerShell de l'exploit PrintNightmare en local uniquement. Utilisant un
 > {.is-info}
 
 > La version PowerShell de PrintNightmare est disponible au téléchargement [ici](https://github.com/calebstewart/CVE-2021-1675)
+> {.is-info}
+
+> Le canal nommé \pipe\spoolss est utilisé pour la communication.
 > {.is-info}
 
 # Syntaxe
@@ -47,3 +50,6 @@ https://github.com/calebstewart/CVE-2021-1675/blob/main/nightmare-dll/nightmare/
 
 Fonction RpcAddPrinterDriver:
 https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/f23a7519-1c77-4069-9ace-a6d8eae47c22
+
+Emplacement et informations concernant le canal nommé \pipe\spoolss:
+https://learn.microsoft.com/fr-fr/openspecs/windows_protocols/ms-rprn/fdf1138a-f6b9-4b00-ada6-1fbb6097d683
