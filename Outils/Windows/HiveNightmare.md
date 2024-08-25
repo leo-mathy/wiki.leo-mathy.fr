@@ -2,8 +2,8 @@
 title: HiveNightmare
 description: Aussi connu sous le nom de SeriousSam. Exploite une erreur sur certaines versions de Windows, permettant à tous les utilisateurs de lire les ruches de registre (SAM,SECURITY...). Effectue une copie de ces ruches pour une exploitation hors-ligne. 
 published: true
-date: 2024-08-23T13:58:52.435Z
-tags: outil, windows, rédaction incomplète
+date: 2024-08-25T15:00:51.007Z
+tags: outil, windows
 editor: markdown
 dateCreated: 2024-08-23T13:57:13.399Z
 ---
