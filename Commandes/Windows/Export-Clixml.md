@@ -2,7 +2,7 @@
 title: Export-Clixml
 description: Permet d'exporter des objets PowerShell dans un fichier en utilisant le format XML.
 published: true
-date: 2024-08-29T16:49:49.809Z
+date: 2024-08-29T16:50:34.501Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-08-29T16:37:58.735Z
@@ -21,17 +21,17 @@ l'applet Export-Clixml permet d'exporter des objets PowerShell dans un fichier e
 
 # Paramètres
 
-| Paramètre                         | Description                                                                                                                   |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `-Confirm`                        | Demande confirmation avant l'exécution                                                                                        |
-| `-Depth <nombre>`                 | Précise le nombre de niveaux d'objets contenus inclus dans le fichier (2 par défaut).                                         |
-| `-Encoding <encodage>`            | Précise l'encodage à utiliser lors de la création du fichier XML (ascii;ansi;utf8...).                                        |
-| `-Force`                          | Force l'opération en remplace le fichier de sortie même s'il est en lecture seule.                                            |
-| `-InputObject <objet powershell>` | Précise l'objet powershell à exporter vers le fichier                                                                         |
-| `-LiteralPath <chemin litéral>`   | Indique le fichier XML vers lequel l'objet est exporté littéralement (la valeur est utilisée exactement comme elle est tapée) |
-| `-NoClobber`                      | Ne remplace pas le contenu d'un fichier si celui-ci existe déjà                                                               |
-| `-Path <chemin>`                  | Indique le fichier XML vers lequel l'objet est exporté                                                                        |
-| `-WhatIf`                         | N'éxecute pas la commande mais indique ce qui se passe lors de son éxecution                                                  |
+| Paramètre                         | Description                                                                                                                    |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `-Confirm`                        | Demande confirmation avant l'exécution.                                                                                        |
+| `-Depth <nombre>`                 | Précise le nombre de niveaux d'objets contenus inclus dans le fichier (2 par défaut).                                          |
+| `-Encoding <encodage>`            | Précise l'encodage à utiliser lors de la création du fichier XML (ascii;ansi;utf8...).                                         |
+| `-Force`                          | Force l'opération en remplace le fichier de sortie même s'il est en lecture seule.                                             |
+| `-InputObject <objet powershell>` | Précise l'objet powershell à exporter vers le fichier.                                                                         |
+| `-LiteralPath <chemin litéral>`   | Indique le fichier XML vers lequel l'objet est exporté littéralement (la valeur est utilisée exactement comme elle est tapée). |
+| `-NoClobber`                      | Ne remplace pas le contenu d'un fichier si celui-ci existe déjà.                                                               |
+| `-Path <chemin>`                  | Indique le fichier XML vers lequel l'objet est exporté.                                                                        |
+| `-WhatIf`                         | N'exécute pas la commande mais indique ce qui se passe lors de son exécution.                                                  |
 
 # Exemples
 
