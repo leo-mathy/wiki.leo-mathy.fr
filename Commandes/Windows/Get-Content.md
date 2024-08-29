@@ -1,8 +1,8 @@
 ---
 title: Get-Content
-description: Permet d'afficher le contenu d'un fichier
+description: Get-Content (alias de gc) permet d'afficher le contenu d'un fichier.
 published: true
-date: 2024-07-16T16:46:51.036Z
+date: 2024-08-29T14:36:08.296Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-07-13T10:11:38.720Z
@@ -10,7 +10,7 @@ dateCreated: 2024-07-13T10:11:38.720Z
 
 # Introduction
 
-L'applet powerhsell Get-Content permet d'afficher le contenu d'un fichier
+L'applet powerhsell Get-Content (alias de gc) permet d'afficher le contenu d'un fichier.
 
 # Syntaxe
 
