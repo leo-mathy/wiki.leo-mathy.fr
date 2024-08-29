@@ -2,7 +2,7 @@
 title: Export-Clixml
 description: Permet d'exporter des objets PowerShell dans un fichier en utilisant le format XML.
 published: true
-date: 2024-08-29T16:37:58.735Z
+date: 2024-08-29T16:40:14.632Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-08-29T16:37:58.735Z
@@ -10,7 +10,7 @@ dateCreated: 2024-08-29T16:37:58.735Z
 
 # Introduction
 
-l'applet Export-Clixml permet d'exporter des objets PowerShell dans un fichier en utilisant le format XML.
+l'applet Export-Clixml permet d'exporter des objets PowerShell dans un fichier en utilisant le format XML. Peut être utilisé avec Import-Clixml
 
 > Sur les systèmes Windows, les objets informations d'identifications sont chiffrés avec DPAPI, le fichier ne peut donc pas être utilisé sur un autre ordinateur ou par un autre utilisateur.
 > {.is-info}
