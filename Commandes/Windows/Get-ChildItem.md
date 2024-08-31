@@ -1,8 +1,8 @@
 ---
 title: Get-ChildItem
-description: Permet d'obtenir les éléments enfants d'un emplacement spécifié (fichiers et dossier, registre, certificats...).
+description: Permet d'obtenir les éléments enfants d'un élément spécifié (fichiers et dossier, registre, certificats...).
 published: true
-date: 2024-08-31T18:20:06.615Z
+date: 2024-08-31T18:22:45.558Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-08-31T18:20:06.615Z
@@ -10,7 +10,7 @@ dateCreated: 2024-08-31T18:20:06.615Z
 
 # Introduction
 
-L'applet Get-ChildItem (alias de gci) permet d'obtenir les éléments enfants d'un emplacement spécifié (fichiers et dossier, registre, certificats...).
+L'applet Get-ChildItem (alias de gci) permet d'obtenir les éléments enfants d'un élément spécifié (fichiers et dossier, registre, certificats...).
 
 # Syntaxe
 
@@ -25,6 +25,34 @@ L'applet Get-ChildItem (alias de gci) permet d'obtenir les éléments enfants d'
 | Paramètre | Description |
 | --------- | ----------- |
 | `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+| `...`     | ...         |
+
 
 # Exemples
 
@@ -32,3 +60,6 @@ L'applet Get-ChildItem (alias de gci) permet d'obtenir les éléments enfants d'
 
 Documentation officielle
 https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/get-childitem
+
+Détails sur les différents attribus des fichiers
+https://learn.microsoft.com/fr-fr/dotnet/api/system.io.fileattributes
