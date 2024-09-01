@@ -1,8 +1,8 @@
 ---
 title: Get-ChildItem
-description: Permet d'obtenir les éléments enfants d'un élément spécifié (fichiers et dossier, registre, certificats...).
+description: (alias de gci), permet d'obtenir les éléments enfants d'un élément spécifié (fichiers et dossier, registre, certificats...).
 published: true
-date: 2024-08-31T18:52:33.865Z
+date: 2024-09-01T12:40:16.019Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-08-31T18:20:06.615Z
