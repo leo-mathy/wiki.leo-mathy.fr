@@ -2,8 +2,8 @@
 title: SharpDPAPI
 description: Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le sous projet SharpChrome (permet le déchiffrement avec DPAPI des logins et cookies).
 published: true
-date: 2024-09-12T08:51:59.511Z
-tags: outil, windows
+date: 2024-09-12T08:55:02.164Z
+tags: outil, windows, rédaction incomplète
 editor: markdown
 dateCreated: 2024-09-12T08:51:59.511Z
 ---
@@ -15,16 +15,32 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 >  SharpDPAPI et SharpChrome sont disponible au téléchargement [ici](https://github.com/GhostPack/SharpDPAPI)
 {.is-info}
 
-# Syntaxe
+# SharpDPAPI
+
+## Syntaxe
 
 `...`
 
-# Paramètres
+## Paramètres
 
 | Paramètre | Description |
 | --------- | ----------- |
 | `...`     | ...         |
 
-# Exemples
+## Exemples
+
+# SharpChrome
+
+## Syntaxe
+
+`...`
+
+## Paramètres
+
+| Paramètre | Description |
+| --------- | ----------- |
+| `...`     | ...         |
+
+## Exemples
 
 # Voir aussi
