@@ -2,8 +2,8 @@
 title: SharpDPAPI
 description: Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le sous projet SharpChrome (permet le déchiffrement avec DPAPI des logins et cookies).
 published: true
-date: 2024-09-14T13:12:27.511Z
-tags: outil, windows, rédaction incomplète
+date: 2024-09-14T13:29:14.251Z
+tags: outil, windows
 editor: markdown
 dateCreated: 2024-09-12T08:51:59.511Z
 ---
@@ -25,7 +25,7 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 
 | Commande             | Description                                                                                                                                                                                                                                                                                                                |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `backupkey`          | Permet de récupérer la clé de sauvegarde DPAPI d'un contrôleur de domaine. (Cette clé permet de dechiffrer toutes les clés secrètes DPAPI utilisateur du domaine).                                                                                                                                                           |
+| `backupkey`          | Permet de récupérer la clé de sauvegarde DPAPI d'un contrôleur de domaine. (Cette clé permet de dechiffrer toutes les clés secrètes DPAPI utilisateur du domaine).                                                                                                                                                         |
 | `search`             | Permet rechercher des blobs DPAPI (blocs de données chiffrés) dans le registre, fichiers, dossiers ou blobs en base64.                                                                                                                                                                                                     |
 | `machinemasterkeys`  | Récupère le secret LSA "DPAPI_SYSTEM" après s'être elevé en tant que SYSTEM, et l'utilise pour déchiffrer les clés secrètes DPAPI (DPAPI masterkeys) trouvées sur la machine. Une fois les clés secrètes DPAPI déchiffrés, elles sont retournées au format "{GUID}:SHA1".                                                  |
 | `machinecredentials` | Récupère le secret LSA "DPAPI_SYSTEM" après s'être elevé en tant que SYSTEM, et l'utilise pour déchiffrer les clés secrètes DPAPI (DPAPI masterkeys) trouvées sur la machine. Une fois les clés secrètes DPAPI déchiffrés, elles sont utilisés pour déchiffrer les informations d'identifications trouvées sur la machine. |
@@ -103,12 +103,12 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 
 ## Commandes
 
-| Commande                             | Description                                                                               |
-| ------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `backupkey` | Permet de récupérer la clé de sauvegarde DPAPI d'un contrôleur de domaine. (Cette clé permet de dechiffrer toutes les clés maîtres des utilisateurs du domaine).                            |
-| `cookies`                      | Spécifie le chemin vers une clé, un dossier ou un fichier.                                |
-| `logins`                         | Affiche les erreurs durant l'énumération pour les recherches de type registre ou dossier. |
-| `statekeys`         | Précise le nombre de bytes à lire pour chaque fichier (1024 par défaut)                   |
+| Commande    | Description                                                                                                                                                      |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `backupkey` | Permet de récupérer la clé de sauvegarde DPAPI d'un contrôleur de domaine. (Cette clé permet de dechiffrer toutes les clés maîtres des utilisateurs du domaine). |
+| `cookies`   | Spécifie le chemin vers une clé, un dossier ou un fichier.                                                                                                       |
+| `logins`    | Affiche les erreurs durant l'énumération pour les recherches de type registre ou dossier.                                                                        |
+| `statekeys` | Recherche les applications basées sur Chromium, cherche l'emplacement des fichiers AES statekey et les déchiffre.                                                |
 
 ### Paramètres de la commande backupkey
 
@@ -120,20 +120,30 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 
 ### Paramètres des commandes cookies, logins et statekeys
 
-| Paramètre                     | Description                                                                  |
-| ----------------------------- | ---------------------------------------------------------------------------- |
-| `/nowrap`                     | Désactive le formatage de sortie pour la clé au format base64.               |
-| `/server:<serveur>.<domaine>` | Spécifie le contrôleur de domaine sur lequel récupérer la clé.               |
-| `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI d'un contrôleur de domaine au format pvk. |
+| Paramètre                                        | Description                                                                                                                                                   |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/unprotect`                                     | Force l'usage de la fonction CryptUnprotectData() sur le fichier (modifie le fichier). (utilisable avec ps, rdg et blob)                                      |
+| `/pvk:<chaîne base64/fichier clé au format pvk>` | Utilise la clé de sauvegarde DPAPI d'un contrôleur de domaine pour déchifrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                     |
+| `/password:<mot de passse>`                      | Utilise le mot de passe en clair de l'utilisateur pour déchifrer les clés secrètes DPAPI utilisateur.                                                         |
+| `/ntlm:<hash NTLM>`                              | Utilise le hash NTLM de l'utilisateur pour déchifrer les clés secrètes DPAPI utilisateur.                                                                     |
+| `/prekey:<clé DPAPI>`                            | Utilise une clé DPAPI (du domaine ou locale) pour déchifrer les clés secrètes DPAPI utilisateur.                                                              |
+| `/rpc`                                           | Demande au controleur de domaine de déchifrer les clés secrètes DPAPI utilisateur.                                                                            |
+| `<GUID>:<SHA1>`                                  | Utilise la clé de sauvegarde DPAPI au format GUID:SHA1 d'un contrôleur de domaine pour déchifrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys). |
+| `/statekey:<fichier statekey> `                  | Spécifie le fichier statekey (obtenu depuis la commande statekey).                                                                                            |
+| `/target:<fichier/dossier>`                      | Spécifie l'emplacement du fichier (fichiers Cookies, Login Data ou Local State) ou d'un repertoire utilisateur.                                               |
+| `/browser:<chrome/edge/slack>`                   | Précise le navigateur.                                                                                                                                        |
+| `/format:<csv/table>`                            | Défini le format de sortie (par défaut csv).                                                                                                                  |
+| `/showall`                                       | Affiche les entrées avec des mots de passe vide et des cookies expirés à la place de les filtrer (par défaut).                                                |
+| `/consoleoutfile:<fichier>`                      | Précise le fichier de sortie.                                                                                                                                 |
 
 ### Paramètres de la commande cookies
 
-| Paramètre                     | Description                                                                  |
-| ----------------------------- | ---------------------------------------------------------------------------- |
-| `/nowrap`                     | Désactive le formatage de sortie pour la clé au format base64.               |
-| `/server:<serveur>.<domaine>` | Spécifie le contrôleur de domaine sur lequel récupérer la clé.               |
-| `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI d'un contrôleur de domaine au format pvk. |
-
+| Paramètre           | Description                                                                                     |
+| ------------------- | ----------------------------------------------------------------------------------------------- |
+| `/cookie:"<regex>"` | Affiche uniquement les cookies où le nom correspond au regex.                                   |
+| `/url:"<regex>" `   | Affiche uniquement les cookies où l'url correspond au regex.                                    |
+| `/format:json`      | Exporte les valeurs des cookies au format json EditThisCookie.                                  |
+| `/setneverexpire`   | Défini la date d'expiration des cookies en sortie pour dans 100ans. (Uniquement pour la sortie) |
 
 # Voir aussi
 
