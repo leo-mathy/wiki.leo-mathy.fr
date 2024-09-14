@@ -2,7 +2,7 @@
 title: SharpDPAPI
 description: Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le sous projet SharpChrome (permet le déchiffrement avec DPAPI des logins et cookies).
 published: true
-date: 2024-09-14T07:52:39.842Z
+date: 2024-09-14T07:57:02.726Z
 tags: outil, windows, rédaction incomplète
 editor: markdown
 dateCreated: 2024-09-12T08:51:59.511Z
@@ -49,8 +49,10 @@ Comme énoncé dans la syntaxe, il est possible de choisir le triage, pour récu
 
 | Paramètre            | Description                                                                                                                                                                                                                                                                                                               |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `machinemasterkeys`  | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, les clés maîtres sont retournées au format "{GUID}:SHA1". (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA")                                           |
-| `machinecredentials` | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, ces clés sont ensuite utilisées pour déchiffrer tous les fichiers d'informations d'identification. (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA") |
+| `machinemasterkeys`  | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, les clés maîtres sont retournées au format "{GUID}:SHA1". (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA").                                           |
+| `machinecredentials` | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, ces clés sont ensuite utilisées pour déchiffrer tous les fichiers d'informations d'identification trouvés. (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA"). |
+| `machinevaults` | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, ces clés sont ensuite utilisées pour déchiffrer tous les coffres-forts trouvés. (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA"). |
+| `machinetriage` | Exécute les commandes "machinecredentials", "machinevaults" et "certificates /machine".  |
 
 # Voir aussi
 
