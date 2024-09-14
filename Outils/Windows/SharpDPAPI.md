@@ -2,7 +2,7 @@
 title: SharpDPAPI
 description: Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le sous projet SharpChrome (permet le déchiffrement avec DPAPI des logins et cookies).
 published: true
-date: 2024-09-14T13:34:46.968Z
+date: 2024-09-14T13:37:41.063Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-09-12T08:51:59.511Z
@@ -61,22 +61,22 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 
 ### Paramètres de la commande masterkeys
 
-| Paramètre                                        | Description                                                                                                                               |
-| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `/target:<fichier/dossier>`                      | Spécifie un fichier ou un dossier contenant des clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                                  |
+| Paramètre                                        | Description                                                                                                                                |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `/target:<fichier/dossier>`                      | Spécifie un fichier ou un dossier contenant des clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                                   |
 | `/pvk:<chaîne base64/fichier clé au format pvk>` | Utilise la clé de sauvegarde DPAPI d'un contrôleur de domaine pour déchiffrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys). |
 | `/password:<mot de passse>`                      | Utilise le mot de passe en clair de l'utilisateur pour déchiffrer les clés secrètes DPAPI utilisateur.                                     |
 | `/ntlm:<hash NTLM>`                              | Utilise le hash NTLM de l'utilisateur pour déchiffrer les clés secrètes DPAPI utilisateur.                                                 |
 | `/credkey:<clé DPAPI>`                           | Utilise une clé DPAPI (du domaine ou locale) pour déchiffrer les clés secrètes DPAPI utilisateur.                                          |
 | `/rpc`                                           | Demande au contrôleur de domaine de déchiffrer les clés secrètes DPAPI utilisateur.                                                        |
-| `/server:<serveur>`                              | Spécifie le serveur.                                                                                                                      |
-| `/hashes`                                        | Ne déchiffre pas mais affiche les hashs des fichiers clés secrètes DPAPI utilisateur.                                                     |
+| `/server:<serveur>`                              | Spécifie le serveur.                                                                                                                       |
+| `/hashes`                                        | Ne déchiffre pas mais affiche les hashs des fichiers clés secrètes DPAPI utilisateur.                                                      |
 
 ### Paramètres des commandes credentials, vaults, rdg, keepass, triage, blob et ps
 
-| Paramètre                                        | Description                                                                                                                                                                                    |
-| ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/unprotect`                                     | Force l'usage de la fonction CryptUnprotectData() sur le fichier (modifie le fichier). (utilisable avec ps, rdg et blob)                                                                       |
+| Paramètre                                        | Description                                                                                                                                                                                     |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/unprotect`                                     | Force l'usage de la fonction CryptUnprotectData() sur le fichier (modifie le fichier). (utilisable avec ps, rdg et blob)                                                                        |
 | `/pvk:<chaîne base64/fichier clé au format pvk>` | Utilise la clé de sauvegarde DPAPI d'un contrôleur de domaine pour déchiffrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                                                      |
 | `/password:<mot de passse>`                      | Utilise le mot de passe en clair de l'utilisateur pour déchiffrer les clés secrètes DPAPI utilisateur.                                                                                          |
 | `/ntlm:<hash NTLM>`                              | Utilise le hash NTLM de l'utilisateur pour déchiffrer les clés secrètes DPAPI utilisateur.                                                                                                      |
@@ -84,15 +84,15 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 | `/rpc`                                           | Demande au contrôleur de domaine de déchiffrer les clés secrètes DPAPI utilisateur.                                                                                                             |
 | `<GUID>:<SHA1>`                                  | Utilise la clé de sauvegarde DPAPI au format GUID:SHA1 d'un contrôleur de domaine pour déchiffrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                                  |
 | `/mkfile:<fichier>`                              | Utilise la/les clé(s) de sauvegarde DPAPI au format GUID:SHA1 d'un contrôleur de domaine contenues dans un fichier pour déchiffrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys). |
-| `/target:<fichier/dossier>`                      | Spécifie un fichier ou un dossier contenant des clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                                                                                       |
-| `/server:<serveur>`                              | Spécifie le serveur.                                                                                                                                                                           |
+| `/target:<fichier/dossier>`                      | Spécifie un fichier ou un dossier contenant des clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                                                                                        |
+| `/server:<serveur>`                              | Spécifie le serveur.                                                                                                                                                                            |
 
 ### Paramètres de la commande certificates
 
-| Paramètre           | Description                                                                                                                                                                         |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/showall`          | Affiche touts les fichiers certificats contenant des clés privées chiffrées avec DPAPI, même si le certificat n'est pas installé.                                                   |
-| `/machine`          | Recherche des certificats contenant des clés privées chiffrées avec DPAPI et les déchiffre.                                                                                         |
+| Paramètre           | Description                                                                                                                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `/showall`          | Affiche touts les fichiers certificats contenant des clés privées chiffrées avec DPAPI, même si le certificat n'est pas installé.                                                    |
+| `/machine`          | Recherche des certificats contenant des clés privées chiffrées avec DPAPI et les déchiffre.                                                                                          |
 | `/mkfile:<fichier>` | Utilise la/les clé(s) de sauvegarde DPAPI au format GUID:SHA1 d'un contrôleur de domaine contenues dans un fichier pour déchiffrer clés privées de certificats chiffrées avec DPAPI. |
 
 # SharpChrome
@@ -105,7 +105,7 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 
 | Commande    | Description                                                                                                                                                      |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `backupkey` | Permet de récupérer la clé de sauvegarde DPAPI d'un contrôleur de domaine. (Cette clé permet de déchiffrer outes les clés maîtres des utilisateurs du domaine). |
+| `backupkey` | Permet de récupérer la clé de sauvegarde DPAPI d'un contrôleur de domaine. (Cette clé permet de déchiffrer toutes les clés maîtres des utilisateurs du domaine). |
 | `cookies`   | Spécifie le chemin vers une clé, un dossier ou un fichier.                                                                                                       |
 | `logins`    | Affiche les erreurs durant l'énumération pour les recherches de type registre ou dossier.                                                                        |
 | `statekeys` | Recherche les applications basées sur Chromium, cherche l'emplacement des fichiers AES statekey et les déchiffre.                                                |
@@ -120,21 +120,21 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 
 ### Paramètres des commandes cookies, logins et statekeys
 
-| Paramètre                                        | Description                                                                                                                                                   |
-| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/unprotect`                                     | Force l'usage de la fonction CryptUnprotectData() sur le fichier (modifie le fichier). (utilisable avec ps, rdg et blob)                                      |
-| `/pvk:<chaîne base64/fichier clé au format pvk>` | Utilise la clé de sauvegarde DPAPI d'un contrôleur de domaine pour déchifrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                     |
-| `/password:<mot de passse>`                      | Utilise le mot de passe en clair de l'utilisateur pour déchifrer les clés secrètes DPAPI utilisateur.                                                         |
-| `/ntlm:<hash NTLM>`                              | Utilise le hash NTLM de l'utilisateur pour déchifrer les clés secrètes DPAPI utilisateur.                                                                     |
-| `/prekey:<clé DPAPI>`                            | Utilise une clé DPAPI (du domaine ou locale) pour déchifrer les clés secrètes DPAPI utilisateur.                                                              |
-| `/rpc`                                           | Demande au controleur de domaine de déchifrer les clés secrètes DPAPI utilisateur.                                                                            |
-| `<GUID>:<SHA1>`                                  | Utilise la clé de sauvegarde DPAPI au format GUID:SHA1 d'un contrôleur de domaine pour déchifrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys). |
-| `/statekey:<fichier statekey> `                  | Spécifie le fichier statekey (obtenu depuis la commande statekey).                                                                                            |
-| `/target:<fichier/dossier>`                      | Spécifie l'emplacement du fichier (fichiers Cookies, Login Data ou Local State) ou d'un repertoire utilisateur.                                               |
-| `/browser:<chrome/edge/slack>`                   | Précise le navigateur.                                                                                                                                        |
-| `/format:<csv/table>`                            | Défini le format de sortie (par défaut csv).                                                                                                                  |
-| `/showall`                                       | Affiche les entrées avec des mots de passe vide et des cookies expirés à la place de les filtrer (par défaut).                                                |
-| `/consoleoutfile:<fichier>`                      | Précise le fichier de sortie.                                                                                                                                 |
+| Paramètre                                        | Description                                                                                                                                                    |
+| ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/unprotect`                                     | Force l'usage de la fonction CryptUnprotectData() sur le fichier (modifie le fichier). (utilisable avec ps, rdg et blob)                                       |
+| `/pvk:<chaîne base64/fichier clé au format pvk>` | Utilise la clé de sauvegarde DPAPI d'un contrôleur de domaine pour déchiffrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                     |
+| `/password:<mot de passse>`                      | Utilise le mot de passe en clair de l'utilisateur pour déchiffrer les clés secrètes DPAPI utilisateur.                                                         |
+| `/ntlm:<hash NTLM>`                              | Utilise le hash NTLM de l'utilisateur pour déchiffrer les clés secrètes DPAPI utilisateur.                                                                     |
+| `/prekey:<clé DPAPI>`                            | Utilise une clé DPAPI (du domaine ou locale) pour déchiffrer les clés secrètes DPAPI utilisateur.                                                              |
+| `/rpc`                                           | Demande au contrôleur de domaine de déchiffrer les clés secrètes DPAPI utilisateur.                                                                            |
+| `<GUID>:<SHA1>`                                  | Utilise la clé de sauvegarde DPAPI au format GUID:SHA1 d'un contrôleur de domaine pour déchiffrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys). |
+| `/statekey:<fichier statekey> `                  | Spécifie le fichier statekey (obtenu depuis la commande statekey).                                                                                             |
+| `/target:<fichier/dossier>`                      | Spécifie l'emplacement du fichier (fichiers Cookies, Login Data ou Local State) ou d'un répertoire utilisateur.                                                |
+| `/browser:<chrome/edge/slack>`                   | Précise le navigateur.                                                                                                                                         |
+| `/format:<csv/table>`                            | Défini le format de sortie (par défaut csv).                                                                                                                   |
+| `/showall`                                       | Affiche les entrées avec des mots de passe vide et des cookies expirés à la place de les filtrer (par défaut).                                                 |
+| `/consoleoutfile:<fichier>`                      | Précise le fichier de sortie.                                                                                                                                  |
 
 ### Paramètres de la commande cookies
 
