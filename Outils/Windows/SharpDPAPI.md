@@ -2,7 +2,7 @@
 title: SharpDPAPI
 description: Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le sous projet SharpChrome (permet le déchiffrement avec DPAPI des logins et cookies).
 published: true
-date: 2024-09-14T12:10:54.165Z
+date: 2024-09-14T12:14:47.374Z
 tags: outil, windows, rédaction incomplète
 editor: markdown
 dateCreated: 2024-09-12T08:51:59.511Z
@@ -29,7 +29,7 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 | `search`             | Permet rechercher des blobs DPAPI (blocs de données chiffrés) dans le registre, fichiers, dossiers ou blobs en base64.                                                                                                                                                                                                          |
 | `machinemasterkeys`  | Récupère le secret LSA "DPAPI_SYSTEM" après s'être elevé en tant que SYSTEM, et l'utilise pour déchiffrer les clés secrètes DPAPI (DPAPI masterkeys) trouvées sur la machine. Une fois les clés secrètes DPAPI déchiffrés, elles sont retournées au format "{GUID}:SHA1".                                             |
 | `machinecredentials` | Récupère le secret LSA "DPAPI_SYSTEM" après s'être elevé en tant que SYSTEM, et l'utilise pour déchiffrer les clés secrètes DPAPI (DPAPI masterkeys) trouvées sur la machine. Une fois les clés secrètes DPAPI déchiffrés, elles sont utilisés pour déchiffrer les informations d'identifications trouvées sur la machine. |
-| `machinevaults`      | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, ces clés sont ensuite utilisées pour déchiffrer tous les coffres-forts trouvés. (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA").                            |
+| `machinevaults`      | Récupère le secret LSA "DPAPI_SYSTEM" après s'être elevé en tant que SYSTEM, et l'utilise pour déchiffrer les clés secrètes DPAPI (DPAPI masterkeys) trouvées sur la machine. Une fois les clés secrètes DPAPI déchiffrés, elles sont utilisés pour déchiffrer les coffres trouvées sur la machine.                            |
 | `machinetriage`      | Exécute les commandes "machinecredentials", "machinevaults" et "certificates /machine".                                                                                                                                                                                                                                           |
 | `masterkeys`         | Permet de rechercher n'importe quel fichiers utilisateurs clés maîtres et de déchiffrer ces fichiers avec la clé de sauvegarde DPAPI de domaine.                                                                                                                                                                                  |
 | `credentials`        | Recherche des fichiers d'information d'identification et les déchiffre.                                                                                                                                                                                                                                                           |
