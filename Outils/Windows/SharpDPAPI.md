@@ -2,7 +2,7 @@
 title: SharpDPAPI
 description: Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le sous projet SharpChrome (permet le déchiffrement avec DPAPI des logins et cookies).
 published: true
-date: 2024-09-14T13:09:56.152Z
+date: 2024-09-14T13:12:27.511Z
 tags: outil, windows, rédaction incomplète
 editor: markdown
 dateCreated: 2024-09-12T08:51:59.511Z
@@ -117,6 +117,23 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 | `/nowrap`                     | Désactive le formatage de sortie pour la clé au format base64.               |
 | `/server:<serveur>.<domaine>` | Spécifie le contrôleur de domaine sur lequel récupérer la clé.               |
 | `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI d'un contrôleur de domaine au format pvk. |
+
+### Paramètres des commandes cookies, logins et statekeys
+
+| Paramètre                     | Description                                                                  |
+| ----------------------------- | ---------------------------------------------------------------------------- |
+| `/nowrap`                     | Désactive le formatage de sortie pour la clé au format base64.               |
+| `/server:<serveur>.<domaine>` | Spécifie le contrôleur de domaine sur lequel récupérer la clé.               |
+| `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI d'un contrôleur de domaine au format pvk. |
+
+### Paramètres de la commande cookies
+
+| Paramètre                     | Description                                                                  |
+| ----------------------------- | ---------------------------------------------------------------------------- |
+| `/nowrap`                     | Désactive le formatage de sortie pour la clé au format base64.               |
+| `/server:<serveur>.<domaine>` | Spécifie le contrôleur de domaine sur lequel récupérer la clé.               |
+| `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI d'un contrôleur de domaine au format pvk. |
+
 
 # Voir aussi
 
