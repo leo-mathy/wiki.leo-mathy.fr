@@ -2,7 +2,7 @@
 title: SharpDPAPI
 description: Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le sous projet SharpChrome (permet le déchiffrement avec DPAPI des logins et cookies).
 published: true
-date: 2024-09-14T07:57:02.726Z
+date: 2024-09-14T08:12:47.762Z
 tags: outil, windows, rédaction incomplète
 editor: markdown
 dateCreated: 2024-09-12T08:51:59.511Z
@@ -37,7 +37,7 @@ Le module search permet rechercher des blobs DPAPI (blocs de données chiffrées
 
 | Paramètre                     | Description                                                                             |
 | ----------------------------- | --------------------------------------------------------------------------------------- | ---- | -------- | ---------------------------------------- |
-| `/type:<registry              | folder                                                                                  | file | base64>` | Spécifie quel type d'élément  rechercher. |
+| `/type:<registry              | folder                                                                                  | file | base64>` | Spécifie quel type d'élément rechercher. |
 | `/path:<chemin>`              | Spécifie le chemin vers une clé, un dossier ou un fichier.                              |
 | `/showErrors`                 | Affiche les erreurs pour les recherches de type registre ou dossier.                    |
 | `/maxBytes:<taille en bytes>` | Précise la taille maximum d'un fichier lors d'une recherche de type dossier ou fichier. |
@@ -47,12 +47,26 @@ Le module search permet rechercher des blobs DPAPI (blocs de données chiffrées
 
 Comme énoncé dans la syntaxe, il est possible de choisir le triage, pour récupérer des informations chiffrées.
 
-| Paramètre            | Description                                                                                                                                                                                                                                                                                                               |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `machinemasterkeys`  | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, les clés maîtres sont retournées au format "{GUID}:SHA1". (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA").                                           |
+| Paramètre            | Description                                                                                                                                                                                                                                                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `machinemasterkeys`  | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, les clés maîtres sont retournées au format "{GUID}:SHA1". (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA").                                                  |
 | `machinecredentials` | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, ces clés sont ensuite utilisées pour déchiffrer tous les fichiers d'informations d'identification trouvés. (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA"). |
-| `machinevaults` | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, ces clés sont ensuite utilisées pour déchiffrer tous les coffres-forts trouvés. (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA"). |
-| `machinetriage` | Exécute les commandes "machinecredentials", "machinevaults" et "certificates /machine".  |
+| `machinevaults`      | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, ces clés sont ensuite utilisées pour déchiffrer tous les coffres-forts trouvés. (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA").                            |
+| `machinetriage`      | Exécute les commandes "machinecredentials", "machinevaults" et "certificates /machine".                                                                                                                                                                                                                                           |
+
+### Paramètres du module masterkeys
+
+Le module masterkeys permet de rechercher n'importe quel fichiers utilisateurs clés maîtres et de déchiffrer ces fichiers avec la clé de sauvegarde DPAPI de domaine.
+
+| Paramètre                               | Description                                                                                          |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `/target:<fichie                        | dossier>`                                                                                            | Spécifie le fichier ou dossier contenant des clés maîtres.                                   |
+| `/pvk:<chaine base64                    | clé au format .pvk>`                                                                                 | Spécifie la clé de sauvegarde DPAPI de domaine au format base64 ou un fichier au format pvk. |
+| `/password:<mot de passe>`              | Déchiffre les fichiers utilisateurs clés maîtres en utilisant un mot de passe en clair.              |
+| `/ntlm:<hash NTLM>`                     | Déchiffre les fichiers utilisateurs clés maîtres en utilisant le hash NTML de l'utilisateur.         |
+| `/credkey:<clé d'identification DPAPI>` | Déchiffre les fichiers utilisateurs clés maîtres en utilisant une clé d'identification DPAPI.        |
+| `/rpc`                                  | Déchiffre les fichiers utilisateurs clés maîtres en effectuant une demande au contrôleur de domaine. |
+| `/mkfile:<fichier pvk>`                 | Précise d'autres fichiers clés au format pvk pour le déchiffrement.                                  |
 
 # Voir aussi
 
