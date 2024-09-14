@@ -2,7 +2,7 @@
 title: SharpDPAPI
 description: Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le sous projet SharpChrome (permet le déchiffrement avec DPAPI des logins et cookies).
 published: true
-date: 2024-09-14T12:26:32.649Z
+date: 2024-09-14T12:27:07.734Z
 tags: outil, windows, rédaction incomplète
 editor: markdown
 dateCreated: 2024-09-12T08:51:59.511Z
@@ -33,7 +33,7 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 | `machinetriage`      | Exécute les commandes "machinecredentials", "machinevaults" et "certificates /machine".                                                                                                                                                                                                                                           |
 | `masterkeys`         | Recherche des fichiers clés secrètes DPAPI utilisateur (DPAPI user masterkeys) et les déchiffre.                                                                                                                                                                                  |
 | `credentials`        | Recherche des fichiers d'informations d'identification (credential files) et les déchiffre.                                                                                                                                                                                                                                                          |
-| `vaults`             | Recherche des fichiers coffre-fort et les déchiffre.                                                                                                                                                                                                                                                                              |
+| `vaults`             | Recherche des coffres (Vaults) et les déchiffre.                                                                                                                                                                                                                                                                              |
 | `rdg`                | Recherche des fichiers "RDCMan.settings" et les déchiffre.                                                                                                                                                                                                                                                                        |
 | `keepass`            | Recherche des fichiers "ProtectedUserKey.bin" et les déchiffre.                                                                                                                                                                                                                                                                   |
 | `triage`             | Lance les commandes credentials, vaults, rdg et certificates.                                                                                                                                                                                                                                                                     |
