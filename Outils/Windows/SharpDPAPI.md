@@ -2,7 +2,7 @@
 title: SharpDPAPI
 description: Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le sous projet SharpChrome (permet le déchiffrement avec DPAPI des logins et cookies).
 published: true
-date: 2024-09-14T08:12:47.762Z
+date: 2024-09-14T10:27:24.430Z
 tags: outil, windows, rédaction incomplète
 editor: markdown
 dateCreated: 2024-09-12T08:51:59.511Z
@@ -19,11 +19,25 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 
 ## Syntaxe
 
-`SharpDPAPI <module|triage> [paramètres]`
+`SharpDPAPI <commande> [paramètres]`
 
-### Paramètres du module backupkey
+## Commandes
 
-Le module backupkey permet de récupérer la clé de sauvegarde DPAPI d'un contrôleur de domaine.
+| Commande             | Description                                                                                                                                                                                                                                                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `backupkey`          | Permet de récupérer la clé de sauvegarde DPAPI d'un contrôleur de domaine.                                                                                                                                                                                                                                                        |
+| `search`             | Permet rechercher des blobs DPAPI (blocs de données chiffrées) dans le registre, fichiers, dossiers ou blobs en base64.                                                                                                                                                                                                           |
+| `machinemasterkeys`  | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, les clés maîtres sont retournées au format "{GUID}:SHA1". (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA").                                                  |
+| `machinecredentials` | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, ces clés sont ensuite utilisées pour déchiffrer tous les fichiers d'informations d'identification trouvés. (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA"). |
+| `machinevaults`      | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, ces clés sont ensuite utilisées pour déchiffrer tous les coffres-forts trouvés. (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA").                            |
+| `machinetriage`      | Exécute les commandes "machinecredentials", "machinevaults" et "certificates /machine".                                                                                                                                                                                                                                           |
+| `masterkeys`             | Permet de rechercher n'importe quel fichiers utilisateurs clés maîtres et de déchiffrer ces fichiers avec la clé de sauvegarde DPAPI de domaine. |
+| `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI au format .pvk. |
+| `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI au format .pvk. |
+| `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI au format .pvk. |
+| `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI au format .pvk. |
+
+### Paramètres de la commande backupkey
 
 | Paramètre                     | Description                                        |
 | ----------------------------- | -------------------------------------------------- |
@@ -31,9 +45,7 @@ Le module backupkey permet de récupérer la clé de sauvegarde DPAPI d'un contr
 | `/server:<serveur>.<domaine>` | Spécifie le contrôleur de domaine.                 |
 | `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI au format .pvk. |
 
-### Paramètres du module search
-
-Le module search permet rechercher des blobs DPAPI (blocs de données chiffrées) dans le registre, fichiers, dossiers ou blobs en base64.
+### Paramètres de la commande search
 
 | Paramètre                     | Description                                                                             |
 | ----------------------------- | --------------------------------------------------------------------------------------- | ---- | -------- | ---------------------------------------- |
@@ -43,20 +55,9 @@ Le module search permet rechercher des blobs DPAPI (blocs de données chiffrées
 | `/maxBytes:<taille en bytes>` | Précise la taille maximum d'un fichier lors d'une recherche de type dossier ou fichier. |
 | `/base:<chaine base64>`       | Spécifie la chaine base64 lors d'une recherche de type base64.                          |
 
-### Types de triage
+### Paramètres de la commande masterkeys
 
-Comme énoncé dans la syntaxe, il est possible de choisir le triage, pour récupérer des informations chiffrées.
-
-| Paramètre            | Description                                                                                                                                                                                                                                                                                                                       |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `machinemasterkeys`  | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, les clés maîtres sont retournées au format "{GUID}:SHA1". (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA").                                                  |
-| `machinecredentials` | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, ces clés sont ensuite utilisées pour déchiffrer tous les fichiers d'informations d'identification trouvés. (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA"). |
-| `machinevaults`      | Récupère la clé "DPAPI_SYSTEM LSA" et l'utilise pour déchiffrer les clés DPAPI maîtres (DPAPI masterkeys) présentes sur la machine, ces clés sont ensuite utilisées pour déchiffrer tous les coffres-forts trouvés. (des droits administrateurs sont requis pour récupérer la clé "DPAPI_SYSTEM LSA").                            |
-| `machinetriage`      | Exécute les commandes "machinecredentials", "machinevaults" et "certificates /machine".                                                                                                                                                                                                                                           |
-
-### Paramètres du module masterkeys
-
-Le module masterkeys permet de rechercher n'importe quel fichiers utilisateurs clés maîtres et de déchiffrer ces fichiers avec la clé de sauvegarde DPAPI de domaine.
+Le module masterkeys 
 
 | Paramètre                               | Description                                                                                          |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
