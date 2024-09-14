@@ -2,7 +2,7 @@
 title: SharpDPAPI
 description: Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le sous projet SharpChrome (permet le déchiffrement avec DPAPI des logins et cookies).
 published: true
-date: 2024-09-14T12:32:40.238Z
+date: 2024-09-14T12:37:23.549Z
 tags: outil, windows, rédaction incomplète
 editor: markdown
 dateCreated: 2024-09-12T08:51:59.511Z
@@ -37,9 +37,9 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 | `rdg`                | Recherche des fichiers "RDCMan.settings" (fichiers contenant les identifiants pour les connexions ave RDCMan) et les déchiffre. (utilisateur actif uniquement, si l'opération se déroule sans elévation)                                                                                                                                                                                                                                                                        |
 | `keepass`            | Recherche des fichiers "ProtectedUserKey.bin" et les déchiffre.                                                                                                                                                                                                                                                                   |
 | `triage`             | Lance les commandes credentials, vaults, rdg et certificates.                                                                                                                                                                                                                                                                     |
-| `blob`               | Effectue une description et déchiffrement du blob DPAPI indiqué.                                                                                                                                                                                                                                                                  |
-| `rdg`                | Déchiffre des fichiers "PSCredential clixml" .                                                                                                                                                                                                                                                                                    |
-| `certificates`       | Déchiffre des clés privées de certificats.                                                                                                                                                                                                                                                                                        |
+| `blob`               | Effectue une description et un déchiffrement du blob DPAPI indiqué (Les blobs sont souvent dans des fichiers ou seulement quelques informations sont chiffrées).                                                                                                                                                                                                                                                             |
+| `ps`                | Effectue une description et un déchiffrement du fichier "PSCredential clixml" indiqué (voir Export-Clixml).                                                                                                                                                                                                                                                                                    |
+| `certificates`       | Recherche des certificats contenant des clés privées chiffrées avec DPAPI et les déchiffre.                                                                                                                                                                                                                                                                                        |
 
 ### Paramètres de la commande backupkey
 
