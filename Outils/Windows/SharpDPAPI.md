@@ -2,7 +2,7 @@
 title: SharpDPAPI
 description: Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le sous projet SharpChrome (permet le déchiffrement avec DPAPI des logins et cookies).
 published: true
-date: 2024-09-14T13:05:56.136Z
+date: 2024-09-14T13:09:56.152Z
 tags: outil, windows, rédaction incomplète
 editor: markdown
 dateCreated: 2024-09-12T08:51:59.511Z
@@ -25,7 +25,7 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 
 | Commande             | Description                                                                                                                                                                                                                                                                                                                |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `backupkey`          | Permet de récupérer la clé de sauvegarde DPAPI d'un contrôleur de domaine. (Cette clé permet de dechiffrer toutes les clés maîtres des utilisateurs du domaine).                                                                                                                                                           |
+| `backupkey`          | Permet de récupérer la clé de sauvegarde DPAPI d'un contrôleur de domaine. (Cette clé permet de dechiffrer toutes les clés secrètes DPAPI utilisateur du domaine).                                                                                                                                                           |
 | `search`             | Permet rechercher des blobs DPAPI (blocs de données chiffrés) dans le registre, fichiers, dossiers ou blobs en base64.                                                                                                                                                                                                     |
 | `machinemasterkeys`  | Récupère le secret LSA "DPAPI_SYSTEM" après s'être elevé en tant que SYSTEM, et l'utilise pour déchiffrer les clés secrètes DPAPI (DPAPI masterkeys) trouvées sur la machine. Une fois les clés secrètes DPAPI déchiffrés, elles sont retournées au format "{GUID}:SHA1".                                                  |
 | `machinecredentials` | Récupère le secret LSA "DPAPI_SYSTEM" après s'être elevé en tant que SYSTEM, et l'utilise pour déchiffrer les clés secrètes DPAPI (DPAPI masterkeys) trouvées sur la machine. Une fois les clés secrètes DPAPI déchiffrés, elles sont utilisés pour déchiffrer les informations d'identifications trouvées sur la machine. |
@@ -102,6 +102,21 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 `SharpChrome <commande> [paramètres]`
 
 ## Commandes
+
+| Commande                             | Description                                                                               |
+| ------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `backupkey` | Permet de récupérer la clé de sauvegarde DPAPI d'un contrôleur de domaine. (Cette clé permet de dechiffrer toutes les clés maîtres des utilisateurs du domaine).                            |
+| `cookies`                      | Spécifie le chemin vers une clé, un dossier ou un fichier.                                |
+| `logins`                         | Affiche les erreurs durant l'énumération pour les recherches de type registre ou dossier. |
+| `statekeys`         | Précise le nombre de bytes à lire pour chaque fichier (1024 par défaut)                   |
+
+### Paramètres de la commande backupkey
+
+| Paramètre                     | Description                                                                  |
+| ----------------------------- | ---------------------------------------------------------------------------- |
+| `/nowrap`                     | Désactive le formatage de sortie pour la clé au format base64.               |
+| `/server:<serveur>.<domaine>` | Spécifie le contrôleur de domaine sur lequel récupérer la clé.               |
+| `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI d'un contrôleur de domaine au format pvk. |
 
 # Voir aussi
 
