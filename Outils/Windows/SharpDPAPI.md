@@ -2,7 +2,7 @@
 title: SharpDPAPI
 description: Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le sous projet SharpChrome (permet le déchiffrement avec DPAPI des logins et cookies).
 published: true
-date: 2024-09-14T12:37:23.549Z
+date: 2024-09-14T12:58:41.848Z
 tags: outil, windows, rédaction incomplète
 editor: markdown
 dateCreated: 2024-09-12T08:51:59.511Z
@@ -45,15 +45,15 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 
 | Paramètre                     | Description                                        |
 | ----------------------------- | -------------------------------------------------- |
-| `/nowrap`                     | Désactive le formatage de sortie.                  |
-| `/server:<serveur>.<domaine>` | Spécifie le contrôleur de domaine.                 |
-| `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI au format .pvk. |
+| `/nowrap`                     | Désactive le formatage de sortie pour la clé au format base64.                 |
+| `/server:<serveur>.<domaine>` | Spécifie le contrôleur de domaine sur lequel récupérer la clé.                 |
+| `/file:<clé.pvk>`             | Exporte la clé de sauvegarde DPAPI d'un contrôleur de domaine au format pvk. |
 
 ### Paramètres de la commande search
 
 | Paramètre                             | Description                                                                             |
 | ------------------------------------- | --------------------------------------------------------------------------------------- |
-| `/type:<registry/folder/file/base64>` | Spécifie quel type d'élément rechercher.                                                |
+| `/type:<registry/folder/file/base64>` | Spécifie quel type d'élément rechercher (registre par défaut).                                                |
 | `/path:<chemin>`                      | Spécifie le chemin vers une clé, un dossier ou un fichier.                              |
 | `/showErrors`                         | Affiche les erreurs durant l'énumération pour les recherches de type registre ou dossier.                    |
 | `/maxBytes:<taille en bytes>`         | Précise le nombre de bytes à lire pour chaque fichier (1024 par défaut) |
@@ -63,26 +63,29 @@ Portage de certaines fonctionnalités DPAPI de mimikatz en C#. Contient aussi le
 
 | Paramètre                                        | Description                                                                                         |
 | ------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
-| `/target:<fichier/dossier>`                      | Spécifie un fichier ou un dossier contenant des clés maître de l'utilisateur.                       |
-| `/pvk:<chaîne base64/fichier clé au format pvk>` | Utilise la clé privée DPAPI pour déchifrer les clés maîtres de l'utilisateur.                       |
-| `/password:<mot de passse>`                      | Utilise le mot de passe en clair de l'utilisateur pour déchifrer les clés maîtres de l'utilisateur. |
-| `/ntlm:<hash NTLM>`                              | Utilise le hash NTLM de l'utilisateur pour déchifrer les clés maîtres de l'utilisateur.             |
-| `/credkey:<clé DPAPI>`                           | Utilise une clé DPAPI pour déchifrer les clés maîtres de l'utilisateur.                             |
-| `/rpc`                                           | Demande au controleur de domaine de déchifrer les clés maîtres de l'utilisateur.                    |
+| `/target:<fichier/dossier>`                      | Spécifie un fichier ou un dossier contenant des clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                      |
+| `/pvk:<chaîne base64/fichier clé au format pvk>` | Utilise la clé de sauvegarde DPAPI d'un contrôleur de domaine pour déchifrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                      |
+| `/password:<mot de passse>`                      | Utilise le mot de passe en clair de l'utilisateur pour déchifrer les clés secrètes DPAPI utilisateur. |
+| `/ntlm:<hash NTLM>`                              | Utilise le hash NTLM de l'utilisateur pour déchifrer les clés secrètes DPAPI utilisateur.             |
+| `/credkey:<clé DPAPI>`                           | Utilise une clé DPAPI (du domaine ou locale) pour déchifrer les clés secrètes DPAPI utilisateur.                             |
+| `/rpc`                                           | Demande au controleur de domaine de déchifrer les clés secrètes DPAPI utilisateur.                   |
 | `/server:<serveur>`                              | Spécifie le serveur.                                                                                |
-| `/hashes`                                        | Ne déchiffre pas mais affiche les hashs des fichiers clés maîtres de l'utilisateur.                 |
+| `/hashes`                                        | Ne déchiffre pas mais affiche les hashs des fichiers clés secrètes DPAPI utilisateur.                 |
 
 ### Paramètres des commandes credentials, vaults, rdg, keepass, triage, blob et ps
 
 | Paramètre                                        | Description                                                                                         |
 | ------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
-| `/unprotect`                                     | Force l'usage de la fonction CryptUnprotectData().                                                  |
-| `/pvk:<chaîne base64/fichier clé au format pvk>` | Utilise la clé privée DPAPI pour déchifrer les clés maîtres de l'utilisateur.                       |
-| `/password:<mot de passse>`                      | Utilise le mot de passe en clair de l'utilisateur pour déchifrer les clés maîtres de l'utilisateur. |
-| `/credkey:<clé DPAPI>`                           | Utilise une clé DPAPI pour déchifrer les clés maîtres de l'utilisateur.                             |
-| `/rpc`                                           | Demande au controleur de domaine de déchifrer les clés maîtres de l'utilisateur.                    |
+| `/unprotect`                                     | Force l'usage de la fonction CryptUnprotectData() sur le fichier (modifie le fichier). (utilisable avec ps, rdg et blob)                                                  |
+| `/pvk:<chaîne base64/fichier clé au format pvk>` |  Utilise la clé de sauvegarde DPAPI d'un contrôleur de domaine pour déchifrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                        |
+| `/password:<mot de passse>`                      | Utilise le mot de passe en clair de l'utilisateur pour déchifrer les clés secrètes DPAPI utilisateur. |
+| `/ntlm:<hash NTLM>`                              | Utilise le hash NTLM de l'utilisateur pour déchifrer les clés secrètes DPAPI utilisateur.             |
+| `/credkey:<clé DPAPI>`                           | Utilise une clé DPAPI (du domaine ou locale) pour déchifrer les clés secrètes DPAPI utilisateur.                             |
+| `/rpc`                                           | Demande au controleur de domaine de déchifrer les clés secrètes DPAPI utilisateur.                    |
+| `<GUID>:<SHA1>`                      |  Utilise la clé de sauvegarde DPAPI au format GUID:SHA1 d'un contrôleur de domaine pour déchifrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                      |
+| `/mkfile:<fichier>`                      | Utilise la/les clé(s) de sauvegarde DPAPI au format GUID:SHA1 d'un contrôleur de domaine contenues dans un fichier pour déchifrer les clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                       |
+| `/target:<fichier/dossier>`                      | Spécifie un fichier ou un dossier contenant des clés secrètes DPAPI utilisateur (DPAPI user masterkeys).                       |
 | `/server:<serveur>`                              | Spécifie le serveur.                                                                                |
-| `/target:<fichier/dossier>`                      | Spécifie un fichier ou un dossier contenant des clés maître de l'utilisateur.                       |
 
 ### Paramètres de la commande certificates
 
