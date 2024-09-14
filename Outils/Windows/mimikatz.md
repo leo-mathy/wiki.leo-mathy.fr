@@ -2,8 +2,8 @@
 title: mimikatz
 description: Permet d'extraire les mots de passe, hash, codes PIN ou tickets Kerberos depuis la mémoire. Peut aussi effectuer des attaques de type pass-the-hash, pass-the-ticket ou construire des Golden tickets.
 published: true
-date: 2024-07-16T17:18:40.317Z
-tags: outil, windows
+date: 2024-09-14T07:06:06.394Z
+tags: outil, windows, rédaction incomplète
 editor: markdown
 dateCreated: 2024-07-14T13:18:23.544Z
 ---
