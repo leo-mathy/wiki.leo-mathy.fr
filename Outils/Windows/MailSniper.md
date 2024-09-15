@@ -2,7 +2,7 @@
 title: MailSniper
 description: Module PowerShell qui permet d'effectuer des recherches de certains termes à travers les emails dans un environnements exchange. Permet aussi d'énumérer l'environnement exchange ainsi que les permissions.
 published: true
-date: 2024-09-15T15:19:41.460Z
+date: 2024-09-15T15:21:48.041Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-15T14:22:51.764Z
@@ -55,7 +55,7 @@ Effectue une recherche sur la boite mail de l'utilisateur actuel.
 | Paramètre                                                | Description                                                                                                                                                                                          |
 | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `-ExchHostname <serveur exchange ou $AutoDiscoverEmail>` | Spécifie le serveur Exchange sur lequel se connecter. Si "$AutoDiscoverEmail" est indiqué, alors le serveur sera découvert automatiquement.                                                          |
-| `-Mailbox <adresse mail>`                                | Adresse mail de l'utilisateur actuel (utilisateur auxquel le processus powershell apartient).                                                                                                        |
+| `-Mailbox <adresse mail>`                                | Adresse mail de l'utilisateur actuel (utilisateur auquel le processus powershell apartient).                                                                                                         |
 | `-MailsPerUser <nombre>`                                 | Spécifie le nombre de mails à retourner.                                                                                                                                                             |
 | `-Terms <termes de recherche>`                           | Spécifie les termes à rechercher dans le sujet et le corp des mails. (par défaut: `"*password*","*creds*","*credentials*"`)                                                                          |
 | `-OutputCsv <fichier>`                                   | Exporte les résultats de la recherche dans un fichier csv.                                                                                                                                           |
@@ -64,7 +64,7 @@ Effectue une recherche sur la boite mail de l'utilisateur actuel.
 | `-Folder <dossier ou Inbox ou all>`                      | Spécifie dans quel dossier effectuer la recherche. "Inbox" pour la boite de réception (par défaut), "all" pour tous les dossiers récursivement. Il est possible de préciser un dossier personnalisé. |
 | `-CheckAttachments`                                      | Essaye d'effectuer la recherche dans le contenu des pièces jointes (fichiers avec les extensions: .bat, .htm, .msg, .pdf, .txt, .ps1, .doc et .xls).                                                 |
 | `-DownloadDir <répertoire>`                              | Télécharge les pièces jointes dans un répertoire.                                                                                                                                                    |
-| `-OtherUserMailbox`                                      | Utiliser ce paramètre quand la boite mais précisé avec -Mailbox est différente de l'utilisateur auxquel le processus powershell apartient.                                                           |
+| `-OtherUserMailbox`                                      | Utiliser ce paramètre quand la boite mais précisé avec -Mailbox est différente de l'utilisateur auquel le processus powershell apartient.                                                            |
 | `-UsePrt`                                                | Utilise le jeton jeton d’actualisation principal (PRT) de l'utilisateur pour l'authentification.                                                                                                     |
 | `-AccessToken <token Oauth>`                             | Utilise un token d'accès Oauth pour l'authentification.                                                                                                                                              |
 
@@ -135,7 +135,7 @@ Depuis un portail OWA, essaye de déterminer un nom de domaine valide pour se co
 
 # Commande Invoke-UsernameHarvestOWA
 
-Depuis un portail OWA, essaye de déterminer un nom d'utilisateur valide parmis une liste pour se connecter au portail (en se basant sur des différences de temps entre chaque tentative).
+Depuis un portail OWA, essaye de déterminer un nom d'utilisateur valide dans une liste pour se connecter au portail (en se basant sur des différences de temps entre chaque tentative).
 
 ## Syntaxe
 
