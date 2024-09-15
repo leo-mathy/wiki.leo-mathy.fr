@@ -2,7 +2,7 @@
 title: MailSniper
 description: Module PowerShell qui permet d'effectuer des recherches de certains termes à travers les emails dans un environnements exchange. Permet aussi d'énumérer l'environnement exchange ainsi que les permissions.
 published: true
-date: 2024-09-15T15:13:18.564Z
+date: 2024-09-15T15:19:41.460Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-15T14:22:51.764Z
@@ -135,11 +135,11 @@ Depuis un portail OWA, essaye de déterminer un nom de domaine valide pour se co
 
 # Commande Invoke-UsernameHarvestOWA
 
-Depuis un portail OWA, essaye de déterminer un nom d'utilisateur valide pour se connecter au portail (en se basant sur des différences de temps entre chaque tentative).
+Depuis un portail OWA, essaye de déterminer un nom d'utilisateur valide parmis une liste pour se connecter au portail (en se basant sur des différences de temps entre chaque tentative).
 
 ## Syntaxe
 
-`Invoke-UsernameHarvestOWA`
+`Invoke-UsernameHarvestOWA -ExchHostname <serveur exchange> -UserList <fichier> -Threads <nombre de threads> -OutFile <fichier de sortie> [paramètres]`
 
 # Commande Invoke-UsernameHarvestGmail
 
@@ -147,7 +147,7 @@ Essaye d'énumérer les comptes Google et potentiellement identifier les comptes
 
 ## Syntaxe
 
-`Invoke-UsernameHarvestGmail`
+`Invoke-UsernameHarvestGmail [-UserFile <fichier>] [-Account <adresse mail>] [-Detailed] [paramètres]`
 
 # Commande Invoke-OpenInboxFinder
 
@@ -155,7 +155,7 @@ Essaye de déterminer si l'utilisateur actuel à accès à des boites mail conte
 
 ## Syntaxe
 
-`Invoke-OpenInboxFinder`
+`Invoke-OpenInboxFinder -EmailList <fichier>`
 
 # Commande Get-ADUsernameFromEWS
 
@@ -163,7 +163,7 @@ Depuis une liste d'adresses mail, essaye de retrouver l'utilisateur Active Direc
 
 ## Syntaxe
 
-`Get-ADUsernameFromEWS`
+`Get-ADUsernameFromEWS -EmailList <fichier>`
 
 # Commande Send-EWSEmail
 
@@ -171,7 +171,7 @@ Essaye d'envoyer un email depuis l'EWS.
 
 ## Syntaxe
 
-`Send-EWSEmail`
+`Send-EWSEmail --ExchHostname <serveur exchange> -Recipient <destinataire> -Subject <sujet> -EmailBody <corp> -AccessToken <token Oauth>`
 
 # Voir aussi
 
