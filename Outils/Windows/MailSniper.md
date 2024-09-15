@@ -2,7 +2,7 @@
 title: MailSniper
 description: Module PowerShell qui permet d'effectuer des recherches de certains termes à travers les emails dans un environnements exchange. Permet aussi d'énumérer l'environnement exchange ainsi que les permissions.
 published: true
-date: 2024-09-15T14:26:52.798Z
+date: 2024-09-15T14:30:36.128Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-15T14:22:51.764Z
@@ -25,22 +25,22 @@ Effectue une recherche sur toutes les boites mails d'un domaine.
 
 ## Paramètres
 
-| Paramètre                                       | Description                                                                                                                 |
-| ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-ImpersonationAccount <[domaine\]utilisateur>` | Spécifie l'utilisateur à qui accorder le privilège ApplicationImpersonation sur le serveur Exchange.                        |
-| `-ExchHostname <serveur exchange                | $AutoDiscoverEmail>`                                                                                                        | Spécifie le serveur Exchange sur lequel se connecter. Si "$AutoDiscoverEmail" est indiqué, alors le serveur sera découvert automatiquement. |
-| `-AutoDiscoverEmail <adresse email>`            | Spécifie une adresse email valide pour la détection automatique du serveur Exchange (voir -ExchHostname)                    |
-| `-MailsPerUser <nombre>`                        | Spécifie le nombre de mails à retourner pour chaque boite mail.                                                             |
-| `-Terms <termes de recherche>`                  | Spécifie les termes à rechercher dans le sujet et le corp des mails. (par défaut: `"*password*","*creds*","*credentials*"`) |
-| `-OutputCsv <fichier>`                          | Exporte les résultats de la recherche dans un fichier csv.                                                                  |
-| `-ExchangeVersion <version>`                    | Spécifie la version du serveur Exchange sur lequel se connecter. (essai de Exchange2010 par défaut)                         |
-| `-AdminUserName <[domaine\]utilisateur>`        | Nom de l'utilisateur administrateur Exchange avec lequel se connecter.                                                      |
-| `-AdminPassword <mot de passe>`                 | Mot de passe de l'utilisateur administrateur Exchange avec lequel se connecter.                                             |
-| `-EmailList <fichier>`                          | Fichier texte précisant quelles adresses email parcourir.                                                                   |
-| `-Folder <dossier                               | Inbox                                                                                                                       | all>`                                                                                                                                       | Spécifie dans quel dossier effectuer la recherche. "Inbox" pour la boite de réception (par défaut), "all" pour tous les dossiers récursivement. Il est possible de préciser un dossier personnalisé. |
-| `-Regex <expression regex>`                                           | Utilise une expression regex à la place de -Terms.                                                                                                                          |
-| `-CheckAttachments`                                           | Essaye d'effectuer la recherche dans le contenu des pièces jointes (fichiers avec les extensions: .bat, .htm, .msg, .pdf, .txt, .ps1, .doc et .xls).                                                                                                                           |
-| `-DownloadDir <répertoire>`                                           | Télécharge les pièces jointes dans un répertoire.                                                                                                                         |
+| Paramètre                                                | Description                                                                                                                                                                                          |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-ImpersonationAccount <[domaine\]utilisateur>`          | Spécifie l'utilisateur à qui accorder le privilège ApplicationImpersonation sur le serveur Exchange.                                                                                                 |
+| `-ExchHostname <serveur exchange ou $AutoDiscoverEmail>` | Spécifie le serveur Exchange sur lequel se connecter. Si "$AutoDiscoverEmail" est indiqué, alors le serveur sera découvert automatiquement.                                                          |
+| `-AutoDiscoverEmail <adresse email>`                     | Spécifie une adresse email valide pour la détection automatique du serveur Exchange (voir -ExchHostname)                                                                                             |
+| `-MailsPerUser <nombre>`                                 | Spécifie le nombre de mails à retourner pour chaque boite mail.                                                                                                                                      |
+| `-Terms <termes de recherche>`                           | Spécifie les termes à rechercher dans le sujet et le corp des mails. (par défaut: `"*password*","*creds*","*credentials*"`)                                                                          |
+| `-OutputCsv <fichier>`                                   | Exporte les résultats de la recherche dans un fichier csv.                                                                                                                                           |
+| `-ExchangeVersion <version>`                             | Spécifie la version du serveur Exchange sur lequel se connecter. (essai de Exchange2010 par défaut)                                                                                                  |
+| `-AdminUserName <[domaine\]utilisateur>`                 | Nom de l'utilisateur administrateur Exchange avec lequel se connecter.                                                                                                                               |
+| `-AdminPassword <mot de passe>`                          | Mot de passe de l'utilisateur administrateur Exchange avec lequel se connecter.                                                                                                                      |
+| `-EmailList <fichier>`                                   | Fichier texte précisant quelles adresses email parcourir.                                                                                                                                            |
+| `-Folder <dossier ou Inbox ou all>`                      | Spécifie dans quel dossier effectuer la recherche. "Inbox" pour la boite de réception (par défaut), "all" pour tous les dossiers récursivement. Il est possible de préciser un dossier personnalisé. |
+| `-Regex <expression regex>`                              | Utilise une expression regex à la place de -Terms.                                                                                                                                                   |
+| `-CheckAttachments`                                      | Essaye d'effectuer la recherche dans le contenu des pièces jointes (fichiers avec les extensions: .bat, .htm, .msg, .pdf, .txt, .ps1, .doc et .xls).                                                 |
+| `-DownloadDir <répertoire>`                              | Télécharge les pièces jointes dans un répertoire.                                                                                                                                                    |
 
 # Commande Invoke-SelfSearch
 
@@ -74,5 +74,5 @@ Effectue une recherche sur toutes les boites mails d'un domaine, en se connectan
 
 # Voir aussi
 
-Description de MailSniper
+Présentation de MailSniper
 https://www.blackhillsinfosec.com/introducing-mailsniper-a-tool-for-searching-every-users-email-for-sensitive-data/
