@@ -2,7 +2,7 @@
 title: MailSniper
 description: Module PowerShell qui permet d'effectuer des recherches de certains termes à travers les emails dans un environnements exchange. Permet aussi d'énumérer l'environnement exchange ainsi que les permissions.
 published: true
-date: 2024-09-15T14:22:51.764Z
+date: 2024-09-15T14:26:52.798Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-15T14:22:51.764Z
@@ -38,9 +38,9 @@ Effectue une recherche sur toutes les boites mails d'un domaine.
 | `-AdminPassword <mot de passe>`                 | Mot de passe de l'utilisateur administrateur Exchange avec lequel se connecter.                                             |
 | `-EmailList <fichier>`                          | Fichier texte précisant quelles adresses email parcourir.                                                                   |
 | `-Folder <dossier                               | Inbox                                                                                                                       | all>`                                                                                                                                       | Spécifie dans quel dossier effectuer la recherche. "Inbox" pour la boite de réception (par défaut), "all" pour tous les dossiers récursivement. Il est possible de préciser un dossier personnalisé. |
-| `...`                                           | ...                                                                                                                         |
-| `...`                                           | ...                                                                                                                         |
-| `...`                                           | ...                                                                                                                         |
+| `-Regex <expression regex>`                                           | Utilise une expression regex à la place de -Terms.                                                                                                                          |
+| `-CheckAttachments`                                           | Essaye d'effectuer la recherche dans le contenu des pièces jointes (fichiers avec les extensions: .bat, .htm, .msg, .pdf, .txt, .ps1, .doc et .xls).                                                                                                                           |
+| `-DownloadDir <répertoire>`                                           | Télécharge les pièces jointes dans un répertoire.                                                                                                                         |
 
 # Commande Invoke-SelfSearch
 
