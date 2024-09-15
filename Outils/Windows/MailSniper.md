@@ -2,7 +2,7 @@
 title: MailSniper
 description: Module PowerShell qui permet d'effectuer des recherches de certains termes à travers les emails dans un environnements exchange. Permet aussi d'énumérer l'environnement exchange ainsi que les permissions.
 published: true
-date: 2024-09-15T14:50:53.650Z
+date: 2024-09-15T15:06:36.476Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-15T14:22:51.764Z
@@ -87,11 +87,83 @@ Effectue une recherche sur toutes les boites mails d'un domaine, en se connectan
 
 # Commande Get-GlobalAddressList
 
-Récupère la Liste d'Adresses Globale (GAL) depuis l'OWA ou l'EWS (Exchange 2013 minimum).
+Récupère la Liste d'Adresses Globale (GAL) en utilisant l'OWA ou l'EWS (Exchange 2013 minimum).
 
 ## Syntaxe
 
 `Get-GlobalAddressList [paramètres]`
+
+# Commande Get-MailboxFolders
+
+Récupère la Liste des dossiers d'une boite mail en utilisant EWS.
+
+## Syntaxe
+
+`Get-MailboxFolders [paramètres]`
+
+# Commande Invoke-PasswordSprayOWA
+
+Depuis un portail OWA, essaye de se connecter à une liste d'utilisateurs avec un seul mot de passe (Password Spraying Attack).
+
+## Syntaxe
+
+`Invoke-PasswordSprayOWA`
+
+# Commande Invoke-PasswordSprayEWS
+
+Depuis un portail EWS, essaye de se connecter à une liste d'utilisateurs avec un seul mot de passe (Password Spraying Attack).
+
+## Syntaxe
+
+`Invoke-PasswordSprayEWS [paramètres]`
+
+# Commande Invoke-PasswordSprayGmail
+
+Depuis un portail Gmail, essaye de se connecter à une liste d'utilisateurs avec un seul mot de passe (Password Spraying Attack).
+
+## Syntaxe
+
+`Invoke-PasswordSprayGmail`
+
+# Commande Invoke-DomainHarvestOWA
+
+Depuis un portail OWA, essaye de déterminer un nom de domaine valide pour se connecter au portail (en utilisant le header WWW-Authenticate ou en se basant sur des différences de temps entre chaque tentative).
+
+## Syntaxe
+
+`Invoke-DomainHarvestOWA`
+
+# Commande Invoke-UsernameHarvestOWA
+
+Depuis un portail OWA, essaye de déterminer un nom d'utilisateur valide pour se connecter au portail (en se basant sur des différences de temps entre chaque tentative).
+
+## Syntaxe
+
+`Invoke-UsernameHarvestOWA`
+
+# Commande Invoke-UsernameHarvestGmail
+
+Essaye d'énumérer les comptes Google et potentiellement identifier les comptes qui n'utilisent pas de solution d'authentification à deux facteurs (2FA).
+
+## Syntaxe
+
+`Invoke-UsernameHarvestGmail`
+
+# Commande Invoke-OpenInboxFinder
+
+Essaye de déterminer si l'utilisateur actuel à accès à des boites mail contenues une liste.
+
+## Syntaxe
+
+`Invoke-OpenInboxFinder`
+
+# Commande Get-ADUsernameFromEWS
+
+Essaye de trouver les utilisateur Active Directory à qui est attribué l'adresse mail dans une liste.
+
+## Syntaxe
+
+`Get-ADUsernameFromEWS`
 
 
 # Voir aussi
