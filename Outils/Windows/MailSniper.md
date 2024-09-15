@@ -2,7 +2,7 @@
 title: MailSniper
 description: Module PowerShell qui permet d'effectuer des recherches de certains termes à travers les emails dans un environnements exchange. Permet aussi d'énumérer l'environnement exchange ainsi que les permissions.
 published: true
-date: 2024-09-15T14:47:51.575Z
+date: 2024-09-15T14:50:53.650Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-15T14:22:51.764Z
@@ -85,7 +85,14 @@ Effectue une recherche sur toutes les boites mails d'un domaine, en se connectan
 | `-UsePrtAdminAccount`                            | Utilise le jeton jeton d’actualisation principal (PRT) de l'utilisateur pour s'authentifier en tant que AdminAccount.         |
 | `-AccessTokenAdminAccount <token Oauth>`         | Utilise un token d'accès Oauth pour s'authentifier en tant que AdminAccount.                                                  |
 
-# Exemples
+# Commande Get-GlobalAddressList
+
+Récupère la Liste d'Adresses Globale (GAL) depuis l'OWA ou l'EWS (Exchange 2013 minimum).
+
+## Syntaxe
+
+`Get-GlobalAddressList [paramètres]`
+
 
 # Voir aussi
 
