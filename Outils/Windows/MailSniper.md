@@ -2,7 +2,7 @@
 title: MailSniper
 description: Module PowerShell qui permet d'effectuer des recherches de certains termes à travers les emails dans un environnements exchange. Permet aussi d'énumérer l'environnement exchange ainsi que les permissions.
 published: true
-date: 2024-09-15T14:44:03.175Z
+date: 2024-09-15T14:47:51.575Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-15T14:22:51.764Z
@@ -65,8 +65,9 @@ Effectue une recherche sur la boite mail de l'utilisateur actuel.
 | `-CheckAttachments`                                      | Essaye d'effectuer la recherche dans le contenu des pièces jointes (fichiers avec les extensions: .bat, .htm, .msg, .pdf, .txt, .ps1, .doc et .xls).                                                 |
 | `-DownloadDir <répertoire>`                              | Télécharge les pièces jointes dans un répertoire.                                                                                                                                                    |
 | `-OtherUserMailbox`                                      | Utiliser ce paramètre quand la boite mais précisé avec -Mailbox est différente de l'utilisateur auxquel le processus powershell apartient.                                                           |
-| `-UsePrt`                                                | utilise le jeton jeton d’actualisation principal (PRT) de l'utilisateur.                                                                                                                             |
+| `-UsePrt`                                                | Utilise le jeton jeton d’actualisation principal (PRT) de l'utilisateur pour l'authentification.                                                                                                     |
 | `-AccessToken <token Oauth>`                             | Utilise un token d'accès Oauth pour l'authentification.                                                                                                                                              |
+
 # Commande Invoke-GlobalO365MailSearch
 
 Effectue une recherche sur toutes les boites mails d'un domaine, en se connectant à Office 365 et en utilisant une authentification SSO.
@@ -77,9 +78,12 @@ Effectue une recherche sur toutes les boites mails d'un domaine, en se connectan
 
 ## Paramètres
 
-| Paramètre | Description |
-| --------- | ----------- |
-| `...`     | ...         |
+| Paramètre                                        | Description                                                                                                                   |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| `-UsePrtImperonsationAccount`                    | Utilise le jeton jeton d’actualisation principal (PRT) de l'utilisateur pour s'authentifier en tant que ImperonsationAccount. |
+| `-AccessTokenImpersonationAccount <token Oauth>` | Utilise un token d'accès Oauth pour s'authentifier en tant que ImperonsationAccount.                                          |
+| `-UsePrtAdminAccount`                            | Utilise le jeton jeton d’actualisation principal (PRT) de l'utilisateur pour s'authentifier en tant que AdminAccount.         |
+| `-AccessTokenAdminAccount <token Oauth>`         | Utilise un token d'accès Oauth pour s'authentifier en tant que AdminAccount.                                                  |
 
 # Exemples
 
