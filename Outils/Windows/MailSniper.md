@@ -2,7 +2,7 @@
 title: MailSniper
 description: Module PowerShell qui permet d'effectuer des recherches de certains termes à travers les emails dans un environnements exchange. Permet aussi d'énumérer l'environnement exchange ainsi que les permissions.
 published: true
-date: 2024-09-15T15:12:46.365Z
+date: 2024-09-15T15:13:18.564Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-15T14:22:51.764Z
@@ -131,7 +131,7 @@ Depuis un portail OWA, essaye de déterminer un nom de domaine valide pour se co
 
 ## Syntaxe
 
-`Invoke-DomainHarvestOWA`
+`Invoke-DomainHarvestOWA -ExchHostname <serveur exchange> [paramètres]`
 
 # Commande Invoke-UsernameHarvestOWA
 
