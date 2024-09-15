@@ -2,7 +2,7 @@
 title: MailSniper
 description: Module PowerShell qui permet d'effectuer des recherches de certains termes à travers les emails dans un environnements exchange. Permet aussi d'énumérer l'environnement exchange ainsi que les permissions.
 published: true
-date: 2024-09-15T15:21:48.041Z
+date: 2024-09-15T15:42:12.204Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-15T14:22:51.764Z
@@ -15,15 +15,17 @@ MailSniper est un module PowerShell qui permet d'effectuer des recherches de cer
 > MailSniper est disponible au téléchargement [ici](https://github.com/dafthack/MailSniper)
 > {.is-info}
 
-# Commande Invoke-GlobalMailSearch
+# Commandes
+
+## Commande Invoke-GlobalMailSearch
 
 Effectue une recherche sur toutes les boites mails d'un domaine.
 
-## Syntaxe
+### Syntaxe
 
 `Invoke-GlobalMailSearch [paramètres]`
 
-## Paramètres
+### Paramètres
 
 | Paramètre                                                | Description                                                                                                                                                                                          |
 | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,15 +44,15 @@ Effectue une recherche sur toutes les boites mails d'un domaine.
 | `-CheckAttachments`                                      | Essaye d'effectuer la recherche dans le contenu des pièces jointes (fichiers avec les extensions: .bat, .htm, .msg, .pdf, .txt, .ps1, .doc et .xls).                                                 |
 | `-DownloadDir <répertoire>`                              | Télécharge les pièces jointes dans un répertoire.                                                                                                                                                    |
 
-# Commande Invoke-SelfSearch
+## Commande Invoke-SelfSearch
 
 Effectue une recherche sur la boite mail de l'utilisateur actuel.
 
-## Syntaxe
+### Syntaxe
 
 `Invoke-SelfSearch [paramètres]`
 
-## Paramètres
+### Paramètres
 
 | Paramètre                                                | Description                                                                                                                                                                                          |
 | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -68,15 +70,15 @@ Effectue une recherche sur la boite mail de l'utilisateur actuel.
 | `-UsePrt`                                                | Utilise le jeton jeton d’actualisation principal (PRT) de l'utilisateur pour l'authentification.                                                                                                     |
 | `-AccessToken <token Oauth>`                             | Utilise un token d'accès Oauth pour l'authentification.                                                                                                                                              |
 
-# Commande Invoke-GlobalO365MailSearch
+## Commande Invoke-GlobalO365MailSearch
 
 Effectue une recherche sur toutes les boites mails d'un domaine, en se connectant à Office 365 et en utilisant une authentification SSO.
 
-## Syntaxe
+### Syntaxe
 
 `Invoke-GlobalO365MailSearch [paramètres]`
 
-## Paramètres
+### Paramètres
 
 | Paramètre                                        | Description                                                                                                                   |
 | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
@@ -85,87 +87,87 @@ Effectue une recherche sur toutes les boites mails d'un domaine, en se connectan
 | `-UsePrtAdminAccount`                            | Utilise le jeton jeton d’actualisation principal (PRT) de l'utilisateur pour s'authentifier en tant que AdminAccount.         |
 | `-AccessTokenAdminAccount <token Oauth>`         | Utilise un token d'accès Oauth pour s'authentifier en tant que AdminAccount.                                                  |
 
-# Commande Get-GlobalAddressList
+## Commande Get-GlobalAddressList
 
 Récupère la Liste d'Adresses Globale (GAL) en utilisant l'OWA ou l'EWS (Exchange 2013 minimum).
 
-## Syntaxe
+### Syntaxe
 
 `Get-GlobalAddressList -ExchHostname <serveur exchange> -UserName <domaine\utilisateur> -Password <mot de passe> -OutFile <fichier de sortie> [paramètres]`
 
-# Commande Get-MailboxFolders
+## Commande Get-MailboxFolders
 
 Récupère la Liste des dossiers d'une boite mail en utilisant EWS.
 
-## Syntaxe
+### Syntaxe
 
 `Get-MailboxFolders -Mailbox <adresse mail> [paramètres]`
 
-# Commande Invoke-PasswordSprayOWA
+## Commande Invoke-PasswordSprayOWA
 
 Depuis un portail OWA, essaye de se connecter à une liste d'utilisateurs avec un seul mot de passe (Password Spraying Attack).
 
-## Syntaxe
+### Syntaxe
 
 `Invoke-PasswordSprayOWA -ExchHostname <serveur exchange> -UserList <fichier> -Password <mot de passe> -Threads <nombre de threads> -OutFile <fichier de sortie> [paramètres]`
 
-# Commande Invoke-PasswordSprayEWS
+## Commande Invoke-PasswordSprayEWS
 
 Depuis un portail EWS, essaye de se connecter à une liste d'utilisateurs avec un seul mot de passe (Password Spraying Attack).
 
-## Syntaxe
+### Syntaxe
 
 `Invoke-PasswordSprayEWS -ExchHostname <serveur exchange> -UserList <fichier> -Password <mot de passe> -Threads <nombre de threads> -OutFile <fichier de sortie> [paramètres]`
 
-# Commande Invoke-PasswordSprayGmail
+## Commande Invoke-PasswordSprayGmail
 
 Depuis un portail Gmail, essaye de se connecter à une liste d'utilisateurs avec un seul mot de passe (Password Spraying Attack).
 
-## Syntaxe
+### Syntaxe
 
 `Invoke-PasswordSprayGmail -UserList <fichier> -Password <mot de passe> -Threads <nombre de threads> -OutFile <fichier de sortie> [paramètres]`
 
-# Commande Invoke-DomainHarvestOWA
+## Commande Invoke-DomainHarvestOWA
 
 Depuis un portail OWA, essaye de déterminer un nom de domaine valide pour se connecter au portail (en utilisant le header WWW-Authenticate ou en se basant sur des différences de temps entre chaque tentative).
 
-## Syntaxe
+### Syntaxe
 
 `Invoke-DomainHarvestOWA -ExchHostname <serveur exchange> [paramètres]`
 
-# Commande Invoke-UsernameHarvestOWA
+## Commande Invoke-UsernameHarvestOWA
 
 Depuis un portail OWA, essaye de déterminer un nom d'utilisateur valide dans une liste pour se connecter au portail (en se basant sur des différences de temps entre chaque tentative).
 
-## Syntaxe
+### Syntaxe
 
 `Invoke-UsernameHarvestOWA -ExchHostname <serveur exchange> -UserList <fichier> -Threads <nombre de threads> -OutFile <fichier de sortie> [paramètres]`
 
-# Commande Invoke-UsernameHarvestGmail
+## Commande Invoke-UsernameHarvestGmail
 
 Essaye d'énumérer les comptes Google et potentiellement identifier les comptes qui n'utilisent pas de solution d'authentification à deux facteurs (2FA).
 
-## Syntaxe
+### Syntaxe
 
 `Invoke-UsernameHarvestGmail [-UserFile <fichier>] [-Account <adresse mail>] [-Detailed] [paramètres]`
 
-# Commande Invoke-OpenInboxFinder
+## Commande Invoke-OpenInboxFinder
 
 Essaye de déterminer si l'utilisateur actuel à accès à des boites mail contenues une liste.
 
-## Syntaxe
+### Syntaxe
 
 `Invoke-OpenInboxFinder -EmailList <fichier>`
 
-# Commande Get-ADUsernameFromEWS
+## Commande Get-ADUsernameFromEWS
 
 Depuis une liste d'adresses mail, essaye de retrouver l'utilisateur Active Directory assigné à chaque boite mail.
 
-## Syntaxe
+### Syntaxe
 
 `Get-ADUsernameFromEWS -EmailList <fichier>`
 
-# Commande Send-EWSEmail
+## Commande Send-EWSEmail
 
 Essaye d'envoyer un email depuis l'EWS.
 
