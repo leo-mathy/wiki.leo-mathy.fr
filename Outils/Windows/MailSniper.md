@@ -2,7 +2,7 @@
 title: MailSniper
 description: Module PowerShell qui permet d'effectuer des recherches de certains termes à travers les emails dans un environnements exchange. Permet aussi d'énumérer l'environnement exchange ainsi que les permissions.
 published: true
-date: 2024-09-15T15:06:36.476Z
+date: 2024-09-15T15:12:46.365Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-15T14:22:51.764Z
@@ -91,7 +91,7 @@ Récupère la Liste d'Adresses Globale (GAL) en utilisant l'OWA ou l'EWS (Exchan
 
 ## Syntaxe
 
-`Get-GlobalAddressList [paramètres]`
+`Get-GlobalAddressList -ExchHostname <serveur exchange> -UserName <domaine\utilisateur> -Password <mot de passe> -OutFile <fichier de sortie> [paramètres]`
 
 # Commande Get-MailboxFolders
 
@@ -99,7 +99,7 @@ Récupère la Liste des dossiers d'une boite mail en utilisant EWS.
 
 ## Syntaxe
 
-`Get-MailboxFolders [paramètres]`
+`Get-MailboxFolders -Mailbox <adresse mail> [paramètres]`
 
 # Commande Invoke-PasswordSprayOWA
 
@@ -107,7 +107,7 @@ Depuis un portail OWA, essaye de se connecter à une liste d'utilisateurs avec u
 
 ## Syntaxe
 
-`Invoke-PasswordSprayOWA`
+`Invoke-PasswordSprayOWA -ExchHostname <serveur exchange> -UserList <fichier> -Password <mot de passe> -Threads <nombre de threads> -OutFile <fichier de sortie> [paramètres]`
 
 # Commande Invoke-PasswordSprayEWS
 
@@ -115,7 +115,7 @@ Depuis un portail EWS, essaye de se connecter à une liste d'utilisateurs avec u
 
 ## Syntaxe
 
-`Invoke-PasswordSprayEWS [paramètres]`
+`Invoke-PasswordSprayEWS -ExchHostname <serveur exchange> -UserList <fichier> -Password <mot de passe> -Threads <nombre de threads> -OutFile <fichier de sortie> [paramètres]`
 
 # Commande Invoke-PasswordSprayGmail
 
@@ -123,7 +123,7 @@ Depuis un portail Gmail, essaye de se connecter à une liste d'utilisateurs avec
 
 ## Syntaxe
 
-`Invoke-PasswordSprayGmail`
+`Invoke-PasswordSprayGmail -UserList <fichier> -Password <mot de passe> -Threads <nombre de threads> -OutFile <fichier de sortie> [paramètres]`
 
 # Commande Invoke-DomainHarvestOWA
 
@@ -159,12 +159,19 @@ Essaye de déterminer si l'utilisateur actuel à accès à des boites mail conte
 
 # Commande Get-ADUsernameFromEWS
 
-Essaye de trouver les utilisateur Active Directory à qui est attribué l'adresse mail dans une liste.
+Depuis une liste d'adresses mail, essaye de retrouver l'utilisateur Active Directory assigné à chaque boite mail.
 
 ## Syntaxe
 
 `Get-ADUsernameFromEWS`
 
+# Commande Send-EWSEmail
+
+Essaye d'envoyer un email depuis l'EWS.
+
+## Syntaxe
+
+`Send-EWSEmail`
 
 # Voir aussi
 
