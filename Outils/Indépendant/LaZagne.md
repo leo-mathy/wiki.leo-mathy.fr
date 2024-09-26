@@ -2,7 +2,7 @@
 title: LaZagne
 description: Recherche et récupère de nombreux mots de passe stockés sur un ordinateur, dans différentes applications couramment utilisées ou stockés par des mécanismes internes.
 published: true
-date: 2024-09-26T17:20:05.670Z
+date: 2024-09-26T17:20:51.152Z
 tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-09-26T16:44:07.624Z
@@ -27,7 +27,7 @@ LaZagne est un outil qui permet de rechercher et récupérer de nombreux mots de
 | `-oN`                       | Enregistre les mots de passe trouvés dans un fichier au format texte.                                                                                                                         |
 | `-oJ`                       | Enregistre les mots de passe trouvés dans un fichier au format Json.                                                                                                                          |
 | `-oA`                       | Enregistre les mots de passe trouvés dans un fichier au format texte et un fichier au format Json.                                                                                            |
-| `-output <répertoire>`      | Spécifie le repertoire où les fichiers sont enregistrés.                                                                                                                                      |
+| `-output <répertoire>`      | Spécifie le répertoire où les fichiers sont enregistrés.                                                                                                                                      |
 | `-h`                        | Affiche l'aide globale ou pour un module spécifique.                                                                                                                                          |
 | `-v`                        | Mode verbeux.                                                                                                                                                                                 |
 | `-vv`                       | Mode verbeux détaillé.                                                                                                                                                                        |
@@ -59,11 +59,11 @@ La liste des modules par défaut est disponible [ici](https://github.com/Alessan
 | `SVN`                                  | Module comportant des clients SVN.                                    |
 | `Sysadmin`                             | Module comportant des outils d'administration système.                |
 | `Wifi`                                 | Module utilisant des méthodes basées sur le WIFI.                     |
-| `Internal mechanism passwords storage` | Module utilisant des méchanismes de stockages de mots de passe.       |
+| `Internal mechanism passwords storage` | Module utilisant des mécanismes de stockages de mots de passe.        |
 
 # Exemples
 
-Lance tous les modules et enregistre les mots de passe trouvés dans un fichier au format texte, dans le repertoire C:\temp.
+Lance tous les modules et enregistre les mots de passe trouvés dans un fichier au format texte, dans le répertoire C:\temp.
 `laZagne.exe all -oA -output C:\temp\`
 
 # Voir aussi
