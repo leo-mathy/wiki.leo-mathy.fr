@@ -2,7 +2,7 @@
 title: LaZagne
 description: Recherche et récupère de nombreux mots de passe stockés sur un ordinateur, dans différentes applications couramment utilisées ou stockés par des mécanismes internes.
 published: true
-date: 2024-09-26T17:22:09.817Z
+date: 2024-09-26T17:22:43.475Z
 tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-09-26T16:44:07.624Z
@@ -43,10 +43,10 @@ La liste des modules par défaut est disponible [ici](https://github.com/Alessan
 > Chaque module contient des scripts, il est possible de lancer un script spécifique comme indiqué dans la syntaxe.
 > {.is-info}
 
-> Certains modules nécéssites des droits administrateurs (pour l'accès aux cartes wifi par exemple)
+> Certains modules nécessites des droits administrateurs (pour l'accès aux cartes wifi par exemple)
 > {.is-warning}
 
-> Tous les modules et scripts ne sont pas présents entre Linux,Windows et Mac OS.
+> Tous les modules et scripts ne sont pas présents entre Linux, Windows et Mac OS.
 > {.is-warning}
 
 | Module                                 | Description                                                           |
