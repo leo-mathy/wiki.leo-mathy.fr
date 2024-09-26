@@ -2,7 +2,7 @@
 title: LaZagne
 description: Recherche et récupère de nombreux mots de passe stockés sur un ordinateur, dans différentes applications couramment utilisées ou stockés par des mécanismes internes.
 published: true
-date: 2024-09-26T16:53:50.579Z
+date: 2024-09-26T16:53:55.922Z
 tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-09-26T16:44:07.624Z
@@ -27,7 +27,7 @@ LaZagne est un outil qui permet de rechercher et récupérer de nombreux mots de
 
 # Modules
 
-La liste des modules par défaut est disponible [ici](https://github.com/AlessandroZ/LaZagne?tab=readme-ov-file#supported-software)
+La liste des modules par défaut est disponible [ici](https://github.com/AlessandroZ/LaZagne?tab=readme-ov-file#supported-software).
 
 | Module | Description |
 | --------- | ----------- |
