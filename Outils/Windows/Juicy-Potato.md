@@ -2,8 +2,8 @@
 title: Juicy Potato
 description: Version améliorée de RottenPotatoNG, permet d'utiliser les privilèges SeImpersonate et/ou SeAssignPrimaryToken pour escalader les privilèges jusqu'au compte NT AUTHORITY\SYSTEM
 published: true
-date: 2024-07-16T17:18:22.263Z
-tags: outil, windows, élévation des privilèges
+date: 2024-10-25T20:42:47.560Z
+tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-12T15:45:18.846Z
 ---
