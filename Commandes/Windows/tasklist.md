@@ -2,8 +2,8 @@
 title: tasklist
 description: Affiche une liste des processus actuellement en cours sur un ordinateur local ou un ordinateur distant
 published: true
-date: 2024-07-16T16:56:58.342Z
-tags: cmd, windows, powershell
+date: 2024-10-25T20:27:25.081Z
+tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-11T11:01:52.293Z
 ---
