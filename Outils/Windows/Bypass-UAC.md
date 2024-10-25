@@ -2,8 +2,8 @@
 title: Bypass-UAC
 description: Permet de contourner l'UAC (User Account Control) en effectuant de appels de méthodes à l'interface (objet COM) "IFileOperation".
 published: true
-date: 2024-09-29T13:35:58.450Z
-tags: outil, windows
+date: 2024-10-25T20:41:55.278Z
+tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-29T13:35:58.450Z
 ---
