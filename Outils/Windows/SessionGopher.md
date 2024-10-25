@@ -2,8 +2,8 @@
 title: SessionGopher
 description: Recherche raisonnablement discrètement des informations de session d'outils d'accès à distance, sauvegardées dans la ruche de registre HKEY_USERS ou dans des fichiers.
 published: true
-date: 2024-09-26T17:49:36.398Z
-tags: outil, windows
+date: 2024-10-25T20:47:56.107Z
+tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-26T17:37:08.015Z
 ---
