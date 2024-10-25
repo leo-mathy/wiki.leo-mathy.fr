@@ -2,8 +2,8 @@
 title: echo
 description: Affiche des messages ou active/désactive l’affichage des commandes
 published: true
-date: 2024-07-16T16:45:44.602Z
-tags: cmd, windows
+date: 2024-10-25T20:22:16.261Z
+tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-11T12:19:34.854Z
 ---
