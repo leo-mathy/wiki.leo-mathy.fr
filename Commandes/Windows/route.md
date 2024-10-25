@@ -2,8 +2,8 @@
 title: route
 description: Permet d'afficher ou modifier la table de routage
 published: true
-date: 2024-07-16T16:54:16.429Z
-tags: cmd, windows, powershell
+date: 2024-10-25T20:25:28.072Z
+tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-11T09:57:49.944Z
 ---
