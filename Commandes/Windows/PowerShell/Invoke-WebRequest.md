@@ -2,8 +2,8 @@
 title: Invoke-WebRequest
 description: Effectue une requête vers un page web.
 published: true
-date: 2024-10-25T20:11:39.589Z
-tags: windows, powershell
+date: 2024-10-25T20:33:36.921Z
+tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-10-25T19:34:05.609Z
 ---
