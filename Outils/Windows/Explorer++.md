@@ -2,8 +2,8 @@
 title: Explorer++
 description: Explorateur de fichiers rapide, compréhensible, portable et léger qui présente une alternative à l'explorateur de fichiers par défaut sur Windows. Utile pour contourner les politiques de restriction d'applications.
 published: true
-date: 2024-09-29T12:45:45.394Z
-tags: outil, interface graphique
+date: 2024-10-25T20:40:39.299Z
+tags: outil, windows, interface graphique
 editor: markdown
 dateCreated: 2024-09-29T12:45:45.394Z
 ---
