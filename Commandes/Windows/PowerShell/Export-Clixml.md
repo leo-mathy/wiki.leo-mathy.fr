@@ -2,8 +2,8 @@
 title: Export-Clixml
 description: Permet d'exporter des objets PowerShell dans un fichier en utilisant le format XML.
 published: true
-date: 2024-08-29T16:50:34.501Z
-tags: windows, powershell
+date: 2024-10-25T20:29:51.249Z
+tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-08-29T16:37:58.735Z
 ---
