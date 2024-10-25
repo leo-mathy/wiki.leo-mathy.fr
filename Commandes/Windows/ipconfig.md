@@ -2,8 +2,8 @@
 title: ipconfig
 description: Commande permettant d'afficher la configuration de carte(s) réseau
 published: true
-date: 2024-07-16T16:49:52.640Z
-tags: cmd, windows, powershell
+date: 2024-10-25T20:23:08.040Z
+tags: windows, commande
 editor: markdown
 dateCreated: 2024-04-28T13:32:25.385Z
 ---
