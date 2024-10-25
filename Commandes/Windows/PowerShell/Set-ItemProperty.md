@@ -2,8 +2,8 @@
 title: Set-ItemProperty
 description: Crée ou modifie la valeur d'une propriété d'un élément ou de clés de registre.
 published: true
-date: 2024-08-22T16:46:09.303Z
-tags: windows, powershell
+date: 2024-10-25T20:34:41.817Z
+tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-07-31T17:34:17.193Z
 ---
