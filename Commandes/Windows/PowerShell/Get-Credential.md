@@ -2,8 +2,8 @@
 title: Get-Credential
 description: l'applet Get-Credential permet de créer un objet d'informations d'identification (objet PSCredential) avec les informations entrées (nom d'utilisateur et mot de passe)
 published: true
-date: 2024-08-29T15:51:07.991Z
-tags: windows, powershell
+date: 2024-10-25T20:31:04.670Z
+tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-08-29T15:33:45.175Z
 ---
