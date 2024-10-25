@@ -2,8 +2,8 @@
 title: mssqlclient
 description: mssqlclient est un programme python permettant de se connecter à un serveur SQL Windows. Il permet d'activer facilement l'option xp_cmdshell avec une simple commande, ce qui permet l'exécution de commandes depuis le client SQL.
 published: true
-date: 2024-07-16T17:10:39.022Z
-tags: outil, linux, windows
+date: 2024-10-25T20:38:40.280Z
+tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-07-13T09:21:17.856Z
 ---
