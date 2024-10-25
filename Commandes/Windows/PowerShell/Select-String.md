@@ -2,8 +2,8 @@
 title: Select-String
 description: Recherche du texte dans les fichiers et des chaînes.
 published: true
-date: 2024-08-30T17:02:50.033Z
-tags: windows, powershell
+date: 2024-10-25T20:34:07.036Z
+tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-08-30T16:17:34.831Z
 ---
