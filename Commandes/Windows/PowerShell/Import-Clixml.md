@@ -2,8 +2,8 @@
 title: Import-Clixml
 description: Permet d'importer des objets PowerShell depuis un fichier en utilisant le format XML.
 published: true
-date: 2024-08-29T16:54:58.449Z
-tags: windows, powershell
+date: 2024-10-25T20:33:09.002Z
+tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-08-29T16:54:58.449Z
 ---
