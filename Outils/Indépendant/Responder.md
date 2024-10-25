@@ -2,8 +2,8 @@
 title: Responder
 description: Permet d'empoisonner certains protocoles (LLMNR;NBT-NS;MDNS) et permet la création de serveurs rogue (proxy WPAD, HTTP) pour la récupération d'identifiants
 published: true
-date: 2024-07-18T15:20:50.784Z
-tags: outil
+date: 2024-10-25T20:39:41.189Z
+tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-07-18T14:53:24.803Z
 ---
