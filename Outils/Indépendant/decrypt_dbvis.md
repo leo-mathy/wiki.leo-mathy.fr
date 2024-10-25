@@ -2,8 +2,8 @@
 title: decrypt_dbvis
 description: Script Python permettant de déchiffrer le fichier dbvis.xml ou des chaînes exportées depuis celui-ci. (Ce fichier est utilisé par DbVisualizer pour le stockage des informations de session)
 published: true
-date: 2024-09-28T14:28:42.026Z
-tags: outil
+date: 2024-10-25T20:37:50.796Z
+tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-09-28T14:28:42.026Z
 ---
