@@ -2,8 +2,8 @@
 title: findstr
 description: Recherche du texte dans les fichiers.
 published: true
-date: 2024-08-29T16:16:19.597Z
-tags: windows
+date: 2024-10-25T20:22:34.725Z
+tags: windows, commande
 editor: markdown
 dateCreated: 2024-08-29T16:16:19.597Z
 ---
