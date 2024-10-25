@@ -2,8 +2,8 @@
 title: PSSQLite
 description: Module PowerShell permettant d'interagir avec des fonctionnalités limités sur une base SQLite.
 published: true
-date: 2024-08-31T16:04:31.046Z
-tags: windows, powershell
+date: 2024-10-25T20:46:26.802Z
+tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-08-31T16:04:31.046Z
 ---
