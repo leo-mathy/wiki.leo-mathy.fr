@@ -2,8 +2,8 @@
 title: Get-WmiObject
 description: Obtient des instances de classes WMI (Windows Management Instrumentation), ce qui permet de surveiller les ressources systèmes.
 published: true
-date: 2024-07-16T16:48:20.486Z
-tags: windows, powershell
+date: 2024-10-25T20:32:54.636Z
+tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-07-11T11:53:49.448Z
 ---
