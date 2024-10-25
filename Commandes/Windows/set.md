@@ -2,8 +2,8 @@
 title: set
 description: Affiche ou modifie les variables d'environement
 published: true
-date: 2024-07-16T16:54:59.951Z
-tags: cmd, windows
+date: 2024-10-25T20:26:30.286Z
+tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-11T11:14:57.743Z
 ---
