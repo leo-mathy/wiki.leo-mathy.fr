@@ -2,8 +2,8 @@
 title: sc
 description: Communique avec le Controlleur de Services et les services installés, permet d'interagir avec les services
 published: true
-date: 2024-07-16T18:09:23.569Z
-tags: cmd, windows, powershell, rédaction incomplète
+date: 2024-10-25T20:26:16.309Z
+tags: windows, commande, rédaction incomplète
 editor: markdown
 dateCreated: 2024-07-16T18:09:23.569Z
 ---
