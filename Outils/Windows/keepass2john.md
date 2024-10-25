@@ -2,8 +2,8 @@
 title: keepass2john
 description: Extrait un hash utilisable par HashCat/John depuis une base KeePass 1.x/2.x.
 published: true
-date: 2024-09-14T11:09:25.842Z
-tags: outil, windows
+date: 2024-10-25T20:44:08.525Z
+tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-09-14T11:08:05.830Z
 ---
