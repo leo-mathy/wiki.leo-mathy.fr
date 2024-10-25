@@ -2,8 +2,8 @@
 title: secretsdump
 description: Lis les informations concernant les comptes depuis la base ntds.dit
 published: true
-date: 2024-07-16T17:14:48.347Z
-tags: outil, linux, windows
+date: 2024-10-25T20:40:02.597Z
+tags: outil, windows, indépendant
 editor: markdown
 dateCreated: 2024-07-15T12:49:07.492Z
 ---
