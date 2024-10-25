@@ -2,8 +2,8 @@
 title: whoami
 description: Cette commande peut être employé pour obtenir le nom d’utilisateur, les informations de groupe ainsi que les identificateurs de sécurité (SID)
 published: true
-date: 2024-07-16T16:58:25.504Z
-tags: cmd, windows, powershell
+date: 2024-10-25T20:27:59.349Z
+tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-11T12:25:15.553Z
 ---
