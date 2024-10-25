@@ -2,7 +2,7 @@
 title: Invoke-Expression
 description: Alias de IEX, exécute des commandes ou des expressions sur l'ordinateur local.
 published: true
-date: 2024-10-25T20:33:25.035Z
+date: 2024-10-25T20:33:27.063Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-10-06T10:13:16.438Z

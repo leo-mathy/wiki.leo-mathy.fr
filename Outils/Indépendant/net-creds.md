@@ -2,7 +2,7 @@
 title: net-creds
 description: Script Python qui récupère les mots de passes et hashes depuis une interface ou un fichier de capture de paquets (pcap). Assembles les paquets et ne se base pas sur les ports pour l'identification du service.
 published: true
-date: 2024-10-06T10:02:02.316Z
+date: 2024-10-06T10:02:04.801Z
 tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-10-06T10:02:02.316Z

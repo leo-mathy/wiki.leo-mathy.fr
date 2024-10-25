@@ -2,7 +2,7 @@
 title: Out-File
 description: Envoie la sortie vers un fichier
 published: true
-date: 2024-10-25T20:33:49.646Z
+date: 2024-10-25T20:33:51.758Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-07-19T12:29:53.066Z

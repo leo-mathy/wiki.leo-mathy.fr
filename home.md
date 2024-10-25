@@ -2,7 +2,7 @@
 title: Accueil
 description: Page principale d'arrivée par défaut
 published: true
-date: 2024-09-08T08:59:41.869Z
+date: 2024-09-08T08:59:44.036Z
 tags: 
 editor: markdown
 dateCreated: 2024-04-14T15:03:48.620Z

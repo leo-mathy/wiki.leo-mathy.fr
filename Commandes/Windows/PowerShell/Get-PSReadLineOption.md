@@ -2,7 +2,7 @@
 title: Get-PSReadLineOption
 description: Permet d'afficher les paramètres du module PSReadLine. (Ce module permet une expérience d’édition de ligne de commande améliorée dans la console PowerShell)
 published: true
-date: 2024-10-25T20:32:12.647Z
+date: 2024-10-25T20:32:14.634Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-08-29T14:44:11.065Z

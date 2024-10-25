@@ -2,7 +2,7 @@
 title: PrintNightmare
 description: Version PowerShell de l'exploit en local uniquement. Qui permet à n'importe quel utilisateur sans le privilège SeLoadDriverPrivilege, d'ajouter des drivers d'impression à un système, et par conséquent d'exécuter du code en tant que NT AUTHORITY\SYSTEM.
 published: true
-date: 2024-08-25T12:46:47.310Z
+date: 2024-10-25T20:44:48.176Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-08-23T14:32:14.312Z

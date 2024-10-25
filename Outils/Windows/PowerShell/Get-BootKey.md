@@ -2,7 +2,7 @@
 title: Get-BootKey
 description: Permet de récupérer la clé de démarrage (ou clé système) depuis le système actuel ou la ruche de registre SYSTEM
 published: true
-date: 2024-07-16T17:04:26.800Z
+date: 2024-10-25T20:42:18.810Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-07-15T12:31:37.362Z

@@ -2,7 +2,7 @@
 title: Write-UserAddMSI
 description: Outil de la suite PowerSploit. Écris un fichier d'installateur au format msi qui crée un nouvel utilisateur. Cela peut servir pour exploiter la faille "AlwaysInstallElevated".
 published: true
-date: 2024-10-25T20:49:16.238Z
+date: 2024-10-25T20:49:18.413Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-09-29T15:47:22.909Z

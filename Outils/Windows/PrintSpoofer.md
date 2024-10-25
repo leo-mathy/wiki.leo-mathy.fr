@@ -2,7 +2,7 @@
 title: PrintSpoofer
 description: Permet de créer un processus SYSTEM dans la console, utilise le privilège SeImpersonate pour escalader les privilèges jusqu'au compte NT AUTHORITY\SYSTEM
 published: true
-date: 2024-10-25T20:45:02.552Z
+date: 2024-10-25T20:45:04.497Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-13T10:26:57.386Z

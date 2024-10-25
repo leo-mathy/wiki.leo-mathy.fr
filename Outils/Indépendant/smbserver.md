@@ -2,7 +2,7 @@
 title: smbserver
 description: Script Python permettant la création rapide d'un serveur SMB de partage de fichiers.
 published: true
-date: 2024-09-29T15:36:32.995Z
+date: 2024-09-29T15:36:35.468Z
 tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-09-29T15:36:32.995Z

@@ -2,7 +2,7 @@
 title: RoguePotato
 description: Permet d'utiliser les privilèges SeImpersonate pour escalader les privilèges jusqu'au compte NT AUTHORITY\SYSTEM
 published: true
-date: 2024-10-25T20:46:52.252Z
+date: 2024-10-25T20:46:54.344Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-13T10:59:42.756Z

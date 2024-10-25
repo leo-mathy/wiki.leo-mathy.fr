@@ -2,7 +2,7 @@
 title: Get-WinEvent
 description: Obtient les événements à partir des journaux des événements et des fichiers journaux
 published: true
-date: 2024-10-25T20:32:41.949Z
+date: 2024-10-25T20:32:43.981Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-07-15T16:45:59.328Z

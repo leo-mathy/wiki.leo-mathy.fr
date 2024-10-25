@@ -2,7 +2,7 @@
 title: nc
 description: Nc est la version disponible sur Windows de Netcat, Netcat est un utilitaire permettant d'ouvrir des connexions réseau, cet outil peut être utilisé pour de nombreux usages
 published: true
-date: 2024-07-16T17:16:59.898Z
+date: 2024-07-16T17:17:02.213Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-12T16:56:06.120Z

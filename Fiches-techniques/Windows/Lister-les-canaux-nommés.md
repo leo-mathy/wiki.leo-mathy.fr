@@ -2,7 +2,7 @@
 title: Lister les canaux nommés
 description: Les canaux sont utilisés pour la communication entre deux applications ou processus en utilisant de la mémoire partagée.
 published: true
-date: 2024-10-25T20:37:27.712Z
+date: 2024-10-25T20:37:29.667Z
 tags: windows, fiche technique
 editor: markdown
 dateCreated: 2024-07-11T16:42:14.911Z

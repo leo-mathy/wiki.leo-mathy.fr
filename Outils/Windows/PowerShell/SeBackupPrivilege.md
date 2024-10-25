@@ -2,7 +2,7 @@
 title: SeBackupPrivilege
 description: Module powershell permettant d'activer le privilège SeBackupPrivilege (désactivé par défaut sur les comptes ayant le privilège d'assigné)
 published: true
-date: 2024-07-16T17:13:47.225Z
+date: 2024-10-25T20:47:10.796Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-07-15T10:52:35.143Z

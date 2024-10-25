@@ -2,7 +2,7 @@
 title: whoami
 description: Cette commande peut être employé pour obtenir le nom d’utilisateur, les informations de groupe ainsi que les identificateurs de sécurité (SID)
 published: true
-date: 2024-10-25T20:27:59.349Z
+date: 2024-10-25T20:28:01.555Z
 tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-11T12:25:15.553Z

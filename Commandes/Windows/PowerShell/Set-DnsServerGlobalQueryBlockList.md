@@ -2,7 +2,7 @@
 title: Set-DnsServerGlobalQueryBlockList
 description: Modifie la liste globale de requêtes bloquées sur un serveur DNS. Le serveur DNS ignore les requêtes dont le nom est dans la liste
 published: true
-date: 2024-10-25T20:34:19.540Z
+date: 2024-10-25T20:34:21.631Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-07-16T18:11:24.036Z
