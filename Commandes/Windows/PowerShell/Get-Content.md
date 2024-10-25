@@ -2,8 +2,8 @@
 title: Get-Content
 description: Get-Content (alias de gc) permet d'afficher le contenu d'un fichier.
 published: true
-date: 2024-08-29T14:36:08.296Z
-tags: windows, powershell
+date: 2024-10-25T20:30:49.172Z
+tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-07-13T10:11:38.720Z
 ---
