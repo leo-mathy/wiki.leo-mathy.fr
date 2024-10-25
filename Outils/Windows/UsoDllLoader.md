@@ -2,8 +2,8 @@
 title: UsoDllLoader
 description: UsoDllLoader est un PoC d'une vulnérabilité exploitant le chargement d'un DLL inexistant par le service exécuté en tant que NT AUTHORITY\System: "Update Session Orchestrator" (USO).
 published: true
-date: 2024-08-27T17:22:22.853Z
-tags: outil, windows, élévation des privilèges
+date: 2024-10-25T20:48:56.663Z
+tags: outil, windows
 editor: markdown
 dateCreated: 2024-08-27T17:22:22.853Z
 ---
