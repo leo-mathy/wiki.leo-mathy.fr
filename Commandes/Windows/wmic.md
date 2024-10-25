@@ -2,8 +2,8 @@
 title: wmic
 description: Windows Management Instrumentation Command-line (WMIC) est un système de gestion interne de Windows qui permet de contrôler et surveiller les ressources systèmes
 published: true
-date: 2024-07-16T16:59:13.213Z
-tags: cmd, windows, powershell
+date: 2024-10-25T20:28:15.646Z
+tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-11T11:35:49.137Z
 ---
