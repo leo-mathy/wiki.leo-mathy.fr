@@ -2,7 +2,7 @@
 title: Invoke-WebRequest
 description: Effectue une requête vers un page web.
 published: true
-date: 2024-10-25T19:34:05.609Z
+date: 2024-10-25T19:47:48.130Z
 tags: windows, powershell
 editor: markdown
 dateCreated: 2024-10-25T19:34:05.609Z
@@ -38,10 +38,23 @@ Invoke-WebRequest est une applet PowerShell, alias de IWR, qui permet d'effectue
 | `-MaximumRedirection <nombre>`     | Précise le nombre de redirections maximales vers d'autres URI. 5 par défaut. Une valeure de 0 empèche toute redirection.         |
 | `-MaximumRetryCount <nombre>`     | Spécifie le nombre de tentatives lorsqu'un code 400,599,inclusive ou 304 est reçu.         |
 | `-Method <Default;Delete;Get;Head;Merge;Options;Patch;Post;Put;Trace>`     | Spécifie la méthode de la requète.         |
-| `-AllowInsecureRedirect`     | Autorise la redirection vers HTTP depuis une page HTTPS.         |
-| `-AllowInsecureRedirect`     | Autorise la redirection vers HTTP depuis une page HTTPS.         |
-| `-AllowInsecureRedirect`     | Autorise la redirection vers HTTP depuis une page HTTPS.         |
-| `-AllowInsecureRedirect`     | Autorise la redirection vers HTTP depuis une page HTTPS.         |
+| `-NoProxy`     | N'utilise pas le proxy spécifie dans le système.         |
+| `-OperationTimeoutSeconds <secondes>`     | Précise après quelle durée la requète est annulée si aucune donnée d'un flux n'est reçu. Utilisé pour le transfert de fichiers. 0 pour une durée illimitée. 0 par défaut.         |
+| `-OutFile <fichier>`     | Précise le fichier de sortie.         |
+| `-PassThru`     | Envoi les resultats dans le terminal en plus du fichier de sortie si un fichier de sortie est indiqué.         |
+| `-PreserveAuthorizationOnRedirect`     | Conserve le header d'authorisation lorsque des redirections sont effectuées.        |
+| `-PreserveHttpMethodOnRedirect`     | Préserve la méthode définie lors des redirections. Par défaut, les redirections sont traités avec la méthode GET.         |
+| `-Proxy <URI du proxy>`     | Précise un serveur proxy à utiliser.         |
+| `-ProxyCredential <utilisateur/objet Credential>`     | Précise les identifiants à utiliser lors de la connexion au proxy. Utilisateur actuel par défaut.         |
+| `-ProxyUseDefaultCredentials`     | Utilise l'utilisateur actuel pour les connexions au proxy.       |
+| `-Resume`     | Essaye de reprendre le téléchargement du fichier. Ce paramètre fait reprendre le téléchargement de zéro si pour une quelquonque raison cela n'est pas possible.        |
+| `-RetryIntervalSec <secondes>`     | Spécifie l'intervale d'envoi des tentatives lorsqu'un code 400,599,inclusive ou 304 est reçu.         |
+| `-OutFile <fichier>`     | Précise le fichier de sortie.         |
+| `-OutFile <fichier>`     | Précise le fichier de sortie.         |
+| `-OutFile <fichier>`     | Précise le fichier de sortie.         |
+| `-OutFile <fichier>`     | Précise le fichier de sortie.         |
+| `-OutFile <fichier>`     | Précise le fichier de sortie.         |
+| `-OutFile <fichier>`     | Précise le fichier de sortie.         |
 
 # Exemples
 
