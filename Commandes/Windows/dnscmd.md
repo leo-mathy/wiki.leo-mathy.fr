@@ -2,8 +2,8 @@
 title: dnscmd
 description: Permet de gérer un serveur DNS
 published: true
-date: 2024-07-16T16:44:42.921Z
-tags: cmd, windows, powershell, rédaction incomplète
+date: 2024-10-25T20:21:37.770Z
+tags: windows, commande, rédaction incomplète
 editor: markdown
 dateCreated: 2024-07-16T16:42:05.458Z
 ---
