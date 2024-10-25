@@ -2,8 +2,8 @@
 title: Runas
 description: Runas permet à un utilisateur d'exécuter des commandes et programmes en tant qu'un utilisateur différent.
 published: true
-date: 2024-09-08T08:57:52.613Z
-tags: cmd, windows
+date: 2024-10-25T20:25:42.535Z
+tags: windows, commande
 editor: markdown
 dateCreated: 2024-09-08T08:57:52.613Z
 ---
