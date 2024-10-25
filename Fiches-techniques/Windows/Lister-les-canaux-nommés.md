@@ -2,8 +2,8 @@
 title: Lister les canaux nommés
 description: Les canaux sont utilisés pour la communication entre deux applications ou processus en utilisant de la mémoire partagée.
 published: true
-date: 2024-07-16T17:00:05.272Z
-tags: cmd, windows, powershell, fiche technique
+date: 2024-10-25T20:37:27.712Z
+tags: windows, fiche technique
 editor: markdown
 dateCreated: 2024-07-11T16:42:14.911Z
 ---
