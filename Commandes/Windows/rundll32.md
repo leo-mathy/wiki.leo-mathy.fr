@@ -2,7 +2,7 @@
 title: rundll32
 description: Permet de charger des DLL (Bibliothèques de liens dynamiques)
 published: true
-date: 2024-10-26T17:12:05.574Z
+date: 2024-10-26T17:13:00.285Z
 tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-30T19:32:19.223Z
@@ -25,8 +25,8 @@ Charge le DLL shell32.dll avec comme argument C:\temp\mydll.dll et appel la fonc
 
 `rundll32.exe shell32.dll,Control_RunDLL C:\temp\mydll.dll`
 
-Charge le DLL et lance la fonction myEntryPoint
-`rundll32.exe mydll,myEntryPoint`
+Charge le DLL mydll situé sur le partage smb \\192.168.1.1\share\ et lance la fonction myEntryPoint
+`rundll32.exe \\192.168.1.1\share\mydll,myEntryPoint`
 
 # Voir aussi
 
