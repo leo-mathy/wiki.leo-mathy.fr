@@ -2,7 +2,7 @@
 title: SharpChromium
 description: Extrait des informations (cookie, historique, informations d'identification) depuis Google Chrome, Microsoft Edge et Microsoft Edge Beta.
 published: true
-date: 2024-10-26T14:28:35.698Z
+date: 2024-10-26T14:28:44.729Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-10-26T14:28:15.762Z
