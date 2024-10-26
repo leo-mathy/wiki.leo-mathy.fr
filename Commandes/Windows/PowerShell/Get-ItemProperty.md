@@ -2,7 +2,7 @@
 title: Get-ItemProperty
 description: Récupère la valeur d'une propriété d'un élément ou de clés de registre.
 published: true
-date: 2024-10-26T12:58:28.792Z
+date: 2024-10-26T12:59:01.114Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-10-26T12:58:28.792Z
