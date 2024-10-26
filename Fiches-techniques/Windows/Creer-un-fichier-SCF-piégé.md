@@ -2,7 +2,7 @@
 title: Créer un fichier SCF piégé
 description: Guide pour la création de fichier SCF (Shell Command File) piégé. Un fichier SCF peut être utilisé par un attaquant pour récupérer les hash des utilisateurs.
 published: true
-date: 2024-10-26T09:31:10.018Z
+date: 2024-10-26T09:52:37.534Z
 tags: windows, fiche technique
 editor: markdown
 dateCreated: 2024-10-26T09:31:10.018Z
@@ -42,6 +42,9 @@ Command=ToggleDesktop
 A présent, le fichier est maintenant créer, il suffit d'attendre que le fichier soit cliqué pour recevoir les informations d'authentification sur notre machine attaquante.
 
 # Voir aussi
+
+Fiche technique pour la création d'un fichier LNK piégé
+[voir la page](/Fiches-techniques/Windows/Creer-un-fichier-LNK-piégé)
 
 Lnkbomb, créer des fichiers raccourcis .url malveillants
 [voir la page](/Outils/Indépendant/Lnkbomb)
