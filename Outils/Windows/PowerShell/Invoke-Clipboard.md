@@ -2,7 +2,7 @@
 title: Invoke-Clipboard
 description: Récupère le contenu du clipboard (presse-papiers).
 published: true
-date: 2024-10-26T14:49:40.702Z
+date: 2024-10-26T14:53:19.425Z
 tags: outil, windows, powershell
 editor: markdown
 dateCreated: 2024-10-26T14:49:40.702Z
@@ -23,3 +23,8 @@ Enregistre le contenu du presse-papiers et l'affiche dans la session PowerShell 
 
 Établi un canal "Command and Control" (C2C) via le presse-papiers. Reçois la sortie des commandes.
 `Invoke-ClipboardC2V`
+
+# Exemples
+
+Lance l'enregistrement du presse-papiers et l'affiche dans la session PowerShell actuelle.
+`Invoke-ClipboardLogger`
