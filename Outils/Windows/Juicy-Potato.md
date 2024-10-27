@@ -2,7 +2,7 @@
 title: Juicy Potato
 description: Version améliorée de RottenPotatoNG, permet d'utiliser les privilèges SeImpersonate et/ou SeAssignPrimaryToken pour escalader les privilèges jusqu'au compte NT AUTHORITY\SYSTEM
 published: true
-date: 2024-10-27T14:00:10.062Z
+date: 2024-10-27T14:00:30.667Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-12T15:45:18.846Z
@@ -18,7 +18,7 @@ Juicy Potato est une version améliorée de RottenPotatoNG, Cet outil permet d'u
 > JuicyPotato ne fonctionne pas sur les versions après Windows Server 2019 et Windows 10 build 1809, du fait que DCOM ne rentre plus en communication avec le serveur COM MITM, de plus, le client ne négocie plus une authentification si les données ont étés transferés.
 > {.is-danger}
 
-> Il est parfois nécéssaire de préciser un autre CLSID si celui par défaut n'est pas valide. Un script est disponible [ici](https://github.com/ohpe/juicy-potato/blob/master/CLSID/GetCLSID.ps1)
+> Il est parfois nécéssaire de préciser un autre CLSID si celui par défaut n'est pas valide. Un script est disponible [ici](https://github.com/ohpe/juicy-potato/blob/master/CLSID/GetCLSID.ps1) pour récupérer une liste valide.
 {.is-warning}
 
 # Syntaxe
