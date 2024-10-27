@@ -2,7 +2,7 @@
 title: hashcat
 description: hashcat est un puissant outil pour l'obtention de mots de passe avec diverse méthodes (brute-force, dictionnaire...).
 published: true
-date: 2024-10-25T20:38:18.700Z
+date: 2024-10-27T17:32:12.022Z
 tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-09-14T19:05:36.980Z
@@ -166,6 +166,8 @@ hashcat est un puissant outil pour l'obtention de mots de passe avec diverse mé
 | `6`               | Horodatage relatif                  |
 
 # Exemples
+Crack le hash avec le dictionnaire rockyou.txt.
+`hashcat -m 5600 admin:1003:aad3b435b51404eeaad3b435b51404ee:5835048ce94ad0564e29a924a03510ef::: /usr/share/wordlists/rockyou.txt `
 
 # Voir aussi
 
