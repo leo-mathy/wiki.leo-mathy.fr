@@ -2,7 +2,7 @@
 title: Hydra
 description: Puissant outil de Brute-Force supportant de nombreux protocoles.
 published: true
-date: 2024-11-07T17:26:13.245Z
+date: 2024-11-07T17:28:42.096Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-07T17:03:55.416Z
@@ -17,9 +17,9 @@ Hydra est un puissant outil de Brute-Force supportant de nombreux protocoles. Ce
 
 # Syntaxe
 
-`hydra [option(s) d'identifiant] [option(s) de mot de passe] [option(s) de l'attaque] [service://cible] [paramètres]`
+`hydra [option(s) d'identifiant] [option(s) de mot de passe] [option(s) de l'attaque] [service://cible] [option(s) du service] [paramètres]`
 
-`hydra [option(s) d'identifiant] [option(s) de mot de passe] [cible] [service] [paramètres]`
+`hydra [option(s) d'identifiant] [option(s) de mot de passe] [cible] [service] [option(s) du service] [paramètres]`
 
 # Paramètres
 
