@@ -2,7 +2,7 @@
 title: Hydra
 description: Puissant outil de Brute-Force supportant de nombreux protocoles.
 published: true
-date: 2024-11-07T17:42:05.776Z
+date: 2024-11-07T17:44:00.841Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-07T17:03:55.416Z
@@ -49,3 +49,8 @@ Lancement d'une attaque avec le module http-post-form en utilisant une liste de 
 
 Lancement d'une attaque avec le module http-get en utilisant l'identifiant "admin" et des mots de passe composés de chiffres de 0 à 9 et entre 1 et 4 charactères.
 `hydra -l admin -x 1:4:0123456789 www.example.com http-get`
+
+# Voir aussi
+
+Collection de listes de différents types (identifiants, mot de passe, URL...)
+https://github.com/danielmiessler/SecLists
