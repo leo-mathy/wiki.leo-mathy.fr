@@ -2,7 +2,7 @@
 title: Hydra
 description: Puissant outil de Brute-Force supportant de nombreux protocoles.
 published: true
-date: 2024-11-07T17:20:21.832Z
+date: 2024-11-07T17:26:13.245Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-07T17:03:55.416Z
@@ -17,7 +17,9 @@ Hydra est un puissant outil de Brute-Force supportant de nombreux protocoles. Ce
 
 # Syntaxe
 
-`hydra [option(s) d'identifiant] [option(s) de mot de passe] [option(s) de l'attaque] [option(s) du service] [paramètres]`
+`hydra [option(s) d'identifiant] [option(s) de mot de passe] [option(s) de l'attaque] [service://cible] [paramètres]`
+
+`hydra [option(s) d'identifiant] [option(s) de mot de passe] [cible] [service] [paramètres]`
 
 # Paramètres
 
@@ -33,8 +35,12 @@ Hydra est un puissant outil de Brute-Force supportant de nombreux protocoles. Ce
 | `-v` | Active le mode verbose.         |
 | `-V` | Active le mode verbose avancé.         |
 | `-m <options>` | Spécifie les options spécifiques au service.         |
-| `-V` | Active le mode verbose avancé.         |
+| `-M <fichier>` | Spécifie une liste de cible
+.         |
 
 # Exemples
 
+Lancement d'une attaque avec le module http-get en utilisant une liste d'identifiants et de mots de passe.
+`hydra -L logins.txt -P passwords.txt www.website.com http-get
+`
 # Voir aussi
