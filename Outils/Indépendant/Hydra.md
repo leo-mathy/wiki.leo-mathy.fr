@@ -2,7 +2,7 @@
 title: Hydra
 description: Puissant outil de Brute-Force supportant de nombreux protocoles.
 published: true
-date: 2024-11-07T17:28:42.096Z
+date: 2024-11-07T17:32:53.685Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-07T17:03:55.416Z
@@ -41,6 +41,9 @@ Hydra est un puissant outil de Brute-Force supportant de nombreux protocoles. Ce
 # Exemples
 
 Lancement d'une attaque avec le module http-get en utilisant une liste d'identifiants et de mots de passe.
-`hydra -L logins.txt -P passwords.txt www.website.com http-get
+`hydra -L logins.txt -P passwords.txt www.example.com http-get
 `
+Lancement d'une attaque avec le module http-post-form en utilisant une liste de mots de passe. Précise les détails de la requète et le code de retour HTTP qui correpsond au code attendu.
+`hydra -l admin -P pass.txt www.example.com http-post-form "/connexion:user=^USER^&pass=^PASS^:S=302"`
+
 # Voir aussi
