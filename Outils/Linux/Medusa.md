@@ -2,7 +2,7 @@
 title: Medusa
 description: Puissant outil de Brute-Force supportant de nombreux protocoles.
 published: true
-date: 2024-11-08T18:25:04.521Z
+date: 2024-11-08T18:25:26.087Z
 tags: outil, linux, synthèse
 editor: markdown
 dateCreated: 2024-11-08T18:06:28.140Z
@@ -38,7 +38,7 @@ Medusa est un puissant outil de Brute-Force supportant de nombreux protocoles. C
 
 # Exemples
 
-Lancement d'une attaque avec le module http en utilisant une liste d'identifiants et de mots de passe. Spécifie l'option de méthode pour le type de requète (ici GET).
+Lancement d'une attaque avec le module HTTP en utilisant une liste d'identifiants et de mots de passe. Spécifie l'option de méthode pour le type de requète (ici GET).
 `medusa -h www.example.com -U logins.txt -P passwords.txt -M http -m GET`
 
 Lancement d'une attaque avec le module web-form en utilisant une liste de mots de passe. Précise les détails de la requète et le code de retour HTTP qui correpsond au message
