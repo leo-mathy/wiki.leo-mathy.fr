@@ -2,7 +2,7 @@
 title: Hydra
 description: Puissant outil de Brute-Force supportant de nombreux protocoles.
 published: true
-date: 2024-11-08T19:29:09.142Z
+date: 2024-11-08T19:38:07.808Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-07T17:03:55.416Z
@@ -48,7 +48,7 @@ Lancement d'une attaque avec le module http-post-form en utilisant une liste de 
 
 Lancement d'une attaque avec le module http-post-form en utilisant une liste de mots de passe. Précise les détails de la requète et le code de retour HTTP qui correpsond au message
 non attendu.
-`hydra -l admin -P pass.txt www.example.com http-post-form "/connexion:user=^USER^&pass=^PASS^:F="Erreur de connexion"`
+`hydra -l admin -P pass.txt www.example.com http-post-form "/connexion:user=^USER^&pass=^PASS^:F=Erreur de connexion"`
 
 Lancement d'une attaque avec le module http-get en utilisant l'identifiant "admin" et des mots de passe composés de chiffres de 0 à 9 et entre 1 et 4 charactères.
 `hydra -l admin -x 1:4:0123456789 www.example.com http-get`
