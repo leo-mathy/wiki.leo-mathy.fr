@@ -2,7 +2,7 @@
 title: Medusa
 description: Puissant outil de Brute-Force supportant de nombreux protocoles.
 published: true
-date: 2024-11-08T18:25:26.087Z
+date: 2024-11-08T18:28:19.740Z
 tags: outil, linux, synthèse
 editor: markdown
 dateCreated: 2024-11-08T18:06:28.140Z
@@ -21,27 +21,28 @@ Medusa est un puissant outil de Brute-Force supportant de nombreux protocoles. C
 
 # Paramètres
 
-| Paramètre               | Description                                                                               |
-| ----------------------- | ----------------------------------------------------------------------------------------- |
-| `-h <cible>`            | Spécifie une cible.                                                                       |
-| `-H <fichier>`          | Spécifie une liste de cibles.                                                             |
-| `-u <identifiant> `     | Spécifie un identifiant à utiliser.                                                       |
-| `-U <fichier>`          | Spécifie une liste d'identifiants à utiliser.                                             |
-| `-p <mot de passe>`     | Spécifie un mot de passe à utiliser.                                                      |
-| `-P <fichier>`          | Spécifie une liste de mots de passe à utiliser.                                           |
-| `-M <module>`           | Spécifie le module à utiliser.                                                            |
-| `-m <options>`          | Spécifie les options spécifiques au module.                                               |
-| `-t <nombre de tâches>` | Spécifie le nombre de tentatives à effectuer en parallèle.                                |
-| `-f, -F`                | Active le mode rapide, arrête l'attaque après la première réussite de l'authentification. |
-| `-n <port>`             | Spécifie un port personnalisé.                                                            |
-| `-V <1-6>`              | Spécifie le niveau du mode verbose.                                                       |
+| Paramètre               | Description                                                                                                                                        |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-h <cible>`            | Spécifie une cible.                                                                                                                                |
+| `-H <fichier>`          | Spécifie une liste de cibles.                                                                                                                      |
+| `-u <identifiant> `     | Spécifie un identifiant à utiliser.                                                                                                                |
+| `-U <fichier>`          | Spécifie une liste d'identifiants à utiliser.                                                                                                      |
+| `-p <mot de passe>`     | Spécifie un mot de passe à utiliser.                                                                                                               |
+| `-P <fichier>`          | Spécifie une liste de mots de passe à utiliser.                                                                                                    |
+| `-M <module>`           | Spécifie le module à utiliser.                                                                                                                     |
+| `-m <options>`          | Spécifie les options spécifiques au module.                                                                                                        |
+| `-t <nombre de tâches>` | Spécifie le nombre de tentatives à effectuer en parallèle.                                                                                         |
+| `-f, -F`                | Active le mode rapide, arrête l'attaque après la première réussite de l'authentification.                                                          |
+| `-n <port>`             | Spécifie un port personnalisé.                                                                                                                     |
+| `-V <1-6>`              | Spécifie le niveau du mode verbose.                                                                                                                |
+| `-e <e,s,es>`           | Effectue des vérifications supplémentaires. -e pour essayer l'identifiant comme mot de passe et -s pour effectuer une tentative sans mot de passe. |
 
 # Exemples
 
-Lancement d'une attaque avec le module HTTP en utilisant une liste d'identifiants et de mots de passe. Spécifie l'option de méthode pour le type de requète (ici GET).
+Lancement d'une attaque avec le module HTTP en utilisant une liste d'identifiants et de mots de passe. Spécifie l'option de méthode pour le type de requête (ici GET).
 `medusa -h www.example.com -U logins.txt -P passwords.txt -M http -m GET`
 
-Lancement d'une attaque avec le module web-form en utilisant une liste de mots de passe. Précise les détails de la requète et le code de retour HTTP qui correpsond au message
+Lancement d'une attaque avec le module web-form en utilisant une liste de mots de passe. Précise les détails de la requête et le code de retour HTTP qui correspond au message
 non attendu.
 `medusa -M web-form -h www.example.com -U logins.txt -P passwords.txt -m FORM:"username=^USER^&password=^PASS^:F=403"`
 
