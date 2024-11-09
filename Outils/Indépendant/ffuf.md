@@ -2,7 +2,7 @@
 title: ffuf
 description: Puissant outil de fuzzing web. Permet la découverte de répertoires, et l'utilisation de diverses requêtes.
 published: true
-date: 2024-11-09T18:29:59.210Z
+date: 2024-11-09T18:30:22.044Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-09T18:29:59.210Z
@@ -26,7 +26,7 @@ ffuf (Fuzz Faster U Fool) est un puissant outil de fuzzing web. Il permet d'effe
 
 | Paramètre | Description |
 | --------- | ----------- |
-| `...`     | ...         |
+| `-h`     | Affiche l'aide.         |
 | `...`     | ...         |
 | `...`     | ...         |
 | `...`     | ...         |
