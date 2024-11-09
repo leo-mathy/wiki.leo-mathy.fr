@@ -2,7 +2,7 @@
 title: ffuf
 description: Puissant outil de fuzzing web. Permet la découverte de répertoires, et l'utilisation de diverses requêtes.
 published: true
-date: 2024-11-09T19:02:09.544Z
+date: 2024-11-09T19:06:15.295Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-09T18:29:59.210Z
@@ -46,10 +46,10 @@ ffuf (Fuzz Faster U Fool) est un puissant outil de fuzzing web. Il permet d'effe
 # Exemples
 
 Effectue une simple découverte de répertoire.
-`ffuf -w opt/useful/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u https://www.example.com/FUZZ`
+`ffuf -w /opt/useful/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u https://www.example.com/FUZZ`
 
 Effectue une simple découverte de répertoire, en utilisant un autre mot clé que FUZZ avec 64 threads.
-`ffuf -w opt/useful/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u https://www.example.com/FFUF -t 64`
+`ffuf -w /opt/useful/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u https://www.example.com/FFUF -t 64`
 
 # Voir aussi
 
