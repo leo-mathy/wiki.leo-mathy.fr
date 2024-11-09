@@ -2,7 +2,7 @@
 title: ffuf
 description: Puissant outil de fuzzing web. Permet la découverte de répertoires, et l'utilisation de diverses requêtes.
 published: true
-date: 2024-11-09T18:30:22.044Z
+date: 2024-11-09T18:45:51.871Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-09T18:29:59.210Z
@@ -12,34 +12,34 @@ dateCreated: 2024-11-09T18:29:59.210Z
 
 ffuf (Fuzz Faster U Fool) est un puissant outil de fuzzing web. Il permet d'effectuer des découvertes de répertoires ainsi que l'utilisation de diverses requêtes.
 
-> Le terme "fuzzing" désigne le fait de tester une interface avec des données diverses (parfois aléatoires) et de vérifier si un changement (neutre,positif ou négatif) s'est produit.
-{.is-info}
+> Le terme "fuzzing" désigne le fait de tester une interface avec des données diverses (parfois aléatoires) et de vérifier si un changement (neutre, positif ou négatif) s'est produit.
+> {.is-info}
 
 > ffuf est disponible au téléchargement [ici](https://github.com/ffuf/ffuf)
-{.is-info}
+> {.is-info}
 
 # Syntaxe
 
-`ffuf [-w <fichier wordlist>] [-u [cible<FUZZ>]] [paramètres]`
+`ffuf [-w <fichier wordlist>] [-u <cible<FUZZ>>] [paramètres]`
 
 # Paramètres
 
-| Paramètre | Description |
-| --------- | ----------- |
-| `-h`     | Affiche l'aide.         |
-| `...`     | ...         |
-| `...`     | ...         |
-| `...`     | ...         |
-| `...`     | ...         |
-| `...`     | ...         |
-| `...`     | ...         |
-| `...`     | ...         |
-| `...`     | ...         |
-| `...`     | ...         |
-| `...`     | ...         |
-| `...`     | ...         |
-| `...`     | ...         |
-| `...`     | ...         |
+| Paramètre                   | Description                                                                                                    |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `-h`                        | Affiche l'aide.                                                                                                |
+| `-H <nom:valeur>`           | Précise un header. Plusieurs -H peuvent être utilisés.                                                         |
+| `-X <méthode HTTP>`         | Précise la méthode HTTP à utiliser. (GET par défaut)                                                           |
+| `-b <nom=valeur>`           | Précise le/les données des cookies. (chaque entrée doit être séparée par un point-virgule)                     |
+| `-d <données POST>`         | Précise les données POST lors des requêtes POST.                                                               |
+| `-recursion`                | Effectue le opérations récursivement, l'URL doit se terminer par le mot clé FUZZ.                              |
+| `-recursion-depth <nombre>` | Précise le niveau de récursion. (0 par défaut)                                                                 |
+| `-u <cible<FUZZ>>`          | Précise l'URL cible.                                                                                           |
+| `-mc <all,code HTTP>`       | Précise le code HTTP attendu. (par défaut: 200,204,301,302,307,401,403). Préciser "all" pour tous les codes.   |
+| `-ms <taille>`              | Spécifie la taille de la réponse attendue.                                                                     |
+| `-fc <code HTTP>`           | Filtre par code HTTP. (chaque entrée doit être séparée par un point-virgule)                                   |
+| `-fs <taille>`              | Spécifie la/les tailles de la réponse attendue. (chaque entrée doit être séparée par un point-virgule)         |
+| `-w <fichier[:mot clé]>`    | Spécifie le fichier wordlist. Il est possible d'utiliser des mots clés pour utiliser certains mots uniquement. |
+| `-o <fichier>`              | Spécifie le fichier de sortie.                                                                                 |
 
 # Exemples
 
