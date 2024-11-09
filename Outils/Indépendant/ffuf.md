@@ -2,7 +2,7 @@
 title: ffuf
 description: Puissant outil de fuzzing web. Permet la découverte de répertoires, et l'utilisation de diverses requêtes.
 published: true
-date: 2024-11-09T18:50:01.655Z
+date: 2024-11-09T18:57:51.905Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-09T18:29:59.210Z
@@ -20,7 +20,7 @@ ffuf (Fuzz Faster U Fool) est un puissant outil de fuzzing web. Il permet d'effe
 
 # Syntaxe
 
-`ffuf [-w <fichier wordlist>] [-u <cible<mot clé>>] [paramètres]`
+`ffuf [-w <fichier wordlist>:<mot clé>] [-u <cible<mot clé>>] [paramètres]`
 
 # Paramètres
 
@@ -38,7 +38,7 @@ ffuf (Fuzz Faster U Fool) est un puissant outil de fuzzing web. Il permet d'effe
 | `-ms <taille>`              | Spécifie la taille de la réponse attendue.                                                                   |
 | `-fc <code HTTP>`           | Filtre par code HTTP. (chaque entrée doit être séparée par un point-virgule)                                 |
 | `-fs <taille>`              | Spécifie la/les tailles de la réponse attendue. (chaque entrée doit être séparée par un point-virgule)       |
-| `-w <fichier[:mot clé]>`    | Spécifie le fichier wordlist. Il est possible d'utiliser des mots clés. (par défaut le mot clé est FUZZ)     |
+| `-w <fichier>:<mot clé>`    | Spécifie le fichier wordlist. Il est possible d'utiliser des mots clés. (par défaut le mot clé est FUZZ)     |
 | `-o <fichier>`              | Spécifie le fichier de sortie.                                                                               |
 | `-t <nombre>`               | Spécifie le nombre de threads à utiliser. (40 par défaut)                                                    |
 
