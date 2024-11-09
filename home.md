@@ -2,7 +2,7 @@
 title: Accueil
 description: Page principale d'arrivée par défaut
 published: true
-date: 2024-09-08T08:59:44.036Z
+date: 2024-11-09T18:53:22.942Z
 tags: 
 editor: markdown
 dateCreated: 2024-04-14T15:03:48.620Z
@@ -14,8 +14,10 @@ Bienvenue sur le wiki de Léo MATHY, cet endroit regroupe différentes procédur
 
 **Mentions**
 
-Les publications sur ce site peuvent contenir des fautes, des incohérences, des erreurs et ne sont pas toujours complètes ou terminées. 
+Les publications sur ce site peuvent contenir des fautes, des incohérences, des erreurs et ne sont pas toujours complètes ou terminées.
 De plus, certaines définitions, explications ou descriptions peuvent être reprises depuis les documentations officielles (qui sont déjà rédigées de la meilleure façon possible).
+
+Les publications marquées "Synthèse" présentent l'essentiel des informations de manière concise, sans entrer dans les détails.
 
 Pour toute demande de contribution, merci de me contacter pour obtenir un accès.
 
@@ -33,4 +35,4 @@ Syntaxe basique utilisée lors de la rédaction
 | `<Élément>` | Élément requis |
 | `[Élément]` | Élément optionnel |
 
-[La syntaxe est basée sur la syntaxe Microsoft officielle](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v=ws.11))
+[La syntaxe est basée sur la syntaxe Microsoft officielle](<https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v=ws.11)>)
