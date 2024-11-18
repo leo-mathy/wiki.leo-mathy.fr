@@ -2,7 +2,7 @@
 title: hashcat
 description: hashcat est un puissant outil pour l'obtention de mots de passe avec diverse méthodes (brute-force, dictionnaire...).
 published: true
-date: 2024-11-10T17:27:10.228Z
+date: 2024-11-18T18:02:08.918Z
 tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-09-14T19:05:36.980Z
@@ -42,7 +42,7 @@ hashcat est un puissant outil pour l'obtention de mots de passe avec diverse mé
 | `--stdin-timeout-abort=<secondes>`     | Interrompt l'opération si aucune entrée n'est effectuée depuis le stdin depuis un certain nombre de secondes.                |
 | `--machine-readable`                   | Affiche le statut en mode lisible par des machines.                                                                          |
 | `--keep-guessing`                      | Continuer de chercher le hash après avoir été crack.                                                                         |
-| `--self-test-disable`                  | Désactive l'autodiagnotic au démarrage.                                                                                      |
+| `--self-test-disable`                  | Désactive l'autodiagnostic au démarrage.                                                                                     |
 | `--loopback`                           | Précise que les fichiers se situent dans le même répertoire. Cela évite de préciser le chemin absolu pour tous les fichiers. |
 | `--markov-hcstat2=<fichier hcstat2>`   | Précise l'emplacement du fichier hcstat2 à utiliser.                                                                         |
 | `-markov-disable`                      | Désactive les chaînes de Markov, utilise un brute-force classique.                                                           |
@@ -83,7 +83,7 @@ hashcat est un puissant outil pour l'obtention de mots de passe avec diverse mé
 | `--speed-only`                         | Affiche l'estimation du temps de l'attaque et quitte.                                                                        |
 | `--progress-only`                      | Affiche les étapes de progrès idéales et le temps de travail.                                                                |
 | `-c <taille en MB>`                    | Spécifie la taille du cache du dictionnaire.                                                                                 |
-| `--cpu-affinity=<coeurs cpu>`          | Précise les coeurs du processeur à utiliser (séparés par des virgules).                                                      |
+| `--cpu-affinity=<coeurs cpu>`          | Précise les cœurs du processeur à utiliser (séparés par des virgules).                                                       |
 | `--hook-threads=<nombre de threads>`   | Spécifie le nombre de threads pour un hook.                                                                                  |
 | `--hash-info`                          | Affiche les informations pour chaque mode de hash.                                                                           |
 | `--example-hashes`                     | Alias de --hash-info.                                                                                                        |
@@ -129,7 +129,7 @@ hashcat est un puissant outil pour l'obtention de mots de passe avec diverse mé
 | ----------------- | ----------------------------------- |
 | `1`               | hash:salt                           |
 | `2`               | Texte en clair                      |
-| `3`               | Héxadécimal en clair                |
+| `3`               | Hexadécimal en clair                |
 | `4`               | Format spécifique aux mots de passe |
 | `5`               | Horodatage absolu                   |
 | `6`               | Horodatage relatif                  |
@@ -138,6 +138,9 @@ hashcat est un puissant outil pour l'obtention de mots de passe avec diverse mé
 
 Crack le hash avec le dictionnaire rockyou.txt.
 `hashcat -m 5600 admin:1003:aad3b435b51404eeaad3b435b51404ee:5835048ce94ad0564e29a924a03510ef::: /usr/share/wordlists/rockyou.txt `
+
+Crack le hash en mode combinatoire avec le dictionnaire rockyou.txt et mydict.txt.
+`hashcat -m 5600 -a 1 admin:1003:aad3b435b51404eeaad3b435b51404ee:5835048ce94ad0564e29a924a03510ef::: /usr/share/wordlists/rockyou.txt ./mydict.txt`
 
 # Voir aussi
 
