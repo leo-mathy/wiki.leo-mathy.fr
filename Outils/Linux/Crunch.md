@@ -2,7 +2,7 @@
 title: Crunch
 description: Permet de générer des listes de mots en fonction de paramètres comme la longueur, les mots, les caractères ou encore un patron.Permet de générer des listes de mots en fonction de paramètres comme la longueur, les mots, les caractères ou encore un patern.
 published: true
-date: 2024-11-19T18:20:21.753Z
+date: 2024-11-19T18:21:04.767Z
 tags: outil, linux
 editor: markdown
 dateCreated: 2024-11-18T18:36:06.762Z
@@ -42,7 +42,7 @@ Crunch permet de générer des listes de mots en fonction de paramètres comme l
 # Exemples
 
 Génère une wordlist de root001 à root999 vers le fichier wordlist.txt
-`crunch -t root%%% -o wordlist.txt`
+`crunch 7 7 -t root%%% -o wordlist.txt`
 
 # Voir aussi
 
