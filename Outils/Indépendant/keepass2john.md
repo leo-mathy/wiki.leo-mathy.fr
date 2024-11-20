@@ -2,7 +2,7 @@
 title: keepass2john
 description: Extrait un hash utilisable par HashCat/John depuis une base KeePass 1.x/2.x.
 published: true
-date: 2024-10-25T20:44:10.632Z
+date: 2024-11-20T17:52:56.004Z
 tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-09-14T11:08:05.830Z
@@ -23,3 +23,6 @@ keepass2john est un script python qui extrait un hash utilisable par HashCat/Joh
 
 Extrait le hash au format utilisable pas HashCast/John depuis la base "MyPasswords.kdbx".
 `keepass2john.py MyPasswords.kdbx`
+
+Autres scripts dans John the Ripper qui permettent l'extraction des hashes.
+https://github.com/openwall/john/tree/bleeding-jumbo/run
