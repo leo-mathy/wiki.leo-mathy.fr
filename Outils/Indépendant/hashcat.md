@@ -2,7 +2,7 @@
 title: hashcat
 description: hashcat est un puissant outil pour l'obtention de mots de passe avec diverse méthodes (brute-force, dictionnaire...).
 published: true
-date: 2024-11-20T16:59:02.014Z
+date: 2024-11-20T17:09:31.260Z
 tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-09-14T19:05:36.980Z
@@ -152,3 +152,12 @@ https://hashcat.net/wiki/doku.php?id=example_hashes
 
 Liste des fonctions pour les attaque basées sur des règles
 https://hashcat.net/wiki/doku.php?id=rule_based_attack#implemented_compatible_functions
+
+Fichiers de règles nsa-rules
+https://github.com/NSAKEY/nsa-rules
+
+Fichiers de règles Hob0Rules
+https://github.com/praetorian-inc/Hob0Rules
+
+Fichier de règles pour cibler des politiques de mots de passe Windows (depuis le livre HackLikeALegend)
+https://github.com/sparcflow/HackLikeALegend/blob/master/old/chap3/corporate.rule
