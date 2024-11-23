@@ -2,7 +2,7 @@
 title: hashcat
 description: hashcat est un puissant outil pour l'obtention de mots de passe avec diverse méthodes (brute-force, dictionnaire...).
 published: true
-date: 2024-11-20T17:09:31.260Z
+date: 2024-11-23T08:46:34.725Z
 tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-09-14T19:05:36.980Z
@@ -122,6 +122,10 @@ hashcat est un puissant outil pour l'obtention de mots de passe avec diverse mé
 | `0`                                   | [Attaque basées sur des règles](https://hashcat.net/wiki/doku.php?id=rule_based_attack) |
 | `supporté avec des règles uniquement` | [Attaque à bascule](https://hashcat.net/wiki/doku.php?id=toggle_case_attack)            |
 | `9`                                   | [Attaque par association](https://hashcat.net/wiki/doku.php?id=association_attack)      |
+
+> Des listes de règles sont disponibles par défaut à l'emplacement /usr/share/hashcat/rules/
+{.is-info}
+
 
 # Formats de sortie
 
