@@ -2,8 +2,8 @@
 title: sqlmap
 description: Outil d'automatisation de détection et d'exploitation de failles SQLi (SQL Injection).
 published: true
-date: 2024-11-23T17:03:59.561Z
-tags: outil, indépendant
+date: 2024-11-23T17:04:36.228Z
+tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-23T16:26:24.352Z
 ---
