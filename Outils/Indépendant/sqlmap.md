@@ -2,7 +2,7 @@
 title: sqlmap
 description: Outil d'automatisation de détection et d'exploitation de failles SQLi (SQL Injection).
 published: true
-date: 2024-11-23T17:04:36.228Z
+date: 2024-11-23T17:23:42.143Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-23T16:26:24.352Z
@@ -36,9 +36,9 @@ sqlmap est un outil d'automatisation de détection et d'exploitation de failles 
 | `-H <header>/ --header <header>`    | Spécifie les valeurs des headers.                                                                                                                                                  |
 | `--random-agent`                    | Utilise une valeur aléatoire parmi une liste pour le champ User-agent (par défaut la valeur de ce champ est sqlmap). Cela est utile pour contourner certaines mesures de sécurité. |
 | `--method <méthode HTTP>`           | Spécifie une autre méthode HTTP pour effectuer la requête.                                                                                                                         |
-| `-h`                                | Afficher l'aide basique.                                                                                                                                                           |
-| `-h`                                | Afficher l'aide basique.                                                                                                                                                           |
-| `-h`                                | Afficher l'aide basique.                                                                                                                                                           |
+| `--dump`                                | Récupère toutes les entrées d'une ou plusieurs tables.                                                                                                                                                           |
+| `-T <table>`                                | Spécifie la table à récupérer.                                                                                                                                                           |
+| `--parse-errors`                                | Afficher les erreurs du SGBD dans le terminal.                                                                                                                                                           |
 | `-h`                                | Afficher l'aide basique.                                                                                                                                                           |
 | `-h`                                | Afficher l'aide basique.                                                                                                                                                           |
 | `-h`                                | Afficher l'aide basique.                                                                                                                                                           |
