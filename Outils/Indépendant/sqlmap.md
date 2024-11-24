@@ -2,7 +2,7 @@
 title: sqlmap
 description: Outil d'automatisation de détection et d'exploitation de failles SQLi (SQL Injection).
 published: true
-date: 2024-11-24T14:12:16.325Z
+date: 2024-11-24T14:12:56.193Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-23T16:26:24.352Z
@@ -56,6 +56,7 @@ sqlmap est un outil d'automatisation de détection et d'exploitation de failles 
 | `--current-user`                                | Récupère le nom de l'utilisateur actuel.                                                                                                                                                         |
 | `--current-db`                                | Récupère le nom de la base de données actuelle.                                                                                                                                                         |
 | `--is-dba`                                | Indique si l'utilisateur actuel a des droits d'administrateurs de la base de données.                                                                                                                                                         |
+| `-D <base de données>`                                | Précise la base de données dans laquelle effectuer les opérations.                                                                                                                                                         |
 
 
 
