@@ -2,7 +2,7 @@
 title: sqlmap
 description: Outil d'automatisation de détection et d'exploitation de failles SQLi (SQL Injection).
 published: true
-date: 2024-11-24T15:10:46.109Z
+date: 2024-11-24T16:48:05.569Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-23T16:26:24.352Z
@@ -72,6 +72,9 @@ sqlmap est un outil d'automatisation de détection et d'exploitation de failles 
 | `--tor`                             | Utilise le réseau Tor comme proxy.                                                                                                                                                 |
 | `--tamper <script>`                 | Utilise un script d'altération de la requête.                                                                                                                                      |
 | `--list-tampers`                    | Liste les scripts pythons utilisables pour altérer les requêtes.                                                                                                                   |
+| `--file-read <fichier>`                    | Récupère un fichier depuis la cible.                                                                                                                   |
+
+
 
 # Exemples
 
