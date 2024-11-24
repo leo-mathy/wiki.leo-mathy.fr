@@ -2,7 +2,7 @@
 title: sqlmap
 description: Outil d'automatisation de détection et d'exploitation de failles SQLi (SQL Injection).
 published: true
-date: 2024-11-24T14:16:57.266Z
+date: 2024-11-24T14:18:27.923Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-23T16:26:24.352Z
@@ -59,6 +59,11 @@ sqlmap est un outil d'automatisation de détection et d'exploitation de failles 
 | `-D <base de données>`                                | Précise la base de données dans laquelle effectuer les opérations.                                                                                                                                                         |
 | `--dump-format <format>`                                | Spécifie le format à utiliser lors de la récupération des tables. (csv par défaut)                                                                                                                                                         |
 | `-C <colonnes>`                                | Spécifie le nom des colonnes à récupérer.                                                                                                                                                         |
+| `--start <numéro de ligne>`                                | Spécifie la ligne de début à récupérer.                                                                                                                                                       |
+| `--stop <numéro de ligne>`                                | Spécifie la ligne de fin à récupérer.                                                                                                                                                        |
+
+
+
 
 
 
