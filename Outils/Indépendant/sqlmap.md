@@ -2,7 +2,7 @@
 title: sqlmap
 description: Outil d'automatisation de détection et d'exploitation de failles SQLi (SQL Injection).
 published: true
-date: 2024-11-24T13:49:29.999Z
+date: 2024-11-24T14:12:16.325Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-23T16:26:24.352Z
@@ -38,6 +38,7 @@ sqlmap est un outil d'automatisation de détection et d'exploitation de failles 
 | `--method <méthode HTTP>`           | Spécifie une autre méthode HTTP pour effectuer la requête.                                                                                                                         |
 | `--dump`                                | Récupère toutes les entrées d'une ou plusieurs tables.                                                                                                                                                           |
 | `-T <table>`                                | Spécifie la table à récupérer.                                                                                                                                                           |
+| `--tables`                                | Liste les tables présentes dans la base de données.                                                                                                                                                           |
 | `--parse-errors`                                | Afficher les erreurs du SGBD dans le terminal.                                                                                                                                                           |
 | `-t <fichier>`                                | Stocke les requètes et réponses dans un fichier.                                                                                                                                                           |
 | `-v <niveau>`                                | Spécifie le niveau du mode verbose.                                                                                                                                                           |
@@ -51,7 +52,10 @@ sqlmap est un outil d'automatisation de détection et d'exploitation de failles 
 | `--string <valeur>`                                | Spécifie une valeur pour la détection des réponses VRAI.                                                                                                                                                         |
 | `--text-only`                                | Se base uniquement sur le texte affiché pour la détection des réponses VRAI.                                                                                                                                                         |
 | `--technique <technique(s)>`                                | Spécifie les techniques SQLi à utiliser.                                                                                                                                                         |
-| `--string <valeur>`                                | Spécifie une valeur pour la détection des réponses VRAI.                                                                                                                                                         |
+| `--banner`                                | Récupère la bannière.                                                                                                                                                         |
+| `--current-user`                                | Récupère le nom de l'utilisateur actuel.                                                                                                                                                         |
+| `--current-db`                                | Récupère le nom de la base de données actuelle.                                                                                                                                                         |
+| `--is-dba`                                | Indique si l'utilisateur actuel a des droits d'administrateurs de la base de données.                                                                                                                                                         |
 
 
 
