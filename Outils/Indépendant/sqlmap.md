@@ -2,7 +2,7 @@
 title: sqlmap
 description: Outil d'automatisation de détection et d'exploitation de failles SQLi (SQL Injection).
 published: true
-date: 2024-11-24T14:23:30.760Z
+date: 2024-11-24T14:23:36.254Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-23T16:26:24.352Z
@@ -38,7 +38,7 @@ sqlmap est un outil d'automatisation de détection et d'exploitation de failles 
 | `--method <méthode HTTP>`           | Spécifie une autre méthode HTTP pour effectuer la requête.                                                                                                                         |
 | `--dump`                                | Récupère toutes les entrées d'une ou plusieurs tables.                                                                                                                                                           |
 | `--dump-all`                                | Récupère toutes les entrées de toutes les tables de toutes les bases de données.                                                                                                                                                           |
-| `--exclude-sysdbs`                                | Né récupère pas les bases de données systèmes du SGBD.                                                                                                                                           |
+| `--exclude-sysdbs`                                | Né récupère pas les bases de données systèmes.                                                                                                                                           |
 | `-T <table>`                                | Spécifie la table à récupérer.                                                                                                                                                           |
 | `--tables`                                | Liste les tables présentes dans la base de données.                                                                                                                                                           |
 | `--parse-errors`                                | Afficher les erreurs du SGBD dans le terminal.                                                                                                                                                           |
