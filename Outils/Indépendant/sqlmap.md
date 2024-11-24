@@ -2,7 +2,7 @@
 title: sqlmap
 description: Outil d'automatisation de détection et d'exploitation de failles SQLi (SQL Injection).
 published: true
-date: 2024-11-24T13:45:11.585Z
+date: 2024-11-24T13:49:29.999Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-23T16:26:24.352Z
@@ -50,7 +50,7 @@ sqlmap est un outil d'automatisation de détection et d'exploitation de failles 
 | `--titles <titre>`                                | Spécifie le contenu de la balise title pour la détection des réponses VRAI.                                                                                                                                                         |
 | `--string <valeur>`                                | Spécifie une valeur pour la détection des réponses VRAI.                                                                                                                                                         |
 | `--text-only`                                | Se base uniquement sur le texte affiché pour la détection des réponses VRAI.                                                                                                                                                         |
-| `--string <valeur>`                                | Spécifie une valeur pour la détection des réponses VRAI.                                                                                                                                                         |
+| `--technique <technique(s)>`                                | Spécifie les techniques SQLi à utiliser.                                                                                                                                                         |
 | `--string <valeur>`                                | Spécifie une valeur pour la détection des réponses VRAI.                                                                                                                                                         |
 
 
