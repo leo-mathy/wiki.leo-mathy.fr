@@ -2,7 +2,7 @@
 title: sqlmap
 description: Outil d'automatisation de détection et d'exploitation de failles SQLi (SQL Injection).
 published: true
-date: 2024-11-24T14:42:06.250Z
+date: 2024-11-24T14:50:23.894Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-23T16:26:24.352Z
@@ -67,6 +67,12 @@ sqlmap est un outil d'automatisation de détection et d'exploitation de failles 
 | `--schema`                                | Affiche l'architecture complète de la base de données.                                                                                                                                               |
 | `--search`                                | Spécifie que l'élément indiquée (table, colonne, base de données) est une recherche.                                                                                                                                               |
 | `--passwords`                                | Énumère les hashes des utilisateurs du SGBD.                                                                                                                                               |
+| `--csrf-token=<nom du token>`                                | Défini le nom du token anti-CSRF pour le réutiliser dans les prochaines requètes..                                                                                                                                               |
+| `--randomize=<champ>`                                | Défini le champ dans la requète à rendre aléatoire.                                                                                                                                               |
+| `--tor`                                | Utilise le réseau Tor comme proxy.                                                                                                                                               |
+
+
+
 
 
 # Exemples
