@@ -2,7 +2,7 @@
 title: sqlmap
 description: Outil d'automatisation de détection et d'exploitation de failles SQLi (SQL Injection).
 published: true
-date: 2024-11-24T14:32:36.909Z
+date: 2024-11-24T14:33:10.978Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-23T16:26:24.352Z
@@ -69,18 +69,12 @@ sqlmap est un outil d'automatisation de détection et d'exploitation de failles 
 | `--passwords`                                | Énumère les hashes des utilisateurs du SGBD.                                                                                                                                               |
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 # Exemples
 
 # Voir aussi
+
+Documentation officielle
+https://github.com/sqlmapproject/sqlmap/wiki
+
+Usage de sqlmap
+https://github.com/sqlmapproject/sqlmap/wiki/usage
