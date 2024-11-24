@@ -2,7 +2,7 @@
 title: sqlmap
 description: Outil d'automatisation de détection et d'exploitation de failles SQLi (SQL Injection).
 published: true
-date: 2024-11-24T13:30:35.284Z
+date: 2024-11-24T13:32:28.343Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-23T16:26:24.352Z
@@ -44,6 +44,8 @@ sqlmap est un outil d'automatisation de détection et d'exploitation de failles 
 | `--proxy <adresse>`                                | Spécifie le proxy à utiliser.                                                                                                                                                           |
 | `--level <1-5>`                                | Spécifie le niveau de vecteurs et limites à utiliser. (1 par défaut)                                                                                                                                                            |
 | `--risk <1-3>`                                | Spécifie le niveau de vecteurs, basé sur le risque de problème au niveau de la cible. (1 par défaut)                                                                                                                                                           |
+| `--prefix <préfixe>`                                | Spécifie le préfixe du vecteur.                                                                                                                                                          |
+| `--suffix <suffixe>`                                | Spécifie le suffixe du vecteur.                                                                                                                                                         |
 
 # Exemples
 
