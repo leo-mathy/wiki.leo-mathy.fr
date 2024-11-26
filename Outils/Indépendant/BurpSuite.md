@@ -1,8 +1,8 @@
 ---
 title: BurpSuite
-description: Puissant outil proxy d'analyse et de test de sécurité d'applications web, d'interception et de modification du trafic HTTP/S.
+description: Puissant proxy d'analyse et de test de sécurité d'applications web, d'interception et de modification du trafic HTTP/S.
 published: true
-date: 2024-11-26T18:41:24.264Z
+date: 2024-11-26T18:41:42.075Z
 tags: outil, indépendant, interface graphique
 editor: markdown
 dateCreated: 2024-11-26T18:40:08.144Z
