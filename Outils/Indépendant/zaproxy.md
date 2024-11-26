@@ -2,8 +2,8 @@
 title: zaproxy
 description: Puissant proxy open source d'analyse et de test de sécurité d'applications web, d'interception et de modification du trafic HTTP/S.
 published: true
-date: 2024-11-26T18:42:07.327Z
-tags: outil, indépendant, interface graphique
+date: 2024-11-26T18:42:29.283Z
+tags: outil, indépendant, interface graphique, synthèse
 editor: markdown
 dateCreated: 2024-11-26T18:34:45.443Z
 ---
