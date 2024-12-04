@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-04T18:12:02.415Z
+date: 2024-12-04T18:13:06.522Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -54,8 +54,8 @@ Il est possible de directement passer a un niveau différent théoriquement (att
 | ------------------------- | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -- |
 | 1. Présence sur Internet  | Identifier la présence sur Internet et de l'infrastructure accessible extérieurement.                           | Domaines, sous-domaines, virtual hosts, cloud, adresses IP, mesures de sécurité, ASN, blocs de réseau...                                              | Identifier tous les systèmes et interfaces cibles qui peuvent être testés |
 | 2. Passerelles            | Identifier les possibles mesures de sécurités pour protéger l'infrastructure externe et interne à l'entreprise. | Pares-feu, DMZ, IPS/IDS, EDR, proxies, NAC, segmentation réseau, VPN...                                                                               | Comprendre avec quoi nous avons affaire et ce qu'il faut regarder. |
-| 3. Services accessibles   | Identifier les interfaces et services hébergés internes ou externes.                                            | type de service, fonctionnalités, configuration, ports, version, interface...                                                                         | Comprendre la raison de la présence et les fonctionnalitées du système cible, obtenir les connaissances pour communiquer et exploiter efficacement le système.
-| 4. Processus              | Identifier les processus internes, ainsi que les sources et destinations.                                       | PID, données traitées, tâches, source, destination...                                                                                                 |
+| 3. Services accessibles   | Identifier les interfaces et services hébergés internes ou externes.                                            | type de service, fonctionnalités, configuration, ports, version, interface...                                                                         | Comprendre la raison de la présence et les fonctionnalitées du système cible, obtenir les connaissances pour communiquer et exploiter efficacement le système. |
+| 4. Processus              | Identifier les processus internes, ainsi que les sources et destinations.                                       | PID, données traitées, tâches, source, destination...                                                                                                 | Identifier les facteurs et les dépendances entre les processus.
 | 5. Privilèges             | Identifier les permissions et privilèges au niveau des services accessibles.                                    | groupes, utilisateurs, permissions, restrictions, environnement...                                                                                    |
 | 6. Système d'exploitation | Identifier les composants internes et la configuration des systèmes.                                            | Type de système d'exploitation, niveau de patch, configuration réseau, environement du système d'exploitation, fichiers de configuration, fichiers... |
 
