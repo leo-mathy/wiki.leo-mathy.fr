@@ -2,7 +2,7 @@
 title: Funnel
 description: 
 published: true
-date: 2024-12-04T08:04:24.203Z
+date: 2024-12-04T08:05:02.560Z
 tags: htb, writeups
 editor: markdown
 dateCreated: 2024-12-04T08:04:24.203Z
