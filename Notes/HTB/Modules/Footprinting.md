@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-04T17:25:44.298Z
+date: 2024-12-04T17:26:57.881Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -40,6 +40,14 @@ Les processus complexes doivent avoir des méthodologies standardisées pour ne 
 Parfois la méthodologie n'est pas standardisée mais suit une approche basée sur l'expérience.
 
 Une méthodologie statique est possible, celle-ci se compose de 6 couches, et représente les limites à franchir durant le processus d'énumération.
+
+Le processus peut être divisé en 3 différents niveaux:
+- énumération basé sur l'infrastructure
+- énumération basé de l'hôte
+- énumération basé sur le système d'exploitation
+
+
+
 
 
 
