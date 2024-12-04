@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-04T17:40:00.412Z
+date: 2024-12-04T17:51:09.686Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -50,4 +50,9 @@ Il est possible de directement passer a un niveau différent théoriquement (att
 
 | Couche | Description | Catégories |
 | -------- | ----------- | -- |
-| `...`    | ...         | |
+| 1. Présence sur Internet   | Identification de la présence sur Internet et de l'infrastructure accesible externalement.         | Domaines, sous-domaines, virtual hosts, cloud, adresses IP, mesures de sécurité, ASN, blocs de réseau...   |
+| 2. Passerelles    | Identifier les possibles mesures de sécurités pour proteger l'infrastructure externe et interne à l'entreprise.         | Pares-feu, DMZ, IPS/IDS, EDR, proxies, NAC, segmentation réseau, VPN... |
+| 3. Services accesibles    | ...         | |
+| 4. Processus   | ...         | |
+| 5. Privilèges   | ...         | |
+| 6. Système d'exploitation   | ...         | |
