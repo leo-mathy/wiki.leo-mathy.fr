@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-04T17:39:12.444Z
+date: 2024-12-04T17:40:00.412Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -41,20 +41,13 @@ Parfois la méthodologie n'est pas standardisée mais suit une approche basée s
 
 Une méthodologie statique est possible, celle-ci se compose de 6 couches, et représente les limites à franchir durant le processus d'énumération.
 
-Le processus peut être divisé en 3 différents niveaux:
+Le processus peut être divisé en 3 différents niveaux (composés de couches):
 - énumération basé sur l'infrastructure (Système d'exploitation/Privilèges)
 - énumération basé de l'hôte ( Processus/Services accesibles)
 - énumération basé sur le système d'exploitation (Passerelles/Présence sur Internet)
 
 Il est possible de directement passer a un niveau différent théoriquement (atteindre directement l'hôte par exemple) avec beaucoup d'efforts. Mais cela n'apporte pas grand chose puisqu'il est possible de ne pas pouvoir aller plus loin (bloqué à un niveau) si la méthodologie n'est pas suivie.
 
-
-
-
-
-
-
-
-| Intitulé | Description |
-| -------- | ----------- |
-| `...`    | ...         |
+| Couche | Description | Catégories |
+| -------- | ----------- | -- |
+| `...`    | ...         | |
