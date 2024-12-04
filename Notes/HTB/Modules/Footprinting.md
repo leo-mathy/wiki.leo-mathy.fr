@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-04T17:18:00.831Z
+date: 2024-12-04T17:25:44.298Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -33,6 +33,13 @@ Les 3 grands principes:
 - Il faut faire la diférence entre ce que l'on voit et ce que l'ont ne voit pas
 - Il y à toujours un moyen d'obtenir plus d'informations. Il faut comprendre la cible.
 
+## Enumeration Methodology
+
+Les processus complexes doivent avoir des méthodologies standardisées pour ne pas oublier les aspects.
+
+Parfois la méthodologie n'est pas standardisée mais suit une approche basée sur l'expérience.
+
+Une méthodologie statique est possible, celle-ci se compose de 6 couches, et représente les limites à franchir durant le processus d'énumération.
 
 
 
