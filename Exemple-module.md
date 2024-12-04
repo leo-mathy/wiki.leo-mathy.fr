@@ -2,27 +2,20 @@
 title: Page d'exemple - module
 description: 
 published: true
-date: 2024-12-04T09:33:20.646Z
+date: 2024-12-04T09:36:59.623Z
 tags: 
 editor: markdown
 dateCreated: 2024-12-04T09:33:20.645Z
 ---
 
-# Introduction
+# [nom du module]
 
->  [lien](https://leo-mathy.fr)
-{.is-info}
+Date de complétion: [XX/XX/XXXX]
 
-# Syntaxe
+# Notes
 
-`...`
+## Sous-partie X
 
-# Paramètres
-
-| Paramètre | Description |
-| --------- | ----------- |
-| `...`     | ...         |
-
-# Exemples
-
-# Voir aussi
+| Intitulé | Description |
+| -------- | ----------- |
+| `...`    | ...         |
