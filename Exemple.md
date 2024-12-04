@@ -2,7 +2,7 @@
 title: Page d'exemple - défaut
 description: 
 published: true
-date: 2024-12-04T08:09:51.127Z
+date: 2024-12-04T09:32:13.270Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-22T12:00:58.913Z
