@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-04T17:53:02.098Z
+date: 2024-12-04T17:57:50.453Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -24,13 +24,14 @@ L'énumération est une boucle dans laquelle les informations sont collectées �
 
 L'information peut être récupérée depuis les domaines, adresses IP, services accessibles...
 
-Une fois les cibles identifiées dans le système cible, il faut éxaminer les services et protocoles. ces services permettent la communication aux clients, l'infrastructure, l'administration ou encore les employées.
+Une fois les cibles identifiées dans le système cible, il faut examiner les services et protocoles. ces services permettent la communication aux clients, l'infrastructure, l'administration ou encore les employées.
 
 **le but n'est pas d'atteindre les systèmes mais de trouver tous les moyens d'y arriver**
 
 Les 3 grands principes:
+
 - Il y a toujours plus que ce que l'on voit
-- Il faut faire la diférence entre ce que l'on voit et ce que l'ont ne voit pas
+- Il faut faire la différence entre ce que l'on voit et ce que l'ont ne voit pas
 - Il y à toujours un moyen d'obtenir plus d'informations. Il faut comprendre la cible.
 
 ## Enumeration Methodology
@@ -42,17 +43,18 @@ Parfois la méthodologie n'est pas standardisée mais suit une approche basée s
 Une méthodologie statique est possible, celle-ci se compose de 6 couches, et représente les limites à franchir durant le processus d'énumération.
 
 Le processus peut être divisé en 3 différents niveaux (composés de couches):
+
 - énumération basé sur l'infrastructure (Système d'exploitation/Privilèges)
 - énumération basé de l'hôte ( Processus/Services accesibles)
 - énumération basé sur le système d'exploitation (Passerelles/Présence sur Internet)
 
 Il est possible de directement passer a un niveau différent théoriquement (atteindre directement l'hôte par exemple) avec beaucoup d'efforts. Mais cela n'apporte pas grand chose puisqu'il est possible de ne pas pouvoir aller plus loin (bloqué à un niveau) si la méthodologie n'est pas suivie.
 
-| Couche | Description | Catégories |
-| -------- | ----------- | -- |
-| 1. Présence sur Internet   | Identifier la présence sur Internet et de l'infrastructure accesible externalement.         | Domaines, sous-domaines, virtual hosts, cloud, adresses IP, mesures de sécurité, ASN, blocs de réseau...   |
-| 2. Passerelles    | Identifier les possibles mesures de sécurités pour proteger l'infrastructure externe et interne à l'entreprise.         | Pares-feu, DMZ, IPS/IDS, EDR, proxies, NAC, segmentation réseau, VPN... |
-| 3. Services accesibles    | Identifier les interfaces et services hebergés internes ou externes.        | type de service, fonctionnalités, configuration, ports, version, interface... |
-| 4. Processus   | Identifier les processus internes, ainsi que les sources et destinations.         | |
-| 5. Privilèges   | ...         | |
-| 6. Système d'exploitation   | ...         | |
+| Couche                    | Description                                                                                                     | Catégories                                                                                                                                            |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. Présence sur Internet  | Identifier la présence sur Internet et de l'infrastructure accessible extérieurement.                           | Domaines, sous-domaines, virtual hosts, cloud, adresses IP, mesures de sécurité, ASN, blocs de réseau...                                              |
+| 2. Passerelles            | Identifier les possibles mesures de sécurités pour protéger l'infrastructure externe et interne à l'entreprise. | Pares-feu, DMZ, IPS/IDS, EDR, proxies, NAC, segmentation réseau, VPN...                                                                               |
+| 3. Services accessibles   | Identifier les interfaces et services hébergés internes ou externes.                                            | type de service, fonctionnalités, configuration, ports, version, interface...                                                                         |
+| 4. Processus              | Identifier les processus internes, ainsi que les sources et destinations.                                       | PID, données traitées, tâches, source, destination...                                                                                                 |
+| 5. Privilèges             | Identifier les permissions et privilèges au niveau des services accessibles.                                    | groupes, utilisateurs, permissions, restrictions, environnement...                                                                                    |
+| 6. Système d'exploitation | Identifier les composants internes et la configuration des systèmes.                                            | Type de système d'exploitation, niveau de patch, configuration réseau, environement du système d'exploitation, fichiers de configuration, fichiers... |
