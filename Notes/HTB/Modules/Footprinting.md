@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-04T18:20:26.121Z
+date: 2024-12-04T18:20:47.815Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -66,3 +66,6 @@ De plus, toutes les failles trouvées au cours de l'énumération ne permettent 
 **Une méthodologie est un résumé des procédures systématiques.** Ce n'est pas un guide pas à pas.
 
 Dans notre cas, ce sont les procédures systématiques à appliquer pour explorer une cible donnée.
+
+## Domain Information
+
