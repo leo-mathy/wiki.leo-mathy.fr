@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-09T13:04:45.699Z
+date: 2024-12-09T13:07:17.120Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -103,3 +103,8 @@ Utiliser Shodan permet de rester en mode passif sans scan actif de notre part.
 
 Rechercher un hôte avec une adresse IP sur Shodan:
 `shodan host [IP]`
+
+Arpès les certificats, il est possible d'afficher les entrées DNS publiques.
+
+Recupèrer tous les enregistrements DNS pour le domaine spécifié:
+`dig any <domaine>`
