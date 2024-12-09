@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-09T11:30:28.036Z
+date: 2024-12-09T12:34:27.118Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -79,4 +79,5 @@ En utilisant une méthode passive il est possible d'utiliser des outils tiers po
 
 Lors de l'inspection du site web de l'organisation il faut garder à l'esprit quelles technologies et structures sont nécéssaires pour ces services.
 
-Les services peuvent être liés à un secteur spécifique, il est possible de rencontrer un service que l'on ne connait pas,
+Les services peuvent être liés à un secteur spécifique, il est possible de rencontrer un service que l'on ne connait pas, dans ce cas il est nécéssaire de le comprendre et de trouver les opportunités qui sont disponibles. Ces services peuvent aussi indiquer comment l'organisation est structurée.
+
