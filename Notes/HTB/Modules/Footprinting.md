@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-09T13:07:17.120Z
+date: 2024-12-09T13:17:12.270Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -104,7 +104,14 @@ Utiliser Shodan permet de rester en mode passif sans scan actif de notre part.
 Rechercher un hôte avec une adresse IP sur Shodan:
 `shodan host [IP]`
 
-Arpès les certificats, il est possible d'afficher les entrées DNS publiques.
+Arpès les certificats, il est possible d'afficher les entrées et champs dans le DNS publique.
 
-Recupèrer tous les enregistrements DNS pour le domaine spécifié:
+Recupèrer tous les champs DNS pour le domaine spécifié:
 `dig any <domaine>`
+
+Les enregistrements de type A contiennent les addresses du domaine donnée,
+les enregistrements de type MX contiennent les addresses du serveur mail,
+les enregistrements de type NS contiennenet les addreses des serveurs DNS qui font authorités pour le domaine,
+les enregistrements TXT contiennent des informations en tout genre (SPF,DKIM,DMARC...)
+
+## Cloud Resources
