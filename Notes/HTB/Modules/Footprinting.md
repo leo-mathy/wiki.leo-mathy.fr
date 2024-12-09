@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-09T13:03:41.216Z
+date: 2024-12-09T13:04:45.699Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -98,6 +98,8 @@ Il possible de générer les addresses IP de chaque domaine par la suite.
 
 Shodan est utilisé pour trouver les appareils et systèmes connectés en permanence à Internet. Il scan Internet à la recherche de ports TCP/IP et filtre les découvertes en fonction de critères et de termes.
 Cela permet de trouver des appareils comme des caméras IP, des serveurs, des appareils de domotique...
+
+Utiliser Shodan permet de rester en mode passif sans scan actif de notre part.
 
 Rechercher un hôte avec une adresse IP sur Shodan:
 `shodan host [IP]`
