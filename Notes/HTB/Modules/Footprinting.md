@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-09T11:21:30.727Z
+date: 2024-12-09T11:22:38.950Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -78,4 +78,3 @@ La partie OSINT présentée dans ce module est juste une petite partie de ce qu'
 En utilisant une méthode passive il est possible d'utiliser des outils tiers pour mieux comprendre l'organisation.
 
 Lors de l'inspection du site web de l'organisation il faut garder à l'esprit quelles technologies et structures sont nécéssaires pour ces services.
-
