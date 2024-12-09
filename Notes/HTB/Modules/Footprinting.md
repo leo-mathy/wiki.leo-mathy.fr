@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-09T12:46:49.396Z
+date: 2024-12-09T12:52:41.149Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -85,3 +85,6 @@ Une fois que l'on a une compréhension basique de l'organisation et de la struct
 
 Le premier point de présence sur Internet peut être le certificat SLL. Celui-ci peut contenir plusieurs SAN (Subject Alternative Name), ce qui peut indiquer d'autres domaines (probablements actifs).
 
+Un autre moyen est de récupèrer les logs de Transparence de certificat (Certificate Transparency). Ces logs contiennent tous les certificats émis par une authoritée de certification à des fins de contrôle (certificats émis à des fins malveillantes pour un domaine).
+
+Les authoritées de certifications partages ces informations avec l'interface web crt.sh, qui stocke ces informations pour une récupèration ultèrieure.
