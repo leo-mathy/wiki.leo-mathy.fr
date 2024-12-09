@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-09T11:18:17.496Z
+date: 2024-12-09T11:21:30.727Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -73,7 +73,9 @@ Présence sur Internet de l'organisation.
 
 Ce type d'information est récupérée de manière passive. (navigation en tant que client/visiteur). Il faut éviter les connections directes pour limiter l'exposition.
 
-La partie OSINT présentée est juste une petite partie de ce qu'il est possible de faire en utilisant ces techniques.
+La partie OSINT présentée dans ce module est juste une petite partie de ce qu'il est possible de faire en utilisant ces techniques.
 
+En utilisant une méthode passive il est possible d'utiliser des outils tiers pour mieux comprendre l'organisation.
 
+Lors de l'inspection du site web de l'organisation il faut garder à l'esprit quelles technologies et structures sont nécéssaires pour ces services.
 
