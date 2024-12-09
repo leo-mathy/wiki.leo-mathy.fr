@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-09T11:16:36.379Z
+date: 2024-12-09T11:18:17.496Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -71,7 +71,9 @@ Dans notre cas, ce sont les procédures systématiques à appliquer pour explore
 
 Présence sur Internet de l'organisation.
 
-Ce type d'information est récupérée de manière passive. (navigation en tant que client/visiteur)
+Ce type d'information est récupérée de manière passive. (navigation en tant que client/visiteur). Il faut éviter les connections directes pour limiter l'exposition.
+
+La partie OSINT présentée est juste une petite partie de ce qu'il est possible de faire en utilisant ces techniques.
 
 
 
