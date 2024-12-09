@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-09T12:55:06.470Z
+date: 2024-12-09T13:03:41.216Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -90,4 +90,14 @@ Un autre moyen est de récupèrer les logs de Transparence de certificat (Certif
 Les authoritées de certifications partages ces informations avec l'interface web crt.sh, qui stocke ces informations pour une récupèration ultèrieure.
 
 Il est possible de récupèrer ces informations sous format json avec la commande suivante:
-`curl -s https://crt.sh/\?q\=inlanefreight.com\&output\=json | jq .`
+`curl -s https://crt.sh/\?q\=<domaine>\&output\=json | jq .`
+
+Il est possible de filtrer ces informations pour retirer les domaines tiers (les domaines tiers de pouvant pas être testés sans l'accord du tiers).
+
+Il possible de générer les addresses IP de chaque domaine par la suite.
+
+Shodan est utilisé pour trouver les appareils et systèmes connectés en permanence à Internet. Il scan Internet à la recherche de ports TCP/IP et filtre les découvertes en fonction de critères et de termes.
+Cela permet de trouver des appareils comme des caméras IP, des serveurs, des appareils de domotique...
+
+Rechercher un hôte avec une adresse IP sur Shodan:
+`shodan host [IP]`
