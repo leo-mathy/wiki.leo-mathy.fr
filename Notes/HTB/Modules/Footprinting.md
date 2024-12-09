@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-09T12:53:21.285Z
+date: 2024-12-09T12:55:06.470Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -88,3 +88,6 @@ Le premier point de présence sur Internet peut être le certificat SLL. Celui-c
 Un autre moyen est de récupèrer les logs de Transparence de certificat (Certificate Transparency). Ces logs contiennent tous les certificats émis par une authoritée de certification à des fins de contrôle (certificats émis à des fins malveillantes pour un domaine).
 
 Les authoritées de certifications partages ces informations avec l'interface web crt.sh, qui stocke ces informations pour une récupèration ultèrieure.
+
+Il est possible de récupèrer ces informations sous format json avec la commande suivante:
+`curl -s https://crt.sh/\?q\=inlanefreight.com\&output\=json | jq .`
