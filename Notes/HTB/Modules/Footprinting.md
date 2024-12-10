@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T09:16:29.877Z
+date: 2024-12-10T09:17:56.223Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -171,3 +171,5 @@ Toutes les commandes de la norme ne sont pas forcéments implémentés de maniè
 **Le protocol FTP communique en clair, c'est à dire qu'il peut être écouté si les conditions sont présentes.**
 
 Il est possible que le serveur offre la fonction de FTP Anonyme. C'est à dire que le serveur autorise le téléchargement et l'envoi de fichiers sans l'utilisation d'un mot de passe.
+
+Les risques associés au protocole FTP sur un serveur public sont grands et les possibilitées limitées.
