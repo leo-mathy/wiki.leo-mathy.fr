@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T10:48:11.165Z
+date: 2024-12-10T10:56:10.661Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -210,12 +210,12 @@ Il est possible de cacher les UID et GUID des fichiers et répertoires avec le p
 
 Si un attaquant récupère le nom des utilisateurs locaux, il peut ensuite effectuer un brute-force à l'aide de ces noms. Cependant les mesures de sécurités comme Fail2ban bloquent les nouvelles tentatives après un certain nombre de tentatives effectuées.
 
-Il y a aussi le paramètre `ls_recurse_enable=YES` qui permet de lister récursivement (avec `ls -R`)les fichiers et repertoires. Cela est utile pour avoir une vue d'ensemble.
+Il y a aussi le paramètre `ls_recurse_enable=YES` qui permet de lister récursivement (avec `ls -R`)les fichiers et répertoires. Cela est utile pour avoir une vue d'ensemble.
 
-L'upload de fichiers sur le serveur FTP (avec `put`)peut aussi rendre vulnérable la machine aux vulnérabilitées LFI (Local File Inclusion).
+L'upload de fichiers sur le serveur FTP (avec `put`)peut aussi rendre vulnérable la machine aux vulnérabilités LFI (Local File Inclusion).
 
 Il est possible de télécharger un fichier avec la commande `get`,
-et de télécharger tous les fichiers auxquels l'utilisateur à accès avec la commande `wget -m --no-passive ftp://[utilisateur@:[mot de passe]@[ip]`
+et de télécharger tous les fichiers auxquels l'utilisateur à accès avec la commande `wget -m --no-passive ftp://<utilisateur>@:[mot de passe]@<ip>`
 Cependant, il est important de noter que le téléchargement de nombreux fichiers et inhabituel et pourrait déclencher des alarmes.
 
 Le footprinting est possible avec différents outils de scans réseaux. Ces outils permettent d'identifier différents services, même s'ils sont sur des ports différents de ceux par défaut. L'outil le plus utilisé étant Nmap.
@@ -224,3 +224,7 @@ Sur ParotOS, les scripts nmap (NSE) sont stockés à l'emplacement `/usr/share/n
 
 Par exemple, le script ftp-anon vérifie si le serveur FTP accepte l'accès anonyme. Si c'est le cas, le contenu de la racine FTP est affichée.
 
+Il est possible d'interagir avec le serveur FTP à l'aide de netcat, telnet ou encore openssl si le serveur utilise le chiffrement SSL/TLS.
+
+Interaction avec openssl (permet aussi la récupération des certificats):
+`openssl s_client -connect <adresse>:21 -starttls ftp`
