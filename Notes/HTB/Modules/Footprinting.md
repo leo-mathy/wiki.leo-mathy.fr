@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T09:12:36.581Z
+date: 2024-12-10T09:13:21.124Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -167,4 +167,3 @@ Pour remédier à ce problème, le mode passif à été développé, dans ce mod
 le serveur FTP implémente plusieur [commandes](https://web.archive.org/web/20230326204635/https://www.smartfile.com/blog/the-ultimate-ftp-commands-list/) et codes [codes](https://en.wikipedia.org/wiki/List_of_FTP_server_return_codes) de statut.
 
 Toutes les commandes de la norme ne sont pas forcéments implémentés de manière constante sur les serveur FTP.
-
