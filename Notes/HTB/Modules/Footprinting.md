@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T08:33:10.216Z
+date: 2024-12-10T08:35:12.573Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -145,6 +145,6 @@ En regardant les compétences des personnes sur LinkedIn, leurs posts, il est po
 De plus, les fiches de recherches de postes des organisations peuvent aussi réveler des informations ou donner des indices.
 (ex: Experience avec la suite Atlassian)
 
-
+Il est possible de regarder les projets des employés (Github/StackOverflow...) pour obtenir une idée des connaissances de celui-ci.
 
 
