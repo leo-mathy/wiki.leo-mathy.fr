@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T09:18:53.099Z
+date: 2024-12-10T09:22:31.725Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -173,3 +173,5 @@ Toutes les commandes de la norme ne sont pas forcements implémentés de manièr
 Il est possible que le serveur offre la fonction de FTP Anonyme. C'est à dire que le serveur autorise le téléchargement et l'envoi de fichiers sans l'utilisation d'un mot de passe.
 
 Les risques associés au protocole FTP sur un serveur public sont grands et les possibilités limitées.
+
+Le protocole TFTP (Trivial File Transfer Protocol) est plus simple que le protocole FTP, Cependant il ne met pas en place toutes les fonctionnalités du protocole FTP, et ne prend pas en charge l'authentification.
