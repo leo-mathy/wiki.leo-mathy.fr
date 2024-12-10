@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T08:11:37.495Z
+date: 2024-12-10T08:13:52.680Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -124,4 +124,4 @@ Par exemples les S3 Buckets (AWS), Blobs (Azure) et Cloud Storage (GCP) peuvent 
 
 Souvent les stockages cloud sont ajoutés à la zone DNS pour faciliter les tâches d'administration.
 
-De plus, il est possible d'utiliser les Google Dorks (inurl,intext...) pour trouver ces ressouces cloud de l'organisation.
+Il est possible d'utiliser les Google Dorks (inurl,intext...) pour trouver ces ressouces cloud de l'organisation, ou encore de regarder le code source des pages web pour voir la source des fichiers (qui peut être stockée sur le cloud).
