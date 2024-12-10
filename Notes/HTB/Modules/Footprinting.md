@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T08:08:46.344Z
+date: 2024-12-10T08:10:17.602Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -122,5 +122,5 @@ Les fournisseurs de services cloud sécurisent leurs infrastructure de manire ce
 
 Par exemples les S3 Buckets (AWS), Blobs (Azure) et Cloud Storage (GCP) peuvent être accesibles sans authentification si ils sont mal configurés.
 
-
+Souvent les stockages cloud sont ajoutés à la zone DNS pour faciliter les tâches d'administration.
 
