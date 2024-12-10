@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T08:19:25.905Z
+date: 2024-12-10T08:20:28.728Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -128,5 +128,6 @@ Il est possible d'utiliser les Google Dorks (inurl,intext...) pour trouver ces r
 
 Domain.glass (https://domain.glass/) permet d'obtenir d'autres informations de manière passive.
 
-buckets.grayhatwarfare (https://buckets.grayhatwarfare.com/) permet d'effectuer une recherche des stockages cloud pour découvrir entre autres les fichiers présent sur celui-ci.
+buckets.grayhatwarfare (https://buckets.grayhatwarfare.com/) permet d'effectuer une recherche des stockages cloud et de découvrir passivement les fichiers présent sur celui-ci.
+
 
