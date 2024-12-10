@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T08:17:35.340Z
+date: 2024-12-10T08:19:25.905Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -127,3 +127,6 @@ Souvent les stockages cloud sont ajoutés à la zone DNS pour faciliter les tâc
 Il est possible d'utiliser les Google Dorks (inurl,intext...) pour trouver ces ressouces cloud de l'organisation, ou encore de regarder le code source des pages web pour voir la source des fichiers (qui peut être stockée sur le cloud).
 
 Domain.glass (https://domain.glass/) permet d'obtenir d'autres informations de manière passive.
+
+buckets.grayhatwarfare (https://buckets.grayhatwarfare.com/) permet d'effectuer une recherche des stockages cloud pour découvrir entre autres les fichiers présent sur celui-ci.
+
