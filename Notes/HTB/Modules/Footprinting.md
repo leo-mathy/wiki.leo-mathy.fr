@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T09:34:53.156Z
+date: 2024-12-10T09:39:43.764Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -186,10 +186,11 @@ Contrairement à FTP, TFTP ne prend pas en charge la fonctionnalité de listage 
 
 Quelques commandes TFTP:
 
-| Commande | Description |
-| -------- | ----------- |
-|          |             |
-|          |             |
-|          |             |
-|          |             |
-|          |             |
+| Commande | Description                                                                                                 |
+| -------- | ----------------------------------------------------------------------------------------------------------- |
+| connect  | Défini l'hôte et optionnellement le port.                                                                   |
+| get      | Transfère un ou plusieurs fichiers vers le client.                                                          |
+| put      | Transfère un ou plusieurs fichiers vers le serveur.                                                         |
+| quit     | Quitte.                                                                                                     |
+| status   | Affiche le mode de transfère(ASCII/binaire), le statut de la connexion, la valeur de time-out...            |
+| verbose  | Active le mode verbose, ce qui affiche des informations supplémentaires pendant les transfères de fichiers. |
