@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T08:22:48.794Z
+date: 2024-12-10T08:23:02.802Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -133,6 +133,8 @@ buckets.grayhatwarfare (https://buckets.grayhatwarfare.com/) permet d'effectuer 
 Certaines organisations utilisent des abréviations de leurs nom pour le stockage cloud. Il est important de prendre en compte cela lors de la recherche.
 
 Parfois des fichiers sensibles (données,clés privées, certificats...) sont accesibles en libre-accès.
+
+## Staff
 
 
 
