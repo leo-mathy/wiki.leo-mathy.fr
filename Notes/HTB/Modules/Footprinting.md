@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T09:22:31.725Z
+date: 2024-12-10T09:31:18.598Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -174,4 +174,8 @@ Il est possible que le serveur offre la fonction de FTP Anonyme. C'est à dire q
 
 Les risques associés au protocole FTP sur un serveur public sont grands et les possibilités limitées.
 
-Le protocole TFTP (Trivial File Transfer Protocol) est plus simple que le protocole FTP, Cependant il ne met pas en place toutes les fonctionnalités du protocole FTP, et ne prend pas en charge l'authentification.
+Le protocole TFTP (Trivial File Transfer Protocol) est plus simple que le protocole FTP, Cependant il ne met pas en place toutes les fonctionnalités du protocole FTP, et ne prend pas en charge l'authentification. De plus TFTP utilise UPD et non TCP, ce qui en fait un protocole peu fiable et donc dépendant de l'implémentation d'un système de récupèration au niveau de l'application.
+
+Comme TFTP ne prend pas en charge l'authentification, il défini les limites de l'accès au fichiers seulement en se basant sur les permissions lecture/écriture des fichiers sur le système d'exploitation. 
+
+Cela veut dire que TFTP est déstiné uniquement aux répertoires avec des fichiers qui sont partagées à tous les utilisateurs.
