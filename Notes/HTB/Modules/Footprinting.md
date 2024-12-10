@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T10:21:59.357Z
+date: 2024-12-10T10:30:46.051Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -201,3 +201,9 @@ Le fichier de configuration est `/etc/vsftpd.conf`
 Le fichier pour refuser certains utilisateurs de l'accès au service FTP est `/etc/ftpusers`
 
 Le fichier de configuration peut être modifié pour l'activation de paramètres dangereux (Connection anonyme...)
+
+Une fois la connexion effectuée, la bannière s'affiche, elle contient la version et la description du service et le type du système.
+
+Les commandes debug,trace et status peuvent être utiles pour obtenir des informations supplémentaires ou voir le fonctionnement détaillé des interactions.
+
+Il est possible de cacher les UID et GUID des fichiers et répertoires avec le paramètre `hide_ids=YES`, cela rend difficile l'identification des droits. (et donc de voir quels utilisateurs peuvent télécharger/modifier ces éléments)
