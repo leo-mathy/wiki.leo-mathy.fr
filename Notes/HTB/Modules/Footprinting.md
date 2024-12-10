@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T10:46:04.860Z
+date: 2024-12-10T10:48:11.165Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -221,3 +221,6 @@ Cependant, il est important de noter que le téléchargement de nombreux fichier
 Le footprinting est possible avec différents outils de scans réseaux. Ces outils permettent d'identifier différents services, même s'ils sont sur des ports différents de ceux par défaut. L'outil le plus utilisé étant Nmap.
 
 Sur ParotOS, les scripts nmap (NSE) sont stockés à l'emplacement `/usr/share/nmap/scripts/`
+
+Par exemple, le script ftp-anon vérifie si le serveur FTP accepte l'accès anonyme. Si c'est le cas, le contenu de la racine FTP est affichée.
+
