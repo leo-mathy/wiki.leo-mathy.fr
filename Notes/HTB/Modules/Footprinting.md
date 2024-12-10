@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T10:06:57.142Z
+date: 2024-12-10T10:21:59.357Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -194,3 +194,10 @@ Quelques commandes TFTP:
 | quit     | Se déconnecte.                                                                                              |
 | status   | Affiche le mode de transfère(ASCII/binaire), le statut de la connexion, la valeur de time-out...            |
 | verbose  | Active le mode verbose, ce qui affiche des informations supplémentaires pendant les transfères de fichiers. |
+
+L'un des serveurs FTP les plus utilisés est [vsFTPd](https://security.appspot.com/vsftpd.html).
+
+Le fichier de configuration est `/etc/vsftpd.conf`
+Le fichier pour refuser certains utilisateurs de l'accès au service FTP est `/etc/ftpusers`
+
+Le fichier de configuration peut être modifié pour l'activation de paramètres dangereux (Connection anonyme...)
