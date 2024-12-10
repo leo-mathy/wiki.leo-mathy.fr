@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T08:49:24.389Z
+date: 2024-12-10T08:53:39.137Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -158,3 +158,4 @@ Par exemple, en recherchant les personnes dans la sécurité informatique de l'e
 Le protocole FTP (File Transfer Protocol) est l'un des protocoles les plus anciens sur Internet. Il opère à la couche TCP/IP (pareil que HTTP).
 Il y a aussi des programmes spécifiques pour le protocole FTP (comme par exemples les navigateurs pour le protocole HTTP).
 
+Lors de la communication, le client établi un cannal de contrôle avec le serveur sur le port TCP 21. Ensutie le client envoi des commandes au serveur via ce cannal et le serveur réponds avec des codes de statut. Ensuite les deux participants établissent un cannal de données sur le port TCP 20. Ce cannal est utilisé uniquement pour la transmission des données. Si une connection est inttérompue pendant la transmission, le transfert peut recommencer après avoir réétabli le contact.
