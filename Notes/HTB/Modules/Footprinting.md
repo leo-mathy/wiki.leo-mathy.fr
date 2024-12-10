@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T10:34:52.802Z
+date: 2024-12-10T10:41:15.486Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -209,3 +209,11 @@ Les commandes debug,trace et status peuvent être utiles pour obtenir des inform
 Il est possible de cacher les UID et GUID des fichiers et répertoires avec le paramètre `hide_ids=YES`, cela rend difficile l'identification des droits. Cela est utile lorsque l'on souhaite ne pas afficher quels utilisateurs peuvent télécharger/modifier ces éléments et cacher le nom des utilisateurs locaux.
 
 Si un attaquant récupère le nom des utilisateurs locaux, il peut ensuite effectuer un brute-force à l'aide de ces noms. Cependant les mesures de sécurités comme Fail2ban bloquent les nouvelles tentatives après un certain nombre de tentatives effectuées.
+
+Il y a aussi le paramètre `ls_recurse_enable=YES` qui permet de lister récursivement (avec `ls -R`)les fichiers et repertoires. Cela est utile pour avoir une vue d'ensemble.
+
+L'upload de fichiers sur le serveur FTP peut aussi rendre vulnérable la machine aux vulnérabilitées LFI (Local File Inclusion).
+
+Il est possible de télécharger un fichier avec la commande `get`,
+et de télécharger tous les fichiers auxquels l'utilisateur à accès avec la commande `wget -m --no-passive ftp://[utilisateur@:[mot de passe]@[ip]`
+Cependant, il est important de noter que le téléchargement de nombreux fichiers et inahbituel et pourrait déclencher des alarmes.
