@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T08:23:02.802Z
+date: 2024-12-10T08:32:54.387Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -135,6 +135,15 @@ Certaines organisations utilisent des abréviations de leurs nom pour le stockag
 Parfois des fichiers sensibles (données,clés privées, certificats...) sont accesibles en libre-accès.
 
 ## Staff
+
+Rechercher et identifier les employés sur les réseaux sociaux (LinkedIn,facebook...) peut révéler de nombreuses informations sur la disposition des équipes et la structure de l'organisation.
+
+Cela peut conduire à la découverte des technologies, languages de programmation ou encore logiciels qui sont utilisées.
+
+En regardant les compétences des personnes sur LinkedIn, leurs posts, il est possible de connaitre les travaux actuels de la personne.
+
+De plus, les fiches de recherches de postes des organisations peuvent aussi réveler des informations.
+(ex: Experience avec la suite Atlassian)
 
 
 
