@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-09T13:17:12.270Z
+date: 2024-12-10T08:08:46.344Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -115,3 +115,12 @@ les enregistrements de type NS contiennenet les addreses des serveurs DNS qui fo
 les enregistrements TXT contiennent des informations en tout genre (SPF,DKIM,DMARC...)
 
 ## Cloud Resources
+
+L'utilisation du cloud (GCP, AWS, Azure...) est devenu un composant essentiel de multiples organisations.
+
+Les fournisseurs de services cloud sécurisent leurs infrastructure de manire centralisée, cependant les configurations des administrateurs peuvent mettre en danger les ressources cloud.
+
+Par exemples les S3 Buckets (AWS), Blobs (Azure) et Cloud Storage (GCP) peuvent être accesibles sans authentification si ils sont mal configurés.
+
+
+
