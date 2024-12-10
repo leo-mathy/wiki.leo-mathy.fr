@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T09:17:56.223Z
+date: 2024-12-10T09:18:53.099Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -164,12 +164,12 @@ Il existe une version passive et active de ce protocole,
 dans la version active, le client établi la connexion avec un canal de contrôle et indique le port (du client) sur lequel le serveur doit envoyer les réponses (établir le canal de données). Cela pose un problème si le port de réponse défini par le client est bloqué par un pare-feu.
 Pour remédier à ce problème, le mode passif à été développé, dans ce mode, le serveur indique au client le port à utiliser pour le canal de données. Comme cette fois c'est le client qui initie la connexion, le pare-feu ne pose pas de problème.
 
-le serveur FTP implémente plusieur [commandes](https://web.archive.org/web/20230326204635/https://www.smartfile.com/blog/the-ultimate-ftp-commands-list/) et codes [codes](https://en.wikipedia.org/wiki/List_of_FTP_server_return_codes) de statut.
+le serveur FTP implémente plusieurs [commandes](https://web.archive.org/web/20230326204635/https://www.smartfile.com/blog/the-ultimate-ftp-commands-list/) et codes [codes](https://en.wikipedia.org/wiki/List_of_FTP_server_return_codes) de statut.
 
-Toutes les commandes de la norme ne sont pas forcéments implémentés de manière constante sur les serveur FTP.
+Toutes les commandes de la norme ne sont pas forcements implémentés de manière constante sur les serveur FTP.
 
-**Le protocol FTP communique en clair, c'est à dire qu'il peut être écouté si les conditions sont présentes.**
+**Le Protocole FTP communique en clair, c'est à dire qu'il peut être écouté si les conditions sont présentes.**
 
 Il est possible que le serveur offre la fonction de FTP Anonyme. C'est à dire que le serveur autorise le téléchargement et l'envoi de fichiers sans l'utilisation d'un mot de passe.
 
-Les risques associés au protocole FTP sur un serveur public sont grands et les possibilitées limitées.
+Les risques associés au protocole FTP sur un serveur public sont grands et les possibilités limitées.
