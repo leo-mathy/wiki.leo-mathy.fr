@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T09:39:43.764Z
+date: 2024-12-10T10:06:57.142Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -191,6 +191,6 @@ Quelques commandes TFTP:
 | connect  | Défini l'hôte et optionnellement le port.                                                                   |
 | get      | Transfère un ou plusieurs fichiers vers le client.                                                          |
 | put      | Transfère un ou plusieurs fichiers vers le serveur.                                                         |
-| quit     | Quitte.                                                                                                     |
+| quit     | Se déconnecte.                                                                                              |
 | status   | Affiche le mode de transfère(ASCII/binaire), le statut de la connexion, la valeur de time-out...            |
 | verbose  | Active le mode verbose, ce qui affiche des informations supplémentaires pendant les transfères de fichiers. |
