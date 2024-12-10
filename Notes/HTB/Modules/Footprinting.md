@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T08:20:28.728Z
+date: 2024-12-10T08:22:48.794Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -129,5 +129,11 @@ Il est possible d'utiliser les Google Dorks (inurl,intext...) pour trouver ces r
 Domain.glass (https://domain.glass/) permet d'obtenir d'autres informations de manière passive.
 
 buckets.grayhatwarfare (https://buckets.grayhatwarfare.com/) permet d'effectuer une recherche des stockages cloud et de découvrir passivement les fichiers présent sur celui-ci.
+
+Certaines organisations utilisent des abréviations de leurs nom pour le stockage cloud. Il est important de prendre en compte cela lors de la recherche.
+
+Parfois des fichiers sensibles (données,clés privées, certificats...) sont accesibles en libre-accès.
+
+
 
 
