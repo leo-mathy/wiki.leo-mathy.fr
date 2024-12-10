@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T09:09:09.171Z
+date: 2024-12-10T09:12:36.581Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -163,3 +163,8 @@ Lors de la communication, le client établi un canal de contrôle avec le serveu
 Il existe une version passive et active de ce protocole,
 dans la version active, le client établi la connexion avec un canal de contrôle et indique le port (du client) sur lequel le serveur doit envoyer les réponses (établir le canal de données). Cela pose un problème si le port de réponse défini par le client est bloqué par un pare-feu.
 Pour remédier à ce problème, le mode passif à été développé, dans ce mode, le serveur indique au client le port à utiliser pour le canal de données. Comme cette fois c'est le client qui initie la connexion, le pare-feu ne pose pas de problème.
+
+le serveur FTP implémente plusieur [commandes](https://web.archive.org/web/20230326204635/https://www.smartfile.com/blog/the-ultimate-ftp-commands-list/) et codes [codes](https://en.wikipedia.org/wiki/List_of_FTP_server_return_codes) de statut.
+
+Toutes les commandes de la norme ne sont pas forcéments implémentés de manière constante sur les serveur FTP.
+
