@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T10:41:15.486Z
+date: 2024-12-10T10:46:04.860Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -212,8 +212,12 @@ Si un attaquant récupère le nom des utilisateurs locaux, il peut ensuite effec
 
 Il y a aussi le paramètre `ls_recurse_enable=YES` qui permet de lister récursivement (avec `ls -R`)les fichiers et repertoires. Cela est utile pour avoir une vue d'ensemble.
 
-L'upload de fichiers sur le serveur FTP peut aussi rendre vulnérable la machine aux vulnérabilitées LFI (Local File Inclusion).
+L'upload de fichiers sur le serveur FTP (avec `put`)peut aussi rendre vulnérable la machine aux vulnérabilitées LFI (Local File Inclusion).
 
 Il est possible de télécharger un fichier avec la commande `get`,
 et de télécharger tous les fichiers auxquels l'utilisateur à accès avec la commande `wget -m --no-passive ftp://[utilisateur@:[mot de passe]@[ip]`
-Cependant, il est important de noter que le téléchargement de nombreux fichiers et inahbituel et pourrait déclencher des alarmes.
+Cependant, il est important de noter que le téléchargement de nombreux fichiers et inhabituel et pourrait déclencher des alarmes.
+
+Le footprinting est possible avec différents outils de scans réseaux. Ces outils permettent d'identifier différents services, même s'ils sont sur des ports différents de ceux par défaut. L'outil le plus utilisé étant Nmap.
+
+Sur ParotOS, les scripts nmap (NSE) sont stockés à l'emplacement `/usr/share/nmap/scripts/`
