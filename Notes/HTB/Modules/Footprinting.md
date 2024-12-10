@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T08:39:01.279Z
+date: 2024-12-10T08:45:36.180Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -146,9 +146,9 @@ Il est possible de regarder les projets des employés (Github/StackOverflow...) 
 
 Les bonnes pratiques des logiciels peuvent indiquer où trouver ce que l'on cherche. (failles...)
 
-Les projets des employés ou des organisations peuvent être disponibles sur des plateformes de collaboration de code (github,gitlab...).
-Ces
+Les projets des employés peuvent êtres disponibles sur des plateformes de collaboration de code (github,gitlab...) pour de multiples raisons (partage, portfolio...).
+Ces projets peuvent contenir des données sensibles (tokens,clés,emails,addresses...).
 
+LinkedIn est une bonne source d'information puisque ce site regroupe les connections,écoles,compétences,industries,langues,services,noms,titres,entreprises...
 
-
-
+Par exemple, en recherchant les personnes dans la sécurité informatique de l'entreprise, il est possible de déterminer les technologies utilisées.
