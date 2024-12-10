@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T08:32:54.387Z
+date: 2024-12-10T08:33:10.216Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -142,7 +142,7 @@ Cela peut conduire à la découverte des technologies, languages de programmatio
 
 En regardant les compétences des personnes sur LinkedIn, leurs posts, il est possible de connaitre les travaux actuels de la personne.
 
-De plus, les fiches de recherches de postes des organisations peuvent aussi réveler des informations.
+De plus, les fiches de recherches de postes des organisations peuvent aussi réveler des informations ou donner des indices.
 (ex: Experience avec la suite Atlassian)
 
 
