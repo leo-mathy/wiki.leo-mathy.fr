@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-11T09:22:23.378Z
+date: 2024-12-11T09:33:03.962Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -236,5 +236,11 @@ De l'autre côté, le système doit aussi avoir implémenté le protocole et tra
 
 Avant cela, les deux parties doivent établir une connexion. C'est pour cela qu'ils s'échangent des messages.
 
-Dans les réseaux IP, SMB utilise le protocole TCP pour cette raison. Il effectue ensuite un three-way-handshake entre le serveur et le client avant que la connexion soit établie. Les spécifications du protocole SMB gouvernent aussi la couche suivant du transport de données.
+Dans les réseaux IP, SMB utilise le protocole TCP pour cette raison. Il effectue ensuite un three-way-handshake entre le serveur et le client avant que la connexion soit établie. Les spécifications du protocole SMB gouvernent aussi la couche suivante du transport de données.
+
+Le protocole SMB fournit une partie de son système de fichiers local en tant que partages. La visibilité de la hiérarchie visible au niveau du client est partiellement indépendante de la structure sur le serveur.
+
+Les droits d'accès aux partages sont définis par les ACL (Acess Control List). Ces droits peuvent être controllés de manière plus grannuleuse grace à des attribus comme "execute","read","full access" définis pour des utilisateurs et groupes.
+
+Les ACL sont basées sur les partages et peuvent ne pas correspondre aux droits assignés localement sur le serveur.
 
