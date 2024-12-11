@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-11T09:45:28.358Z
+date: 2024-12-11T09:47:28.881Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -249,4 +249,4 @@ Samba est développé pour les systèmes Unix et implémente le protocole CIFS (
 CIFS est une implémentation spécifique du protocole SMB originellement créée par Microsoft.
 Cela permet à Samba de communiquer avec les dernières versions des systèmes Windows.
 
-Ce dialecte est référée comme SMB/CIFS.
+L'implémentation moderne de ce protocole est souvent référée comme SMB/CIFS.
