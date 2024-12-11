@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-11T09:33:03.962Z
+date: 2024-12-11T09:44:58.303Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -240,7 +240,13 @@ Dans les réseaux IP, SMB utilise le protocole TCP pour cette raison. Il effectu
 
 Le protocole SMB fournit une partie de son système de fichiers local en tant que partages. La visibilité de la hiérarchie visible au niveau du client est partiellement indépendante de la structure sur le serveur.
 
-Les droits d'accès aux partages sont définis par les ACL (Acess Control List). Ces droits peuvent être controllés de manière plus grannuleuse grace à des attribus comme "execute","read","full access" définis pour des utilisateurs et groupes.
+Les droits d'accès aux partages sont définis par les ACL (Acess Control List). Ces droits peuvent être contrôlés de manière plus granuleuse grâce à des attributs comme "execute","read","full access" définis pour des utilisateurs et groupes.
 
 Les ACL sont basées sur les partages et peuvent ne pas correspondre aux droits assignés localement sur le serveur.
 
+Il y a une implémentation alternative de serveur SMB appelée Samba.
+Samba est développé pour les systèmes Unix et implémente le protocole CIFS (un dialecte de SMB).
+CIFS est une implémentation spécifique du protocole SMB originellement créée par Microsoft.
+Cela permet à Samba de communiquer avec les dernières versions des systèmes Windows.
+
+Cette implémentation est référée comme SMB/CIFS.
