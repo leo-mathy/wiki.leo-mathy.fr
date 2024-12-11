@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-11T07:56:40.961Z
+date: 2024-12-11T08:07:06.437Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -232,6 +232,8 @@ Interaction avec openssl (permet aussi la récupération des certificats):
 ## SMB
 
 Le protocole SMB (Server Message Block) permet aux clients de communiquer avec d'autres participants dans le même réseau pour accéder à des fichiers ou des services partagés sur le réseau.
-De l'autre côté, le système doit aussi avoir implémenté le protocole et traité la requète en utilisant une application serveur SMB.
+De l'autre côté, le système doit aussi avoir implémenté le protocole et traité la requête en utilisant une application serveur SMB.
 
-Avant cela, les deux parties doivent établir une connection. C'est pour cela qu'ils échangent les messages correspondant.
+Avant cela, les deux parties doivent établir une connexion. C'est pour cela qu'ils s'échangent des messages.
+
+Dans les réseaux IP, SMB utilise le protocole TCP pour cette raison. Il effectue ensuite un three-way-handshake entre le serveur et le client avant que la connexion soit établie. Les spécifications du protocole SMB gouvernent aussi la couche suivant du transport de données.
