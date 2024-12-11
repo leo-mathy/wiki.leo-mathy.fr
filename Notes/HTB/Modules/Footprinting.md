@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-11T07:54:00.137Z
+date: 2024-12-11T07:56:40.961Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -232,3 +232,6 @@ Interaction avec openssl (permet aussi la récupération des certificats):
 ## SMB
 
 Le protocole SMB (Server Message Block) permet aux clients de communiquer avec d'autres participants dans le même réseau pour accéder à des fichiers ou des services partagés sur le réseau.
+De l'autre côté, le système doit aussi avoir implémenté le protocole et traité la requète en utilisant une application serveur SMB.
+
+Avant cela, les deux parties doivent établir une connection. C'est pour cela qu'ils échangent les messages correspondant.
