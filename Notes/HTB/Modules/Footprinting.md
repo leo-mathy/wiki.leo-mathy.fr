@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-10T10:56:10.661Z
+date: 2024-12-11T07:54:00.137Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -228,3 +228,7 @@ Il est possible d'interagir avec le serveur FTP à l'aide de netcat, telnet ou e
 
 Interaction avec openssl (permet aussi la récupération des certificats):
 `openssl s_client -connect <adresse>:21 -starttls ftp`
+
+## SMB
+
+Le protocole SMB (Server Message Block) permet aux clients de communiquer avec d'autres participants dans le même réseau pour accéder à des fichiers ou des services partagés sur le réseau.
