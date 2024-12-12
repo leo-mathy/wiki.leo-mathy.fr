@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-12T08:03:41.751Z
+date: 2024-12-12T08:05:14.319Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -264,3 +264,5 @@ Avec la version 3 de Samba, le serveur Samba peut être un membre complet d'un A
 Dans la version 4 de Samba, le serveur Samba peut être un contrôleur de domaine Active Directory.
 
 Pour implémenter le rôle d'Active Directory, le serveur Samba est composé de plusieurs services pour effectuer cette tâche. Le service smbd (service serveur SMB) et le service nmbd (service NetBIOS message Block). Le service SMB contrôle ces deux programmes d'arrières plan.
+
+Samba est donc approprié pour les systèmes Windows et Linux.
