@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-12T07:54:01.828Z
+date: 2024-12-12T08:00:34.247Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -259,3 +259,8 @@ En revanche, CIFS utilise le port 445 exclusivement.
 Il y a des nouvelles version de SMB comme SMBv2 et SMBv3, ces versions offrent des améliorations et sont préférés dans des environnements plus modernes.
 
 SMBv1 (CIFS) est considéré comme dépassée mais peut encore être utilisée dans des environnements spécifiques.
+
+Avec la version 3 de Samba, le serveur Samba peut être un membre complet d'un Active Directory.
+Dans la version 4 de Samba, le serveur Samba peut être un controlleur de domaine Active Directory.
+
+Pour implementer le rôle d'Active Directory, le serveur Samba est composé de plusieurs services pour effectuer cette tâche. Le service smbd (
