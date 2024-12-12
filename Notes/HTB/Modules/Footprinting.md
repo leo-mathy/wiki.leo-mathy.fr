@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-11T09:47:28.881Z
+date: 2024-12-12T07:54:01.828Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -250,3 +250,12 @@ CIFS est une implémentation spécifique du protocole SMB originellement créée
 Cela permet à Samba de communiquer avec les dernières versions des systèmes Windows.
 
 L'implémentation moderne de ce protocole est souvent référée comme SMB/CIFS.
+
+CIFS est considérée comme une version spécifique du protocole SMB, cette version s'aligne principalement avec SMBv1.
+
+Quand des commandes SMB sont transmises en utilisant Samba vers un service NetBios plus ancien, la connexion va utiliser les ports 137,138 et 138.
+En revanche, CIFS utilise le port 445 exclusivement.
+
+Il y a des nouvelles version de SMB comme SMBv2 et SMBv3, ces versions offrent des améliorations et sont préférés dans des environnements plus modernes.
+
+SMBv1 (CIFS) est considéré comme dépassée mais peut encore être utilisée dans des environnements spécifiques.
