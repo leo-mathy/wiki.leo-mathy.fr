@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T13:26:37.809Z
+date: 2024-12-13T13:39:35.998Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -339,7 +339,7 @@ Pour énumérer le service NFS, les ports 111 et 2049 sont essentiels.
 
 Le script nmap NSE rpcinfo peut récupérer la liste de tous les services RPC en cours d'exécution.
 
-Affiche la liste des partages NFS disponibles:
+Affiche la liste des partages NFS disponibles sur un serveur:
 `showmount -e <ip>`
 
 Monte le partage NFS 10.129.14.128:/ dans le dossier cible ./target-NFS/
@@ -347,3 +347,19 @@ Monte le partage NFS 10.129.14.128:/ dans le dossier cible ./target-NFS/
 
 Démonte le partage
 `umount ./target-NFS`
+
+## DNS
+
+Domain Name System (DNS) est une grande partie d'Internet. C'est un système de résolution de noms en adresses IP. Ce système ne possède pas une base de données centrale. L'information est distribuée vers des serveurs DNS.
+
+Il y a de nombreux types de serveurs DNS utilisés dans le monde.
+| Type | Description|
+| -- | -- |
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
