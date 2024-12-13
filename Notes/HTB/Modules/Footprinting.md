@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T11:04:01.042Z
+date: 2024-12-13T11:29:17.566Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -304,3 +304,11 @@ Des alternatives à rpcclient peuvent être [smbmap](https://github.com/ShawnDEv
 Il est nécessaire d'utiliser des outils variés pour l'énumération puisque certains outils peuvent ne pas retourner les mêmes résultats (différence lié à la programmation de l'outil). Dans ce cas une vérification manuelle est nécessaire.
 
 Il est déconseillé de se baser sur un outil automatisé dont on ignore comment il a été écrit.
+
+## NFS
+
+NFS (Network File System) est un système de fichier en réseau développé par Sun Microsystems et a le même but que SMB. Le but est l'accès aux fichiers depuis un réseau comme si ils étaient en local. Cependant il utilise un protocole complètement différent. NFS est utilisé pour la communication entre les systèmes Linux/Unix. Cela veut dire que les clients NFS ne peuvent pas directement communiquer avec des serveurs SMB. NFS est un standard Internet qui gouverne les procédures dans un environnement de fichiers distribués.
+
+Tandis que NFSv3 authentifie l'ordinateur client, avec NFSv4, le système est désormais pareil que SMB avec une authentification utilisateur.
+
+NFSv2 est plus ancien mais supporté par beaucoup de systèmes, il était originellement opéré à travers UDP.
