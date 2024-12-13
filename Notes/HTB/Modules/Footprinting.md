@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T14:17:16.864Z
+date: 2024-12-13T14:17:41.724Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -374,7 +374,7 @@ Différents enregistrements DNS avec plusieurs fonctions associés sont utilisab
 | ---- | ---- |
 | A | Retourne l'adresse IPv4 du domaine demandé. |
 | AAAA |  Retourne l'adresse IPv6 du domaine demandé. |
-| | |
+| MX | Retourne le serveur de messagerie du domaine demandé. |
 | | |
 | | |
 | | |
