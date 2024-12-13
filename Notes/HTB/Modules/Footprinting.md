@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T15:18:09.127Z
+date: 2024-12-13T15:31:20.728Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -415,3 +415,11 @@ Parfois il est aussi possible de récupérer la version du serveur DNS en récup
 
 Pour récupérer toutes les zones DNS d'un résolveur avec Dig, il faut utiliser l'option ANY.
 `dig any mydomain.tld @<ip du résolveur>`
+
+Le Transfer de zone représente le transfère de zones vers un autre serveur DNS, cela se produit généralement sur le port TCP 53. La procédure pour effectuer cela se nomme Asynchronous Full Transfer Zone (AXFR).
+
+Les transfères de zone utilisent une clé secrète appelle rndc-key (présente dans le fichier de configuration global sur Bind9).
+
+Le transfère de zone transfère des fichiers ou enregistrements et détecte les écarts dans les jeux de données des serveurs.
+
+Les données originales d'une zone sont présentes sur le serveur DNS Primaire pour la zone (Primary). Les serveurs où les zone sont transférés sont appelés serveurs DNS secondaires pour la zone(Secondary)
