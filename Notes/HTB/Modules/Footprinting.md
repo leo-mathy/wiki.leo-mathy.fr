@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T13:50:06.662Z
+date: 2024-12-13T14:01:06.020Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -355,11 +355,9 @@ Domain Name System (DNS) est une grande partie d'Internet. C'est un système de 
 Il y a de nombreux types de serveurs DNS utilisés dans le monde.
 | Type | Description|
 | -- | -- |
-| DNS Root Server | Les serveurs racines DNS sont responsables des domaines de premier niveau (TLD). En dernière instance, ils sont uniquement intérogés si le serveur de noms de réponds pas. C'est l'interface centrale entre les utilisateurs et le contenu sur Internet. C'est l'ICANN qui coordonne les serveurs racines. Il y a 13 serveur racines dans le monde. |
-| Authoritative Nameserver	 | Les Authoritative Nameservers sont responsables d'une zone particulière, ils répondent uniquement aux requètes dans leurs zone. Si un Authoritative Nameserver ne peut pas répondre à une requète, le Root Server s'en occupe. |
-| Non-authoritative Nameserver | Les Non-authoritative Nameservers ne sont pas responsables d'une zone particulière, ils collectent l'information de zones DNS spécifiques. Cela est fait en utilisant des requètes DNS itératives ou récursives. |
-| | |
-| | |
-| | |
-| | |
-| | |
+| DNS Root Server (Serveur racine DNS) | Les serveurs racine DNS sont responsables des domaines de premier niveau (TLD). En dernière instance, ils sont uniquement interrogés si le serveur de noms de réponds pas. C'est l'interface centrale entre les utilisateurs et le contenu sur Internet. C'est l'ICANN qui coordonne les serveurs racines. Il y a 13 serveur racines dans le monde. |
+| Authoritative Nameserver (serveur de noms faisant autorité) | Les serveurs de noms faisant autorité sont responsables d'une zone particulière, ils répondent uniquement aux requêtes dans leurs zone. Si un serveur de noms faisant autorité ne peut pas répondre à une requête, le Root Server s'en occupe. |
+| Non-authoritative Nameserver (Serveur de noms ne faisant pas autorité) | Les serveurs de noms ne faisant pas autorité ne sont pas responsables d'une zone particulière, ils collectent l'information de zones DNS spécifiques. Cela est fait en utilisant des requêtes DNS itératives ou récursives. |
+| Caching DNS Server (Serveur DNS Cache) | Les serveurs DNS Cache stockent les informations d'autres serveurs de noms pour une certaine période (la période est définie par les serveurs de noms faisant autorité). |
+| Forwarding Server (Serveur de transfert) | Les serveurs de transfert ont une fonction unique, ils redirigent les requêtes DNS vers un autre serveur DNS|
+| Resolver (Résolveur) | Les résolveurs effectuent une résolution de nom localement sur le système. |
