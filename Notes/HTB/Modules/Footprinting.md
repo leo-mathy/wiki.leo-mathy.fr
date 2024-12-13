@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T13:25:20.952Z
+date: 2024-12-13T13:26:37.809Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -313,15 +313,15 @@ Tandis que NFSv3 authentifie l'ordinateur client, avec NFSv4, le système est d�
 
 - NFSv2 est plus ancien mais supporté par beaucoup de systèmes, il fonctionnait originellement entièrement avec UDP.
 - NFSv3 à plus de fonctionnalités comme la taille des fichiers variable et un meilleur rapport des erreurs. Mais il n'est pas compatible entièrement avec NFSv2.
-- NFSv4 inclus Kerberos, fonctionne sur Internet et a travers les pares-feu, supporte les ACL, fournit des performances supplémentaires et un niveau de sécurité accru. C'est la première version à implementer un protocole à état.
+- NFSv4 inclus Kerberos, fonctionne sur Internet et a travers les pares-feu, supporte les ACL, fournit des performances supplémentaires et un niveau de sécurité accru. C'est la première version à implémenter un protocole à état.
 
-NFSv4 vise à implementer un support pour le protocole, pour l'utilisation dans les clusters de serveurs. cela inclut la fonctionnalitée d'accès distribué à travers de multiples serveurs (pNFS). De plus, cette version ajoute un méchanisme "session trunking", aussi connu sous le nom de NFS multipathing.
+NFSv4 vise à implémenter un support pour le protocole, pour l'utilisation dans les clusters de serveurs. cela inclut la fonctionnalité d'accès distribué à travers de multiples serveurs (pNFS). De plus, cette version ajoute un mécanisme "session trunking", aussi connu sous le nom de NFS multipathing.
 
 De plus, avec la version 4, un seul port est utilisé par le service, le port 2049 TCP ou UDP, ce qui simplifie son utilisation à travers les pares-feu.
 
-NFS est basé sur le protocole ONC-RPC/SUN-RPC, exposé sur le port TCP et UDP 111. ce protocole utilise la representation externe des données (XDR), ce qui permet un échange des données indépendant du système.
+NFS est basé sur le protocole ONC-RPC/SUN-RPC, exposé sur le port TCP et UDP 111. ce protocole utilise la représentation externe des données (XDR), ce qui permet un échange des données indépendant du système.
 
-Le protocole NFS n'a pas de méchanisme d'authentification ou d'autorisation, l'authentification est gérée au niveau du protocole RPC et l'autorisation est dérivée du système de fichiers.
+Le protocole NFS n'a pas de mécanisme d'authentification ou d'autorisation, l'authentification est gérée au niveau du protocole RPC et l'autorisation est dérivée du système de fichiers.
 
 Le serveur est responsable de la traduction des informations utilisateur du client dans le format du système de fichier et de la conversion des autorisations dans le format UNIX.
 
@@ -329,7 +329,7 @@ La méthode la plus commune d'authentification est via les UID/GUID et l'apparte
 
 La NFS Export Table contient une table des systèmes de fichiers physiques accessibles par le client ainsi que les options.
 
-Certaines options comme rw,insecure,nohide... sont dangereuses. 
+Certaines options comme rw,insecure,nohide... sont dangereuses.
 
 Par exemple:
 `/mnt/nfs  10.129.14.0/24(sync,rw,no_subtree_check)`
