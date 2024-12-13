@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T13:04:17.383Z
+date: 2024-12-13T13:25:20.952Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -324,3 +324,26 @@ NFS est basé sur le protocole ONC-RPC/SUN-RPC, exposé sur le port TCP et UDP 1
 Le protocole NFS n'a pas de méchanisme d'authentification ou d'autorisation, l'authentification est gérée au niveau du protocole RPC et l'autorisation est dérivée du système de fichiers.
 
 Le serveur est responsable de la traduction des informations utilisateur du client dans le format du système de fichier et de la conversion des autorisations dans le format UNIX.
+
+La méthode la plus commune d'authentification est via les UID/GUID et l'appartenance aux groupes.
+
+La NFS Export Table contient une table des systèmes de fichiers physiques accessibles par le client ainsi que les options.
+
+Certaines options comme rw,insecure,nohide... sont dangereuses. 
+
+Par exemple:
+`/mnt/nfs  10.129.14.0/24(sync,rw,no_subtree_check)`
+permet le partage de /mnt/nfs en lecture et écriture à tous les systèmes dans le réseau 10.129.14.0/24.
+
+Pour énumérer le service NFS, les ports 111 et 2049 sont essentiels.
+
+Le script nmap NSE rpcinfo peut récupérer la liste de tous les services RPC en cours d'exécution.
+
+Affiche la liste des partages NFS disponibles:
+`showmount -e <ip>`
+
+Monte le partage NFS 10.129.14.128:/ dans le dossier cible ./target-NFS/
+`sudo mount -t nfs 10.129.14.128:/ ./target-NFS/ -o nolock`
+
+Démonte le partage
+`umount ./target-NFS`
