@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T15:13:20.252Z
+date: 2024-12-13T15:16:31.657Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -409,3 +409,6 @@ Avec dig, pour spécifier un résolveur de nom, il faut utiliser le caractère "
 
 Récupère les enregistrements ns de la zone mydomain.tld en interrogeant un serveur spécifique.
 `dig ns mydomain.tld @<ip du résolveur>`
+
+Parfois il est aussi possible de récupérer la version du serveur DNS en récupérant un enregistrement TXT de classe CHAOS.
+`dig CH TXT version.bind <ip du résolveur>`
