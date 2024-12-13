@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T09:30:32.021Z
+date: 2024-12-13T09:33:44.624Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -280,3 +280,5 @@ Samba offre de nombreux paramètres que l'on peut configurer grâce au [fichier 
 En regardant les paramètres du service il faut se demander ce que les employés et attaquants peuvent gagner de l'activation de ces paramètres.
 
 Certains paramètres peuvent être sensibles voir dangereux, par exemple `browseable = yes` permet de lister les partages disponibles, `guest ok = yes` autorise les connexions sans mot de passe ou encore `create mask = 0777 `qui défini les permissions des nouveaux fichiers.
+
+`smbclient -N -L //<ip>` permet de lister les partages du serveur en utilisant une session nulle (accès anonyme), donc sans utiliser de mots de passe ou d'utilisateur.
