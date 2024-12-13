@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T09:09:16.171Z
+date: 2024-12-13T09:09:40.321Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -273,4 +273,4 @@ IBM à développé une API appelée NetBIOS (Network Basic Input/Output System),
 
 Dans un environnement NetBIOS, quand une machine passe en ligne, elle nécessite un nom, ce qui est fait en passant par la procédure d'enregistrement de nom.
 
-Chaque hôte réserve un nom sur le réseau ou bien le serveur de nom NetBIOS est utilisé. Cela à été amélioré avec [le Service de noms Internet Windows](https://networkencyclopedia.com/windows-internet-name-service-wins/)
+Chaque hôte réserve son nom sur le réseau ou bien le serveur de nom NetBIOS est utilisé. Cela à été amélioré avec [le Service de noms Internet Windows](https://networkencyclopedia.com/windows-internet-name-service-wins/)
