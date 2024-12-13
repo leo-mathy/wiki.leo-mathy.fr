@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T15:31:20.728Z
+date: 2024-12-13T15:37:57.283Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -422,4 +422,9 @@ Les transfères de zone utilisent une clé secrète appelle rndc-key (présente 
 
 Le transfère de zone transfère des fichiers ou enregistrements et détecte les écarts dans les jeux de données des serveurs.
 
-Les données originales d'une zone sont présentes sur le serveur DNS Primaire pour la zone (Primary). Les serveurs où les zone sont transférés sont appelés serveurs DNS secondaires pour la zone(Secondary)
+Les données originales d'une zone sont présentes sur le serveur DNS Primaire pour la zone (Primary). Les serveurs où les zone sont transférés sont appelés serveurs DNS secondaires pour la zone (Secondary).
+
+Un serveur DNS qui sert de source directe pour la synchronisation d'un fichier de zone est appelé Maître (Master).
+Un serveur DNS qui obtient les données d'une zone depuis un Master est appelé Esclave (Slave).
+
+Une serveur DNS Primaire pour une zone est toujours un Maître alors qu'un serveur DNS Secondaire peut être un Maître ou un Esclave.
