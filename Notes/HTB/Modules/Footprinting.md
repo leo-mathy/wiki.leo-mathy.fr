@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T14:26:29.256Z
+date: 2024-12-13T15:02:44.317Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -380,3 +380,23 @@ Différents enregistrements DNS avec plusieurs fonctions associés sont utilisab
 | CNAME                     | Est utilisé comme alias pour un autre nom de domaine.                                        |
 | PTR                       | Associe une adresse IP à un nom de domaine.                                                  |
 | SOA                       | Donne des informations sur la zone DNS correspondante et l'adresse du contact administratif. |
+
+Tous les serveurs DNS utilisent 3 types différents de fichiers de configuration:
+
+- fichiers de configuration locale du serveur DNS
+- fichiers de zones
+- fichiers de résolution de nom inverse
+
+Sur les serveurs Linux, le serveur DNS Blind9 est souvent utilisé. Son fichier de configuration named.conf est divisé en deux sections, la configuration générale et les entrées de zone.
+
+Les options globales affectent toutes les zones et une option de zone affecte uniquement une zone. Les options de zone sont prioritaires sur les options globales.
+
+Les zones définies dans le fichier sont divisés dans des fichiers individuels, les fichiers de zone.
+Un fichier de zone décrit une zone DNS dans le format BIND.
+Un fichier de zone est composé au minimum d'un enregistrement NS et SOA.
+
+Si le fichier est considéré comme inutilisable (par exemple à cause d'une erreur de syntaxe), la réponse du serveur lors des requêtes vers cette zone sera un message SERVERFAIL.
+
+Pour traduire les adresses IP en FQDN, le serveur DNS doit avoir un fichier de résolution de nom inverse. Dans ce fichier le FQDN est assigné à la partie hôte de l'adresse IP grâce à un enregistrement PTR.
+
+Il y a de nombreux paramètres dangereux sur un serveur Bind9, comme `allow-recursion` (défini les hôtes qui ont le droit d'effectuer des requêtes récursives), `allow-transfer` (défini les hôtes qui ont le droit de recevoir des transferts de zone) ou encore `allow-query` (défini les hôtes qui peuvent faire des requêtes au serveur)
