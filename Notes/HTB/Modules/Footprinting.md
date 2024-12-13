@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T08:58:03.386Z
+date: 2024-12-13T09:06:45.664Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -269,3 +269,8 @@ Samba est donc approprié pour les systèmes Windows et Linux.
 
 Dans un réseau, chaque hôte participe au même workgroup. Un Workgroup est le nom d'un groupe qui identifie une collection arbitraire de systèmes et leurs ressources sur un réseau SMB. Il est possible d'avoir plusieurs workgroups dans un même réseau à n'importe quel moment.
 
+IBM à développé une API appelée NetBIOS (Network Basic Input/Output System), cette API fournie un plan à une application pour se connecter et partager des données entre ordinateurs.
+
+Dans un environnement NetBIOS, quand une machine passe en ligne, elle nécessite un nom, ce qui est fait en passant par la procédure d'enregistrement de nom.
+
+Chaque hôte réserve un nom sur le réseau ou bien le serveur de nom NetBIOS est utilisé. Cela à été amélioré avec [le Service de noms Internet Windows](https://networkencyclopedia.com/windows-internet-name-service-wins/)
