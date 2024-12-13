@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T14:13:53.481Z
+date: 2024-12-13T14:17:16.864Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -368,3 +368,15 @@ Pour chiffrer ces requètes, il est possible d'utiliser DNS over TLS (DoT) ou DN
 
 Le DNS ne traduit pas uniquement des noms en adresses IP. Il permet aussi de stocker et publier des informations supplémentaires sur les services associés à un domaine (par exemple pour indiquer l'adresse du serveur de messagerie).
 
+Différents enregistrements DNS avec plusieurs fonctions associés sont utilisables. 
+
+| Type d'enregistrement DNS | Fonction |
+| ---- | ---- |
+| A | Retourne l'adresse IPv4 du domaine demandé. |
+| AAAA |  Retourne l'adresse IPv6 du domaine demandé. |
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
