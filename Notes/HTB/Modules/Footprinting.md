@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T15:16:31.657Z
+date: 2024-12-13T15:18:09.127Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -412,3 +412,6 @@ Récupère les enregistrements ns de la zone mydomain.tld en interrogeant un ser
 
 Parfois il est aussi possible de récupérer la version du serveur DNS en récupérant un enregistrement TXT de classe CHAOS.
 `dig CH TXT version.bind <ip du résolveur>`
+
+Pour récupérer toutes les zones DNS d'un résolveur avec Dig, il faut utiliser l'option ANY.
+`dig any mydomain.tld @<ip du résolveur>`
