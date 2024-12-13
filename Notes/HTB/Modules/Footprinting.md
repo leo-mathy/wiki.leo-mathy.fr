@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T10:31:30.047Z
+date: 2024-12-13T10:43:12.834Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -290,3 +290,7 @@ Sur le serveur Samba, il est possible d'utiliser smbstatus pour voir les connexi
 Nmap peut être utilisé énumérer le service. Il est cependant recommandé d'effectuer une énumération manuelle.
 
 Pour interagir manuellement avec le service SMB et envoyer des requêtes spécifiques il est possible d'utiliser rpcclient. Cet outil effectue des fonctions MS-RPC.
+
+rpcclient offre de nombreuses requêtes qui exécutent des fonctions spécifiques sur le serveur SMB.
+
+Ces fonctions sont disponibles [ici](https://www.samba.org/samba/docs/current/man-html/rpcclient.1.html).
