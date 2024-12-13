@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T10:56:53.430Z
+date: 2024-12-13T11:03:15.723Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -300,3 +300,7 @@ Parmi ces fonctions, il est possible de lister les partages(`netshareenumall`), 
 Il est aussi possible de brute-force les RID des utilisateurs (si la liste des utilisateurs n'est pas possible par exemple). Un outil permettant cela est [samrdump.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/samrdump.py).
 
 Des alternatives à rpcclient peuvent être [smbmap](https://github.com/ShawnDEvans/smbmap), [CrackMapExec](/Outils/Linux/CrackMapExec) ou encore [enum4linux-ng](https://github.com/cddmp/enum4linux-ng).
+
+Cependant il est nécessaire d'utiliser des outils variés pour l'énumération puisque certains outils peuvent ne pas retourner les mêmes résultats (différence lié à la programmation de l'outil). Dans ce cas une vérification manuelle est nécessaire.
+
+Il est déconseillé de se baser sur un outil automatisé dont on ignore comment il a été écrit.
