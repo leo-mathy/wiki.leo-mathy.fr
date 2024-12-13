@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T15:02:44.317Z
+date: 2024-12-13T15:13:20.252Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -399,4 +399,13 @@ Si le fichier est considéré comme inutilisable (par exemple à cause d'une err
 
 Pour traduire les adresses IP en FQDN, le serveur DNS doit avoir un fichier de résolution de nom inverse. Dans ce fichier le FQDN est assigné à la partie hôte de l'adresse IP grâce à un enregistrement PTR.
 
-Il y a de nombreux paramètres dangereux sur un serveur Bind9, comme `allow-recursion` (défini les hôtes qui ont le droit d'effectuer des requêtes récursives), `allow-transfer` (défini les hôtes qui ont le droit de recevoir des transferts de zone) ou encore `allow-query` (défini les hôtes qui peuvent faire des requêtes au serveur)
+Il y a de nombreux paramètres dangereux sur un serveur Bind9, comme `allow-recursion` (défini les hôtes qui ont le droit d'effectuer des requêtes récursives), `allow-transfer` (défini les hôtes qui ont le droit de recevoir des transferts de zone) ou encore `allow-query` (défini les hôtes qui peuvent faire des requêtes au serveur).
+
+L'énumération d'un serveur DNS se base sur les réponses aux requêtes envoyées.
+
+Il est possible de récupérer les enregistrements NS pour savoir quels autres serveurs de noms sont connus.
+
+Avec dig, pour spécifier un résolveur de nom, il faut utiliser le caractère "@". Par défaut, le résolveur précisé dans le système sera utilisé.
+
+Récupère les enregistrements ns de la zone mydomain.tld en interrogeant un serveur spécifique.
+`dig ns mydomain.tld @<ip du résolveur>`
