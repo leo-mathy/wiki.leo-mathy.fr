@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T14:09:23.341Z
+date: 2024-12-13T14:13:53.481Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -365,4 +365,6 @@ Il y a de nombreux types de serveurs DNS utilisés dans le monde.
 Le protocole DNS est en grande partie non chiffré, cela pose des problèmes de confidentialité (les FAI/appareils sur le réseau local peuvent voir en clair les requètes). 
 
 Pour chiffrer ces requètes, il est possible d'utiliser DNS over TLS (DoT) ou DNS over HTTP (DoH). Il est aussi possible d'utiliser DNSCrypt pour chiffrer la communication entre le serveur de nom et le client.
+
+Le DNS ne traduit pas uniquement des noms en adresses IP. Il permet aussi de stocker et publier des informations supplémentaires sur les services associés à un domaine (par exemple pour indiquer l'adresse du serveur de messagerie).
 
