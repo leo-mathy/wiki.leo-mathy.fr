@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-12T08:05:14.319Z
+date: 2024-12-13T08:58:03.386Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -266,3 +266,6 @@ Dans la version 4 de Samba, le serveur Samba peut être un contrôleur de domain
 Pour implémenter le rôle d'Active Directory, le serveur Samba est composé de plusieurs services pour effectuer cette tâche. Le service smbd (service serveur SMB) et le service nmbd (service NetBIOS message Block). Le service SMB contrôle ces deux programmes d'arrières plan.
 
 Samba est donc approprié pour les systèmes Windows et Linux.
+
+Dans un réseau, chaque hôte participe au même workgroup. Un Workgroup est le nom d'un groupe qui identifie une collection arbitraire de systèmes et leurs ressources sur un réseau SMB. Il est possible d'avoir plusieurs workgroups dans un même réseau à n'importe quel moment.
+
