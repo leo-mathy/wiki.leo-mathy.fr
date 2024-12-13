@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T15:41:28.637Z
+date: 2024-12-13T15:46:14.522Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -430,3 +430,5 @@ Un serveur DNS qui obtient les données d'une zone depuis un Master est appelé 
 Une serveur DNS Primaire pour une zone est toujours un Maître alors qu'un serveur DNS Secondaire peut être un Maître ou un Esclave.
 
 Les esclaves récupèrent l'enregistrement SOA de la zone à certaines intervalles (refresh time), et compare les numéros de série. Si le numéro de série de l'enregistrement SOA du Maître est plus grand que celui de l'esclave alors les données ne sont plus égales.
+
+Si l'option allow-transfer est définie sur un sous-réseau ou sur any, alors n'importe qui peut récupérer le fichier de zone, ce qui peut autoriser la récupération d'autres zones ou encore la possibilité de récupérer des noms et adresse IP internes.
