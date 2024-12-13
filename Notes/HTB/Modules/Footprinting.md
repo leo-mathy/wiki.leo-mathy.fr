@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T09:20:28.693Z
+date: 2024-12-13T09:30:32.021Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -276,3 +276,7 @@ Dans un environnement NetBIOS, quand une machine passe en ligne, elle nécessite
 Chaque hôte réserve son nom sur le réseau ou bien le serveur de nom NetBIOS est utilisé. Cela à été amélioré avec [le Service de noms Internet Windows](https://networkencyclopedia.com/windows-internet-name-service-wins/)
 
 Samba offre de nombreux paramètres que l'on peut configurer grâce au [fichier de configuration](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html)
+
+En regardant les paramètres du service il faut se demander ce que les employés et attaquants peuvent gagner de l'activation de ces paramètres.
+
+Certains paramètres peuvent être sensibles voir dangereux, par exemple `browseable = yes` permet de lister les partages disponibles, `guest ok = yes` autorise les connexions sans mot de passe ou encore `create mask = 0777 `qui défini les permissions des nouveaux fichiers.
