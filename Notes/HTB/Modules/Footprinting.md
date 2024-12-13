@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T14:02:17.957Z
+date: 2024-12-13T14:09:23.341Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -361,3 +361,8 @@ Il y a de nombreux types de serveurs DNS utilisés dans le monde.
 | Caching DNS Server (Serveur DNS Cache) | Les serveurs DNS Cache stockent les informations d'autres serveurs de noms pour une certaine période (la période est définie par les serveurs de noms faisant autorité). |
 | Forwarding Server (Serveur de transfert) | Les serveurs de transfert ont une fonction unique, ils redirigent les requêtes DNS vers un autre serveur DNS|
 | Resolver (Résolveur) | Les résolveurs effectuent une résolution de nom localement sur le système. |
+
+Le protocole DNS est en grande partie non chiffré, cela pose des problèmes de confidentialité (les FAI/appareils sur le réseau local peuvent voir en clair les requètes). 
+
+Pour chiffrer ces requètes, il est possible d'utiliser DNS over TLS (DoT) ou DNS over HTTP (DoH). Il est aussi possible d'utiliser DNSCrypt pour chiffrer la communication entre le serveur de nom et le client.
+
