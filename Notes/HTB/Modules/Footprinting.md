@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T15:49:03.613Z
+date: 2024-12-13T15:57:26.120Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -432,5 +432,8 @@ Une serveur DNS Primaire pour une zone est toujours un Maître alors qu'un serve
 Les esclaves récupèrent l'enregistrement SOA de la zone à certaines intervalles (refresh time), et compare les numéros de série. Si le numéro de série de l'enregistrement SOA du Maître est plus grand que celui de l'esclave alors les données ne sont plus égales.
 
 Si l'option allow-transfer est définie sur un sous-réseau ou sur any, alors n'importe qui peut récupérer le fichier de zone, ce qui peut autoriser la récupération d'autres zones ou encore la possibilité de récupérer des noms et adresse IP internes.
+
+Pour récupérer les transfères de zones avec Dig:
+`dig axfr <domaine> @<ip du résolveur>`
 
 Il est possible aussi de brute-force les sous-domaines, un outils parmi d'autres pour cela est [dnsenum](https://github.com/fwaeytens/dnsenum).
