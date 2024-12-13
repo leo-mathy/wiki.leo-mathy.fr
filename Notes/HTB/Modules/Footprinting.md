@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T10:17:02.472Z
+date: 2024-12-13T10:31:30.047Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -284,3 +284,9 @@ Certains paramètres peuvent être sensibles voir dangereux, par exemple `browse
 `smbclient -N -L //<ip>` permet de lister les partages du serveur en utilisant une session nulle (accès anonyme), donc sans utiliser de mots de passe ou d'utilisateur.
 
 Il est possible de faire `!<commande>` pour exécuter une commande sur le client dans une session avec smbclient.
+
+Sur le serveur Samba, il est possible d'utiliser smbstatus pour voir les connexions, l'hôte et le partage auxquels le client est connecté.
+
+Nmap peut être utilisé énumérer le service. Il est cependant recommandé d'effectuer une énumération manuelle.
+
+Pour interagir manuellement avec le service SMB et envoyer des requêtes spécifiques il est possible d'utiliser rpcclient. Cet outil effectue des fonctions MS-RPC.
