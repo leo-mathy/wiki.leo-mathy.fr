@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T11:29:17.566Z
+date: 2024-12-13T12:35:07.084Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -311,4 +311,4 @@ NFS (Network File System) est un système de fichier en réseau développé par 
 
 Tandis que NFSv3 authentifie l'ordinateur client, avec NFSv4, le système est désormais pareil que SMB avec une authentification utilisateur.
 
-NFSv2 est plus ancien mais supporté par beaucoup de systèmes, il était originellement opéré à travers UDP.
+NFSv2 est plus ancien mais supporté par beaucoup de systèmes, il fonctionnait originellement entièrement avec UDP.
