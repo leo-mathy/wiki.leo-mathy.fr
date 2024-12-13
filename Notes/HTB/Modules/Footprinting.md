@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T14:18:18.297Z
+date: 2024-12-13T14:25:46.117Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -362,21 +362,21 @@ Il y a de nombreux types de serveurs DNS utilisés dans le monde.
 | Forwarding Server (Serveur de transfert) | Les serveurs de transfert ont une fonction unique, ils redirigent les requêtes DNS vers un autre serveur DNS|
 | Resolver (Résolveur) | Les résolveurs effectuent une résolution de nom localement sur le système. |
 
-Le protocole DNS est en grande partie non chiffré, cela pose des problèmes de confidentialité (les FAI/appareils sur le réseau local peuvent voir en clair les requètes). 
+Le protocole DNS est en grande partie non chiffré, cela pose des problèmes de confidentialité (les FAI/appareils sur le réseau local peuvent voir en clair les requêtes).
 
-Pour chiffrer ces requètes, il est possible d'utiliser DNS over TLS (DoT) ou DNS over HTTP (DoH). Il est aussi possible d'utiliser DNSCrypt pour chiffrer la communication entre le serveur de nom et le client.
+Pour chiffrer ces requêtes, il est possible d'utiliser DNS over TLS (DoT) ou DNS over HTTP (DoH). Il est aussi possible d'utiliser DNSCrypt pour chiffrer la communication entre le serveur de nom et le client.
 
 Le DNS ne traduit pas uniquement des noms en adresses IP. Il permet aussi de stocker et publier des informations supplémentaires sur les services associés à un domaine (par exemple pour indiquer l'adresse du serveur de messagerie).
 
-Différents enregistrements DNS avec plusieurs fonctions associés sont utilisables. 
+Différents enregistrements DNS avec plusieurs fonctions associés sont utilisables.
 
-| Type d'enregistrement DNS | Fonction |
-| ---- | ---- |
-| A | Retourne l'adresse IPv4 du domaine demandé. |
-| AAAA |  Retourne l'adresse IPv6 du domaine demandé. |
-| MX | Retourne le serveur de messagerie responsable du domaine demandé. |
-| NS | Retourne les serveurs DNS du domaine. |
-| | |
-| | |
-| | |
-| | |
+| Type d'enregistrement DNS | Fonction                                                                                     |
+| ------------------------- | -------------------------------------------------------------------------------------------- |
+| A                         | Retourne l'adresse IPv4 du domaine demandé.                                                  |
+| AAAA                      | Retourne l'adresse IPv6 du domaine demandé.                                                  |
+| MX                        | Retourne le serveur de messagerie responsable du domaine demandé.                            |
+| NS                        | Retourne les serveurs DNS (NameServers) du domaine.                                          |
+| TXT                       | Retourne des informations diverses (DMARC,DKIM,SPF...)                                       |
+| CNAME                     | Est utilisé comme alias pour un autre nom de domaine.                                        |
+| PTR                       | Associe une adresse IP à un nom de domaine.                                                  |
+| SOA                       | Donne des informations sur la zone DNS correspondante et l'adresse du contact administratif. |
