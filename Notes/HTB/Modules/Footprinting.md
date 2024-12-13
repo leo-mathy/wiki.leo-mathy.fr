@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T15:37:57.283Z
+date: 2024-12-13T15:41:28.637Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -428,3 +428,5 @@ Un serveur DNS qui sert de source directe pour la synchronisation d'un fichier d
 Un serveur DNS qui obtient les données d'une zone depuis un Master est appelé Esclave (Slave).
 
 Une serveur DNS Primaire pour une zone est toujours un Maître alors qu'un serveur DNS Secondaire peut être un Maître ou un Esclave.
+
+Les esclaves récupèrent l'enregistrement SOA de la zone à certaines intervalles (refresh time), et compare les numéros de série. Si le numéro de série de l'enregistrement SOA du Maître est plus grand que celui de l'esclave alors les données ne sont plus égales.
