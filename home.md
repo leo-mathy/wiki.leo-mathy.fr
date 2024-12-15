@@ -2,7 +2,7 @@
 title: Accueil
 description: Page principale d'arrivée par défaut
 published: true
-date: 2024-12-15T21:18:34.474Z
+date: 2024-12-15T21:19:03.589Z
 tags: 
 editor: markdown
 dateCreated: 2024-04-14T15:03:48.620Z
@@ -37,4 +37,4 @@ Syntaxe basique utilisée lors de la rédaction
 
 [La syntaxe est basée sur la syntaxe Microsoft officielle](<https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v=ws.11)>)
 
-[profile vscode utilisé](https://vscode.dev/editor/profile/github/db29e0b5a82d99c32f4f97a6dd2f94e9)
+[profil Visual Studio Code utilisé](https://vscode.dev/editor/profile/github/db29e0b5a82d99c32f4f97a6dd2f94e9)
