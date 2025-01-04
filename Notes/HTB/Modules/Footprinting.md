@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2024-12-13T15:57:26.120Z
+date: 2025-01-04T13:35:29.334Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -437,3 +437,5 @@ Pour récupérer les transfères de zones avec Dig:
 `dig axfr <domaine> @<ip du résolveur>`
 
 Il est possible aussi de brute-force les sous-domaines, un outils parmi d'autres pour cela est [dnsenum](https://github.com/fwaeytens/dnsenum).
+
+## SMTP
