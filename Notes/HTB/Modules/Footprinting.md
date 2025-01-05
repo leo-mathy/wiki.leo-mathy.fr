@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-05T15:55:36.479Z
+date: 2025-01-05T16:00:22.988Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -446,4 +446,8 @@ Il peut être utilisé entre un client mail et un serveur mail ou entre deux ser
 
 Le protocole SMTP est souvent utilisé avec les protocoles IMAP ou POP3, pour l'envoi et la récupération des mails.
 
-Par défaut les serveurs SMTP écoutent sur le port 25. Cependant les serveurs plus réçents écoutent aussi sur le port 587 pour la réception des mails depuis des serveurs/utilisateurs authentifiés, normalement en utilisant la commande STARTTLS (passer d'une connexion en clair à une connection chiffrée).
+Par défaut les serveurs SMTP écoutent sur le port 25. Cependant les serveurs plus réçents écoutent aussi sur le port 587 pour la réception des mails depuis des serveurs/utilisateurs authentifiés, normalement en utilisant la commande STARTTLS (pour passer d'une connexion en clair à une connection chiffrée).
+
+Au début de la connexion, l'authentification se produit lorsque le client confirme son identité (avec un nom d'utilisateur et un mot de passe). Les mails peuvent ensuite être transmis.
+
+Pour transmettre un mail, le client transmet l'adresse du serveur d'origine et du/des destinataire(s)
