@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-05T16:22:50.929Z
+date: 2025-01-05T16:26:57.143Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -460,3 +460,5 @@ Pour palier à cela, SMTP peut être utilisé avec un chiffrement SSL/TLS. Le se
 - avec le port 465, la connexion est chiffrée dès le premier échange entre le client et le serveur.
 
 Cependant il est conseillé d'utiliser le port 587 avec STARTTLS puisqu'il permet aux clients et serveurs qui ne supportent pas le chiffrement de fonctionner en mode "fallback" et que le port 465 à été déprécié.
+
+Une fonctionnalitée essentielle d'un serveur SMTP est la prévention du spam en utilisant des méchanismes d'authentification qui permettent uniquement aux utilisateurs autorisés d'envoyer des mails.
