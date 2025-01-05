@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-05T16:50:04.889Z
+date: 2025-01-05T16:53:05.852Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -466,4 +466,5 @@ Pour cela, la pluspart des serveurs SMTP modernes supportent l'extension du prot
 
 - Lors de l'envoi d'un mail, le client SMTP aussi connu sous le nom Mail User Agent (MUA) convertit le mail en un header et un body, puis envoi les deux au serveur SMTP.
 - Sur le serveur SMTP, le Mail Transfer Agent (MTA), est responsable de l'envoi et de la réception des mails. Le MTA vérifie ensuite la taille et si le mail est un spam ou non puis le stocke.
-- Ocasionnellement, cette tâche de vérification peut être déléguée à l'avance au Mail Submission Agent (MSA)
+- Ocasionnellement, cette tâche de vérification peut être déléguée à l'avance au Mail Submission Agent (MSA). Le MSA va vérifier la validitée de l'email (origine du mail). Le MSA est aussi appellé serveur Relais (Relay Server).
+
