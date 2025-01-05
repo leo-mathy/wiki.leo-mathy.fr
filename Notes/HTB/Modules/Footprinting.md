@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-05T16:00:22.988Z
+date: 2025-01-05T16:01:01.977Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -450,4 +450,4 @@ Par défaut les serveurs SMTP écoutent sur le port 25. Cependant les serveurs p
 
 Au début de la connexion, l'authentification se produit lorsque le client confirme son identité (avec un nom d'utilisateur et un mot de passe). Les mails peuvent ensuite être transmis.
 
-Pour transmettre un mail, le client transmet l'adresse du serveur d'origine et du/des destinataire(s)
+Pour transmettre un mail, le client transmet au serveur l'adresse du serveur d'origine et du/des destinataire(s), le contenu du mail et d'autres informations/paramètres.
