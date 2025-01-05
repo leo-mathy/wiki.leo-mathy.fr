@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-05T17:23:58.345Z
+date: 2025-01-05T17:26:55.557Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -446,7 +446,7 @@ Il peut être utilisé entre un client mail et un serveur mail ou entre deux ser
 
 Le protocole SMTP est souvent utilisé avec les protocoles IMAP ou POP3, pour l'envoi et la récupération des mails.
 
-Par défaut les serveurs SMTP écoutent sur le port 25. Cependant les serveurs plus réçents écoutent aussi sur le port 587 pour la réception des mails depuis des serveurs/utilisateurs authentifiés, normalement en utilisant la commande STARTTLS (pour passer d'une connexion en clair à une connection chiffrée).
+Par défaut les serveurs SMTP écoutent sur le port 25. Cependant les serveurs plus récents écoutent aussi sur le port 587 pour la réception des mails depuis des serveurs/utilisateurs authentifiés, normalement en utilisant la commande STARTTLS (pour passer d'une connexion en clair à une connexion chiffrée).
 
 Au début de la connexion, l'authentification se produit lorsque le client confirme son identité (avec un nom d'utilisateur et un mot de passe). Les mails peuvent ensuite être transmis.
 
@@ -461,22 +461,21 @@ Pour palier à cela, SMTP peut être utilisé avec un chiffrement SSL/TLS. Le se
 
 Cependant il est conseillé d'utiliser le port 587 avec STARTTLS puisqu'il permet aux clients et serveurs qui ne supportent pas le chiffrement de fonctionner en mode "fallback" et que le port 465 à été déprécié.
 
-Une fonctionnalitée essentielle d'un serveur SMTP est la prévention du spam en utilisant des méchanismes d'authentification qui permettent uniquement aux utilisateurs autorisés d'envoyer des mails.
-Pour cela, la pluspart des serveurs SMTP modernes supportent l'extension du protocole SMTP, ESMTP (Extended SMTP) avec SMTP-Auth.
+Une fonctionnalité essentielle d'un serveur SMTP est la prévention du spam en utilisant des mécanismes d'authentification qui permettent uniquement aux utilisateurs autorisés d'envoyer des mails.
+Pour cela, la plupart des serveurs SMTP modernes supportent l'extension du protocole SMTP, ESMTP (Extended SMTP) avec SMTP-Auth.
 
 - Lors de l'envoi d'un mail, le **client SMTP** aussi connu sous le nom **Mail User Agent (MUA)** **convertit le mail en un header et un body**, puis **envoi les deux** au serveur SMTP.
-- Sur le serveur SMTP, le **Mail Transfer Agent (MTA)**, est r**esponsable de l'envoi et de la réception des mails**. Le MTA vérifie ensuite la taille et si le mail est un spam ou non puis le stocke. Le MTA va ensuite **récupérer l'adresse IP du serveur de réception** depuis le DNS.
-- Ocasionnellement, cette tâche de vérification peut être **déléguée à l'avance** au Mail Submission Agent (MSA). Le MSA va vérifier la validitée de l'email (origine du mail). Le MSA est **aussi appellé serveur Relais** (Relay Server). Une attaque de type "Open Relay Attack" est souvent disponible sur de nombreux serveurs SMTP à cause de configurations incorrectes.
+- Sur le serveur SMTP, le **Mail Transfer Agent (MTA)**, est **responsable de l'envoi et de la réception des mails**. Le MTA vérifie ensuite la taille et si le mail est un spam ou non puis le stocke. Le MTA va ensuite **récupérer l'adresse IP du serveur de réception** depuis le DNS.
+- Occasionnellement, cette tâche de vérification peut être **déléguée à l'avance** au Mail Submission Agent (MSA). Le MSA va vérifier la validité de l'email (origine du mail). Le MSA est **aussi appelé serveur Relais** (Relay Server). Une attaque de type "Open Relay Attack" est souvent disponible sur de nombreux serveurs SMTP à cause de configurations incorrectes.
 - Une fois le mail reçu par le **serveur SMTP de destination**, les paquets sont réassemblés pour former un mail complet.
 - Le **Mail delivery agent (MDA)** transfère le mail **vers la boite aux lettres** de destination.
 
 Mail User Agent (MUA) 🡆 Mail Submission Agent (MSA) 🡆 Mail Transfer Agent (MTA) 🡆 Mail delivery agent (MDA) 🡆 Boite aux lettres
 
-SMTP à deux désavantages inherents au protocole réseau:
-- L'envoi des mails en utilisant SMTP ne retourne pas d'informations concernant la confirmation de livraison. Bien que les spécifications du protocole prévoient ce type de notification, son format n'est pas spécifié par défaut, de sorte que généralement seul un message d'erreur en anglais, comprenant l'en-tête du message non remis, est renvoyé.
-- Les utilisateurs ne sont pas authentifiés lorsqu'une connection est établie, l'expéditeur du mail est donc peu fiable. C'est pour cela que les relais SMTP sont souvent utilisés pour l'envoi de spam en masse, souvent à l'aide de mail spoofing. Pour prévenir cela, de nombreuses techniques sont disponibles, comme par exemple le rejet de mails ou la mise en quarantaine grâce protocole SPF ( Sender Policy Framework) et [DKIM](http://dkim.org/) (DomainKeys).
+SMTP à deux désavantages inhérents au protocole réseau:
 
-C'est pour cela que l'extension à SMTP, ESMTP (Extended SMTP) à été developpé. En général c'est cette extension qui est désignée lorsque le protocole SMTP est abordé.
-ESMTP utilise TLS, ce qui est fait après la commande EHLO en envoyant STARTTLS. Ce qui initialise la connection SMTP chiffrée. Après cela, les extensions d'authentification en clair peuvent être utilisés de manière sécurisée.
+- L'envoi des mails en utilisant SMTP ne retourne pas d'information concernant la confirmation de livraison. Bien que les spécifications du protocole prévoient ce type de notification, son format n'est pas spécifié par défaut, de sorte que généralement seul un message d'erreur en anglais, comprenant l'en-tête du message non remis, est renvoyé.
+- Les utilisateurs ne sont pas authentifiés lorsqu'une connexion est établie, l'expéditeur du mail est donc peu fiable. C'est pour cela que les relais SMTP sont souvent utilisés pour l'envoi de spam en masse, souvent à l'aide de mail spoofing. Pour prévenir cela, de nombreuses techniques sont disponibles, comme par exemple le rejet de mails ou la mise en quarantaine grâce protocole SPF ( Sender Policy Framework) et [DKIM](http://dkim.org/) (DomainKeys).
 
-
+C'est pour cela que l'extension à SMTP, ESMTP (Extended SMTP) à été développé. En général c'est cette extension qui est désignée lorsque le protocole SMTP est abordé.
+ESMTP utilise TLS, ce qui est fait après la commande EHLO en envoyant STARTTLS. Ce qui initialise la connexion SMTP chiffrée. Après cela, les extensions d'authentification en clair (AUTH PLAIN) peuvent être utilisés de manière sécurisée.
