@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-05T17:06:23.339Z
+date: 2025-01-05T17:17:37.329Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -471,3 +471,9 @@ Pour cela, la pluspart des serveurs SMTP modernes supportent l'extension du prot
 - Le **Mail delivery agent (MDA)** transfère le mail **vers la boite aux lettres** de destination.
 
 Mail User Agent (MUA) 🡆 Mail Submission Agent (MSA) 🡆 Mail Transfer Agent (MTA) 🡆 Mail delivery agent (MDA) 🡆 Boite aux lettres
+
+SMTP à deux désavantages inherents au protocole réseau:
+- L'envoi des mails en utilisant SMTP ne retourne pas d'informations concernant la confirmation de livraison. Bien que les spécifications du protocole prévoient ce type de notification, son format n'est pas spécifié par défaut, de sorte que généralement seul un message d'erreur en anglais, comprenant l'en-tête du message non remis, est renvoyé.
+- Les utilisateurs ne sont pas authentifiés lorsqu'une connection est établie, l'expéditeur du mail est donc peu fiable. C'est pour cela que les relais SMTP sont souvent utilisés pour l'envoi de spam en masse, souvent à l'aide de mail spoofing. Pour prévenir cela, de nombreuses techniques sont disponibles, comme par exemple le rejet de mails ou la mise en quarantaine grâce protocole SPF ( Sender Policy Framework) ou [DKIM](http://dkim.org/) (DomainKeys)
+
+
