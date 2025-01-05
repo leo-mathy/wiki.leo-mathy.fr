@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-04T13:35:29.334Z
+date: 2025-01-05T15:55:36.479Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -439,3 +439,11 @@ Pour récupérer les transfères de zones avec Dig:
 Il est possible aussi de brute-force les sous-domaines, un outils parmi d'autres pour cela est [dnsenum](https://github.com/fwaeytens/dnsenum).
 
 ## SMTP
+
+Le protocole SMTP (Simple Mail Transfer Protocol) est un protocole d'envoi de mail dans un réseau IP.
+
+Il peut être utilisé entre un client mail et un serveur mail ou entre deux serveurs SMTP (Si la communication s'effectue entre deux serveurs, alors un des deux est client et l'autre serveur).
+
+Le protocole SMTP est souvent utilisé avec les protocoles IMAP ou POP3, pour l'envoi et la récupération des mails.
+
+Par défaut les serveurs SMTP écoutent sur le port 25. Cependant les serveurs plus réçents écoutent aussi sur le port 587 pour la réception des mails depuis des serveurs/utilisateurs authentifiés, normalement en utilisant la commande STARTTLS (passer d'une connexion en clair à une connection chiffrée).
