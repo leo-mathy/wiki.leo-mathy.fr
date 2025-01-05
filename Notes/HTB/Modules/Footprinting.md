@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-05T16:01:01.977Z
+date: 2025-01-05T16:22:50.929Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -450,4 +450,13 @@ Par défaut les serveurs SMTP écoutent sur le port 25. Cependant les serveurs p
 
 Au début de la connexion, l'authentification se produit lorsque le client confirme son identité (avec un nom d'utilisateur et un mot de passe). Les mails peuvent ensuite être transmis.
 
-Pour transmettre un mail, le client transmet au serveur l'adresse du serveur d'origine et du/des destinataire(s), le contenu du mail et d'autres informations/paramètres.
+Pour transmettre un mail, le client transmet au serveur l'adresse du serveur d'origine et du/des destinataire(s), le contenu du mail et d'autres informations/paramètres. Après la transmission du mail, la connexion se termine et le serveur envoi le mail à un autre serveur SMTP.
+
+Par défaut, SMTP fonctionne sans chiffrement et transmet les commandes,données ou encore informations d'authentification en clair.
+
+Pour palier à cela, SMTP peut être utilisé avec un chiffrement SSL/TLS. Le serveur peut utiliser un port différent du port 25 pour cela, par exemple le port 465.
+
+- avec le port 587, la connexion démarre en clair, puis le client demande au serveur de passer en mode chiffré avec la commande STARTTLS.
+- avec le port 465, la connexion est chiffrée dès le premier échange entre le client et le serveur.
+
+Cependant il est conseillé d'utiliser le port 587 avec STARTTLS puisqu'il permet aux clients et serveurs qui ne supportent pas le chiffrement de fonctionner en mode "fallback" et que le port 465 à été déprécié.
