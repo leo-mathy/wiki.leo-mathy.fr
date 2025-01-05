@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-05T17:17:37.329Z
+date: 2025-01-05T17:23:58.345Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -474,6 +474,9 @@ Mail User Agent (MUA) 🡆 Mail Submission Agent (MSA) 🡆 Mail Transfer Agent 
 
 SMTP à deux désavantages inherents au protocole réseau:
 - L'envoi des mails en utilisant SMTP ne retourne pas d'informations concernant la confirmation de livraison. Bien que les spécifications du protocole prévoient ce type de notification, son format n'est pas spécifié par défaut, de sorte que généralement seul un message d'erreur en anglais, comprenant l'en-tête du message non remis, est renvoyé.
-- Les utilisateurs ne sont pas authentifiés lorsqu'une connection est établie, l'expéditeur du mail est donc peu fiable. C'est pour cela que les relais SMTP sont souvent utilisés pour l'envoi de spam en masse, souvent à l'aide de mail spoofing. Pour prévenir cela, de nombreuses techniques sont disponibles, comme par exemple le rejet de mails ou la mise en quarantaine grâce protocole SPF ( Sender Policy Framework) ou [DKIM](http://dkim.org/) (DomainKeys)
+- Les utilisateurs ne sont pas authentifiés lorsqu'une connection est établie, l'expéditeur du mail est donc peu fiable. C'est pour cela que les relais SMTP sont souvent utilisés pour l'envoi de spam en masse, souvent à l'aide de mail spoofing. Pour prévenir cela, de nombreuses techniques sont disponibles, comme par exemple le rejet de mails ou la mise en quarantaine grâce protocole SPF ( Sender Policy Framework) et [DKIM](http://dkim.org/) (DomainKeys).
+
+C'est pour cela que l'extension à SMTP, ESMTP (Extended SMTP) à été developpé. En général c'est cette extension qui est désignée lorsque le protocole SMTP est abordé.
+ESMTP utilise TLS, ce qui est fait après la commande EHLO en envoyant STARTTLS. Ce qui initialise la connection SMTP chiffrée. Après cela, les extensions d'authentification en clair peuvent être utilisés de manière sécurisée.
 
 
