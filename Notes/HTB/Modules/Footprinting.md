@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-05T16:26:57.143Z
+date: 2025-01-05T16:50:04.889Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -462,3 +462,8 @@ Pour palier à cela, SMTP peut être utilisé avec un chiffrement SSL/TLS. Le se
 Cependant il est conseillé d'utiliser le port 587 avec STARTTLS puisqu'il permet aux clients et serveurs qui ne supportent pas le chiffrement de fonctionner en mode "fallback" et que le port 465 à été déprécié.
 
 Une fonctionnalitée essentielle d'un serveur SMTP est la prévention du spam en utilisant des méchanismes d'authentification qui permettent uniquement aux utilisateurs autorisés d'envoyer des mails.
+Pour cela, la pluspart des serveurs SMTP modernes supportent l'extension du protocole SMTP, ESMTP (Extended SMTP) avec SMTP-Auth.
+
+- Lors de l'envoi d'un mail, le client SMTP aussi connu sous le nom Mail User Agent (MUA) convertit le mail en un header et un body, puis envoi les deux au serveur SMTP.
+- Sur le serveur SMTP, le Mail Transfer Agent (MTA), est responsable de l'envoi et de la réception des mails. Le MTA vérifie ensuite la taille et si le mail est un spam ou non puis le stocke.
+- Ocasionnellement, cette tâche de vérification peut être déléguée à l'avance au Mail Submission Agent (MSA)
