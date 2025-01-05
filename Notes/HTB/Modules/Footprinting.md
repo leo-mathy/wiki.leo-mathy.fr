@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-05T17:03:36.990Z
+date: 2025-01-05T17:06:23.339Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -470,3 +470,4 @@ Pour cela, la pluspart des serveurs SMTP modernes supportent l'extension du prot
 - Une fois le mail reçu par le **serveur SMTP de destination**, les paquets sont réassemblés pour former un mail complet.
 - Le **Mail delivery agent (MDA)** transfère le mail **vers la boite aux lettres** de destination.
 
+Mail User Agent (MUA) 🡆 Mail Submission Agent (MSA) 🡆 Mail Transfer Agent (MTA) 🡆 Mail delivery agent (MDA) 🡆 Boite aux lettres
