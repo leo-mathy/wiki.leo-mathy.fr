@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T11:56:34.192Z
+date: 2025-01-11T11:58:00.959Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -507,7 +507,7 @@ Le header d'un mail comporte de nombreuses informations utiles, comme l'horaire 
 
 Pour éviter le filtrage des mails (et donc la non réception des mails par le destinataire), l'expéditeur peut utiliser un serveur relais en qui le destinataire a confiance.
 
-Le relais est un serveur SMTP connu et vérifié par tous les autres. Lors de la connexion au serveur relais, l'expéditeur doit s'authentifier avant de l'utiliser.
+Le relais est un serveur SMTP connu et vérifié par tous les autres. Lors de la connexion au serveur relais, l'expéditeur doit s'authentifier avant de l'utiliser sauf dans certains cas où des adresses IP ou plages d'adresses spécifiques sont préautorisées.
 
 Dans Postfix, le paramètre suivant peut être utilisé pour indiquer les adresses IP ou les plages d'adresses qui sont autorisées à utiliser le serveur comme relais sans authentification.
 `mynetworks = [adresses IP / les plages d'adresses]`
