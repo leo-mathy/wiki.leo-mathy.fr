@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T18:16:11.820Z
+date: 2025-01-11T18:25:46.383Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -549,7 +549,7 @@ Au début de chaque connexion, l'utilisateur est authentifié sur le serveur ave
 En copiant les mails envoyés vers un dossier IMAP, tous les clients ont accès aux mails envoyés depuis la boite aux lettres. Sans prendre en compte depuis quel poste le mail à été envoyé.
 
 Par défaut, la communication avec IMAP entre un client et un serveur n'est pas chiffrée (transmission des mails,noms d'utilisateurs, mots de passe en clair). Beaucoup de serveurs requièrent l'établissement d'une session IMAP chiffrée, c'est SSL/TLS qui est normalement utilisé pour cela.
-La connexion IMAP chiffrée utilise le port standard 143 ou un port alternatif (par exemple 993), en fonction de la méthode et de l'implémentation utilisée.
+La connexion IMAP utilise le port 143 par défaut, ou le port 993 ou un port alternatif, en fonction de la méthode et de l'implémentation utilisée.
 
 Pour tester/examiner ces protocoles, il est possible d'utiliser les paquets (apt) dovecot-imapd et dovecot-pop3d.
 
@@ -593,3 +593,12 @@ Pour tester/examiner ces protocoles, il est possible d'utiliser les paquets (apt
 | `auth_verbose`            | Log les tentatives d'authentifications ratés et leurs raison.                                                                                    |
 | `auth_verbose_passwords`  | Les mots de passe pour l'authentification sont loggés, ils peuvent être tronqués.                                                                |
 | `auth_anonymous_username` | Spécifie le nom d'utilisateur pour la connexion anonyme sans authentification avec le mécanisme SASL (Simple Authentication and Security Layer). |
+
+Voici un tableau des ports par défaut utilisé par les deux protocoles:
+
+| Port  | Description                                                              |
+| ----- | ------------------------------------------------------------------------ |
+| `143` | Port utilisé par IMAP.                                                   |
+| `993` | Port utilisé par IMAP, basé sur SSL/TLS pour chiffrer la communication.. |
+| `110` | Port utilisé par POP3.                                                   |
+| `995` | Port utilisé par POP3, basé sur SSL/TLS pour chiffrer la communication.. |
