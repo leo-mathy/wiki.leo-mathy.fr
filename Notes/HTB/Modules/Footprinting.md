@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T17:40:54.120Z
+date: 2025-01-11T17:41:43.651Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -549,4 +549,4 @@ Au début de chaque connexion, l'utilisateur est authentifié sur le serveur ave
 En copiant les mails envoyés vers un dossier IMAP, tous les clients ont accès aux mails envoyés depuis la boite aux lettres. Sans prendre en compte depuis quel poste le mail à été envoyé.
 
 Par défaut, la communication avec IMAP entre un client et un serveur n'est pas chiffrée (transmission des mails,noms d'utilisateurs, mots de passe en clair). Beaucoup de serveurs requièrent l'établissement d'une session IMAP chiffrée, c'est SSL/TLS qui est normalement utilisé pour cela.
-La connexion IMAP chiffrée utilise le port standard 143 ou le port 993 comme alternative, en fonction de la méthode et de l'implémentation utilisée.
+La connexion IMAP chiffrée utilise le port standard 143 ou un port alternatif (par exemple 993), en fonction de la méthode et de l'implémentation utilisée.
