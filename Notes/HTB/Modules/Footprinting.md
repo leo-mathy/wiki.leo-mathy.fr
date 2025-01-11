@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T17:56:17.171Z
+date: 2025-01-11T17:56:35.178Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -553,7 +553,7 @@ La connexion IMAP chiffrée utilise le port standard 143 ou un port alternatif (
 
 Pour tester/examiner ces protocoles, il est possible d'utiliser les paquets (apt) dovecot-imapd et dovecot-pop3d.
 
-Le terme boite aux lettres (au sens IMAP) correspond a un dossier (au sens de la plupart des clients de messagerie).
+**Le terme boite aux lettres (au sens IMAP) correspond a un dossier (au sens de la plupart des clients de messagerie).**
 
 Les commandes IMAP sont les suivantes:
 
