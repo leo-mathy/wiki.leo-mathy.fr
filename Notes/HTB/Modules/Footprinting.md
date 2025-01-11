@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T11:34:59.769Z
+date: 2025-01-11T11:56:34.192Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -503,4 +503,11 @@ Pour interagir avec le serveur SMTP, il est possible d'utiliser telnet pour init
 
 Il est possible de communiquer vers un serveur mail au travers un proxy web, (possiblement avec la version HTTP/1.0 )
 
-Le header d'un mail comporte de nombreuses informations utiles, comme l'horaire d'expédition, le format ou encore les serveurs qui ont redirigés le mail.
+Le header d'un mail comporte de nombreuses informations utiles, comme l'horaire d'expédition, le format ou encore les serveurs qui ont redirigés le mail. Cependant **le header du mail ne contient aucune information nécessaire à la livraison technique**. Les informations nécessaires à la livraison technique sont transmises dans une partie du protocole de transmission.
+
+Pour éviter le filtrage des mails (et donc la non réception des mails par le destinataire), l'expéditeur peut utiliser un serveur relais en qui le destinataire a confiance.
+
+Le relais est un serveur SMTP connu et vérifié par tous les autres. Lors de la connexion au serveur relais, l'expéditeur doit s'authentifier avant de l'utiliser.
+
+Dans Postfix, le paramètre suivant peut être utilisé pour indiquer les adresses IP ou les plages d'adresses qui sont autorisées à utiliser le serveur comme relais sans authentification.
+`mynetworks = [adresses IP / les plages d'adresses]`
