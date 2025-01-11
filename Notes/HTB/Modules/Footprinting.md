@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T17:06:35.970Z
+date: 2025-01-11T17:16:46.598Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -528,5 +528,8 @@ Enumérer les utilisateurs du serveur SMTP avec une liste et un timeout de 30sec
 ## IMAP / POP3
 
 Le protocole IMAP (Internet Message Access Protocol) permet l'accès aux mails depuis un serveur. Contrairement à POP, IMAP de manager des mails directement sur le serveur et supporte les structures sous forme de dossier.
-IMAP est donc un protocole client-serveur de management en ligne (les modifications sont opérés sur le serveur) de mails sur un serveur distant et permet de synchroniser un client mail local avec la boite aux lettres sur le serveur.
+IMAP est donc un protocole client-serveur de management en ligne (les modifications sont opérés sur le serveur) de mails sur un serveur distant et permet de synchroniser un client mail local avec la boite aux lettres sur le serveur. IMAP peut être vu comme une sorte de protocole de système de fichier en réseau pour mails.
+Cela permet une synchronisation à travers de nombreux clients indépendants. 
+
+Au niveau de POP3, celui-ci peut uniquement lister,récupérer et supprimer des mails du serveur. IMAP doit donc être utilisé pour des fonctionnalités additionnelles (dossiers sur le serveur, accès à de multiples boites aux lettres durant la même session, préselection des mails (synchronise uniquement les e-mails spécifiques en fonction de critères tels que la date, les indicateurs, la taille ou les dossiers pour optimiser les performances et l'utilisation des ressources)...)
 
