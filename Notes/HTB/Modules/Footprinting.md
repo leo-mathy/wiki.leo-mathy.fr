@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T11:18:54.122Z
+date: 2025-01-11T11:19:59.235Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -483,14 +483,13 @@ C'est pour cela que l'extension à SMTP, ESMTP (Extended SMTP) à été dévelop
 ESMTP utilise TLS, ce qui est fait après la commande EHLO en envoyant STARTTLS. Ce qui initialise la connexion SMTP chiffrée. Après cela, les extensions d'authentification en clair (AUTH PLAIN) peuvent être utilisés de manière sécurisée.
 
 Pour communiquer avec le serveur SMTP (via un client de messagerie par exemple), il est nécéssaire d'utiliser des commandes spéciales.
-Suite à l'envoi d'une commande, le serveur va répondre sous forme de code (un peu comme le protocole HTTP).
-
-Ces codes sont consultables [ici](https://serversmtp.com/smtp-error/)
+Suite à l'envoi d'une commande, le serveur va répondre sous forme de codes retour (un peu comme le protocole HTTP).
+Ces codes sont consultables [ici](https://serversmtp.com/smtp-error/).
 
 | Commande   | Description                                                                                                  |
 | ---------- | ------------------------------------------------------------------------------------------------------------ |
 | AUTH PLAIN | AUTH est une commande provenant de l'extension SMTP, ESMTP (Extended SMTP). Permet d'authentifier le client. |
-| HELO       | Le client se connecte en utilisant le nom de son ordinateur et démarre la session.                           |
+| HELO / EHLO       | Le client se connecte en utilisant le nom de son ordinateur et démarre la session.                           |
 | MAIL FROM  | Le client spécifie l'expéditeur de l'e-mail.                                                                 |
 | RCPT TO    | Le client spécifie le destinataire de l'e-mail.                                                              |
 | DATA       | Le client initie la transmission de l'e-mail.                                                                |
@@ -501,3 +500,4 @@ Ces codes sont consultables [ici](https://serversmtp.com/smtp-error/)
 | QUIT       | Le client termine la session.                                                                                |
 
 Pour intéragir avec le serveur SMTP, il est possible d'utiliser telnet pour initialiser une connexion TCP avec le serveur.
+
