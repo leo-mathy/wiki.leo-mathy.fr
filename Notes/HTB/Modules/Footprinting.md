@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T12:05:02.264Z
+date: 2025-01-11T12:08:01.834Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -500,6 +500,8 @@ Ces codes sont consultables [ici](https://serversmtp.com/smtp-error/).
 | QUIT        | Le client termine la session.                                                                                                                                                                                                                                        |
 
 Pour interagir avec le serveur SMTP, il est possible d'utiliser telnet pour initialiser une connexion TCP avec le serveur.
+
+`telnet [adresse IP] 25`
 
 Il est possible de communiquer vers un serveur mail au travers un proxy web, (possiblement avec la version HTTP/1.0 )
 
