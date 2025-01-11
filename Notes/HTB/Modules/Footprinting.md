@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T17:41:43.651Z
+date: 2025-01-11T17:56:17.171Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -550,3 +550,23 @@ En copiant les mails envoyés vers un dossier IMAP, tous les clients ont accès 
 
 Par défaut, la communication avec IMAP entre un client et un serveur n'est pas chiffrée (transmission des mails,noms d'utilisateurs, mots de passe en clair). Beaucoup de serveurs requièrent l'établissement d'une session IMAP chiffrée, c'est SSL/TLS qui est normalement utilisé pour cela.
 La connexion IMAP chiffrée utilise le port standard 143 ou un port alternatif (par exemple 993), en fonction de la méthode et de l'implémentation utilisée.
+
+Pour tester/examiner ces protocoles, il est possible d'utiliser les paquets (apt) dovecot-imapd et dovecot-pop3d.
+
+Le terme boite aux lettres (au sens IMAP) correspond a un dossier (au sens de la plupart des clients de messagerie).
+
+Les commandes IMAP sont les suivantes:
+
+| Commande                                               | Description                                                                                   |
+| ------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| `1 LOGIN <nom d'utilisateur> <mot de passe>`           | S'authentifie au serveur avec un nom d'utilisateur et un mot de passe.                        |
+| `1 LIST "" *`                                          | Lister tous les répertoires.                                                                  |
+| `1 CREATE "<boite aux lettres>"`                       | Créer une boite aux lettres.                                                                  |
+| `1 DELETE "<boite aux lettres>"`                       | Supprimer une boite aux lettres.                                                              |
+| `1 RENAME "<boite aux lettres>" "<boite aux lettres>"` | Renommer une boite aux lettres.                                                               |
+| `1 LSUB "" *`                                          | Retourne le nom des boites aux lettres que l'utilisateur à déclaré comme actives ou abonnées. |
+| `1 SELECT <boite aux lettres>`                         | Sélectionne une boite aux lettres pour accéder aux mails contenus dans celle-ci.              |
+| `1 UNSELECT <boite aux lettres>`                       | Quitte la boite aux lettres sélectionnée.                                                     |
+| `1 FETCH <ID> all`                                     | Récupère les données associés à un message.                                                   |
+| `1 CLOSE`                                              | Supprime tous les messages avec le flag "Deleted".                                            |
+| `1 LOGOUT`                                             | Termine la connexion avec le serveur.                                                         |
