@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T18:30:36.051Z
+date: 2025-01-11T18:32:12.223Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -607,3 +607,5 @@ Pour interagir avec un serveur IMAP(S)/POP3(S), il est possible d'utiliser curl,
 `curl -k 'imaps://<Adresse IP>' --user <utilisateur>:<mot de passe> -v`
 `openssl s_client -connect <Adresse IP>:imaps`
 `openssl s_client -connect <Adresse IP>:pop3s`
+
+# SNMP
