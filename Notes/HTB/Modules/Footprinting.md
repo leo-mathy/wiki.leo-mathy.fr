@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T11:08:06.488Z
+date: 2025-01-11T11:14:05.630Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -446,7 +446,7 @@ Il peut être utilisé entre un client mail et un serveur mail ou entre deux ser
 
 Le protocole SMTP est souvent utilisé avec les protocoles IMAP ou POP3, pour l'envoi et la récupération des mails.
 
-Les serveurs SMTP servent uniquement à envoyer et rediriger des mails. 
+Les serveurs SMTP servent uniquement à envoyer et rediriger des mails.
 
 Par défaut les serveurs SMTP écoutent sur le port 25. Cependant les serveurs plus récents écoutent aussi sur le port 587 pour la réception des mails depuis des serveurs/utilisateurs authentifiés, normalement en utilisant la commande STARTTLS (pour passer d'une connexion en clair à une connexion chiffrée).
 
@@ -482,4 +482,19 @@ SMTP à deux désavantages inhérents au protocole réseau:
 C'est pour cela que l'extension à SMTP, ESMTP (Extended SMTP) à été développé. En général c'est cette extension qui est désignée lorsque le protocole SMTP est abordé.
 ESMTP utilise TLS, ce qui est fait après la commande EHLO en envoyant STARTTLS. Ce qui initialise la connexion SMTP chiffrée. Après cela, les extensions d'authentification en clair (AUTH PLAIN) peuvent être utilisés de manière sécurisée.
 
+Pour communiquer avec le serveur SMTP (via un client de messagerie par exemple), il est nécéssaire d'utiliser des commandes spéciales.
 
+| Commande   | Description                                                                                |
+| ---------- | ------------------------------------------------------------------------------------------ |
+| AUTH PLAIN | AUTH est une extension de service utilisée pour authentifier le client.                    |
+| HELO       | Le client se connecte en utilisant le nom de son ordinateur et démarre la session.         |
+| MAIL FROM  | Le client spécifie l'expéditeur de l'e-mail.                                               |
+| RCPT TO    | Le client spécifie le destinataire de l'e-mail.                                            |
+| DATA       | Le client initie la transmission de l'e-mail.                                              |
+| RSET       | Le client interrompt la transmission en cours mais maintient la connexion avec le serveur. |
+| VRFY       | Le client vérifie si une boîte aux lettres est disponible pour le transfert de messages.   |
+| EXPN       | Le client vérifie également si une boîte aux lettres est disponible pour le messagerie.    |
+| NOOP       | Le client demande une réponse du serveur pour éviter la déconnexion due à un time-out.     |
+| QUIT       | Le client termine la session.                                                              |
+
+Pour intéragir avec le serveur SMTP, il est possible d'utiliser telnet pour initialiser une connexion TCP avec le serveur.
