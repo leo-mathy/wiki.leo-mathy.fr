@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T17:37:03.755Z
+date: 2025-01-11T17:40:54.120Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -516,7 +516,7 @@ Dans Postfix, le paramètre suivant peut être utilisé pour indiquer les adress
 
 Un relais ouvert correspond à un relais SMTP ou tout le monde est autorisé à utiliser le serveur comme relais sans authentification.
 
-Sur Nmap, les scripts par défaut (-sC) incluent le script **smtp-commands**, ce script va utiliser la commande EHLO pour afficher toutes les commandes qui peuvent être exécutés sur le seveuer SMTP.
+Sur Nmap, les scripts par défaut (-sC) incluent le script **smtp-commands**, ce script va utiliser la commande EHLO pour afficher toutes les commandes qui peuvent être exécutés sur le serveur SMTP.
 `nmap [adresse IP] -sC -p25`
 
 Il est aussi possible d'utiliser le script [smtp-open-relay](https://nmap.org/nsedoc/scripts/smtp-open-relay.html) pour vérifier si le serveur est un relais ouvert grâce à 16 tests.
@@ -529,13 +529,13 @@ Enumérer les utilisateurs du serveur SMTP avec une liste et un timeout de 30sec
 
 Le protocole IMAP (Internet Message Access Protocol) permet l'accès aux mails depuis un serveur. Contrairement à POP, IMAP de manager des mails directement sur le serveur et supporte les structures sous forme de dossier.
 IMAP est donc un protocole client-serveur de management en ligne (les modifications sont opérés sur le serveur) de mails sur un serveur distant et permet de synchroniser un client mail local avec la boite aux lettres sur le serveur. IMAP peut être vu comme une sorte de protocole de système de fichier en réseau pour mails.
-Cela permet une synchronisation à travers de nombreux clients indépendants. 
+Cela permet une synchronisation à travers de nombreux clients indépendants.
 
-Au niveau de POP3, celui-ci peut uniquement lister,récupérer et supprimer des mails du serveur. IMAP doit donc être utilisé pour des fonctionnalités additionnelles (dossiers sur le serveur, accès à de multiples boites aux lettres durant la même session, préselection des mails (synchronise uniquement les e-mails spécifiques en fonction de critères tels que la date, les indicateurs, la taille ou les dossiers pour optimiser les performances et l'utilisation des ressources)...)
+Au niveau de POP3, celui-ci peut uniquement lister,récupérer et supprimer des mails du serveur. IMAP doit donc être utilisé pour des fonctionnalités additionnelles (dossiers sur le serveur, accès à de multiples boites aux lettres durant la même session, présélection des mails (synchronise uniquement les e-mails spécifiques en fonction de critères tels que la date, les indicateurs, la taille ou les dossiers pour optimiser les performances et l'utilisation des ressources)...)
 
 Les clients peuvent donc avoir accès à ces structures en ligne et créer des copies locales.
 
-IMAP est basé sur du texte (commandes et reponses lisible par l'homme) et possède des fonctionnalités avancées (parcourir les mails directement sur le serveur, accès en simultané au serveur...)
+IMAP est basé sur du texte (commandes et réponses lisible par l'homme) et possède des fonctionnalités avancées (parcourir les mails directement sur le serveur, accès en simultané au serveur...)
 
 Sans connexion active au serveur mail, manager les mails devient impossible. C'est pour cela que certains clients offrent un mode hors-ligne avec une copie locale de la boite aux lettres. Le client synchronise ensuite tous les changements quand la connexion est rétablie.
 
@@ -548,4 +548,5 @@ Au début de chaque connexion, l'utilisateur est authentifié sur le serveur ave
 
 En copiant les mails envoyés vers un dossier IMAP, tous les clients ont accès aux mails envoyés depuis la boite aux lettres. Sans prendre en compte depuis quel poste le mail à été envoyé.
 
-Par défaut, la communication avec IMAP entre un client et un serveur n'est pas chiffrée.
+Par défaut, la communication avec IMAP entre un client et un serveur n'est pas chiffrée (transmission des mails,noms d'utilisateurs, mots de passe en clair). Beaucoup de serveurs requièrent l'établissement d'une session IMAP chiffrée, c'est SSL/TLS qui est normalement utilisé pour cela.
+La connexion IMAP chiffrée utilise le port standard 143 ou le port 993 comme alternative, en fonction de la méthode et de l'implémentation utilisée.
