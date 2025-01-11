@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T18:25:46.383Z
+date: 2025-01-11T18:30:36.051Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -596,9 +596,14 @@ Pour tester/examiner ces protocoles, il est possible d'utiliser les paquets (apt
 
 Voici un tableau des ports par défaut utilisé par les deux protocoles:
 
-| Port  | Description                                                              |
-| ----- | ------------------------------------------------------------------------ |
-| `143` | Port utilisé par IMAP.                                                   |
-| `993` | Port utilisé par IMAP, basé sur SSL/TLS pour chiffrer la communication.. |
-| `110` | Port utilisé par POP3.                                                   |
-| `995` | Port utilisé par POP3, basé sur SSL/TLS pour chiffrer la communication.. |
+| Port  | Description                                                             |
+| ----- | ----------------------------------------------------------------------- |
+| `143` | Port utilisé par IMAP.                                                  |
+| `993` | Port utilisé par IMAP, basé sur SSL/TLS pour chiffrer la communication. |
+| `110` | Port utilisé par POP3.                                                  |
+| `995` | Port utilisé par POP3, basé sur SSL/TLS pour chiffrer la communication. |
+
+Pour interagir avec un serveur IMAP(S)/POP3(S), il est possible d'utiliser curl, openssl, ou netcat:
+`curl -k 'imaps://<Adresse IP>' --user <utilisateur>:<mot de passe> -v`
+`openssl s_client -connect <Adresse IP>:imaps`
+`openssl s_client -connect <Adresse IP>:pop3s`
