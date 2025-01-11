@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T11:58:00.959Z
+date: 2025-01-11T12:03:24.670Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -511,3 +511,10 @@ Le relais est un serveur SMTP connu et vérifié par tous les autres. Lors de la
 
 Dans Postfix, le paramètre suivant peut être utilisé pour indiquer les adresses IP ou les plages d'adresses qui sont autorisées à utiliser le serveur comme relais sans authentification.
 `mynetworks = [adresses IP / les plages d'adresses]`
+
+Un relais ouvert correspond à un relais SMTP ou tout le monde est autorisé à utiliser le serveur comme relais sans authentification.
+
+Sur Nmap, les scripts par défaut (-sC) incluent le script **smtp-commands**, ce script va utiliser la commande EHLO pour afficher toutes les commandes qui peuvent être exécutés sur le seveuer SMTP.
+`nmap [adresse IP] -sC -p25`
+
+Il est aussi possible d'utiliser le script [smtp-open-relay](https://nmap.org/nsedoc/scripts/smtp-open-relay.html) pour vérifier si le serveur est un relais ouvert.
