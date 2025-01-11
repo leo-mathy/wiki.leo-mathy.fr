@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T17:30:22.315Z
+date: 2025-01-11T17:32:35.799Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -544,4 +544,4 @@ Le client établi la connexion au serveur via le port 143. Pour communiquer, le 
 Plusieurs commandes peuvent être envoyés à la suite sans attendre la confirmation du serveur pour chacune.
 Les confirmations reçues par la suite, peuvent être associées aux commandes envoyées, en utilisant les identifiants envoyés lors de la commande. Cela permet d'associer la confirmation reçue à la commande envoyée.
 
-
+Au début de chaque connexion, l'utilisateur est authentifié sur le serveur avec un nom d'utilisateur et un mot de passe. L'accès aux boites aux lettres désirées est uniquement possible après une authentification.
