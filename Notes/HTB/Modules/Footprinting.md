@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T17:21:25.532Z
+date: 2025-01-11T17:27:30.312Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -533,9 +533,11 @@ Cela permet une synchronisation à travers de nombreux clients indépendants.
 
 Au niveau de POP3, celui-ci peut uniquement lister,récupérer et supprimer des mails du serveur. IMAP doit donc être utilisé pour des fonctionnalités additionnelles (dossiers sur le serveur, accès à de multiples boites aux lettres durant la même session, préselection des mails (synchronise uniquement les e-mails spécifiques en fonction de critères tels que la date, les indicateurs, la taille ou les dossiers pour optimiser les performances et l'utilisation des ressources)...)
 
-Les clients peuvent donc avoirr accès à ces structures en ligne et créer des copies locales.
+Les clients peuvent donc avoir accès à ces structures en ligne et créer des copies locales.
 
-IMAP est basé sur du texte et possède des fonctionnalités avancées (parcourir les mails directement sur le serveur, accès en simultané au serveur...)
+IMAP est basé sur du texte (commandes et reponses lisible par l'homme) et possède des fonctionnalités avancées (parcourir les mails directement sur le serveur, accès en simultané au serveur...)
 
 Sans connexion active au serveur mail, manager les mails devient impossible. C'est pour cela que certains clients offrent un mode hors-ligne avec une copie locale de la boite aux lettres. Le client synchronise ensuite tous les changements quand la connexion est rétablie.
 
+Le client établi la connexion au serveur via le port 143. Pour communiquer, le client utilise des commandes lisible par l'homme encodés en ASCII.
+Plusieurs commandes peuvent être envoyés à la suite sans attendre la confirmation du serveur pour chacune.
