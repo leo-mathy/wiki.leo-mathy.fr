@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T17:27:30.312Z
+date: 2025-01-11T17:29:30.763Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -540,4 +540,8 @@ IMAP est basé sur du texte (commandes et reponses lisible par l'homme) et poss�
 Sans connexion active au serveur mail, manager les mails devient impossible. C'est pour cela que certains clients offrent un mode hors-ligne avec une copie locale de la boite aux lettres. Le client synchronise ensuite tous les changements quand la connexion est rétablie.
 
 Le client établi la connexion au serveur via le port 143. Pour communiquer, le client utilise des commandes lisible par l'homme encodés en ASCII.
+
 Plusieurs commandes peuvent être envoyés à la suite sans attendre la confirmation du serveur pour chacune.
+Les confirmations reçues par la suite, peuvent être associées aux commandes envoyées, en utilisant les identifiants envoyés lors de la commande.
+
+
