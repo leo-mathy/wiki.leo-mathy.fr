@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T12:46:44.801Z
+date: 2025-01-11T17:03:01.785Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -526,3 +526,5 @@ Enumérer les utilisateurs du serveur SMTP avec une liste et un timeout de 30sec
 `smtp-user-enum -M VRFY -U [fichier utilisateurs] -t [IP] -v -w 30`
 
 ## IMAP / POP3
+
+Le protocole IMAP (Internet Message Access Protocol) permet l'accès aux mails depuis un serveur. Contrairement à POP, IMAP de manager des mails directement sur le serveur et supporte les structures sous forme de dossier.
