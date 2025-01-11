@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T12:08:01.834Z
+date: 2025-01-11T12:46:44.801Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -521,5 +521,8 @@ Sur Nmap, les scripts par défaut (-sC) incluent le script **smtp-commands**, ce
 
 Il est aussi possible d'utiliser le script [smtp-open-relay](https://nmap.org/nsedoc/scripts/smtp-open-relay.html) pour vérifier si le serveur est un relais ouvert grâce à 16 tests.
 `nmap [adresse IP] -p25 --script smtp-open-relay -v`
+
+Enumérer les utilisateurs du serveur SMTP avec une liste et un timeout de 30secondes.
+`smtp-user-enum -M VRFY -U [fichier utilisateurs] -t [IP] -v -w 30`
 
 ## IMAP / POP3
