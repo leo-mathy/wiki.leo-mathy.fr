@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T17:32:35.799Z
+date: 2025-01-11T17:37:03.755Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -545,3 +545,7 @@ Plusieurs commandes peuvent être envoyés à la suite sans attendre la confirma
 Les confirmations reçues par la suite, peuvent être associées aux commandes envoyées, en utilisant les identifiants envoyés lors de la commande. Cela permet d'associer la confirmation reçue à la commande envoyée.
 
 Au début de chaque connexion, l'utilisateur est authentifié sur le serveur avec un nom d'utilisateur et un mot de passe. L'accès aux boites aux lettres désirées est uniquement possible après une authentification.
+
+En copiant les mails envoyés vers un dossier IMAP, tous les clients ont accès aux mails envoyés depuis la boite aux lettres. Sans prendre en compte depuis quel poste le mail à été envoyé.
+
+Par défaut, la communication avec IMAP entre un client et un serveur n'est pas chiffrée.
