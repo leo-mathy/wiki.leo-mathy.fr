@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T18:04:41.878Z
+date: 2025-01-11T18:16:11.820Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -570,7 +570,7 @@ Pour tester/examiner ces protocoles, il est possible d'utiliser les paquets (apt
 | `1 CLOSE`                                              | Supprime tous les messages avec le flag "Deleted".                                            |
 | `1 LOGOUT`                                             | Termine la connexion avec le serveur.                                                         |
 
-Les commandes POP3 sont les suivantes:
+**Les commandes POP3 sont les suivantes:**
 
 | Commande                   | Description                                                                   |
 | -------------------------- | ----------------------------------------------------------------------------- |
@@ -583,3 +583,13 @@ Les commandes POP3 sont les suivantes:
 | `CAPA`                     | Demande au serveur d'afficher ses fonctionnalités.                            |
 | `RSET`                     | Demande au serveur d'annuler les modifications effectuées dans cette session. |
 | `QUIT`                     | Termine la connexion avec le serveur.                                         |
+
+**Certains paramètres présents sur les serveurs de messagerie peuvent être dangereux. En voici quelques-uns:**
+
+| Setting                   | Description                                                                                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `auth_debug`              | Active les logs de debug pour l'authentification.                                                                                                |
+| `auth_debug_passwords`    | Ajuste la verbosité des logs. Peut enregistrer les mots de passe, la méthode d'authentification.                                                 |
+| `auth_verbose`            | Log les tentatives d'authentifications ratés et leurs raison.                                                                                    |
+| `auth_verbose_passwords`  | Les mots de passe pour l'authentification sont loggés, ils peuvent être tronqués.                                                                |
+| `auth_anonymous_username` | Spécifie le nom d'utilisateur pour la connexion anonyme sans authentification avec le mécanisme SASL (Simple Authentication and Security Layer). |
