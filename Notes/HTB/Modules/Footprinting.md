@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T11:23:20.815Z
+date: 2025-01-11T11:27:01.346Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -482,21 +482,21 @@ SMTP à deux désavantages inhérents au protocole réseau:
 C'est pour cela que l'extension à SMTP, ESMTP (Extended SMTP) à été développé. En général c'est cette extension qui est désignée lorsque le protocole SMTP est abordé.
 ESMTP utilise TLS, ce qui est fait après la commande EHLO en envoyant STARTTLS. Ce qui initialise la connexion SMTP chiffrée. Après cela, les extensions d'authentification en clair (AUTH PLAIN) peuvent être utilisés de manière sécurisée.
 
-Pour communiquer avec le serveur SMTP (via un client de messagerie par exemple), il est nécéssaire d'utiliser des commandes spéciales.
+Pour communiquer avec le serveur SMTP (via un client de messagerie par exemple), il est nécessaire d'utiliser des commandes spéciales.
 Suite à l'envoi d'une commande, le serveur va répondre sous forme de codes retour (un peu comme le protocole HTTP).
 Ces codes sont consultables [ici](https://serversmtp.com/smtp-error/).
 
-| Commande    | Description                                                                                                                                                                                                            |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| AUTH PLAIN  | AUTH est une commande provenant de l'extension SMTP, ESMTP (Extended SMTP). Permet d'authentifier le client.                                                                                                           |
-| HELO / EHLO | Le client se connecte en utilisant le nom de son ordinateur et démarre la session. EHLO est utilisé avec les extensions de SMTP (ESMTP par exemple) et retourne la liste des fonctionnalités supportés par le serveur. |
-| MAIL FROM   | Le client spécifie l'expéditeur de l'e-mail.                                                                                                                                                                           |
-| RCPT TO     | Le client spécifie le destinataire de l'e-mail.                                                                                                                                                                        |
-| DATA        | Le client initie la transmission de l'e-mail.                                                                                                                                                                          |
-| RSET        | Le client interrompt la transmission en cours mais maintient la connexion avec le serveur.                                                                                                                             |
-| VRFY        | Le client vérifie si une boîte aux lettres est disponible pour le transfert de messages.                                                                                                                               |
-| EXPN        | Le client vérifie également si une boîte aux lettres est disponible pour le messagerie.                                                                                                                                |
-| NOOP        | Le client demande une réponse du serveur pour éviter la déconnexion due à un time-out.                                                                                                                                 |
-| QUIT        | Le client termine la session.                                                                                                                                                                                          |
+| Commande    | Description                                                                                                                                                                                                                                                          |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AUTH PLAIN  | AUTH est une commande provenant de l'extension SMTP, ESMTP (Extended SMTP). Permet d'authentifier le client.                                                                                                                                                         |
+| HELO / EHLO | Le client se connecte en utilisant le nom de son ordinateur et démarre la session. EHLO est utilisé avec les extensions de SMTP (ESMTP par exemple) et retourne la liste des fonctionnalités supportés par le serveur.                                               |
+| MAIL FROM   | Le client spécifie l'expéditeur de l'e-mail.                                                                                                                                                                                                                         |
+| RCPT TO     | Le client spécifie le destinataire de l'e-mail.                                                                                                                                                                                                                      |
+| DATA        | Le client initie la transmission de l'e-mail.                                                                                                                                                                                                                        |
+| RSET        | Le client interrompt la transmission en cours mais maintient la connexion avec le serveur.                                                                                                                                                                           |
+| VRFY        | Le client vérifie si une boîte aux lettres est disponible pour le transfert de messages. Peut aussi être utilisé pour l'énumération les utilisateurs (en fonction de la configuration serveur, celui-ci pourrait confirmer l'existence d'un utilisateur inexistant). |
+| EXPN        | Le client vérifie également si une boîte aux lettres est disponible pour le messagerie.                                                                                                                                                                              |
+| NOOP        | Le client demande une réponse du serveur pour éviter la déconnexion due à un time-out.                                                                                                                                                                               |
+| QUIT        | Le client termine la session.                                                                                                                                                                                                                                        |
 
-Pour intéragir avec le serveur SMTP, il est possible d'utiliser telnet pour initialiser une connexion TCP avec le serveur.
+Pour interagir avec le serveur SMTP, il est possible d'utiliser telnet pour initialiser une connexion TCP avec le serveur.
