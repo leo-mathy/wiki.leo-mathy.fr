@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T17:57:46.341Z
+date: 2025-01-11T17:59:23.183Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -554,7 +554,7 @@ La connexion IMAP chiffrée utilise le port standard 143 ou un port alternatif (
 Pour tester/examiner ces protocoles, il est possible d'utiliser les paquets (apt) dovecot-imapd et dovecot-pop3d.
 
 **Le terme boite aux lettres (au sens IMAP) correspond a un dossier (au sens de la plupart des clients de messagerie).** Le numéro précédant la commande correspond à l'identifiant à utiliser lors de la réponse du serveur.
-Les commandes IMAP sont les suivantes:
+**Les commandes IMAP sont les suivantes:**
 
 | Commande                                               | Description                                                                                   |
 | ------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
@@ -569,3 +569,17 @@ Les commandes IMAP sont les suivantes:
 | `1 FETCH <ID> all`                                     | Récupère les données associés à un message.                                                   |
 | `1 CLOSE`                                              | Supprime tous les messages avec le flag "Deleted".                                            |
 | `1 LOGOUT`                                             | Termine la connexion avec le serveur.                                                         |
+
+Les commandes POP3 sont les suivantes:
+
+| Commande       | Description                                              |
+|---------------|----------------------------------------------------------|
+| `USER username` | Identifies the user.                                     |
+| `PASS password` | Authenticates the user using their password.             |
+| `STAT`          | Requests the number of saved emails from the server.     |
+| `LIST`          | Requests from the server the number and size of all emails. |
+| `RETR id`       | Requests the server to deliver the requested email by ID.|
+| `DELE id`       | Requests the server to delete the requested email by ID. |
+| `CAPA`          | Requests the server to display the server capabilities.  |
+| `RSET`          | Requests the server to reset the transmitted information.|
+| `QUIT`          | Closes the connection with the POP3 server.              |
