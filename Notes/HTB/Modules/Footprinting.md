@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T11:30:11.702Z
+date: 2025-01-11T11:34:59.769Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -502,3 +502,5 @@ Ces codes sont consultables [ici](https://serversmtp.com/smtp-error/).
 Pour interagir avec le serveur SMTP, il est possible d'utiliser telnet pour initialiser une connexion TCP avec le serveur.
 
 Il est possible de communiquer vers un serveur mail au travers un proxy web, (possiblement avec la version HTTP/1.0 )
+
+Le header d'un mail comporte de nombreuses informations utiles, comme l'horaire d'expédition, le format ou encore les serveurs qui ont redirigés le mail.
