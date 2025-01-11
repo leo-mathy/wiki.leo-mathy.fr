@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T17:59:23.183Z
+date: 2025-01-11T18:04:41.878Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -572,14 +572,14 @@ Pour tester/examiner ces protocoles, il est possible d'utiliser les paquets (apt
 
 Les commandes POP3 sont les suivantes:
 
-| Commande       | Description                                              |
-|---------------|----------------------------------------------------------|
-| `USER username` | Identifies the user.                                     |
-| `PASS password` | Authenticates the user using their password.             |
-| `STAT`          | Requests the number of saved emails from the server.     |
-| `LIST`          | Requests from the server the number and size of all emails. |
-| `RETR id`       | Requests the server to deliver the requested email by ID.|
-| `DELE id`       | Requests the server to delete the requested email by ID. |
-| `CAPA`          | Requests the server to display the server capabilities.  |
-| `RSET`          | Requests the server to reset the transmitted information.|
-| `QUIT`          | Closes the connection with the POP3 server.              |
+| Commande                   | Description                                                                   |
+| -------------------------- | ----------------------------------------------------------------------------- |
+| `USER <nom d'utilisateur>` | S'identifie au serveur avec un nom d'utilisateur.                             |
+| `PASS <mot de passe>`      | S'authentifie au serveur avec un mot de passe.                                |
+| `STAT`                     | Récupère le nombre de mails sur le serveur.                                   |
+| `LIST`                     | Récupère le nombre et la taille des mails sur le serveur.                     |
+| `RETR <id>`                | Demande au serveur l'envoi du mail par son ID.                                |
+| `DELE <id>`                | Demande au serveur la suppression du mail par son ID.                         |
+| `CAPA`                     | Demande au serveur d'afficher ses fonctionnalités.                            |
+| `RSET`                     | Demande au serveur d'annuler les modifications effectuées dans cette session. |
+| `QUIT`                     | Termine la connexion avec le serveur.                                         |
