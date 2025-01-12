@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-12T16:46:53.308Z
+date: 2025-01-12T16:54:19.894Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -618,26 +618,32 @@ La dernière de ce protocole est SNMPv3.
 
 En plus de l'échange d'information, le client SNMP peut aussi transmettre des commandes de contrôle en utilisant des agents sur le port UDP 161.
 
-De plus, dans une communication classique, le client effectue les requètes vers le serveur. En plus de cette communication classique, le protocole SNMP prend en charge les traps via le port UDP 162. C'est à dire que le serveur va envoyer des paquets au client sans que celui-ci ne les demande explicitement (notifications d'évenements). Si l'appareil est configuré pour l'utilisation de traps, alors une trap SNMP est envoyée au client une fois qu'un évenement spécifique se produit sur le serveur.
+De plus, dans une communication classique, le client effectue les requêtes vers le serveur. En plus de cette communication classique, le protocole SNMP prend en charge les traps via le port UDP 162. C'est à dire que le serveur va envoyer des paquets au client sans que celui-ci ne les demande explicitement (notifications d'évènements). Si l'appareil est configuré pour l'utilisation de traps, alors une trap SNMP est envoyée au client une fois qu'un évènement spécifique se produit sur le serveur.
 
-Pour que l'échange d'information se produise entre un client et un serveur SNMP, les objets SNMP doivent avoir une adresse unique connue de chaque côté. Ce méchanisme d'adresse est impératif pour transmettre des données avec SNMP.
+Pour que l'échange d'information se produise entre un client et un serveur SNMP, les objets SNMP doivent avoir une adresse unique connue de chaque côté. Ce mécanisme d'adresse est impératif pour transmettre des données avec SNMP.
 
 Pour s'assurer que le protocole fonctionne à travers de multiples fabricants et combinaisons de client/Serveur, le MIB (Management Information Base) a été créer. MIB est un format indépendant pour le stockage d'information d'appareils.
-Le MIB est un fichier texte qui contient la liste (ordonée sous forme arborescence) des objets SNMP pouvant être récupérés.
+Le MIB est un fichier texte qui contient la liste (ordonnée sous forme arborescence) des objets SNMP pouvant être récupérés.
 Le fichier MIB contient des identifiants d'objet (OID) et fournit des informations essentielles sur chaque objet, telles que son adresse unique, son nom, son type de données, ses droits d'accès et une description détaillée.
 Les fichiers MIB sont écrits dans le format ASN.1 (Abstract Syntax Notation One), ce format est basé sur l'encodage ASCII.
 Le MIB ne contient donc aucune donnée mais il défini où la trouver et à quoi cette donnée ressemble (ce qui correspond aux valeurs de l'oid).
 
-Un OID représente un noeud dans un espace de nom hiérarchique. Une séquence de nombres unique identifie chaque noeud, ce qui permet à la position du noeud dans l'arboréscence d'être déterminé. Plus la séquence de nombres est longue plus l'information est spécifique. Beaucoups de noeuds dans l'arboréscence OID contiennent uniquement des références aux noeuds enfants.
-Les OID sont composés de nombres entiers et sont le plus souvent concaténé par une notation en points. 
+Un OID représente un nœud dans un espace de nom hiérarchique. Une séquence de nombres unique identifie chaque nœud, ce qui permet à la position du nœud dans l'arborescence d'être déterminé. Plus la séquence de nombres est longue plus l'information est spécifique. Beaucoup de nœuds dans l'arborescence OID contiennent uniquement des références aux nœuds enfants.
+Les OID sont composés de nombres entiers et sont le plus souvent concaténé par une notation en points.
 Il est possible de voir les MIB associés aux OID dans l'[Object Identifier Registry (OIR)](https://www.alvestrand.no/objectid/)
 
 **La version 1 de SNMP (SNMPv1)**, est la première version du protocole et est toujours utilisée dans des petits réseaux. Cette version supporte la récupération d'information depuis des appareils, la configuration des appareils et les traps.
 En revanche, SNMPv1 n'a pas de système d'authentification embarqué. Cela signifie que n'importe qui ayant accès au réseau peut lire/modifier les données. De plus, SNMPv1 ne supporte pas le chiffrement de la communication.
-**SNMPv2** existe en plusieurs version. La version qui éxiste toujours est la version v2c ("c" pour community-based). Au niveau de la sécurité, SNMPv2 est pareil que SNMPv1 et à été etendu avec des fonctionnalités additionnelles tiers qui ne sont plus utilisées. Le problème le plus important de cette version est que la "community string" qui permet une authentification basique, est transmise en clair. 
-Avec **SNMPv3**, la sécurité à été grandement améliorée, avec des mesures de sécurité comme une authentification avec un nom d'utilisateur et un mot de passe ou encore le chiffrement de la communication avec une clé partagée. Cependant la compléxité augmente aussi avec de nombreuses options supplémentaires disponibles par rapport à SNMPv2c. C'est pour cela que de nombreuses organisations utilisent encore SNMPv2.
+**SNMPv2** existe en plusieurs version. La version qui existe toujours est la version v2c ("c" pour community-based). Au niveau de la sécurité, SNMPv2 est pareil que SNMPv1 et à été étendu avec des fonctionnalités additionnelles tiers qui ne sont plus utilisées. Le problème le plus important de cette version est que la "community string" qui permet une authentification basique, est transmise en clair.
+Avec **SNMPv3**, la sécurité à été grandement améliorée, avec des mesures de sécurité comme une authentification avec un nom d'utilisateur et un mot de passe ou encore le chiffrement de la communication avec une clé partagée. Cependant la complexité augmente aussi avec de nombreuses options supplémentaires disponibles par rapport à SNMPv2c. C'est pour cela que de nombreuses organisations utilisent encore SNMPv2.
 
 Les "community string" peuvent être vues comme des mots de passe, qui déterminent si les informations demandés sont accessibles.
 
 Pour tester et voir le fonctionnement en détails de SNMP, il est possible d'utiliser [snmpd](http://www.net-snmp.org/docs/man/snmpd.conf.html).
 
+Certains paramètres SNMP sont dangereux, en voici quelque-uns:
+| Command | Description |
+|------------------------------|-----------------------------------------------------------------------------|
+| `rwuser noauth` | Autorise un accès complet à l'arborescence OID sans authentification. |
+| `rwcommunity <community string> <adresse IPv4>` | Autorise un accès complet à l'arborescence OID en fonction d'où la requète provient. |
+| `rwcommunity6 <community string> <adresse IPv6>` | Autorise un accès complet à l'arborescence OID en fonction d'où la requète provient. |
