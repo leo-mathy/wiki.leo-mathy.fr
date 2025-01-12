@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-12T15:42:49.834Z
+date: 2025-01-12T15:47:51.737Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -616,5 +616,7 @@ SNMP peut être entre autres, utilisé sur des serveurs,routeurs,switchs,apparei
 
 La dernière de ce protocole est SNMPv3.
 
-En plus de l'échange d'information, SNMP peut aussi transmettre des commandes de contrôle en utilisant des agents sur le port UDP 161.
+En plus de l'échange d'information, le client SNMP peut aussi transmettre des commandes de contrôle en utilisant des agents sur le port UDP 161.
+
+De plus, dans une communication classique, le client effectue les requètes vers le serveur. En plus de cette communication classique, le protocole SNMP prend en charge les traps via le port UDP 162. C'est à dire que le serveur va envoyer des paquets au client sans que celui-ci ne les demande explicitement. Si l'appareil est configuré pour l'utilisation de traps, alors une trap SNMP est envoyée au client une fois qu'un évenement spécifique se produit sur le serveur.
 
