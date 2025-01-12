@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-12T16:30:50.921Z
+date: 2025-01-12T16:37:06.045Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -632,9 +632,11 @@ Un OID représente un noeud dans un espace de nom hiérarchique. Une séquence d
 Les OID sont composés de nombres entiers et sont le plus souvent concaténé par une notation en points. 
 Il est possible de voir les MIB associés aux OID dans l'[Object Identifier Registry (OIR)](https://www.alvestrand.no/objectid/)
 
-La version 1 de SNMP (SNMPv1), est la première version du protocole et est toujours utilisée dans des petits réseaux. Cette version supporte la récupération d'information depuis des appareils, la configuration des appareils et les traps.
+**La version 1 de SNMP (SNMPv1)**, est la première version du protocole et est toujours utilisée dans des petits réseaux. Cette version supporte la récupération d'information depuis des appareils, la configuration des appareils et les traps.
 En revanche, SNMPv1 n'a pas de système d'authentification embarqué. Cela signifie que n'importe qui ayant accès au réseau peut lire/modifier les données. De plus, SNMPv1 ne supporte pas le chiffrement de la communication.
+**SNMPv2** existe en plusieurs version. La version qui éxiste toujours est la version v2c ("c" pour community-based). Au niveau de la sécurité, SNMPv2 est pareil que SNMPv1 et à été etendu avec des fonctionnalités additionnelles tiers qui ne sont plus utilisées. Le problème le plus important de cette version est que la "community string" qui permet une authentification basique, est transmise en clair. 
+Avec **SNMPv3**, la sécurité à été grandement améliorée, avec des mesures de sécurité comme une authentification avec un nom d'utilisateur et un mot de passe ou encore le chiffrement de la communication avec une clé partagée. Cependant la compléxité augmente aussi avec de nombreuses options supplémentaires disponibles par rapport à SNMPv2c. C'est pour cela que de nombreuses organisations utilisent encore SNMPv2.
 
-SNMPv2 existe en plusieurs version. La version qui éxiste toujours est la version v2c ("c" pour community-based). Au niveau de la sécurité, SNMPv2 est pareil que SNMPv1 et à été etendu avec des fonctionnalités additionnelles tiers qui ne sont plus utilisées. Le problème le plus important de cette version est que la "community string" qui permet une authentification basique, est transmise en clair. 
+Les "community string" peuvent être vues comme des mots de passe, qui déterminent si les informations demandés sont accessibles.
 
-Avec SNMPv3, la sécurité à été grandement améliorée, avec des mesures de sécurité comme une authentification avec un nom d'utilisateur et un mot de passe ou encore le chiffrement de la communication avec une clé partagée. Cependant la compléxité augmente aussi avec de nombreuses options supplémentaires disponibles par rapport à SNMPv2c.
+Pour tester, il est possible d'utiliser snmpd /www.net-snmp.org/docs/man/snmpd.conf.html
