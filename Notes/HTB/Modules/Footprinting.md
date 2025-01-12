@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-12T17:01:06.464Z
+date: 2025-01-12T17:06:21.542Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -645,10 +645,14 @@ Certains paramètres SNMP sont dangereux, en voici quelque-uns:
 | Command | Description |
 |------------------------------|-----------------------------------------------------------------------------|
 | `rwuser noauth` | Autorise un accès complet à l'arborescence OID sans authentification. |
-| `rwcommunity <community string> <adresse IPv4>` | Autorise un accès complet à l'arborescence OID en fonction d'où la requète provient. |
-| `rwcommunity6 <community string> <adresse IPv6>` | Autorise un accès complet à l'arborescence OID en fonction d'où la requète provient. |
+| `rwcommunity <community string> <adresse IPv4>` | Autorise un accès complet à l'arborescence OID en fonction d'où la requête provient. |
+| `rwcommunity6 <community string> <adresse IPv6>` | Autorise un accès complet à l'arborescence OID en fonction d'où la requête provient. |
 
-Pour analyser le protocole SNMP, il est possible d'utiliser entre autres, les outils snmpwalk, onesixtyone et braa.
-snmpwalk est utilisé pour envoyer des requètes pour récupérer les informations de l'OID.
+Pour analyser le protocole SNMP, il est possible d'utiliser entre autres, les outils snmpwalk, Onesixtyone et braa.
+snmpwalk est utilisé pour envoyer des requêtes pour récupérer les informations de l'OID.
+
 Onesixtyone pour réaliser des attaques par force brute sur les noms des "community string":
 `onesixtyone -c /opt/useful/seclists/Discovery/SNMP/snmp.txt <adresse IP>`
+
+Braa pour réaliser des attaques par force brute sur les OID individuelles et énumérer les informations derrières celles-ci:
+`braa <community string>@<adresse IP>:<OID>`
