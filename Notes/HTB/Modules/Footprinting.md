@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-11T18:32:52.093Z
+date: 2025-01-12T15:42:49.834Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -609,3 +609,12 @@ Pour interagir avec un serveur IMAP(S)/POP3(S), il est possible d'utiliser curl,
 `openssl s_client -connect <Adresse IP>:pop3s`
 
 # SNMP
+
+SNMP (Simple Network Management Protocol) est un protocole qui permet de surveiller/gérer les appareils réseau, gérer les tâches de configuration et changer les paramètres à distance.
+
+SNMP peut être entre autres, utilisé sur des serveurs,routeurs,switchs,appareils IoT...
+
+La dernière de ce protocole est SNMPv3.
+
+En plus de l'échange d'information, SNMP peut aussi transmettre des commandes de contrôle en utilisant des agents sur le port UDP 161.
+
