@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-12T17:06:21.542Z
+date: 2025-01-12T17:07:04.964Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -642,10 +642,11 @@ Les "community string" peuvent être vues comme des mots de passe, qui détermin
 Pour tester et voir le fonctionnement en détails de SNMP, il est possible d'utiliser [snmpd](http://www.net-snmp.org/docs/man/snmpd.conf.html).
 
 Certains paramètres SNMP sont dangereux, en voici quelque-uns:
-| Command | Description |
-|------------------------------|-----------------------------------------------------------------------------|
-| `rwuser noauth` | Autorise un accès complet à l'arborescence OID sans authentification. |
-| `rwcommunity <community string> <adresse IPv4>` | Autorise un accès complet à l'arborescence OID en fonction d'où la requête provient. |
+
+| Command                                          | Description                                                                          |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `rwuser noauth`                                  | Autorise un accès complet à l'arborescence OID sans authentification.                |
+| `rwcommunity <community string> <adresse IPv4>`  | Autorise un accès complet à l'arborescence OID en fonction d'où la requête provient. |
 | `rwcommunity6 <community string> <adresse IPv6>` | Autorise un accès complet à l'arborescence OID en fonction d'où la requête provient. |
 
 Pour analyser le protocole SNMP, il est possible d'utiliser entre autres, les outils snmpwalk, Onesixtyone et braa.
