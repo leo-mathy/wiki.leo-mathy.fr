@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-12T16:40:36.815Z
+date: 2025-01-12T16:46:53.308Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -624,7 +624,7 @@ Pour que l'échange d'information se produise entre un client et un serveur SNMP
 
 Pour s'assurer que le protocole fonctionne à travers de multiples fabricants et combinaisons de client/Serveur, le MIB (Management Information Base) a été créer. MIB est un format indépendant pour le stockage d'information d'appareils.
 Le MIB est un fichier texte qui contient la liste (ordonée sous forme arborescence) des objets SNMP pouvant être récupérés.
-Le fichier MIB contient au moins un identifieur d'objet (Object Identifier)(OID), qui en plus de l'adresse unique et le nom, fournit les informations concernant le type,les droits d'accès et la description de l'objet.
+Le fichier MIB contient des identifiants d'objet (OID) et fournit des informations essentielles sur chaque objet, telles que son adresse unique, son nom, son type de données, ses droits d'accès et une description détaillée.
 Les fichiers MIB sont écrits dans le format ASN.1 (Abstract Syntax Notation One), ce format est basé sur l'encodage ASCII.
 Le MIB ne contient donc aucune donnée mais il défini où la trouver et à quoi cette donnée ressemble (ce qui correspond aux valeurs de l'oid).
 
