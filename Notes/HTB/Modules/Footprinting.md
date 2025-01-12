@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-12T16:37:55.048Z
+date: 2025-01-12T16:40:36.815Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -628,7 +628,7 @@ Le fichier MIB contient au moins un identifieur d'objet (Object Identifier)(OID)
 Les fichiers MIB sont écrits dans le format ASN.1 (Abstract Syntax Notation One), ce format est basé sur l'encodage ASCII.
 Le MIB ne contient donc aucune donnée mais il défini où la trouver et à quoi cette donnée ressemble (ce qui correspond aux valeurs de l'oid).
 
-Un OID représente un noeud dans un espace de nom hiérarchique. Une séquence de nombres unique identifie chaque noeud, ce qui permet à la position du noeud dans l'arboréscence d'être déterminé. Plus la séquence de nombres est longue plus l'information est spécifique. Beaucoups de noeuds dans l'arboréscence OID contiennent uniquement des références aux noeuds enfants..
+Un OID représente un noeud dans un espace de nom hiérarchique. Une séquence de nombres unique identifie chaque noeud, ce qui permet à la position du noeud dans l'arboréscence d'être déterminé. Plus la séquence de nombres est longue plus l'information est spécifique. Beaucoups de noeuds dans l'arboréscence OID contiennent uniquement des références aux noeuds enfants.
 Les OID sont composés de nombres entiers et sont le plus souvent concaténé par une notation en points. 
 Il est possible de voir les MIB associés aux OID dans l'[Object Identifier Registry (OIR)](https://www.alvestrand.no/objectid/)
 
@@ -640,3 +640,4 @@ Avec **SNMPv3**, la sécurité à été grandement améliorée, avec des mesures
 Les "community string" peuvent être vues comme des mots de passe, qui déterminent si les informations demandés sont accessibles.
 
 Pour tester et voir le fonctionnement en détails de SNMP, il est possible d'utiliser [snmpd](http://www.net-snmp.org/docs/man/snmpd.conf.html).
+
