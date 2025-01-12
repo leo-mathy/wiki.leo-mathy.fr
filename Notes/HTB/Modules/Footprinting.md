@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-12T17:07:04.964Z
+date: 2025-01-12T17:07:21.497Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -657,3 +657,5 @@ Onesixtyone pour réaliser des attaques par force brute sur les noms des "commun
 
 Braa pour réaliser des attaques par force brute sur les OID individuelles et énumérer les informations derrières celles-ci:
 `braa <community string>@<adresse IP>:<OID>`
+
+## MySQL
