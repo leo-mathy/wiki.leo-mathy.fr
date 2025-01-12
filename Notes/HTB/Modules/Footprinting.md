@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-12T16:37:06.045Z
+date: 2025-01-12T16:37:55.048Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -639,4 +639,4 @@ Avec **SNMPv3**, la sécurité à été grandement améliorée, avec des mesures
 
 Les "community string" peuvent être vues comme des mots de passe, qui déterminent si les informations demandés sont accessibles.
 
-Pour tester, il est possible d'utiliser snmpd /www.net-snmp.org/docs/man/snmpd.conf.html
+Pour tester et voir le fonctionnement en détails de SNMP, il est possible d'utiliser [snmpd](http://www.net-snmp.org/docs/man/snmpd.conf.html).
