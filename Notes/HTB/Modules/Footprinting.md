@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-12T15:47:51.737Z
+date: 2025-01-12T15:50:09.916Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -619,4 +619,6 @@ La dernière de ce protocole est SNMPv3.
 En plus de l'échange d'information, le client SNMP peut aussi transmettre des commandes de contrôle en utilisant des agents sur le port UDP 161.
 
 De plus, dans une communication classique, le client effectue les requètes vers le serveur. En plus de cette communication classique, le protocole SNMP prend en charge les traps via le port UDP 162. C'est à dire que le serveur va envoyer des paquets au client sans que celui-ci ne les demande explicitement. Si l'appareil est configuré pour l'utilisation de traps, alors une trap SNMP est envoyée au client une fois qu'un évenement spécifique se produit sur le serveur.
+
+Pour que l'échange d'information se produise entre un client et un serveur SNMP, les objets SNMP doivent avoir une adresse unique connue de chaque côté. Ce méchanisme d'adresse est impératif pour transmettre des données avec SNMP.
 
