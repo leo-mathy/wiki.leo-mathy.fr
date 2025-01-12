@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-12T16:54:19.894Z
+date: 2025-01-12T17:01:06.464Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -647,3 +647,8 @@ Certains paramètres SNMP sont dangereux, en voici quelque-uns:
 | `rwuser noauth` | Autorise un accès complet à l'arborescence OID sans authentification. |
 | `rwcommunity <community string> <adresse IPv4>` | Autorise un accès complet à l'arborescence OID en fonction d'où la requète provient. |
 | `rwcommunity6 <community string> <adresse IPv6>` | Autorise un accès complet à l'arborescence OID en fonction d'où la requète provient. |
+
+Pour analyser le protocole SNMP, il est possible d'utiliser entre autres, les outils snmpwalk, onesixtyone et braa.
+snmpwalk est utilisé pour envoyer des requètes pour récupérer les informations de l'OID.
+Onesixtyone pour réaliser des attaques par force brute sur les noms des "community string":
+`onesixtyone -c /opt/useful/seclists/Discovery/SNMP/snmp.txt <adresse IP>`
