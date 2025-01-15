@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T18:43:12.487Z
+date: 2025-01-15T18:47:33.888Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -681,4 +681,6 @@ Ces messages peuvent apporter des informations importantes et confirmer que l'ap
 SQL peut aussi être utilisé pour la gestion des utilisateurs et le changement de la structure des tables.
 
 MariaDB est un fork du code original de MySQL. Cela est du au développeur en chef de MySQL qui quitta l'entreprise MySQL AB après son acquisition par Oracle, pour développer un autre DBMS basé sur le code source de MySQL.
+
+L'administration des bases de données est un vaste sujet, les structures peuvent devenir très grandes rapidement et leur planification peut devenir compliquée. C'est pour cela que des professions à part entière y sont destinées, comme le métier d'administrateur de bases de données. C'est donc une compétence primaire pour les développeurs logiciels et aussi les analystes en sécurité de l'information.
 
