@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T18:29:58.843Z
+date: 2025-01-15T18:37:07.830Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -675,4 +675,6 @@ MySQL est souvent utilisé avec un OS Linux, PHP et un serveur web Apache, cette
 L'utilisation d'une base de données MySQL pour l'hébergement web, permet aux scripts PHP de stocker leurs données (mots de passe, permissions, liens, utilisateurs, emails, clients...).
 Les données sensibles ( par exemple les mots de passe) peuvent être stockés en texte clair dans la base de données, cependant ces données sont générallement chiffrés par le script PHP avant l'insertion dans la base avec une méthode sécurisée comme le chiffrement à sens unique (hash).
 
+La base de données MySQL traduit les commandes en internes, en code exécutable et effectue les actions demandés. L'application peut en informer l'utilisateur (ce qui peut arriver avec de l'injection SQL) en cas d'erreur.
+Ces messages peuvent apporter des informations importantes et confirmer que l'application web intérragi avec la base de données dans un sens différent imaginé du développeur.
 
