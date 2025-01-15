@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T19:10:42.754Z
+date: 2025-01-15T19:14:39.675Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -706,3 +706,7 @@ Le port MySQL peut être scanné avec Nmap (Il est nécessaire de vérifier les 
 
 Il est possible de se connecter au serveur MySQL avec la commande suivante:
 `mysql -u <utilisateur> -p <mot de passe> -h <adresse IP>`
+
+Les bases de données les plus importantes sur un serveur MySQL sont la base schéma système ("sys") et la base schéma d'information ("information_schema").
+La base [schéma système](https://dev.mysql.com/doc/refman/8.0/en/system-schema.html#:~:text=The%20mysql%20schema%20is%20the,used%20for%20other%20operational%20purposes) contient les tables, informations et métadonnées nécéssaires à l'administration.
+
