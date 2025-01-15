@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T18:00:45.029Z
+date: 2025-01-15T18:06:02.935Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -665,3 +665,6 @@ MySQL est un RDBMNS (Relational Database Management System) open-source dévelop
 La base de données est controllée en utilisant le language SQL. MySQL fonctionne sur une architecture client-serveur, le serveur étant le DBMS.
 Les données sont stockés dans des tables, contenant des collonnes, des lignes et des types de données. Ces bases de données sont souvent stockés dans un fichier unique avec une extension .sql.
 
+Les clients MySQL peuvent récupérer et éditer les données en utilisant des requêtes verrs le moteur de base de données. L'insertion, la suppression, la modification et la récupération des données se fait avec le langage SQL.
+
+MySQL peut être utilisé pour l'administration de multiples bases de données, vers lequelles les clients peuvent envoyer de multiples requêtes simultanément. En fonction de l'utilisation de la base de données, l'accès est possible via un réseau interne ou depuis Internet.
