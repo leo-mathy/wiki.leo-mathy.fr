@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T18:49:28.927Z
+date: 2025-01-15T19:04:53.322Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -686,3 +686,16 @@ L'administration des bases de données est un vaste sujet, les structures peuven
 
 Les possibilités de configuration de MySQL sont vastes, les options principales avec un impact sur la sécurité sont les suivantes:
 
+| Paramètre           | Description                                                                                  |
+|--------------------|----------------------------------------------------------------------------------------------|
+| user               | Défini l'utilisateur pour l'exécution du service MySQL.                                              |
+| password           | Défini le mot de passe associé à l'utilisateur pour l'exécution du service MySQL.                                                      |
+| admin_address      | L'adresse IP sur laquelle écouter les connexions TCP/IP sur l'interface réseau administrative. |
+| debug              | Spécifie les paramètres du débug.                                     |
+| sql_warnings       | Spécifie si en cas d'erreur au niveau de l'insertion d'une ligne unique, une information est retournée. |
+| secure_file_priv   | Spécifie le paramètre pour limiter l'effet des opérations d'importation et d'exportation de données.             |
+
+Les paramètres debug et sql_warnings sont utilisés pour retourner des informations en cas d'erreur. Ces messages d'erreurs sont sensibles t sont souvent affichés sur le navigateur en retour.
+
+Toutes les inforrmations entrées dans le fichier de configuration sont en texte clair.
+Si il y a un moyen de voir le contenu du fichier (par exemple avec des droits mal configurés sur le fichier), alors il est possible, à partir du paramètre user et password, de récupérer les données de la base.
