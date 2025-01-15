@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-12T17:07:21.497Z
+date: 2025-01-15T17:51:39.038Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -608,7 +608,7 @@ Pour interagir avec un serveur IMAP(S)/POP3(S), il est possible d'utiliser curl,
 `openssl s_client -connect <Adresse IP>:imaps`
 `openssl s_client -connect <Adresse IP>:pop3s`
 
-# SNMP
+## SNMP
 
 SNMP (Simple Network Management Protocol) est un protocole qui permet de surveiller/gérer les appareils réseau, gérer les tâches de configuration et changer les paramètres à distance.
 
@@ -659,3 +659,5 @@ Braa pour réaliser des attaques par force brute sur les OID individuelles et é
 `braa <community string>@<adresse IP>:<OID>`
 
 ## MySQL
+
+MySQL est un RDBMNS (Relational Database Management System) open-source développé et supporté par Oracle. 
