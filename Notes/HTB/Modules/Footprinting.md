@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T19:06:27.310Z
+date: 2025-01-15T19:10:42.754Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -700,3 +700,9 @@ Les paramètres debug et sql_warnings sont utilisés pour retourner des informat
 Toutes les inforrmations entrées dans le fichier de configuration sont en texte clair.
 Si il y a un moyen de voir le contenu du fichier (par exemple avec des droits mal configurés sur le fichier), alors il est possible, à partir du paramètre user et password, de récupérer les données de la base.
 
+Le serveur MySQL écoute par défaut sur le port 3306.
+Le port MySQL peut être scanné avec Nmap (Il est nécessaire de vérifier les informations manuellement, puisque certaines peuvent être des faux positif):
+`nmap <adresse IP> -sV -sC -p3306 --script mysql*`
+
+Il est possible de se connecter au serveur MySQL avec la commande suivante:
+`mysql -u <utilisateur> -p <mot de passe> -h <adresse IP>`
