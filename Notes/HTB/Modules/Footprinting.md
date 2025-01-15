@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T19:22:39.511Z
+date: 2025-01-15T19:26:44.625Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -707,13 +707,11 @@ Le port MySQL peut être scanné avec Nmap (Il est nécessaire de vérifier les 
 Il est possible de se connecter au serveur MySQL avec la commande suivante:
 `mysql -u <utilisateur> -p <mot de passe> -h <adresse IP>`
 
-Les bases de données les plus importantes sur un serveur MySQL sont la base schéma système ("sys") et la base schéma d'information ("information_schema").
-La base contient les tables, informations et métadonnées nécéssaires à l'administration.
-La base schéma d'information est aussi une base contenant des meta-données, cependant ces méta-données sont récupérés depuis la base schéma système. La raison de l'existence de ces deux bases est le standard ANSI/ISO.
-La base schéma système est un catalogue Microsoft pour les serveurs SQL et contient beaucoup plus d'information que la base schéma d'information.
+Les bases de données les plus importantes sur un serveur MySQL sont la [base système](https://dev.mysql.com/doc/refman/8.0/en/system-schema.html#:~:text=The%20mysql%20schema%20is%20the,used%20for%20other%20operational%20purposes) ("sys") et la base de schéma d'information ("information_schema").
+La base système contient les tables, informations et métadonnées nécessaires à l'administration du serveur.
+La base de schéma d'information est également une base contenant des métadonnées, mais ces métadonnées sont principalement récupérées depuis la base système. L'existence de ces deux bases repose sur le respect du standard ANSI/ISO.
+Contrairement à SQL Server, où le catalogue système est spécifique à Microsoft et fournit des informations plus détaillées, sur MySQL, la base système et la base de schéma d'information remplissent des rôles distincts mais complémentaires.
 
-Les bases de données les plus importantes sur un serveur MySQL sont la base schéma système ("sys") et la base schéma d'information ("information_schema").
-La base [schéma système](https://dev.mysql.com/doc/refman/8.0/en/system-schema.html#:~:text=The%20mysql%20schema%20is%20the,used%20for%20other%20operational%20purposes)  "sys" contient des vues et fonctions utiles pour l'administration et le diagnostic des performances. Elle offre une interface simplifiée pour accéder aux informations issues des autres schémas comme information_schema et performance_schema.
-La base schéma d'information est aussi une base contenant des méta-données, cependant ces méta-données sont directement générées à partir des structures internes de MySQL. La raison de l'existence de ces deux bases est de répondre à des besoins différents : information_schema respecte le standard ANSI/ISO pour fournir une vue standardisée des métadonnées, tandis que sys simplifie l'administration spécifique à MySQL.
-Contrairement à ce qui est parfois supposé, la base schéma système de MySQL n'a aucun lien avec les catalogues système de Microsoft SQL Server.
+Voici les commandes utiles pour intéragir avec MySQL.
 
+Retrouver les [bonnes pratiques MySQL](https://dev.mysql.com/doc/refman/8.0/en/general-security-issues.html)
