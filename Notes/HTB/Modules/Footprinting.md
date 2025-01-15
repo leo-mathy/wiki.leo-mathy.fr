@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T18:16:26.943Z
+date: 2025-01-15T18:23:00.099Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -668,4 +668,9 @@ Les données sont stockés dans des tables, contenant des collonnes, des lignes 
 Les clients MySQL peuvent récupérer et éditer les données en utilisant des requêtes verrs le moteur de base de données. L'insertion, la suppression, la modification et la récupération des données se fait avec le langage SQL.
 
 MySQL peut être utilisé pour l'administration de multiples bases de données, vers lequelles les clients peuvent envoyer de multiples requêtes simultanément. En fonction de l'usage de la base de données, l'accès est possible via un réseau interne ou depuis Internet.
+
+MySQL convient pour les applications où une syntaxe efficiente et des hautes vitesses de réponses sont essentielles. 
+
+MySQL est souvent utilisé avec un OS Linux, PHP et un serveur web Apache, cette combinaison est connue sous le nom de (LAMP)[https://en.wikipedia.org/wiki/LAMP_(software_bundle)] (Linux, Apache, MySQL, PHP), ou avec Nginx, [LEMP](https://lemp.io/) (Linux, Nginx, MySQL, PHP).
+
 
