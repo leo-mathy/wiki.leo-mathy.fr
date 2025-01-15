@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T17:51:39.038Z
+date: 2025-01-15T18:00:45.029Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -660,4 +660,8 @@ Braa pour réaliser des attaques par force brute sur les OID individuelles et é
 
 ## MySQL
 
-MySQL est un RDBMNS (Relational Database Management System) open-source développé et supporté par Oracle. 
+MySQL est un RDBMNS (Relational Database Management System) open-source développé et supporté par Oracle. Une base de données est une collection structurée de données organisées pour un usage et un récupération facile. Le système de gestion de base de données peut rapidement et avec performance, traiter un grand volume de données.
+
+La base de données est controllée en utilisant le language SQL. MySQL fonctionne sur une architecture client-serveur, le serveur étant le DBMS.
+Les données sont stockés dans des tables, contenant des collonnes, des lignes et des types de données. Ces bases de données sont souvent stockés dans un fichier unique avec une extension .sql.
+
