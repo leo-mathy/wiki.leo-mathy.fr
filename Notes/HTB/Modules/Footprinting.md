@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T18:40:13.870Z
+date: 2025-01-15T18:43:12.487Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -679,4 +679,6 @@ La base de données MySQL traduit les commandes en internes, en code exécutable
 Ces messages peuvent apporter des informations importantes et confirmer que l'application web intérragi avec la base de données dans un sens différent imaginé du développeur.
 
 SQL peut aussi être utilisé pour la gestion des utilisateurs et le changement de la structure des tables.
+
+MariaDB est un fork du code original de MySQL. Cela est du au développeur en chef de MySQL qui quitta l'entreprise MySQL AB après son acquisition par Oracle, pour développer un autre DBMS basé sur le code source de MySQL.
 
