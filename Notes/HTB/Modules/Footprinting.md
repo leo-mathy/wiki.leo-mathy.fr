@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T19:26:44.625Z
+date: 2025-01-15T19:32:46.349Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -662,21 +662,21 @@ Braa pour réaliser des attaques par force brute sur les OID individuelles et é
 
 MySQL est un RDBMNS (Relational Database Management System) open-source développé et supporté par Oracle. Une base de données est une collection structurée de données organisées pour un usage et un récupération facile. Le système de gestion de base de données peut rapidement et avec performance, traiter un grand volume de données.
 
-La base de données est controllée en utilisant le language SQL. MySQL fonctionne sur une architecture client-serveur, le serveur étant le DBMS.
-Les données sont stockés dans des tables, contenant des collonnes, des lignes et des types de données. Ces bases de données sont souvent stockés dans un fichier unique avec une extension .sql.
+La base de données est contrôlée en utilisant le langage SQL. MySQL fonctionne sur une architecture client-serveur, le serveur étant le DBMS.
+Les données sont stockés dans des tables, contenant des colonnes, des lignes et des types de données. Ces bases de données sont souvent stockés dans un fichier unique avec une extension ".sql".
 
-Les clients MySQL peuvent récupérer et éditer les données en utilisant des requêtes verrs le moteur de base de données. L'insertion, la suppression, la modification et la récupération des données se fait avec le langage SQL.
+Les clients MySQL peuvent récupérer et éditer les données en utilisant des requêtes vers le moteur de base de données. L'insertion, la suppression, la modification et la récupération des données se fait avec le langage SQL.
 
-MySQL peut être utilisé pour l'administration de multiples bases de données, vers lequelles les clients peuvent envoyer de multiples requêtes simultanément. En fonction de l'usage de la base de données, l'accès est possible via un réseau interne ou depuis Internet.
+MySQL peut être utilisé pour l'administration de multiples bases de données, vers lesquelles les clients peuvent envoyer de multiples requêtes simultanément. En fonction de l'usage de la base de données, l'accès est possible via un réseau interne ou depuis Internet.
 
-MySQL convient pour les applications où une syntaxe efficiente et des hautes vitesses de réponses sont essentielles. 
+MySQL convient pour les applications où une syntaxe efficiente et des hautes vitesses de réponses sont essentielles.
 
-MySQL est souvent utilisé avec un OS Linux, PHP et un serveur web Apache, cette combinaison est connue sous le nom de [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) (Linux, Apache, MySQL, PHP), ou avec Nginx, [LEMP](https://lemp.io/) (Linux, Nginx, MySQL, PHP).
+MySQL est souvent utilisé avec un OS Linux, PHP et un serveur web Apache, cette combinaison est connue sous le nom de [LAMP](<https://en.wikipedia.org/wiki/LAMP_(software_bundle)>) (Linux, Apache, MySQL, PHP), ou avec Nginx, [LEMP](https://lemp.io/) (Linux, Nginx, MySQL, PHP).
 L'utilisation d'une base de données MySQL pour l'hébergement web, permet aux scripts PHP de stocker leurs données (mots de passe, permissions, liens, utilisateurs, emails, clients...).
-Les données sensibles ( par exemple les mots de passe) peuvent être stockés en texte clair dans la base de données, cependant ces données sont générallement chiffrés par le script PHP avant l'insertion dans la base avec une méthode sécurisée comme le chiffrement à sens unique (hash).
+Les données sensibles ( par exemple les mots de passe) peuvent être stockés en texte clair dans la base de données, cependant ces données sont généralement chiffrés par le script PHP avant l'insertion dans la base avec une méthode sécurisée comme le chiffrement à sens unique (hash).
 
 La base de données MySQL traduit les commandes en internes, en code exécutable et effectue les actions demandés. L'application peut en informer l'utilisateur (ce qui peut arriver avec de l'injection SQL) en cas d'erreur.
-Ces messages peuvent apporter des informations importantes et confirmer que l'application web intérragi avec la base de données dans un sens différent imaginé du développeur.
+Ces messages peuvent apporter des informations importantes et confirmer que l'application web interagi avec la base de données dans un sens différent imaginé du développeur.
 
 SQL peut aussi être utilisé pour la gestion des utilisateurs et le changement de la structure des tables.
 
@@ -686,32 +686,41 @@ L'administration des bases de données est un vaste sujet, les structures peuven
 
 Les possibilités de configuration de MySQL sont vastes, les options principales avec un impact sur la sécurité sont les suivantes:
 
-| Paramètre           | Description                                                                                  |
-|--------------------|----------------------------------------------------------------------------------------------|
-| user               | Défini l'utilisateur pour l'exécution du service MySQL.                                              |
-| password           | Défini le mot de passe associé à l'utilisateur pour l'exécution du service MySQL.                                                      |
-| admin_address      | Spécifie l'adresse IP sur laquelle écouter les connexions TCP/IP sur l'interface réseau administrative. |
-| debug              | Spécifie les paramètres du débug.                                     |
-| sql_warnings       | Spécifie si en cas d'erreur au niveau de l'insertion d'une ligne unique, une information est retournée. |
-| secure_file_priv   | Spécifie le paramètre pour limiter l'effet des opérations d'importation et d'exportation de données.             |
+| Paramètre        | Description                                                                                             |
+| ---------------- | ------------------------------------------------------------------------------------------------------- |
+| user             | Défini l'utilisateur pour l'exécution du service MySQL.                                                 |
+| password         | Défini le mot de passe associé à l'utilisateur pour l'exécution du service MySQL.                       |
+| admin_address    | Spécifie l'adresse IP sur laquelle écouter les connexions TCP/IP sur l'interface réseau administrative. |
+| debug            | Spécifie les paramètres du débug.                                                                       |
+| sql_warnings     | Spécifie si en cas d'erreur au niveau de l'insertion d'une ligne unique, une information est retournée. |
+| secure_file_priv | Spécifie le paramètre pour limiter l'effet des opérations d'importation et d'exportation de données.    |
 
 Les paramètres debug et sql_warnings sont utilisés pour retourner des informations en cas d'erreur. Ces messages d'erreurs sont sensibles et sont souvent affichés sur le navigateur en retour.
 
-Toutes les inforrmations entrées dans le fichier de configuration sont en texte clair.
+Toutes les informations entrées dans le fichier de configuration sont en texte clair.
 Si il y a un moyen de voir le contenu du fichier (par exemple avec des droits mal configurés sur le fichier), alors il est possible, à partir du paramètre user et password, de récupérer les données de la base.
 
 Le serveur MySQL écoute par défaut sur le port 3306.
 Le port MySQL peut être scanné avec Nmap (Il est nécessaire de vérifier les informations manuellement, puisque certaines peuvent être des faux positif):
 `nmap <adresse IP> -sV -sC -p3306 --script mysql*`
 
-Il est possible de se connecter au serveur MySQL avec la commande suivante:
-`mysql -u <utilisateur> -p <mot de passe> -h <adresse IP>`
+Il est possible de avec la commande suivante:
 
 Les bases de données les plus importantes sur un serveur MySQL sont la [base système](https://dev.mysql.com/doc/refman/8.0/en/system-schema.html#:~:text=The%20mysql%20schema%20is%20the,used%20for%20other%20operational%20purposes) ("sys") et la base de schéma d'information ("information_schema").
 La base système contient les tables, informations et métadonnées nécessaires à l'administration du serveur.
 La base de schéma d'information est également une base contenant des métadonnées, mais ces métadonnées sont principalement récupérées depuis la base système. L'existence de ces deux bases repose sur le respect du standard ANSI/ISO.
 Contrairement à SQL Server, où le catalogue système est spécifique à Microsoft et fournit des informations plus détaillées, sur MySQL, la base système et la base de schéma d'information remplissent des rôles distincts mais complémentaires.
 
-Voici les commandes utiles pour intéragir avec MySQL.
+Voici les commandes utiles principales pour interagir avec MySQL:
+
+| Command                                                            | Description                                                     |
+| ------------------------------------------------------------------ | --------------------------------------------------------------- |
+| `mysql -u <utilisateur> -p <mot de passe> -h <adresse IP>`         | se connecter au serveur MySQL.                                  |
+| `show databases;`                                                  | Afficher toutes les bases de données.                           |
+| `use <base de données>;`                                           | Sélectionner une base de données existante.                     |
+| `show tables;`                                                     | Afficher toutes les tables disponibles dans la base de données. |
+| `show columns from <table>;`                                       | Afficher toutes les colonnes de la table spécifiée.             |
+| `select * from <table>;`                                           | Afficher la table spécifiée.                                    |
+| `select * from <table> where <colone> = "<chaîne de caractères>";` | Rechercher une chaîne de caractères dans la table spécifiée.    |
 
 Retrouver les [bonnes pratiques MySQL](https://dev.mysql.com/doc/refman/8.0/en/general-security-issues.html)
