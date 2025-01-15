@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T18:37:07.830Z
+date: 2025-01-15T18:40:13.870Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -677,4 +677,6 @@ Les données sensibles ( par exemple les mots de passe) peuvent être stockés e
 
 La base de données MySQL traduit les commandes en internes, en code exécutable et effectue les actions demandés. L'application peut en informer l'utilisateur (ce qui peut arriver avec de l'injection SQL) en cas d'erreur.
 Ces messages peuvent apporter des informations importantes et confirmer que l'application web intérragi avec la base de données dans un sens différent imaginé du développeur.
+
+SQL peut aussi être utilisé pour la gestion des utilisateurs et le changement de la structure des tables.
 
