@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T18:23:00.099Z
+date: 2025-01-15T18:23:24.953Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -671,6 +671,6 @@ MySQL peut être utilisé pour l'administration de multiples bases de données, 
 
 MySQL convient pour les applications où une syntaxe efficiente et des hautes vitesses de réponses sont essentielles. 
 
-MySQL est souvent utilisé avec un OS Linux, PHP et un serveur web Apache, cette combinaison est connue sous le nom de (LAMP)[https://en.wikipedia.org/wiki/LAMP_(software_bundle)] (Linux, Apache, MySQL, PHP), ou avec Nginx, [LEMP](https://lemp.io/) (Linux, Nginx, MySQL, PHP).
+MySQL est souvent utilisé avec un OS Linux, PHP et un serveur web Apache, cette combinaison est connue sous le nom de [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) (Linux, Apache, MySQL, PHP), ou avec Nginx, [LEMP](https://lemp.io/) (Linux, Nginx, MySQL, PHP).
 
 
