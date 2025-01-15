@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T18:25:45.565Z
+date: 2025-01-15T18:29:58.843Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -672,7 +672,7 @@ MySQL peut être utilisé pour l'administration de multiples bases de données, 
 MySQL convient pour les applications où une syntaxe efficiente et des hautes vitesses de réponses sont essentielles. 
 
 MySQL est souvent utilisé avec un OS Linux, PHP et un serveur web Apache, cette combinaison est connue sous le nom de [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) (Linux, Apache, MySQL, PHP), ou avec Nginx, [LEMP](https://lemp.io/) (Linux, Nginx, MySQL, PHP).
-
-L'utilisation d'une base de données MySQL pour l'hébergement web, permet aux scripts de stocker leurs données (Mots de passe, Permissions, liens, utilisateurs, emails, clients...).
+L'utilisation d'une base de données MySQL pour l'hébergement web, permet aux scripts PHP de stocker leurs données (mots de passe, permissions, liens, utilisateurs, emails, clients...).
+Les données sensibles ( par exemple les mots de passe) peuvent être stockés en texte clair dans la base de données, cependant ces données sont générallement chiffrés par le script PHP avant l'insertion dans la base avec une méthode sécurisée comme le chiffrement à sens unique (hash).
 
 
