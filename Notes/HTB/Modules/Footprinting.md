@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-16T18:17:17.923Z
+date: 2025-01-16T18:20:30.625Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -749,3 +749,10 @@ Pour trouver l'emplacement du client sur l'hôte Linux:
 
 Comme MySQL, MSSQL a des [bases de données par défaut](https://docs.microsoft.com/en-us/sql/relational-databases/databases/system-databases?view=sql-server-ver15):
 
+| Base de données | Description                                                                                                         |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------|
+| master                  | Comporte toutes les informations systèmes pour une instance d'un serveur SQL.                                                          |
+| model                   | Modèle utilisé comme structure pour la création des nouvelles bases de données. Tout changement effectué sur cette base est répliqué pour toute création d'une ouvelle base.|
+| msdb                    | The SQL Server Agent uses this database to schedule jobs & alerts                                                  |
+| tempdb                  | Stores temporary objects                                                                                           |
+| resource                | Read-only database containing system objects included with SQL server                                              |
