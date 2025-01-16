@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-16T18:52:07.316Z
+date: 2025-01-16T18:56:28.491Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -788,3 +788,5 @@ Se connecter en utilisant `Mssqlclient.py` et l'authentification Windows:
 
 Une fois connecté il est conseillé de lister les bases de données présentes sur le système:
 `select name from sys.databases`
+
+## Oracle TNS
