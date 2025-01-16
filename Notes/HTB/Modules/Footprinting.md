@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-15T19:32:46.349Z
+date: 2025-01-16T18:01:14.718Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -660,7 +660,7 @@ Braa pour réaliser des attaques par force brute sur les OID individuelles et é
 
 ## MySQL
 
-MySQL est un RDBMNS (Relational Database Management System) open-source développé et supporté par Oracle. Une base de données est une collection structurée de données organisées pour un usage et un récupération facile. Le système de gestion de base de données peut rapidement et avec performance, traiter un grand volume de données.
+MySQL est un RDBMNS (Relational Database Management System) open-source développé et supporté par Oracle. Une base de données est une collection structurée de données organisées pour un usage et une récupération facile. Le système de gestion de base de données peut rapidement et avec performance, traiter un grand volume de données.
 
 La base de données est contrôlée en utilisant le langage SQL. MySQL fonctionne sur une architecture client-serveur, le serveur étant le DBMS.
 Les données sont stockés dans des tables, contenant des colonnes, des lignes et des types de données. Ces bases de données sont souvent stockés dans un fichier unique avec une extension ".sql".
@@ -724,3 +724,10 @@ Voici les commandes utiles principales pour interagir avec MySQL:
 | `select * from <table> where <colone> = "<chaîne de caractères>";` | Rechercher une chaîne de caractères dans la table spécifiée.    |
 
 Retrouver les [bonnes pratiques MySQL](https://dev.mysql.com/doc/refman/8.0/en/general-security-issues.html)
+
+## MSSQL
+
+Microsoft SQL est le RDBMNS (Relational Database Management System) Microsoft développé pour les environements Windows, contrairement à MySQL, il n'est pas open-source.
+MSSQL est populaire parmis les administrateurs et développeurs pour le développement d'applications dotnet puisqu'il supporrte nativement ce langage.
+Il est tout de même possible de rencontrer rarement MSSQL dans des environements Linux/Unix.
+
