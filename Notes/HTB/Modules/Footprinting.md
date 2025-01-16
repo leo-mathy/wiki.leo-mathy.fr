@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-16T18:37:47.797Z
+date: 2025-01-16T18:39:50.035Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -772,6 +772,10 @@ Certains paramètres sont dangereux, en voici certains:
 - Identifiants et mot de passe par défaut. (pour le compte "sa", qui parfois n'est pas désactivé).
 
 Par défaut, MSSQL utilise le port 1433.
-Nmap peut aider à la reconnaissance du service (nom d'hôte, versions, cannaux nommés actifs...): 
+Nmap peut aider à la reconnaissance du service (nom d'hôte, versions, cannaux nommés actifs...).
+
+Voici un exemple, en utilisant des scripts pour MSSQL et avec l'utilisateur "sa":
 `nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 <adresse IP>`
+
+Metasploit dispose aussi de modules MSSQL, pour le scan il est possible d'utiliser le module `scanner/mssql/mssql_ping`.
 
