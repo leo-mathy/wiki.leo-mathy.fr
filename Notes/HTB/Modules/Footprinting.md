@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-16T18:26:50.858Z
+date: 2025-01-16T18:29:47.647Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -761,3 +761,4 @@ Comme MySQL, MSSQL a des [bases de données par défaut](https://docs.microsoft.
 
 Lors de la configuration initiale, lorsqu'un administrateur initie et configure MSSQL pour être accessible en réseau, le service SQL tournera avec l'utilisateur `NT SERVICE\MSSQLSERVER`. Se connecter à MSSQL via un client est possible via l'authentification Windows, par défaut le chiffrrement n'est pas obligatoire lors d'une tentative de connexion.
 
+Si l'authentification utilise l'authentification Windows, alors c'est le système d'exploitation qui traitera la demande et utilisera soit la base locale SAM ou le contrôlleur de domaine avant d'autoriser la connexion au système de gestion de base de données (DBMNS). 
