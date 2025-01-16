@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-16T18:14:54.924Z
+date: 2025-01-16T18:17:17.923Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -743,3 +743,9 @@ D'autres clients sont utilisables pour acceder à une base de données présente
 - [Script Impacket mssqlclient.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/mssqlclient.py)
 
 Le client le plus souvent utilisé pas les pentesters est le script Impacket `mssqlclient.py`. Effectivement, la suite Impacket est présente sur de nombreuses distributions nativement.
+
+Pour trouver l'emplacement du client sur l'hôte Linux:
+`locate mssqlclient`
+
+Comme MySQL, MSSQL a des [bases de données par défaut](https://docs.microsoft.com/en-us/sql/relational-databases/databases/system-databases?view=sql-server-ver15):
+
