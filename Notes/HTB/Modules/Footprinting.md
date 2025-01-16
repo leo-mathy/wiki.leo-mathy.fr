@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-16T18:01:14.718Z
+date: 2025-01-16T18:01:29.353Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -727,7 +727,7 @@ Retrouver les [bonnes pratiques MySQL](https://dev.mysql.com/doc/refman/8.0/en/g
 
 ## MSSQL
 
-Microsoft SQL est le RDBMNS (Relational Database Management System) Microsoft développé pour les environements Windows, contrairement à MySQL, il n'est pas open-source.
+Microsoft SQL est un RDBMNS (Relational Database Management System) Microsoft développé pour les environements Windows, contrairement à MySQL, il n'est pas open-source.
 MSSQL est populaire parmis les administrateurs et développeurs pour le développement d'applications dotnet puisqu'il supporrte nativement ce langage.
 Il est tout de même possible de rencontrer rarement MSSQL dans des environements Linux/Unix.
 
