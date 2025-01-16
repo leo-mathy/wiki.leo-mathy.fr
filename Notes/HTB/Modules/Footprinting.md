@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-16T18:09:59.740Z
+date: 2025-01-16T18:10:44.652Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -732,4 +732,6 @@ MSSQL est populaire parmis les administrateurs et développeurs pour le dévelop
 Il est tout de même possible de rencontrer rarement MSSQL dans des environements Linux/Unix.
 
 [SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) est une fonctionnalitée qui peut être installée avec le paquet d'installation MSSQL ou installée séparément. Cette application est souvent installé sur les serveurs MSSQL pour la configuration initiale et l'administration sur le long terme des bases de données.
+
 SSMS est une application client qui permet la gestion des bases de données, elle n'existe donc pas uniquement sur les serveurs, cela signifie qu'il est possible de rencontrer des systèmes avec SSMS d'installé et stockant des identifiants et mots de passe enregistrés.
+
