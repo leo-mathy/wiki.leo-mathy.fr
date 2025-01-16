@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-16T18:41:11.495Z
+date: 2025-01-16T18:52:07.316Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -758,27 +758,33 @@ Comme MySQL, MSSQL a des [bases de données par défaut](https://docs.microsoft.
 | tempdb          | Stocke les objets temporaires.                                                                                                                                                |
 | resource        | Base de données en lecture seule contenant les objets systèmes inclus avec SQL Server.                                                                                        |
 
+Lors de la configuration initiale, lorsqu'un administrateur initie et configure MSSQL pour être accessible en réseau, le service SQL tournera avec l'utilisateur `NT SERVICE\MSSQLSERVER`. Se connecter à MSSQL via un client est possible via l'authentification Windows, par défaut le chiffrement n'est pas obligatoire lors d'une tentative de connexion.
 
-Lors de la configuration initiale, lorsqu'un administrateur initie et configure MSSQL pour être accessible en réseau, le service SQL tournera avec l'utilisateur `NT SERVICE\MSSQLSERVER`. Se connecter à MSSQL via un client est possible via l'authentification Windows, par défaut le chiffrrement n'est pas obligatoire lors d'une tentative de connexion.
+Si l'authentification utilise l'authentification Windows, alors c'est le système d'exploitation qui traitera la demande et utilisera soit la base locale SAM ou le contrôleur de domaine avant d'autoriser la connexion au système de gestion de base de données (DBMNS).
 
-Si l'authentification utilise l'authentification Windows, alors c'est le système d'exploitation qui traitera la demande et utilisera soit la base locale SAM ou le contrôlleur de domaine avant d'autoriser la connexion au système de gestion de base de données (DBMNS).
-
-L'utilisation d'un Active Directory est idéal pour l'audit des activités et le contrôle d'accès dans les environements Windows, mais cela pose aussi un problème si un compte est compromis, alors il pourrait être utilisé pour se déplacer lattéralement ou causer une escalation de privilèges.
+L'utilisation d'un Active Directory est idéal pour l'audit des activités et le contrôle d'accès dans les environnements Windows, mais cela pose aussi un problème si un compte est compromis, alors il pourrait être utilisé pour se déplacer latéralement ou causer une élévation de privilèges.
 
 Certains paramètres sont dangereux, en voici certains:
+
 - Les connexions non chiffrées.
 - L'utilisation de certificats autosignés (peut être utilisé pour du spoofing).
-- L'utilisation des cannaux nommés.
+- L'utilisation des canaux nommés.
 - Identifiants et mot de passe par défaut. (pour le compte "sa", qui parfois n'est pas désactivé).
 
 Par défaut, MSSQL utilise le port 1433.
-Nmap peut aider à la reconnaissance du service (nom d'hôte, versions, cannaux nommés actifs...).
+Nmap peut aider à la reconnaissance du service (nom d'hôte, versions, canaux nommés actifs...).
 
 Voici un exemple, en utilisant des scripts pour MSSQL et avec l'utilisateur "sa":
 `nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 <adresse IP>`
 
 Metasploit dispose aussi de modules MSSQL, pour le scan il est possible d'utiliser le module `scanner/mssql/mssql_ping`.
 
-Pour se connecter au DBMNS avec `Mssqlclient.py` en utilisant l'authentification Windows:
+Pour interagir avec les bases de données sur le systèmes MSSQL, il faut utiliser le langage T-SQL (Transact-SQL)
+
+L'authentification avec MSSQL nous permet d'interagir directement avec les bases de données via le moteur de base de données SQL.
+
+Se connecter en utilisant `Mssqlclient.py` et l'authentification Windows:
 `python3 mssqlclient.py <utilisateur>@<adresse IP> -windows-auth`
 
+Une fois connecté il est conseillé de lister les bases de données présentes sur le système:
+`select name from sys.databases`
