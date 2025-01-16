@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-16T18:10:44.652Z
+date: 2025-01-16T18:14:54.924Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -735,3 +735,11 @@ Il est tout de même possible de rencontrer rarement MSSQL dans des environement
 
 SSMS est une application client qui permet la gestion des bases de données, elle n'existe donc pas uniquement sur les serveurs, cela signifie qu'il est possible de rencontrer des systèmes avec SSMS d'installé et stockant des identifiants et mots de passe enregistrés.
 
+D'autres clients sont utilisables pour acceder à une base de données présente sur MSSQL:
+- [mssql-cli](https://docs.microsoft.com/en-us/sql/tools/mssql-cli?view=sql-server-ver15)
+- [SQL Server PowerShell](https://docs.microsoft.com/en-us/sql/powershell/sql-server-powershell?view=sql-server-ver15)
+- [HeidiSQL](https://www.heidisql.com/)
+- [SQLPro](https://www.macsqlclient.com/)
+- [Script Impacket mssqlclient.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/mssqlclient.py)
+
+Le client le plus souvent utilisé pas les pentesters est le script Impacket `mssqlclient.py`. Effectivement, la suite Impacket est présente sur de nombreuses distributions nativement.
