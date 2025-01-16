@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-16T18:39:50.035Z
+date: 2025-01-16T18:41:11.495Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -778,4 +778,7 @@ Voici un exemple, en utilisant des scripts pour MSSQL et avec l'utilisateur "sa"
 `nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 <adresse IP>`
 
 Metasploit dispose aussi de modules MSSQL, pour le scan il est possible d'utiliser le module `scanner/mssql/mssql_ping`.
+
+Pour se connecter au DBMNS avec `Mssqlclient.py` en utilisant l'authentification Windows:
+`python3 mssqlclient.py <utilisateur>@<adresse IP> -windows-auth`
 
