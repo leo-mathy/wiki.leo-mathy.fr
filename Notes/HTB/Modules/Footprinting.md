@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-16T18:20:30.625Z
+date: 2025-01-16T18:23:40.127Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -727,15 +727,16 @@ Retrouver les [bonnes pratiques MySQL](https://dev.mysql.com/doc/refman/8.0/en/g
 
 ## MSSQL
 
-Microsoft SQL est un RDBMNS (Relational Database Management System) Microsoft développé pour les environements Windows, contrairement à MySQL, il n'est pas open-source.
-MSSQL est populaire parmis les administrateurs et développeurs pour le développement d'applications dotnet puisqu'il supporrte nativement ce langage.
-Il est tout de même possible de rencontrer rarement MSSQL dans des environements Linux/Unix.
+Microsoft SQL est un RDBMNS (Relational Database Management System) Microsoft développé pour les environnements Windows, contrairement à MySQL, il n'est pas open-source.
+MSSQL est populaire parmi les administrateurs et développeurs pour le développement d'applications dotnet puisqu'il supporte nativement ce langage.
+Il est tout de même possible de rencontrer rarement MSSQL dans des environnements Linux/Unix.
 
-[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) est une fonctionnalitée qui peut être installée avec le paquet d'installation MSSQL ou installée séparément. Cette application est souvent installé sur les serveurs MSSQL pour la configuration initiale et l'administration sur le long terme des bases de données.
+[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) est une fonctionnalité qui peut être installée avec le paquet d'installation MSSQL ou installée séparément. Cette application est souvent installé sur les serveurs MSSQL pour la configuration initiale et l'administration sur le long terme des bases de données.
 
 SSMS est une application client qui permet la gestion des bases de données, elle n'existe donc pas uniquement sur les serveurs, cela signifie qu'il est possible de rencontrer des systèmes avec SSMS d'installé et stockant des identifiants et mots de passe enregistrés.
 
-D'autres clients sont utilisables pour acceder à une base de données présente sur MSSQL:
+D'autres clients sont utilisables pour accéder à une base de données présente sur MSSQL:
+
 - [mssql-cli](https://docs.microsoft.com/en-us/sql/tools/mssql-cli?view=sql-server-ver15)
 - [SQL Server PowerShell](https://docs.microsoft.com/en-us/sql/powershell/sql-server-powershell?view=sql-server-ver15)
 - [HeidiSQL](https://www.heidisql.com/)
@@ -749,10 +750,10 @@ Pour trouver l'emplacement du client sur l'hôte Linux:
 
 Comme MySQL, MSSQL a des [bases de données par défaut](https://docs.microsoft.com/en-us/sql/relational-databases/databases/system-databases?view=sql-server-ver15):
 
-| Base de données | Description                                                                                                         |
-|--------------------------|---------------------------------------------------------------------------------------------------------------------|
-| master                  | Comporte toutes les informations systèmes pour une instance d'un serveur SQL.                                                          |
-| model                   | Modèle utilisé comme structure pour la création des nouvelles bases de données. Tout changement effectué sur cette base est répliqué pour toute création d'une ouvelle base.|
-| msdb                    | The SQL Server Agent uses this database to schedule jobs & alerts                                                  |
-| tempdb                  | Stores temporary objects                                                                                           |
-| resource                | Read-only database containing system objects included with SQL server                                              |
+| Base de données | Description                                                                                                                                                                   |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| master          | Comporte toutes les informations systèmes pour une instance d'un serveur SQL.                                                                                                 |
+| model           | Modèle utilisé comme structure pour la création des nouvelles bases de données. Tout changement effectué sur cette base est répliqué pour toute création d'une nouvelle base. |
+| msdb            | L'agent SQL serveur utilise cette base pour planifier les tâches et alertes.                                                                                                  |
+| tempdb          | Stocke les objets temporaires.                                                                                                                                                |
+| resource        | Base de données en lecture seule contenant les objets systèmes inclus avec SQL Server.                                                                                        |
