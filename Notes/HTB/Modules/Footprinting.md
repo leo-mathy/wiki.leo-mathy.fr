@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T20:08:19.972Z
+date: 2025-01-17T20:09:02.845Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -886,3 +886,4 @@ Si jamais l'erreur suivante apparait "`sqlplus: error while loading shared libra
 la commmande suivante peut résoudre le problème:
 `sudo sh -c "echo /usr/lib/oracle/12.2/client64/lib > /etc/ld.so.conf.d/oracle-instantclient.conf";sudo ldconfig`
 
+La liste des commandes sqlplus sont disponibles [ici](https://docs.oracle.com/cd/E11882_01/server.112/e41085/sqlqraa001.htm#SQLQR985).
