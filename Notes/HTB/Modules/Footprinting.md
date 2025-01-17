@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T20:14:48.935Z
+date: 2025-01-17T20:15:23.164Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -896,3 +896,4 @@ Voici la requète pour afficher les permissions de l'utilisateur actuel:
 
 Il est possible de se connecter en tant que l'Administrateur de base de données système ("sysdba"). Cela est possible si l'utilisateur à les permissions nécéssaires (normalement attribués par l'administrateur de la base de données ou utilisés par lui-même):
 `sqlplus <utilisateur>/<mot de passe>@<adresse IP>[/<SID>] as sysdba`
+
