@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T19:02:52.029Z
+date: 2025-01-17T19:03:58.636Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -804,5 +804,7 @@ Par défaut, TNS écoute sur le port TCP 1521. Il est configuré pour le support
 **Par défaut**, Oracle TNS peut être administré à distance dans Oracle 8i/9i mais pas dans Oracle 10g/11g.
 
 Par défaut, le listener TNS comporte des mesures de sécurités comme accepter les connexions depuis des hôtes spécifiques uniquement ou encore une authentification basique.
-De plus, le listener utilisera les services réseau Oracle (Oracle Net Services) pour chiffrer la communication entre le client et le serveur. Les fichiers de configuration pour Oracle TNS sont nommés `tnsnames.ora` et `listener.ora` et sont normalement situés dans le répertoire `$ORACLE_HOME/network/admin`.
+De plus, le listener utilisera les services réseau Oracle (Oracle Net Services) pour chiffrer la communication entre le client et le serveur. Les fichiers de configuration pour Oracle TNS sont nommés `tnsnames.ora` et `listener.ora` et sont normalement situés dans le répertoire `$ORACLE_HOME/network/admin`. Ces fichiers sont en texte clair et contiennent les informations de configuration pour les instances de bases de données Oracle et les autres services réseau utilisant le protocole TNS.
+
+
 
