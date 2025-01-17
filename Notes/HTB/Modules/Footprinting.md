@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T19:57:55.244Z
+date: 2025-01-17T20:02:01.124Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -868,3 +868,8 @@ Dans le DBMNS Oracle, un SID (System Identifier) est un nom unique qui identifie
 Une instance est un panel de processus et de structures mémoire qui intéragissent pour administrer les données de la base de données.
 
 Quand un client se connecte à une base de données Oracle, il peut spécifier le SID de la base de données en plus de la chaîne de connexion. Si aucun SID n'est précisé, alors la valeur par défaut contenue dans le fichier `tnsnames.ora` sera utilisée.
+
+Le SID peut être utilisé par les administrateurs pour contrôller et administrer les différentes instances d'une base de données. Par exemple, ils peuvent démarrer, arreter ou redémarrer une instance, ajuster l'allocation mémoire ou les autres paramètres de configuration. Les performances peuvent être visualisés avec un outil comme Oracle Entreprise Manager.
+
+Il est possible d'utiliser de nombreux outils pour trouver les SID. (nmap,hydra,odat...)
+
