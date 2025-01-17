@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T19:30:56.876Z
+date: 2025-01-17T19:35:45.506Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -829,3 +829,4 @@ Ce fichier peut aussi comporter des informations additionnelles comme la configu
 
 Le fichier `listener.ora`, est un fichier de configuration côté serveur qui défini les propriétés et paramètres du processus listener. Le processus listener est responsable de la réception des requètes client entrantes et de leurs redirection vers la bonne instance de base de données Oracle.
 
+En résumé, les services réseau Oracle (Oracle Net Services) utilisent `tnsnames.ora` pour résoudre les noms des services en adresses réseau tandis que le processus listener utilise `listener.ora` pour déterminer les services qu'il doit écouter et le comportement du listener.
