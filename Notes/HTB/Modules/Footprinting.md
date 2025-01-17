@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T20:15:40.997Z
+date: 2025-01-17T20:18:17.197Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -896,4 +896,6 @@ Voici la requète pour afficher les permissions de l'utilisateur actuel:
 
 Il est possible de se connecter en tant que l'Administrateur de base de données système ("sysdba"). Cela est possible si l'utilisateur à les permissions nécéssaires (normalement attribués par l'administrateur de la base de données ou utilisés par lui-même):
 `sqlplus <utilisateur>/<mot de passe>@<adresse IP>[/<SID>] as sysdba`
+
+Si l'accès à la table `sys.user$` est autorisé (en ayant les droits,administrateur de la base...) alors il est possible de récupérer les hashs et de les cracker hors-ligne. La commande suivante permet de récupérer ces hashs:
 
