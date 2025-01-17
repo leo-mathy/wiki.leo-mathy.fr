@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T20:06:18.745Z
+date: 2025-01-17T20:08:19.972Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -881,4 +881,8 @@ Avec `odat.py` (avec le flag "all" pour récupérer le noms de bases, versions, 
 
 Pour se connecter et intéragir avec la base de données Oracle, il est possible d'utiliser sqlplus:
 `sqlplus <utilisateur>/<mot de passe>@<adresse IP>[/<SID>]`
+
+Si jamais l'erreur suivante apparait "`sqlplus: error while loading shared libraries: libsqlplus.so: cannot open shared object file: No such file or directory`",
+la commmande suivante peut résoudre le problème:
+`sudo sh -c "echo /usr/lib/oracle/12.2/client64/lib > /etc/ld.so.conf.d/oracle-instantclient.conf";sudo ldconfig`
 
