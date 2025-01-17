@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T20:06:10.302Z
+date: 2025-01-17T20:06:18.745Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -881,3 +881,4 @@ Avec `odat.py` (avec le flag "all" pour récupérer le noms de bases, versions, 
 
 Pour se connecter et intéragir avec la base de données Oracle, il est possible d'utiliser sqlplus:
 `sqlplus <utilisateur>/<mot de passe>@<adresse IP>[/<SID>]`
+
