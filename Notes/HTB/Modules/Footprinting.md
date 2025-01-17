@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T19:46:24.197Z
+date: 2025-01-17T19:48:06.501Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -854,3 +854,9 @@ sudo pip3 install colorlog termcolor passlib python-libnmap
 sudo apt-get install build-essential libgmp-dev -y
 pip3 install pycryptodome
 ```
+
+Pour vérifier que ODAT est bien installé:
+`./odat.py -h`
+
+
+
