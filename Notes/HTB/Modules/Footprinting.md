@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T19:36:12.880Z
+date: 2025-01-17T19:45:59.481Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -830,4 +830,8 @@ Ce fichier peut aussi comporter des informations additionnelles comme la configu
 Le fichier `listener.ora`, est un fichier de configuration côté serveur qui défini les propriétés et paramètres du processus listener. Le processus listener est responsable de la réception des requètes client entrantes et de leurs redirection vers la bonne instance de base de données Oracle.
 
 En résumé, les services réseau Oracle (Oracle Net Services) utilisent `tnsnames.ora` pour résoudre les noms des services en adresses réseau tandis que le processus listener utilise `listener.ora` pour déterminer les services qu'il doit écouter et le comportement du listener.
+
+Les bases de données Oracle peuvent être protégés en utilisant la liste d'exclusion PL/SQL (PlsqlExclusionList). Cette liste est un fichier créée par l'utilisateur qui doit être placé dans le répertoire `$ORACLE_HOME/sqldeveloper`. Ce fichier contient les nom des paquets PL/SQL ou les types qui doivent être exclus de l'exécution. Une fois le fichier créer, il peut être chargé dans l'instance de la base de données. Il sert de liste noire qui ne peut pas être accessible depuis le serveur applicatif Oracle.
+
+Avant d'énumérer le listener TNS et intéragir avec, il faut avoir certains outils. Voici un script pour installer tout cela automatiquement.
 
