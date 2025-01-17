@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-16T18:56:28.491Z
+date: 2025-01-17T18:40:57.649Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -790,3 +790,8 @@ Une fois connecté il est conseillé de lister les bases de données présentes 
 `select name from sys.databases`
 
 ## Oracle TNS
+
+Oracle Transparent Network Substrate (TNS) est un protocole de communication qui facilite la communication entre les bases de données Oracle et les applications réseau.
+
+TNS à été introduit comme partie de la suite logicielle [Oracle Net Services](https://docs.oracle.com/en/database/oracle/oracle-database/18/netag/introducing-oracle-net-services.html). TNS supporte de nombreux protocols réseau entre les bases Oracle et les applications clients, comme IPX/SPX et TCP/IP. C'est une solution largement utilisée pour la gestion de larges bases de données complexes dans les domaines de la santé, de la finance et de la distribution. De plus, ce protocole comporte un méchanisme de chiffrement natif.
+
