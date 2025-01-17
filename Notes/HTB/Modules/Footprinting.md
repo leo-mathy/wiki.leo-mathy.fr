@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T20:19:04.743Z
+date: 2025-01-17T20:21:21.650Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -899,4 +899,9 @@ Il est possible de se connecter en tant que l'Administrateur de base de données
 
 Si l'accès à la table `sys.user$` est autorisé (en ayant les droits,administrateur de la base...) alors il est possible de récupérer les hashs des utilisateurs et de les cracker hors-ligne. La commande suivante permet de récupérer ces hashs:
 `select name, password from sys.user$;`
+
+Une autre option est de transferer un shell web vers la cible, cela nécéssite le serveur d'exécuter un serveur web et de connaitre l'emplacement éxacte de la racine du serveur web.
+Les répertoires racines des serveurs web par défaut sont:
+- /var/www/html (Linux)
+- C:\inetpub\wwwroot (Windows)
 
