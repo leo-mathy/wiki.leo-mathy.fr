@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T20:04:20.252Z
+date: 2025-01-17T20:06:10.302Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -872,8 +872,12 @@ Quand un client se connecte à une base de données Oracle, il peut spécifier l
 Le SID peut être utilisé par les administrateurs pour contrôller et administrer les différentes instances d'une base de données. Par exemple, ils peuvent démarrer, arreter ou redémarrer une instance, ajuster l'allocation mémoire ou les autres paramètres de configuration. Les performances peuvent être visualisés avec un outil comme Oracle Entreprise Manager.
 
 Il est possible d'utiliser de nombreux outils pour trouver les SID. (nmap,hydra,odat...)
-- Avec nmap:
+
+Avec nmap:
 `nmap -p1521 -sV <adresse IP> --open --script oracle-sid-brute`
-- Avec `odat.py` (avec le flag "all" pour récupérer le noms de bases, versions, comptes, vulnérabilités, mauvaises configurations...)
+
+Avec `odat.py` (avec le flag "all" pour récupérer le noms de bases, versions, comptes, vulnérabilités, mauvaises configurations...)
 `./odat.py all -s <adresse IP>`
 
+Pour se connecter et intéragir avec la base de données Oracle, il est possible d'utiliser sqlplus:
+`sqlplus <utilisateur>/<mot de passe>@<adresse IP>[/<SID>]`
