@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T19:50:16.177Z
+date: 2025-01-17T19:50:51.980Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -859,6 +859,9 @@ Pour vérifier que ODAT est bien installé:
 `./odat.py -h`
 
 Oracle Database Attacking Tool (ODAT) est un outil open-source de pentest écrit en Python et créé pour énumérer et exploiter les vulnérabilités présentes dans les bases de données Oracle. Les vulnérabilités prises en charges sont vastes, de l'injection SQL, au RCE en passant par l'élévation de privilèges.
+
+Scan nmap pour Oracle TNS:
+`nmap -p1521 -sV 10.129.204.235`
 
 
 
