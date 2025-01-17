@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T20:09:59.275Z
+date: 2025-01-17T20:10:32.258Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -890,4 +890,7 @@ La liste des commandes sqlplus sont disponibles [ici](https://docs.oracle.com/cd
 
 Voici la requète pour lister les tables dans la base actuelle:
 `select table_name from all_tables;`
+
+Voici la requète pour afficher les permissions de l'utilisateur actuel:
+`select * from user_role_privs;`
 
