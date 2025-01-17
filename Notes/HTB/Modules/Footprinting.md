@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T20:09:02.845Z
+date: 2025-01-17T20:09:59.275Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -887,3 +887,7 @@ la commmande suivante peut résoudre le problème:
 `sudo sh -c "echo /usr/lib/oracle/12.2/client64/lib > /etc/ld.so.conf.d/oracle-instantclient.conf";sudo ldconfig`
 
 La liste des commandes sqlplus sont disponibles [ici](https://docs.oracle.com/cd/E11882_01/server.112/e41085/sqlqraa001.htm#SQLQR985).
+
+Voici la requète pour lister les tables dans la base actuelle:
+`select table_name from all_tables;`
+
