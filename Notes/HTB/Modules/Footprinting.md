@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T19:11:25.261Z
+date: 2025-01-17T19:20:36.140Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -814,4 +814,12 @@ Le service Oracle DBSNMP utilise aussi un mot de passe par défaut ("dbsnmp").
 
 De plus, si le service "finger" est utilisé avec Oracle, alors cela rend le service Oracle vulnérable. (divulgation des répertoires home...)
 
+Chaque base de données ou service utilisant Oracle TNS a une entrée dans [tnsnames.ora](https://docs.oracle.com/cd/E11882_01/network.112/e10835/tnsnames.htm#NETRF007), ce fichier contient les informations nécéssaires aux clients pour se connecter au service. Les entrées sont composés d'un nom pour le service, l'emplacement réseau du service et le nom de la base de données ou du service que les clients doivent utiliser pour se connecter au service.
 
+```
+  ORCL=
+ (DESCRIPTION=
+   (ADDRESS=(PROTOCOL = TCP)(HOST = 192.168.1.1)(PORT = 1521))
+   (CONNECT_DATA=
+     (SERVICE_NAME=orcl)))
+```
