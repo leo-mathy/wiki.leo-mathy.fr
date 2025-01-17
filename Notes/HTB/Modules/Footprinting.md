@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T19:27:10.487Z
+date: 2025-01-17T19:30:56.876Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -826,3 +826,6 @@ Voici un exemple simple du fichier `tnsnames.ora`:
 ```
 
 Ce fichier peut aussi comporter des informations additionnelles comme la configuration de l'authentification, les paramètres du pool de connexion et la configuration du load balancing.
+
+Le fichier `listener.ora`, est un fichier de configuration côté serveur qui défini les propriétés et paramètres du processus listener. Le processus listener est responsable de la réception des requètes client entrantes et de leurs redirection vers la bonne instance de base de données Oracle.
+
