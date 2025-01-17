@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T19:45:59.481Z
+date: 2025-01-17T19:46:24.197Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -833,5 +833,24 @@ En résumé, les services réseau Oracle (Oracle Net Services) utilisent `tnsnam
 
 Les bases de données Oracle peuvent être protégés en utilisant la liste d'exclusion PL/SQL (PlsqlExclusionList). Cette liste est un fichier créée par l'utilisateur qui doit être placé dans le répertoire `$ORACLE_HOME/sqldeveloper`. Ce fichier contient les nom des paquets PL/SQL ou les types qui doivent être exclus de l'exécution. Une fois le fichier créer, il peut être chargé dans l'instance de la base de données. Il sert de liste noire qui ne peut pas être accessible depuis le serveur applicatif Oracle.
 
-Avant d'énumérer le listener TNS et intéragir avec, il faut avoir certains outils. Voici un script pour installer tout cela automatiquement.
+Avant d'énumérer le listener TNS et intéragir avec, il faut avoir certains outils. Voici un script pour installer tout cela automatiquement:
+```
+#!/bin/bash
 
+sudo apt-get install libaio1 python3-dev alien -y
+git clone https://github.com/quentinhardy/odat.git
+cd odat/
+git submodule init
+git submodule update
+wget https://download.oracle.com/otn_software/linux/instantclient/2112000/instantclient-basic-linux.x64-21.12.0.0.0dbru.zip
+unzip instantclient-basic-linux.x64-21.12.0.0.0dbru.zip
+wget https://download.oracle.com/otn_software/linux/instantclient/2112000/instantclient-sqlplus-linux.x64-21.12.0.0.0dbru.zip
+unzip instantclient-sqlplus-linux.x64-21.12.0.0.0dbru.zip
+export LD_LIBRARY_PATH=instantclient_21_12:$LD_LIBRARY_PATH
+export PATH=$LD_LIBRARY_PATH:$PATH
+pip3 install cx_Oracle
+sudo apt-get install python3-scapy -y
+sudo pip3 install colorlog termcolor passlib python-libnmap
+sudo apt-get install build-essential libgmp-dev -y
+pip3 install pycryptodome
+```
