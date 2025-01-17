@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T19:06:57.645Z
+date: 2025-01-17T19:11:25.261Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -810,5 +810,8 @@ Oracle TNS est souvent utilisé avec d'autres services Oracle comme Oracle DBSNM
 
 Des différences entres les versions des services Oracle sont à prendre en compte, par exemple Oracle 9 à un mot de passe par défaut ("CHANGE_ON_INSTALL") alors que Oracle 10 n'a pas de mot de passe par défaut.
 
+Le service Oracle DBSNMP utilise aussi un mot de passe par défaut ("dbsnmp").
+
+De plus, si le service "finger" est utilisé avec Oracle, alors cela rend le service Oracle vulnérable. (divulgation des répertoires home...)
 
 
