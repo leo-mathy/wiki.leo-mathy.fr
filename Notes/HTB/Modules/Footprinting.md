@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T20:24:46.618Z
+date: 2025-01-17T20:28:31.128Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -793,7 +793,7 @@ Une fois connecté il est conseillé de lister les bases de données présentes 
 
 Oracle Transparent Network Substrate (TNS) est un protocole de communication qui facilite la communication entre les bases de données Oracle et les applications réseau.
 
-TNS à été introduit comme partie de la suite logicielle [Oracle Net Services](https://docs.oracle.com/en/database/oracle/oracle-database/18/netag/introducing-oracle-net-services.html). TNS supporte de nombreux protocols réseau entre les bases Oracle et les applications clients, comme IPX/SPX et TCP/IP. C'est une solution largement utilisée pour la gestion de larges bases de données complexes dans les domaines de la santé, de la finance et de la distribution. De plus, ce protocole comporte un méchanisme de chiffrement natif.
+TNS à été introduit comme partie de la suite logicielle [Oracle Net Services](https://docs.oracle.com/en/database/oracle/oracle-database/18/netag/introducing-oracle-net-services.html). TNS supporte de nombreux protocoles réseau entre les bases Oracle et les applications clients, comme IPX/SPX et TCP/IP. C'est une solution largement utilisée pour la gestion de larges bases de données complexes dans les domaines de la santé, de la finance et de la distribution. De plus, ce protocole comporte un mécanisme de chiffrement natif.
 
 Plus tard, TNS à été mis à jour pour supporter de nouvelles technologies comme IPv6 et le chiffrement SSL/TLS. SSL/TLS offre un niveau additionnel de protection via la couche TCP/IP.
 
@@ -814,9 +814,10 @@ Le service Oracle DBSNMP utilise aussi un mot de passe par défaut ("dbsnmp").
 
 De plus, si le service "finger" est utilisé avec Oracle, alors cela rend le service Oracle vulnérable. (divulgation des répertoires home...)
 
-Chaque base de données ou service utilisant Oracle TNS a une entrée dans [tnsnames.ora](https://docs.oracle.com/cd/E11882_01/network.112/e10835/tnsnames.htm#NETRF007), ce fichier contient les informations nécéssaires aux clients pour se connecter au service. Les entrées sont composés d'un nom pour le service, l'emplacement réseau du service et le nom de la base de données ou du service que les clients doivent utiliser pour se connecter au service.
+Chaque base de données ou service utilisant Oracle TNS a une entrée dans [tnsnames.ora](https://docs.oracle.com/cd/E11882_01/network.112/e10835/tnsnames.htm#NETRF007), ce fichier contient les informations nécessaires aux clients pour se connecter au service. Les entrées sont composés d'un nom pour le service, l'emplacement réseau du service et le nom de la base de données ou du service que les clients doivent utiliser pour se connecter au service.
 
 Voici un exemple simple du fichier `tnsnames.ora`:
+
 ```
   ORCL=
  (DESCRIPTION=
@@ -833,7 +834,8 @@ En résumé, les services réseau Oracle (Oracle Net Services) utilisent `tnsnam
 
 Les bases de données Oracle peuvent être protégés en utilisant la liste d'exclusion PL/SQL (PlsqlExclusionList). Cette liste est un fichier créée par l'utilisateur qui doit être placé dans le répertoire `$ORACLE_HOME/sqldeveloper`. Ce fichier contient les nom des paquets PL/SQL ou les types qui doivent être exclus de l'exécution. Une fois le fichier créer, il peut être chargé dans l'instance de la base de données. Il sert de liste noire qui ne peut pas être accessible depuis le serveur applicatif Oracle.
 
-Avant d'énumérer le listener TNS et intéragir avec, il faut avoir certains outils. Voici un script pour installer tout cela automatiquement:
+Avant d'énumérer le listener TNS et interagir avec, il faut avoir certains outils. Voici un script pour installer tout cela automatiquement:
+
 ```
 #!/bin/bash
 
@@ -863,13 +865,13 @@ Pour vérifier que ODAT est bien installé:
 Scan nmap pour Oracle TNS:
 `nmap -p1521 -sV <adresse IP>`
 
-Dans le DBMNS Oracle, un SID (System Identifier) est un nom unique qui identifie une instance de basee de données particulière.
+Dans le DBMNS Oracle, un SID (System Identifier) est un nom unique qui identifie une instance de base de données particulière.
 
-Une instance est un panel de processus et de structures mémoire qui intéragissent pour administrer les données de la base de données.
+Une instance est un panel de processus et de structures mémoire qui interagissent pour administrer les données de la base de données.
 
 Quand un client se connecte à une base de données Oracle, il peut spécifier le SID de la base de données en plus de la chaîne de connexion. Si aucun SID n'est précisé, alors la valeur par défaut contenue dans le fichier `tnsnames.ora` sera utilisée.
 
-Le SID peut être utilisé par les administrateurs pour contrôller et administrer les différentes instances d'une base de données. Par exemple, ils peuvent démarrer, arreter ou redémarrer une instance, ajuster l'allocation mémoire ou les autres paramètres de configuration. Les performances peuvent être visualisés avec un outil comme Oracle Entreprise Manager.
+Le SID peut être utilisé par les administrateurs pour contrôler et administrer les différentes instances d'une base de données. Par exemple, ils peuvent démarrer, arrêter ou redémarrer une instance, ajuster l'allocation mémoire ou les autres paramètres de configuration. Les performances peuvent être visualisés avec un outil comme Oracle Entreprise Manager.
 
 Il est possible d'utiliser de nombreux outils pour trouver les SID. (nmap,hydra,odat...)
 
@@ -879,33 +881,35 @@ Avec nmap:
 Avec `odat.py` (avec le flag "all" pour récupérer le noms de bases, versions, comptes, vulnérabilités, mauvaises configurations...)
 `./odat.py all -s <adresse IP>`
 
-Pour se connecter et intéragir avec la base de données Oracle, il est possible d'utiliser sqlplus:
+Pour se connecter et interagir avec la base de données Oracle, il est possible d'utiliser sqlplus:
 `sqlplus <utilisateur>/<mot de passe>@<adresse IP>[/<SID>]`
 
 Si jamais l'erreur suivante apparait "`sqlplus: error while loading shared libraries: libsqlplus.so: cannot open shared object file: No such file or directory`",
-la commmande suivante peut résoudre le problème:
+la commande suivante peut résoudre le problème:
 `sudo sh -c "echo /usr/lib/oracle/12.2/client64/lib > /etc/ld.so.conf.d/oracle-instantclient.conf";sudo ldconfig`
 
 La liste des commandes sqlplus sont disponibles [ici](https://docs.oracle.com/cd/E11882_01/server.112/e41085/sqlqraa001.htm#SQLQR985).
 
-Voici la requète pour lister les tables dans la base actuelle:
+Voici la requête pour lister les tables dans la base actuelle:
 `select table_name from all_tables;`
 
-Voici la requète pour afficher les permissions de l'utilisateur actuel:
+Voici la requête pour afficher les permissions de l'utilisateur actuel:
 `select * from user_role_privs;`
 
-Il est possible de se connecter en tant que l'Administrateur de base de données système ("sysdba"). Cela est possible si l'utilisateur à les permissions nécéssaires (normalement attribués par l'administrateur de la base de données ou utilisés par lui-même):
+Il est possible de se connecter en tant que l'Administrateur de base de données système ("sysdba"). Cela est possible si l'utilisateur à les permissions nécessaires (normalement attribués par l'administrateur de la base de données ou utilisés par lui-même):
 `sqlplus <utilisateur>/<mot de passe>@<adresse IP>[/<SID>] as sysdba`
 
 Si l'accès à la table `sys.user$` est autorisé (en ayant les droits,administrateur de la base...) alors il est possible de récupérer les hashs des utilisateurs et de les cracker hors-ligne. La commande suivante permet de récupérer ces hashs:
 `select name, password from sys.user$;`
 
-Une autre option est de transferer un web shell vers la cible, pour cela, le serveur doit exécuter un serveur web et il faut connaitre l'emplacement éxact de la racine du serveur web.
+Une autre option est de transférer un web shell vers la cible, pour cela, le serveur doit exécuter un serveur web et il faut connaitre l'emplacement éxact de la racine du serveur web.
 Les répertoires racines des serveurs web par défaut sont:
+
 - /var/www/html (Linux)
 - C:\inetpub\wwwroot (Windows)
 
-Avant de transferer un web shell, il est conseillé d'essayer avec un fichier qui ne semble pas dangereux pour éviter les mesures de l'antivirus.
+Avant de transférer un web shell, il est conseillé d'essayer avec un fichier qui ne semble pas dangereux pour éviter les mesures de l'antivirus et voir si cela fonctionne et que le fichier est bien accessible.
 
 `./odat.py utlfile -s <adresse IP> -d XE -U <utilisateur> -P <mot de passe> --sysdba --putFile C:\\inetpub\\wwwroot <nom du fichier> ./<emplacement local du fichier à envoyer>`
 
+## IPMI
