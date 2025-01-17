@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T18:55:21.350Z
+date: 2025-01-17T18:56:54.542Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -800,4 +800,8 @@ Plus tard, TNS à été mis à jour pour supporter de nouvelles technologies com
 TNS fournit des outils et fonctionnalités avancées pour les administrateurs et les développeurs, il offre une surveillance, des performances compréhensive, des outils d'analyse, des outils de rapports d'erreurs, des capacités de journalisation, la gestion de la charge de travail et de la tolérance aux pannes.
 
 Par défaut, TNS écoute sur le port TCP 1521. Il est configuré pour le support de nombreux protocoles réseau (incluant TCP/IP, UDP, IPX/SPX, et AppleTalk) et peut écouter sur une ou plusieurs cartes réseau, et sur des adresses spécifiques ou non.
+
+**Par défaut**, Oracle TNS peut être administré à distance dans Oracle 8i/9i mais pas dans Oracle 10g/11g.
+
+
 
