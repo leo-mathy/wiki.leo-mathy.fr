@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T19:21:02.297Z
+date: 2025-01-17T19:27:10.487Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -824,3 +824,5 @@ Voici un exemple simple du fichier `tnsnames.ora`:
    (CONNECT_DATA=
      (SERVICE_NAME=orcl)))
 ```
+
+Ce fichier peut aussi comporter des informations additionnelles comme la configuration de l'authentification, les paramètres du pool de connexion et la configuration du load balancing.
