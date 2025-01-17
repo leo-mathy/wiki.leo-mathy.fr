@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T19:51:01.320Z
+date: 2025-01-17T19:57:55.244Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -863,5 +863,8 @@ Pour vérifier que ODAT est bien installé:
 Scan nmap pour Oracle TNS:
 `nmap -p1521 -sV 10.129.204.235`
 
+Dans le DBMNS Oracle, un SID (System Identifier) est un nom unique qui identifie une instance de basee de données particulière.
 
+Une instance est un panel de processus et de structures mémoire qui intéragissent pour administrer les données de la base de données.
 
+Quand un client se connecte à une base de données Oracle, il peut spécifier le SID de la base de données en plus de la chaîne de connexion. Si aucun SID n'est précisé, alors la valeur par défaut contenue dans le fichier `tnsnames.ora` sera utilisée.
