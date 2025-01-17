@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T20:29:00.248Z
+date: 2025-01-17T20:42:11.719Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -901,6 +901,8 @@ Il est possible de se connecter en tant que l'Administrateur de base de données
 
 Si l'accès à la table `sys.user$` est autorisé (en ayant les droits,administrateur de la base...) alors il est possible de récupérer les hashs des utilisateurs et de les cracker hors-ligne. La commande suivante permet de récupérer ces hashs:
 `select name, password from sys.user$;`
+Attention, Oracle nécessite d'entourer les valeurs comme ci-dessous avec des guillemets:
+`SELECT * FROM sys.user$ WHERE name = 'DBSNMP'`
 
 Une autre option est de transférer un web shell vers la cible, pour cela, le serveur doit exécuter un serveur web et il faut connaitre l'emplacement éxact de la racine du serveur web.
 Les répertoires racines des serveurs web par défaut sont:
