@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T16:09:26.045Z
+date: 2025-01-18T16:10:51.873Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1076,7 +1076,7 @@ Chaque commande à une fonctionnalitée principale. Voici les programmes de r-co
 | Commande | Démon de service | Port | Protocole de transport | Description |
 |---------|----------------|------|--------------------|-------------|
 | rcp     | rshd           | 514  | TCP                | Copie un fichier ou un répertoire, d'un système distant vers ou depuis l'hôte local ou un autre système distant. Un peu comme la commande `cp` mais sans avertissement lors de l'écrasement de fichiers. |
-| rsh     | rshd           | 514  | TCP                | |
+| rsh     | rshd           | 514  | TCP                | Ouvre un shell sur un système distant sans procédure de connexion. (se base sur les entrées dans les fichiers `/etc/hosts.equiv` et `.rhosts`). |
 | rexec   | rexecd         | 512  | TCP                |  |
 | rlogin  | rlogind        | 513  | TCP                | |
 
