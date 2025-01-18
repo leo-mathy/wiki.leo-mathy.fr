@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:41:00.609Z
+date: 2025-01-18T11:42:49.779Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -956,4 +956,6 @@ Beaucoup de BMC mettent à disposition une console web, un système d'accès dis
 
 Le script NSE [ipmi-version](https://nmap.org/nsedoc/scripts/ipmi-version.html) peut être utilisé pour récupérer des informations sur le service:
 `nmap -sU --script ipmi-version -p 623 <adresse IP>`
+
+Le module de scan metasploit [`auxiliary/scanner/ipmi/ipmi_version`](https://www.rapid7.com/db/modules/auxiliary/scanner/ipmi/ipmi_version/) peut aussi être utilisé.
 
