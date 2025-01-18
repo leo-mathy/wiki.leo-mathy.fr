@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T16:36:01.322Z
+date: 2025-01-18T16:40:14.475Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -989,11 +989,12 @@ Un des avantages de SSH est que c'est un protocole est utilisable sur tous les s
 Le serveur [OpenBSD SSH (OpenSSH)](https://www.openssh.com/), est un fork open-source de la version originelle et commerciale "SSH Server" de SSH Communication Security.
 
 SSH dispose de deux version, SSH-1 et SSH-2.
-SSH-2, aussi connu sous le nom de SSH version 2, est plus avancé que SSH-1 au niveau du chiffrement, de la vitesse, de la stabilitée et de la sécuritée.
+SSH-2, aussi connu sous le nom de SSH version 2, est plus avancé que SSH-1 au niveau du chiffrement, de la vitesse, de la stabilité et de la sécurité.
 Par exemple, SSH-1 est vulnérable aux attaques MITM (Man In The Middle) tandis que SSH-2 ne l'est pas.
 
 SSH peut être utilisé pour l'envoi de commandes au serveur, le transfert de fichiers ou la redirection de ports.
 Mais avant cela il faut se connecter en utilisant le protocole SSH et s'authentifier. OpenSSH dispose de [six méthodes d'authentification](https://www.golinuxcloud.com/openssh-authentication-methods-sshd-config/):
+
 - Authentification par mot de passe
 - Authentification par clé publique
 - Authentification par hôte
@@ -1002,26 +1003,24 @@ Mais avant cela il faut se connecter en utilisant le protocole SSH et s'authenti
 - Authentification par GSSAPI
 
 Voici les différentes étapes de l'authentification par clé publique:
+
 1. le serveur s'authentifier auprès du client (server-side authentication), en envoyant un certificat au client. Cela permet au client de s'assurer que le serveur est le bon.
-2. le client s'authentifie auprès du serveur (client-side authentication)
-			- L'utilisateur entre la phrase secrète (passphrase) de la clé privée (si celle-ci utilise une passphrase). 			Cela permet au client SSH d'avoir accès à la clé privée.
-  		- Le serveur créée un problème cryptographique qui ne peut être résolu qu'avec la clée privée. Et l'envoi au client.
-			- Le client déchiffre le problème cryptographique reçu avec sa clée privée et le résout. Puis envoi la solution au serveur. Et indique au serveur qu'il est prêt à établir une connexion légitime.
-      
+2. le client s'authentifie auprès du serveur (client-side authentication) - L'utilisateur entre la phrase secrète (passphrase) de la clé privée (si celle-ci utilise une passphrase). Cela permet au client SSH d'avoir accès à la clé privée. - Le serveur créée un problème cryptographique qui ne peut être résolu qu'avec la clée privée. Et l'envoi au client. - Le client déchiffre le problème cryptographique reçu avec sa clée privée et le résout. Puis envoi la solution au serveur. Et indique au serveur qu'il est prêt à établir une connexion légitime.
+
 Le fichier [sshd_config](https://www.ssh.com/academy/ssh/sshd_config) (/etc/ssh/sshd_config) est le fichier de configuration pour le serveur OpenSSH.
 
 Certains paramètres peuvent être dangereux:
 
-| Paramètre                  | Description                                  |
-|--------------------------|----------------------------------------------|
-| PasswordAuthentication yes | Autorise l'authentification avec des mots de passe.       |
-| PermitEmptyPasswords yes  | Autorise l'usage de mots de passe vides.          |
-| PermitRootLogin yes       | Autorise l'utilisateur root à se connecter.           |
-| Protocol 1               | Utilise la version 1 du protocole SSH.     |
-| X11Forwarding yes         | Autorise le X11Forwarding pour les applications avec interface graphique. |
-| AllowTcpForwarding yes    | Autorise la redirection de ports TCP.             |
-| PermitTunnel             | Autorise le tunneling (tunnel de couche 2 ou 3).                           |
-| DebianBanner yes          | Affiche une banière spécifique lors de la connexion. |
+| Paramètre                  | Description                                                               |
+| -------------------------- | ------------------------------------------------------------------------- |
+| PasswordAuthentication yes | Autorise l'authentification avec des mots de passe.                       |
+| PermitEmptyPasswords yes   | Autorise l'usage de mots de passe vides.                                  |
+| PermitRootLogin yes        | Autorise l'utilisateur root à se connecter.                               |
+| Protocol 1                 | Utilise la version 1 du protocole SSH.                                    |
+| X11Forwarding yes          | Autorise le X11Forwarding pour les applications avec interface graphique. |
+| AllowTcpForwarding yes     | Autorise la redirection de ports TCP.                                     |
+| PermitTunnel               | Autorise le tunneling (tunnel de couche 2 ou 3).                          |
+| DebianBanner yes           | Affiche une bannière spécifique lors de la connexion.                     |
 
 Des guides pour augmenter la sécurité des serveurs SSH (hardening) sont disponibles en ligne. En voici un [ici](https://www.ssh-audit.com/hardening_guides.html).
 
@@ -1029,15 +1028,15 @@ Des guides pour augmenter la sécurité des serveurs SSH (hardening) sont dispon
 
 Le flag `-v` peut être utilisé pour afficher plus d'informations lors de la connexion au serveur avec le client openSSH (méthodes d'authentification, version du protocole, version du serveur...)
 
-Pour précisier la méthode d'authentification avec le client OpenSSH (ici "password"):
+Pour préciser la méthode d'authentification avec le client OpenSSH (ici "password"):
 `ssh <utilisateur>@<adresse IP> -o PreferredAuthentications=password`
 
 [Rsync](https://linux.die.net/man/1/rsync) est un outil rapide et efficace pour copier des fichiers localement ou à distance. Il peut copier des fichiers d'une machine vers et depuis des hôtes distants.
 
 C'est un outil très versatile et renommé pour son algorithme "delta-transfer".
-Cet algorithme reduit la quantitée de données transférés quand une version du fichier existe déjà sur l'hôte de destination (en envoyant uniquement les différences entre le fichier source et de destination).
+Cet algorithme réduit la quantité de données transférés quand une version du fichier existe déjà sur l'hôte de destination (en envoyant uniquement les différences entre le fichier source et de destination).
 
-Il est largement utilisé pour les sauvegardes et la réplication. Il trouve les fichiers nécéssitant un transfert en se basant sur leurs taille (si elle à changée) ou la date de dernière modification.
+Il est largement utilisé pour les sauvegardes et la réplication. Il trouve les fichiers nécessitant un transfert en se basant sur leurs taille (si elle à changée) ou la date de dernière modification.
 
 par défaut, rsync utilise le port 873 et peut être configuré pour utiliser le protocole SSH pour le transfert de fichiers.
 
@@ -1055,14 +1054,15 @@ Un guide pour l'utilisation de Rsync sur le protocole SSH est disponible [ici](h
 
 R-services est une suite de services qui permettent un accès distant ou l'envoi de commandes entres les systèmes Unix via TCP/IP.
 
-Développé originellement par le Computer Systems Research Group (CSRG) à l'universitée Berkeley, R-services est devenu un standard pour l'accès à distance entre les systèmes d'exploitation Unix jusqu'à son remplacement par SSH à cause des vulnérabilités inherentes à R-services.
+Développé originellement par le Computer Systems Research Group (CSRG) à l'université Berkeley, R-services est devenu un standard pour l'accès à distance entre les systèmes d'exploitation Unix jusqu'à son remplacement par SSH à cause des vulnérabilités inhérentes à R-services.
 
 Comme telnet, R-services ne chiffre pas les communications entre le client et le serveur, ce qui rend possible l'interception des mots de passe et identifiants.
 
-R-services utilise les ports 512,513 et 514 et sont accesible au travers d'une suite de programmes appellés r-commands.
+R-services utilise les ports 512,513 et 514 et sont accessible au travers d'une suite de programmes appelés r-commands.
 Ils sont le plus souvent utilisés par les systèmes d'exploitation commerciaux comme Solaris, HP-UX, et AIX.
 
 La suite [R-commands](https://en.wikipedia.org/wiki/Berkeley_r-commands) comporte les programmes suivants:
+
 - rcp (remote copy)
 - rexec (remote execution)
 - rlogin (remote login)
@@ -1071,27 +1071,28 @@ La suite [R-commands](https://en.wikipedia.org/wiki/Berkeley_r-commands) comport
 - ruptime
 - rwho (remote who)
 
-Chaque commande à une fonctionnalitée principale. Voici les programmes de r-commands les plus généralement exploités:
+Chaque commande à une fonctionnalité principale. Voici les programmes de r-commands les plus généralement exploités:
 
-| Commande | Démon de service | Port | Protocole de transport | Description |
-|---------|----------------|------|--------------------|-------------|
-| rcp     | rshd           | 514  | TCP                | Copie un fichier ou un répertoire, d'un système distant vers ou depuis l'hôte local ou un autre système distant. Un peu comme la commande `cp` mais sans avertissement lors de l'écrasement de fichiers. |
-| rsh     | rshd           | 514  | TCP                | Ouvre un shell sur un système distant sans procédure de connexion. (se base sur les entrées dans les fichiers `/etc/hosts.equiv` et `.rhosts`). |
-| rexec   | rexecd         | 512  | TCP                | Permet à un utilisateur d'exécuter des commandes sur un système distant. Requière une authentification via un login et mot de passe, au travers d'un socket réseau non chiffré. L'authentification est remplacée par les entrées dans les fichiers `/etc/hosts.equiv` et `.rhosts`.  |
-| rlogin  | rlogind        | 513  | TCP                | Permet à un utilisateur de se connecter sur un système distant. Fonctionne un peu comme telnet. L'authentification est remplacée par les entrées dans les fichiers `/etc/hosts.equiv` et `.rhosts`. |
-
+| Commande | Démon de service | Port | Protocole de transport | Description                                                                                                                                                                                                                                                                         |
+| -------- | ---------------- | ---- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| rcp      | rshd             | 514  | TCP                    | Copie un fichier ou un répertoire, d'un système distant vers ou depuis l'hôte local ou un autre système distant. Un peu comme la commande `cp` mais sans avertissement lors de l'écrasement de fichiers.                                                                            |
+| rsh      | rshd             | 514  | TCP                    | Ouvre un shell sur un système distant sans procédure de connexion. (se base sur les entrées dans les fichiers `/etc/hosts.equiv` et `.rhosts`).                                                                                                                                     |
+| rexec    | rexecd           | 512  | TCP                    | Permet à un utilisateur d'exécuter des commandes sur un système distant. Requière une authentification via un login et mot de passe, au travers d'un socket réseau non chiffré. L'authentification est remplacée par les entrées dans les fichiers `/etc/hosts.equiv` et `.rhosts`. |
+| rlogin   | rlogind          | 513  | TCP                    | Permet à un utilisateur de se connecter sur un système distant. Fonctionne un peu comme telnet. L'authentification est remplacée par les entrées dans les fichiers `/etc/hosts.equiv` et `.rhosts`.                                                                                 |
 
 Le fichier `/etc/hosts.equiv` et `.rhosts` contient une liste des hôtes de confiance. Il est utilisé pour autoriser l'accès aux autres systèmes sur le réseau. Quand des utilisateurs contenus sur ces listes tentent d'accéder au système, leur accès est automatiquement autorisé sans authentification supplémentaire.
 
 Le fichier `hosts.equiv` représente la configuration globale et `.rhosts` représente la configuration par utilisateur.
 
 Voici un exemple de fichier `hosts.equiv`:
+
 ```
 # <hôte/Adresse IP> <utilisateur local>
 192.168.1.1	user # Utilisateur "user" de l'hôte 192.168.1.1
 ```
 
 Voici un exemple de fichier `.rhosts`:
+
 ```
 # <utilisateur local/+> <hôte/Adresse IP/+>
 user	192.168.1.1 # Utilisateur "user" de l'hôte 192.168.1.1
@@ -1110,4 +1111,4 @@ Le démon rwho va périodiquement envoyer des broadcasts sur le réseau, contena
 Commande rusers (afficher une liste des utilisateurs authentifiés):
 `rusers -al <adresse IP>`
 
-
+## Windows Remote Management Protocols
