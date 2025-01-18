@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T16:18:28.508Z
+date: 2025-01-18T16:22:34.366Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1081,8 +1081,13 @@ Chaque commande à une fonctionnalitée principale. Voici les programmes de r-co
 | rlogin  | rlogind        | 513  | TCP                | Permet à un utilisateur de se connecter sur un système distant. Fonctionne un peu comme telnet. L'authentification est remplacée par les entrées dans les fichiers `/etc/hosts.equiv` et `.rhosts`. |
 
 
-Le fichier `/etc/hosts.equiv` contient une liste des hôtes de confiance. Il est utilisé pour autoriser l'accès aux autres systèmes sur le réseau. Quand des utilisateurs contenus sur ces listes tentent d'accéder au système, leur accès est automatiquement autorisé sans authentification supplémentaire.
+Le fichier `/etc/hosts.equiv` et `.rhosts` contient une liste des hôtes de confiance. Il est utilisé pour autoriser l'accès aux autres systèmes sur le réseau. Quand des utilisateurs contenus sur ces listes tentent d'accéder au système, leur accès est automatiquement autorisé sans authentification supplémentaire.
+
+Le fichier `hosts.equiv` représente la configuration globale et `.rhosts` représente la configuration par utilisateur.
 
 Voici un exemple de ligne dans le fichier `hosts.equiv`:
-`<hôte> <utilisateur local>`
+`<hôte/Adresse IP> <utilisateur local>`
+
+Voici un exemple de ligne dans le fichier `.rhosts`:
+`<utilisateur local> <hôte/Adresse IP>`
 
