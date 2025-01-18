@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T16:34:26.137Z
+date: 2025-01-18T16:36:01.322Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1099,11 +1099,15 @@ user	192.168.1.1 # Utilisateur "user" de l'hôte 192.168.1.1
 +			+					# Tous les utilisateurs
 ```
 
-Commande rlogin (pour se connecter au serveur):
+Commande rlogin (se connecter au serveur):
 `rlogin <adresse IP> -l <utilisateur>`
 
-rwho (pour afficher la liste des sessions intéractives sur le réseau local)
+rwho (afficher la liste des sessions intéractives sur le réseau local)
 `rwho`
 
 Le démon rwho va périodiquement envoyer des broadcasts sur le réseau, contenant des informations sur les utilisateurs connectés.
+
+Commande rusers (afficher une liste des utilisateurs authentifiés):
+`rusers -al <adresse IP>`
+
 
