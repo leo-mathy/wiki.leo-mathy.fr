@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:46:05.087Z
+date: 2025-01-18T11:54:37.704Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -968,3 +968,14 @@ Parfois, le mot de passe par défaut du BMC n'est pas changé, en voici quelque-
 | Dell iDRAC      | root              | calvin                                                     |
 | HP iLO          | Administrator     | 8 caractères aléatoires composés de majuscules et chiffres |
 | Supermicro IPMI | ADMIN             | ADMIN                                                      |
+
+Il est possible d'utiliser une vulnérabilitée dans le procotole RAKP dans la version 2.0 de IPMI,
+pendant la phase d'authentification, le serveur envoi le hash (SHA1 avec sel ou MD5) du mot de passe utilisateur au client. Cela peut être exploité pour obtenir le mot de passe de n'importe quel utilisateur valide sur le BMC.
+Ces hashs peuvent être crackés hors-ligne avec une attaque par dictionnaire par exemple. (mode 7300 sur hashcat).
+Une attaque par masque est aussi possible pour HP iLO.
+
+Comme aucun réglage ne peut résoudre cette faille (composant critique de la spécification IPMI). Les mots de passe doivent être très robustes aux attaques par force brute et/ou implementer une ségmentation réseau pour restreindre l'accès aux BMC.
+
+
+
+
