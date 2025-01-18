@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:46:41.170Z
+date: 2025-01-18T15:47:52.823Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1046,4 +1046,6 @@ Ce [guide](https://book.hacktricks.xyz/network-services-pentesting/873-pentestin
 Il est possible de sonder le service avec netcat:
 `nc -nv <adresse IP> 873`
 Il est possible de voir les accès disponibles avec la commande `list`.
+Puis d'y avoir accès avec la commande rsync pour l'énumérer en détails:
+`rsync -av --list-only rsync://<adresse IP>/<partage>`
 
