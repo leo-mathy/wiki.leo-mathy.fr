@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T16:24:15.122Z
+date: 2025-01-18T16:24:21.081Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1090,7 +1090,7 @@ Voici un exemple de ligne dans le fichier `hosts.equiv`:
 `192.168.1.1	user`
 
 Voici un exemple de ligne dans le fichier `.rhosts` (la wildcard est représentée par un "+") :
-`<utilisateur local> <hôte/Adresse IP>`
+`#<utilisateur local> <hôte/Adresse IP>`
 `user 192.168.1.1`
 `+ 		192.168.1.1`
 `+		+`
