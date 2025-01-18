@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:13:06.507Z
+date: 2025-01-18T11:16:55.316Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -928,4 +928,8 @@ IPMI peut être utilisé de trois manières différentes:
 - Avant que le système d'exploitation soit lancé, pour modifier les paramètres du BIOS.
 - Quand l'hôte est entièrement éteint.
 - Pour l'accès à l'hôte après un échec système.
+
+Quand IPMI n'est pas utilisé pour ces 3 tâches, il peut surveiller une grande variétée de métriques comme la température, le voltage, le statut des ventilateurs et l'alimentation. Il peut aussi être utilisé pour la récupération des informations d'inventaire, voir les logs métériels, et créer des alertes grâce à SNMP.
+
+Le système hôte peut être entièrement éteint mais le module IPMI nécéssite une source d'énergie et une connexion LAN.
 
