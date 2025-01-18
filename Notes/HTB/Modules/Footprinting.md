@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:02:09.169Z
+date: 2025-01-18T15:18:54.750Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1000,4 +1000,13 @@ Mais avant cela il faut se connecter en utilisant le protocole SSH et s'authenti
 - Authentification clavier-interactive
 - Authentification défi-réponse (Challenge–response authentication)
 - Authentification par GSSAPI
+
+Voici les différentes étapes de l'authentification par clé publique:
+1. le serveur s'authentifier auprès du client (server-side authentication), en envoyant un certificat au client. Cela permet au client de s'assurer que le serveur est le bon.
+2. le client s'authentifie auprès du serveur (client-side authentication)
+			- L'utilisateur entre la phrase secrète (passphrase) de la clé privée (si celle-ci utilise une passphrase). 			Cela permet au client SSH d'avoir accès à la clé privée.
+  		- Le serveur créée un problème cryptographique qui ne peut être résolu qu'avec la clée privée. Et l'envoi au client.
+			- Le client déchiffre le problème cryptographique reçu avec sa clée privée et le résout. Puis envoi la solution au serveur. Et indique au serveur qu'il est prêt à établir une connexion légitime.
+      
+Le fichier [sshd_config](https://www.ssh.com/academy/ssh/sshd_config) (/etc/ssh/sshd_config) est le fichier de configuration pour le serveur OpenSSH.
 
