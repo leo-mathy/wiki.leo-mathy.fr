@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:41:46.512Z
+date: 2025-01-18T15:46:41.170Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1041,6 +1041,9 @@ Il est largement utilisé pour les sauvegardes et la réplication. Il trouve les
 
 par défaut, rsync utilise le port 873 et peut être configuré pour utiliser le protocole SSH pour le transfert de fichiers.
 
+Ce [guide](https://book.hacktricks.xyz/network-services-pentesting/873-pentesting-rsync) peut être utilisé pour voir les moyens d'exploiter Rsync (lister le contenu des dossiers, récupérer des fichiers, parfois sans authentification)
 
-
+Il est possible de sonder le service avec netcat:
+`nc -nv <adresse IP> 873`
+Il est possible de voir les accès disponibles avec la commande `list`.
 
