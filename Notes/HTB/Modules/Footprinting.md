@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:42:49.779Z
+date: 2025-01-18T11:46:05.087Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -925,6 +925,7 @@ IPMI permet aux administrateurs d'administrer et de surveiller les systèmes, m�
 IPMI peut aussi être utilisé pour mettre à jour les systèmes à distance sans nécésitter d'accès physique.
 
 IPMI peut être utilisé de trois manières différentes:
+
 - Avant que le système d'exploitation soit lancé, pour modifier les paramètres du BIOS.
 - Quand l'hôte est entièrement éteint.
 - Pour l'accès à l'hôte après un échec système.
@@ -939,6 +940,7 @@ Les systèmes utilisant IPMI 2.0 peuvent être administrés via "Serial over LAN
 Ce qui offre aux administrateurs la possibilité de voir la sortie de la console série en mode "in-band" (l'accès se fait via les canaux normaux, comme le réseau IP).
 
 Pour fonctionner, IPMI nécéssite:
+
 - Un "Baseboard Management Controller" (BMC) : Un micro-contrôlleur, composant essentiel.
 - Un "Intelligent Chassis Management Bus" (ICMB) : Une interface permettant la communication d'un châssis à un autre.
 - Un "Intelligent Platform Management Bus" (IPMB) : Une extension du BMC.
@@ -952,10 +954,17 @@ Les BMC peuvent être présentes directement sur la carte mère ou ajoutés comm
 
 LEs BMC les plus souvent rencontrés sont HP iLO, Dell DRAC, et Supermicro IPMI.
 
-Beaucoup de BMC mettent à disposition une console web, un système d'accès distant en ligne de commande et bien évidement le protocole IPMI. 
+Beaucoup de BMC mettent à disposition une console web, un système d'accès distant en ligne de commande et bien évidement le protocole IPMI.
 
 Le script NSE [ipmi-version](https://nmap.org/nsedoc/scripts/ipmi-version.html) peut être utilisé pour récupérer des informations sur le service:
 `nmap -sU --script ipmi-version -p 623 <adresse IP>`
 
 Le module de scan metasploit [`auxiliary/scanner/ipmi/ipmi_version`](https://www.rapid7.com/db/modules/auxiliary/scanner/ipmi/ipmi_version/) peut aussi être utilisé.
 
+Parfois, le mot de passe par défaut du BMC n'est pas changé, en voici quelque-uns:
+
+| Produit         | Nom d'utilisateur | mot de passe                                               |
+| --------------- | ----------------- | ---------------------------------------------------------- |
+| Dell iDRAC      | root              | calvin                                                     |
+| HP iLO          | Administrator     | 8 caractères aléatoires composés de majuscules et chiffres |
+| Supermicro IPMI | ADMIN             | ADMIN                                                      |
