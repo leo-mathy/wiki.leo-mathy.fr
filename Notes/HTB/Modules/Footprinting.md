@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:36:28.474Z
+date: 2025-01-18T15:37:19.390Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1033,5 +1033,8 @@ Pour précisier la méthode d'authentification avec le client OpenSSH (ici "pass
 `ssh <utilisateur>@<adresse IP> -o PreferredAuthentications=password`
 
 [Rsync](https://linux.die.net/man/1/rsync) est un outil rapide et efficace pour copier des fichiers localement ou à distance. Il peut copier des fichiers d'une machine vers et depuis des hôtes distants.
+
 C'est un outil très versatile et renommé pour son algorithme "delta-transfer".
+Cet algorithme reduit la quantitée de données transférés quand une version du fichier existe déjà sur l'hôte de destination.
+
 
