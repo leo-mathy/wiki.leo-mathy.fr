@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:18:54.750Z
+date: 2025-01-18T15:26:14.782Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1009,4 +1009,18 @@ Voici les différentes étapes de l'authentification par clé publique:
 			- Le client déchiffre le problème cryptographique reçu avec sa clée privée et le résout. Puis envoi la solution au serveur. Et indique au serveur qu'il est prêt à établir une connexion légitime.
       
 Le fichier [sshd_config](https://www.ssh.com/academy/ssh/sshd_config) (/etc/ssh/sshd_config) est le fichier de configuration pour le serveur OpenSSH.
+
+Certains paramètres peuvent être dangereux:
+
+| Paramètre                  | Description                                  |
+|--------------------------|----------------------------------------------|
+| PasswordAuthentication yes | Autorise l'authentification avec des mots de passe.       |
+| PermitEmptyPasswords yes  | Autorise l'usage de mots de passe vides.          |
+| PermitRootLogin yes       | Autorise l'utilisateur root à se connecter.           |
+| Protocol 1               | Utilise la version 1 du protocole SSH.     |
+| X11Forwarding yes         | Autorise le X11Forwarding pour les applications avec interface graphique. |
+| AllowTcpForwarding yes    | Autorise la redirection de ports TCP.             |
+| PermitTunnel             | Autorise le tunneling (tunnel de couche 2 ou 3).                           |
+| DebianBanner yes          | Affiche une banière spécifique lors de la connexion. |
+
 
