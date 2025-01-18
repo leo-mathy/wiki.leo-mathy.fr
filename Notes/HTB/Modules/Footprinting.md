@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T16:24:21.081Z
+date: 2025-01-18T16:26:59.689Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1085,13 +1085,21 @@ Le fichier `/etc/hosts.equiv` et `.rhosts` contient une liste des hôtes de conf
 
 Le fichier `hosts.equiv` représente la configuration globale et `.rhosts` représente la configuration par utilisateur.
 
-Voici un exemple de ligne dans le fichier `hosts.equiv`:
+Voici le format de ligne dans le fichier `hosts.equiv`:
 `#<hôte/Adresse IP> <utilisateur local>`
-`192.168.1.1	user`
 
-Voici un exemple de ligne dans le fichier `.rhosts` (la wildcard est représentée par un "+") :
-`#<utilisateur local> <hôte/Adresse IP>`
-`user 192.168.1.1`
-`+ 		192.168.1.1`
-`+		+`
+Voici un exemple de fichier `hosts.equiv`:
+```
+192.168.1.1	user
+```
+
+Voici le format de ligne dans le fichier `.rhosts`:
+`<utilisateur local/+> <hôte/Adresse IP/+>`
+
+Voici un exemple de fichier `.rhosts`:
+```
+user	192.168.1.1
++ 		192.168.1.1
++			+
+```
 
