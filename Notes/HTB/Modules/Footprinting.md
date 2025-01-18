@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:40:01.254Z
+date: 2025-01-18T11:41:00.609Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -952,7 +952,8 @@ Les BMC peuvent être présentes directement sur la carte mère ou ajoutés comm
 
 LEs BMC les plus souvent rencontrés sont HP iLO, Dell DRAC, et Supermicro IPMI.
 
-Beaucoup de BMC mettent à disposition une console web, un système d'accès distant en ligne de commande, 
+Beaucoup de BMC mettent à disposition une console web, un système d'accès distant en ligne de commande et bien évidement le protocole IPMI. 
 
 Le script NSE [ipmi-version](https://nmap.org/nsedoc/scripts/ipmi-version.html) peut être utilisé pour récupérer des informations sur le service:
 `nmap -sU --script ipmi-version -p 623 <adresse IP>`
+
