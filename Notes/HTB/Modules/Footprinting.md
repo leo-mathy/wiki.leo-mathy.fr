@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:29:46.547Z
+date: 2025-01-18T15:31:50.605Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1026,5 +1026,7 @@ Certains paramètres peuvent être dangereux:
 Des guides pour augmenter la sécurité des serveurs SSH (hardening) sont disponibles en ligne. En voici un [ici](https://www.ssh-audit.com/hardening_guides.html).
 
 [ssh-audit](https://github.com/jtesta/ssh-audit) peut être utilisé pour énumérer le serveur SSH (banière, chiffrement, configuration client et serveur...).
+
+Le flag `-v` peut être utilisé pour afficher plus d'informations lors de la connexion au serveur avec le client openSSH (méthodes d'authentification, version...)
 
 
