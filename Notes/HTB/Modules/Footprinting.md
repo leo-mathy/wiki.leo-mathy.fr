@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:47:52.823Z
+date: 2025-01-18T15:49:08.149Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1049,3 +1049,4 @@ Il est possible de voir les accès disponibles avec la commande `list`.
 Puis d'y avoir accès avec la commande rsync pour l'énumérer en détails:
 `rsync -av --list-only rsync://<adresse IP>/<partage>`
 
+Un guide pour l'utilisation de Rsync sur le protocole SSH est disponible [ici](https://phoenixnap.com/kb/how-to-rsync-over-ssh).
