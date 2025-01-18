@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:59:39.234Z
+date: 2025-01-18T16:01:12.207Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1060,5 +1060,15 @@ Développé originellement par le Computer Systems Research Group (CSRG) à l'un
 Comme telnet, R-services ne chiffre pas les communications entre le client et le serveur, ce qui rend possible l'interception des mots de passe et identifiants.
 
 R-services utilise les ports 512,513 et 514 et sont accesible au travers d'une suite de programmes appellés r-commands.
+Ils sont le plus souvent utilisés par les systèmes d'exploitation commerciaux comme Solaris, HP-UX, et AIX.
+
+La suite [R-commands](https://en.wikipedia.org/wiki/Berkeley_r-commands) comporte les programmes suivants:
+- rcp (remote copy)
+- rexec (remote execution)
+- rlogin (remote login)
+- rsh (remote shell)
+- rstat
+- ruptime
+- rwho (remote who)
 
 
