@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T16:10:51.873Z
+date: 2025-01-18T16:18:17.574Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1077,8 +1077,11 @@ Chaque commande à une fonctionnalitée principale. Voici les programmes de r-co
 |---------|----------------|------|--------------------|-------------|
 | rcp     | rshd           | 514  | TCP                | Copie un fichier ou un répertoire, d'un système distant vers ou depuis l'hôte local ou un autre système distant. Un peu comme la commande `cp` mais sans avertissement lors de l'écrasement de fichiers. |
 | rsh     | rshd           | 514  | TCP                | Ouvre un shell sur un système distant sans procédure de connexion. (se base sur les entrées dans les fichiers `/etc/hosts.equiv` et `.rhosts`). |
-| rexec   | rexecd         | 512  | TCP                |  |
-| rlogin  | rlogind        | 513  | TCP                | |
+| rexec   | rexecd         | 512  | TCP                | Permet à un utilisateur d'exécuter des commandes sur un système distant. Requière une authentification via un login et mot de passe, au travers d'un socket réseau non chiffré. L'authentification est remplacée par les entrées dans les fichiers `/etc/hosts.equiv` et `.rhosts`.  |
+| rlogin  | rlogind        | 513  | TCP                | Permet à un utilisateur de se connecter sur un système distant. Fonctionne un peu comme telnet. L'authentification est remplacée par les entrées dans les fichiers `/etc/hosts.equiv` et `.rhosts`. |
 
 
 Le fichier `/etc/hosts.equiv` contient une liste des hôtes de confiance. Il est utilisé pour autoriser l'accès aux autres systèmes sur le réseau. Quand des utilisateurs contenus sur ces listes tentent d'accéder au système, leur accès est automatiquement autorisé sans authentification supplémentaire.
+
+Voici un exemple de ligne dans le fichier hosts.equiv:
+`<hôte> <utilisateur local>`
