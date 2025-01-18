@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:32:46.692Z
+date: 2025-01-18T11:34:21.241Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -946,3 +946,5 @@ Pour fonctionner, IPMI nécéssite:
 - Les interfaces de communication : interfaces systèmes locales, en série et LAN, bus de management ICMB et PCI.
 
 IPMI communique via le port UDP 623. Les systèmes utilisant IPMI sont appelés les Baseboard Management Controllers (BMCs) ou Contrôleurs de gestion de carte mère.
+Les BMC sont souvent implémentés comme des systèmes ARM intégrés éxecutant Linux, et directement connectés à la carte mère de l'hôte.
+
