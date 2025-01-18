@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T16:01:12.207Z
+date: 2025-01-18T16:04:56.816Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1071,4 +1071,6 @@ La suite [R-commands](https://en.wikipedia.org/wiki/Berkeley_r-commands) comport
 - ruptime
 - rwho (remote who)
 
+Chaque commande à une fonctionnalitée principale. Voici les programmes de r-commands les plus généralement exploités:
 
+Le fichier `/etc/hosts.equiv` contient une liste des hôtes de confiance. Il est utilisé pour autoriser l'accès aux autres systèmes sur le réseau. Quand des utilisateurs contenus sur ces listes tentent d'accéder au système, leur accès est automatiquement autorisé sans authentification supplémentaire.
