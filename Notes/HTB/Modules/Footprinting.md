@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:49:34.332Z
+date: 2025-01-18T15:57:49.335Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1052,3 +1052,11 @@ Pour synchroniser les fichiers du partage:
 `rsync -av rsync://<adresse IP>/<partage>`
 
 Un guide pour l'utilisation de Rsync sur le protocole SSH est disponible [ici](https://phoenixnap.com/kb/how-to-rsync-over-ssh).
+
+R-services est une suite de services qui permettent un accès distant ou l'envoi de commandes entres les systèmes Unix via TCP/IP.
+
+Développé originellement par le Computer Systems Research Group (CSRG) à l'universitée Berkeley, R-services est devenu un standard pour l'accès à distance entre les systèmes d'exploitation Unix jusqu'à son remplacement par SSH à cause des vulnérabilités inherentes à R-services.
+
+Comme telnet, R-services ne chiffre pas les communications entre le client et le serveur, ce qui rend possible l'interception des mots de passe et identifiants.
+
+
