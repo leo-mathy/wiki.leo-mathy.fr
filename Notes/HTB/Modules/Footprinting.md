@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T16:18:17.574Z
+date: 2025-01-18T16:18:28.508Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1083,5 +1083,6 @@ Chaque commande à une fonctionnalitée principale. Voici les programmes de r-co
 
 Le fichier `/etc/hosts.equiv` contient une liste des hôtes de confiance. Il est utilisé pour autoriser l'accès aux autres systèmes sur le réseau. Quand des utilisateurs contenus sur ces listes tentent d'accéder au système, leur accès est automatiquement autorisé sans authentification supplémentaire.
 
-Voici un exemple de ligne dans le fichier hosts.equiv:
+Voici un exemple de ligne dans le fichier `hosts.equiv`:
 `<hôte> <utilisateur local>`
+
