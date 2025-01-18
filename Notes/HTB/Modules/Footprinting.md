@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:33:14.039Z
+date: 2025-01-18T15:33:24.674Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1029,6 +1029,6 @@ Des guides pour augmenter la sécurité des serveurs SSH (hardening) sont dispon
 
 Le flag `-v` peut être utilisé pour afficher plus d'informations lors de la connexion au serveur avec le client openSSH (méthodes d'authentification, version...)
 
-Pour précisier la méthode d'authentification avec le client OpenSSH:
+Pour précisier la méthode d'authentification avec le client OpenSSH (ici "password"):
 `ssh <utilisateur>@<adresse IP> -o PreferredAuthentications=password`
 
