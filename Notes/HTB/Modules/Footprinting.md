@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T12:06:23.552Z
+date: 2025-01-18T14:54:10.316Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -981,3 +981,9 @@ De plus, parfois les mots de passe sont réutilisés, c'est pour cela que l'expl
 Pour récupérer les hashes IPMI, il est possible d'utiliser le module metasploit [`auxiliary/scanner/ipmi/ipmi_dumphashes`](https://www.rapid7.com/db/modules/auxiliary/scanner/ipmi/ipmi_dumphashes/)
 
 ## Linux Remote Management Protocols
+
+Secure Shell (SSH) permet à deux ordinateurs d'établir une connexion chiffrée sur un réseau possiblement non sécurisé. SSH utilise le port TCP 22.
+
+Un des avantages de SSH est que c'est un protocole est utilisable sur tous les systèmes d'exploitation communs. Comme c'est une application Unix à l'origine, il est implémenté nativement sur toutes les distributions Linux/MacOS.
+
+Le serveur [OpenBSD SSH (OpenSSH)](https://www.openssh.com/), est un fork open-source de la version originelle et commerciale "SSH Server" de SSH Communication Security.
