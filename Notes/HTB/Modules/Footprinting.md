@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:34:21.241Z
+date: 2025-01-18T11:36:02.835Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -947,4 +947,8 @@ Pour fonctionner, IPMI nécéssite:
 
 IPMI communique via le port UDP 623. Les systèmes utilisant IPMI sont appelés les Baseboard Management Controllers (BMCs) ou Contrôleurs de gestion de carte mère.
 Les BMC sont souvent implémentés comme des systèmes ARM intégrés éxecutant Linux, et directement connectés à la carte mère de l'hôte.
+
+Les BMC peuvent être présentes directement sur la carte mère ou ajoutés comme carte PCI.
+
+LEs BMC les plus souvent rencontrés sont HP iLO, Dell DRAC, et Supermicro IPMI.
 
