@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:57:28.679Z
+date: 2025-01-18T11:59:35.142Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -918,11 +918,11 @@ Avant de transférer un web shell, il est conseillé d'essayer avec un fichier q
 
 Intelligent Platform Management Interface (IPMI) est un ensemble de spécifications standardisés pour la gestion matérielle des hôtes, utilisés pour la gestion et la surveillance des systèmes.
 
-C'est un sous-système autonome qui fonctionne indépendament du BIOS, processeur, firmware et du système d'exploitation.
+C'est un sous-système autonome qui fonctionne indépendamment du BIOS, processeur, firmware et du système d'exploitation.
 
 IPMI permet aux administrateurs d'administrer et de surveiller les systèmes, même si ils sont éteins ou qu'ils sont sans réponse. IPMI fonctionne via une connexion directe aux composants systèmes et ne requière aucun accès au système d'exploitation.
 
-IPMI peut aussi être utilisé pour mettre à jour les systèmes à distance sans nécésitter d'accès physique.
+IPMI peut aussi être utilisé pour mettre à jour les systèmes à distance sans nécessiter d'accès physique.
 
 IPMI peut être utilisé de trois manières différentes:
 
@@ -930,25 +930,25 @@ IPMI peut être utilisé de trois manières différentes:
 - Quand l'hôte est entièrement éteint.
 - Pour l'accès à l'hôte après un échec système.
 
-Quand IPMI n'est pas utilisé pour ces 3 tâches, il peut surveiller une grande variétée de métriques comme la température, le voltage, le statut des ventilateurs et l'alimentation. Il peut aussi être utilisé pour la récupération des informations d'inventaire, voir les logs métériels, et créer des alertes grâce à SNMP.
+Quand IPMI n'est pas utilisé pour ces 3 tâches, il peut surveiller une grande variété de métriques comme la température, le voltage, le statut des ventilateurs et l'alimentation. Il peut aussi être utilisé pour la récupération des informations d'inventaire, voir les logs matériels, et créer des alertes grâce à SNMP.
 
-Le système hôte peut être entièrement éteint mais le module IPMI nécéssite une source d'énergie et une connexion LAN.
+Le système hôte peut être entièrement éteint mais le module IPMI nécessite une source d'énergie et une connexion LAN.
 
 Ce protocole à été développé par Intel en 1998 et est supporté par plus de 200 constructeurs (cisco, Dell, HP, Supermicro, Intel...).
 
 Les systèmes utilisant IPMI 2.0 peuvent être administrés via "Serial over LAN" (mécanisme qui permet de rediriger l'entrée et la sortie du port série sur un système IP).
 Ce qui offre aux administrateurs la possibilité de voir la sortie de la console série en mode "in-band" (l'accès se fait via les canaux normaux, comme le réseau IP).
 
-Pour fonctionner, IPMI nécéssite:
+Pour fonctionner, IPMI nécessite:
 
-- Un "Baseboard Management Controller" (BMC) : Un micro-contrôlleur, composant essentiel.
+- Un "Baseboard Management Controller" (BMC) : Un micro-contrôleur, composant essentiel.
 - Un "Intelligent Chassis Management Bus" (ICMB) : Une interface permettant la communication d'un châssis à un autre.
 - Un "Intelligent Platform Management Bus" (IPMB) : Une extension du BMC.
-- La mémoire IPMI : Stocke des informations comme les logs d'évenements système, données dépôt...
+- La mémoire IPMI : Stocke des informations comme les logs d'évènements système, données dépôt...
 - Les interfaces de communication : interfaces systèmes locales, en série et LAN, bus de management ICMB et PCI.
 
 IPMI communique via le port UDP 623. Les systèmes utilisant IPMI sont appelés les Baseboard Management Controllers (BMCs) ou Contrôleurs de gestion de carte mère.
-Les BMC sont souvent implémentés comme des systèmes ARM intégrés éxecutant Linux, et directement connectés à la carte mère de l'hôte.
+Les BMC sont souvent implémentés comme des systèmes ARM intégrés exécutant Linux, et directement connectés à la carte mère de l'hôte.
 
 Les BMC peuvent être présentes directement sur la carte mère ou ajoutés comme carte PCI.
 
@@ -969,15 +969,13 @@ Parfois, le mot de passe par défaut du BMC n'est pas changé, en voici quelque-
 | HP iLO          | Administrator     | 8 caractères aléatoires composés de majuscules et chiffres |
 | Supermicro IPMI | ADMIN             | ADMIN                                                      |
 
-Il est possible d'utiliser une vulnérabilitée dans le procotole RAKP dans la version 2.0 de IPMI,
+Il est possible d'utiliser une vulnérabilité dans le protocole RAKP dans la version 2.0 de IPMI,
 pendant la phase d'authentification, le serveur envoi le hash (SHA1 avec sel ou MD5) du mot de passe utilisateur au client. Cela peut être exploité pour obtenir le mot de passe de n'importe quel utilisateur valide sur le BMC.
 Ces hashs peuvent être crackés hors-ligne avec une attaque par dictionnaire par exemple. (mode 7300 sur hashcat).
 Une attaque par masque est aussi possible pour HP iLO.
 
-Comme aucun réglage ne peut résoudre cette faille (composant critique de la spécification IPMI). Les mots de passe doivent être très robustes aux attaques par force brute et/ou implementer une ségmentation réseau pour restreindre l'accès aux BMC.
+Comme aucun réglage ne peut résoudre cette faille (composant critique de la spécification IPMI). Les mots de passe doivent être très robustes aux attaques par force brute et/ou implémenter une segmentation réseau pour restreindre l'accès aux BMC.
 
 De plus, parfois les mots de passe sont réutilisés, c'est pour cela que l'exploration d'IPMI est important et ne doit pas être négligée.
 
 Pour récupérer les hashes IPMI, il est possible d'utiliser le module metasploit [`auxiliary/scanner/ipmi/ipmi_dumphashes`](https://www.rapid7.com/db/modules/auxiliary/scanner/ipmi/ipmi_dumphashes/)
-
-
