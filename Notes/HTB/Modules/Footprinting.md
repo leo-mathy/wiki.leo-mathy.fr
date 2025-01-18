@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:01:30.468Z
+date: 2025-01-18T15:02:09.169Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -993,7 +993,7 @@ SSH-2, aussi connu sous le nom de SSH version 2, est plus avancé que SSH-1 au n
 Par exemple, SSH-1 est vulnérable aux attaques MITM (Man In The Middle) tandis que SSH-2 ne l'est pas.
 
 SSH peut être utilisé pour l'envoi de commandes au serveur, le transfert de fichiers ou la redirection de ports.
-Mais avant cela il faut se connecter en utilisant le protocole SSH et s'authentifier. OpenSSH dispose de six méthodes d'authentification:
+Mais avant cela il faut se connecter en utilisant le protocole SSH et s'authentifier. OpenSSH dispose de [six méthodes d'authentification](https://www.golinuxcloud.com/openssh-authentication-methods-sshd-config/):
 - Authentification par mot de passe
 - Authentification par clé publique
 - Authentification par hôte
