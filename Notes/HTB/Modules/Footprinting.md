@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:26:14.782Z
+date: 2025-01-18T15:28:14.364Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1022,5 +1022,7 @@ Certains paramètres peuvent être dangereux:
 | AllowTcpForwarding yes    | Autorise la redirection de ports TCP.             |
 | PermitTunnel             | Autorise le tunneling (tunnel de couche 2 ou 3).                           |
 | DebianBanner yes          | Affiche une banière spécifique lors de la connexion. |
+
+Des guides pour augmenter la sécurité des serveurs SSH (hardening) sont disponibles en ligne. En voici un [ici](https://www.ssh-audit.com/hardening_guides.html).
 
 
