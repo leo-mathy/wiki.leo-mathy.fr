@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T14:56:33.419Z
+date: 2025-01-18T14:57:42.696Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -991,5 +991,7 @@ Le serveur [OpenBSD SSH (OpenSSH)](https://www.openssh.com/), est un fork open-s
 SSH dispose de deux version, SSH-1 et SSH-2.
 SSH-2, aussi connu sous le nom de SSH version 2, est plus avancé que SSH-1 au niveau du chiffrement, de la vitesse, de la stabilitée et de la sécuritée.
 Par exemple, SSH-1 est vulnérable aux attaques MITM (Man In The Middle) tandis que SSH-2 ne l'est pas.
+
+SSH peut être utilisé pour l'envoi de commandes au serveur, le transfert de fichiers ou la redirection de ports.
 
 
