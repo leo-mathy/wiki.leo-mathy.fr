@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:54:37.704Z
+date: 2025-01-18T11:55:57.366Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -975,6 +975,8 @@ Ces hashs peuvent être crackés hors-ligne avec une attaque par dictionnaire pa
 Une attaque par masque est aussi possible pour HP iLO.
 
 Comme aucun réglage ne peut résoudre cette faille (composant critique de la spécification IPMI). Les mots de passe doivent être très robustes aux attaques par force brute et/ou implementer une ségmentation réseau pour restreindre l'accès aux BMC.
+
+De plus, parfois les mots de passe sont réutilisés, c'est pour cela que l'exploration d'IPMI est important et ne doit pas être négligée.
 
 
 
