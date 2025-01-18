@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:59:35.142Z
+date: 2025-01-18T12:06:23.552Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -979,3 +979,5 @@ Comme aucun réglage ne peut résoudre cette faille (composant critique de la sp
 De plus, parfois les mots de passe sont réutilisés, c'est pour cela que l'exploration d'IPMI est important et ne doit pas être négligée.
 
 Pour récupérer les hashes IPMI, il est possible d'utiliser le module metasploit [`auxiliary/scanner/ipmi/ipmi_dumphashes`](https://www.rapid7.com/db/modules/auxiliary/scanner/ipmi/ipmi_dumphashes/)
+
+## Linux Remote Management Protocols
