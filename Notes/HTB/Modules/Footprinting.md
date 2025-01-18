@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:20:54.990Z
+date: 2025-01-18T11:24:42.141Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -934,5 +934,9 @@ Quand IPMI n'est pas utilisé pour ces 3 tâches, il peut surveiller une grande 
 Le système hôte peut être entièrement éteint mais le module IPMI nécéssite une source d'énergie et une connexion LAN.
 
 Ce protocole à été développé par Intel en 1998 et est supporté par plus de 200 constructeurs (cisco, Dell, HP, Supermicro, Intel...).
+
 Les systèmes utilisant IPMI 2.0 peuvent être administrés via "Serial over LAN" (mécanisme qui permet de rediriger l'entrée et la sortie du port série sur un système IP).
+Ce qui offre aux administrateurs la possibilité de voir la sortie de la console série en mode "in-band" (accès réalisé via le même canal utilisé pour les opérations régulières (l'accès se fait via les canaux normaux, comme le réseau).
+
+
 
