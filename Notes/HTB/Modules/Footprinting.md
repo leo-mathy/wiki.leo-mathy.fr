@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:57:49.335Z
+date: 2025-01-18T15:59:39.234Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1058,5 +1058,7 @@ R-services est une suite de services qui permettent un accès distant ou l'envoi
 Développé originellement par le Computer Systems Research Group (CSRG) à l'universitée Berkeley, R-services est devenu un standard pour l'accès à distance entre les systèmes d'exploitation Unix jusqu'à son remplacement par SSH à cause des vulnérabilités inherentes à R-services.
 
 Comme telnet, R-services ne chiffre pas les communications entre le client et le serveur, ce qui rend possible l'interception des mots de passe et identifiants.
+
+R-services utilise les ports 512,513 et 514 et sont accesible au travers d'une suite de programmes appellés r-commands.
 
 
