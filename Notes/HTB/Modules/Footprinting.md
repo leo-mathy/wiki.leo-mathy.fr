@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T16:34:13.341Z
+date: 2025-01-18T16:34:26.137Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1105,5 +1105,5 @@ Commande rlogin (pour se connecter au serveur):
 rwho (pour afficher la liste des sessions intéractives sur le réseau local)
 `rwho`
 
-Le démon rwho va périodiquement envoyer des broadcasts sur le réseau contenant des informations sur les utilisateurs connectés.
+Le démon rwho va périodiquement envoyer des broadcasts sur le réseau, contenant des informations sur les utilisateurs connectés.
 
