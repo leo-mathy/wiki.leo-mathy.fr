@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:31:30.155Z
+date: 2025-01-18T11:32:46.692Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -945,3 +945,4 @@ Pour fonctionner, IPMI nécéssite:
 - La mémoire IPMI : Stocke des informations comme les logs d'évenements système, données dépôt...
 - Les interfaces de communication : interfaces systèmes locales, en série et LAN, bus de management ICMB et PCI.
 
+IPMI communique via le port UDP 623. Les systèmes utilisant IPMI sont appelés les Baseboard Management Controllers (BMCs) ou Contrôleurs de gestion de carte mère.
