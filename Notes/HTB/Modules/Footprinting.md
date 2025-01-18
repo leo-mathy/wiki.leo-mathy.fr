@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T16:30:18.871Z
+date: 2025-01-18T16:32:44.213Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1099,4 +1099,8 @@ user	192.168.1.1 # Utilisateur "user" de l'hôte 192.168.1.1
 +			+					# Tous les utilisateurs
 ```
 
+Commande rlogin (pour se connecter au serveur):
+`rlogin <adresse IP> -l <utilisateur>`
+
+rwho (pour afficher la liste des sessions intéractives sur le réseau local)
 
