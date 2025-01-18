@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-17T20:42:11.719Z
+date: 2025-01-18T11:05:30.298Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -915,3 +915,6 @@ Avant de transférer un web shell, il est conseillé d'essayer avec un fichier q
 `./odat.py utlfile -s <adresse IP> -d XE -U <utilisateur> -P <mot de passe> --sysdba --putFile C:\\inetpub\\wwwroot <nom du fichier> ./<emplacement local du fichier à envoyer>`
 
 ## IPMI
+
+Intelligent Platform Management Interface (IPMI) est un ensemble de spécifications standardisés pour la gestion matérielle des hôtes, utilisés pour la gestion et la surveillance des systèmes.
+
