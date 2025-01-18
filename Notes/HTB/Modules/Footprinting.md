@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T15:38:06.632Z
+date: 2025-01-18T15:40:31.998Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1036,6 +1036,8 @@ Pour précisier la méthode d'authentification avec le client OpenSSH (ici "pass
 
 C'est un outil très versatile et renommé pour son algorithme "delta-transfer".
 Cet algorithme reduit la quantitée de données transférés quand une version du fichier existe déjà sur l'hôte de destination (en envoyant uniquement les différences entre le fichier source et de destination).
+
+Il est largement utilisé pour les sauvegardes et la réplication. Il trouve les fichiers nécéssitant un transfert en se basant sur leurs taille (si elle à changée) ou la date de dernière modification.
 
 
 
