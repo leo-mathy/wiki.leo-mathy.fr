@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:05:30.298Z
+date: 2025-01-18T11:13:06.507Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -917,4 +917,15 @@ Avant de transférer un web shell, il est conseillé d'essayer avec un fichier q
 ## IPMI
 
 Intelligent Platform Management Interface (IPMI) est un ensemble de spécifications standardisés pour la gestion matérielle des hôtes, utilisés pour la gestion et la surveillance des systèmes.
+
+C'est un sous-système autonome qui fonctionne indépendament du BIOS, processeur, firmware et du système d'exploitation.
+
+IPMI permet aux administrateurs d'administrer et de surveiller les systèmes, même si ils sont éteins ou qu'ils sont sans réponse. IPMI fonctionne via une connexion directe aux composants systèmes et ne requière aucun accès au système d'exploitation.
+
+IPMI peut aussi être utilisé pour mettre à jour les systèmes à distance sans nécésitter d'accès physique.
+
+IPMI peut être utilisé de trois manières différentes:
+- Avant que le système d'exploitation soit lancé, pour modifier les paramètres du BIOS.
+- Quand l'hôte est entièrement éteint.
+- Pour l'accès à l'hôte après un échec système.
 
