@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T11:26:39.134Z
+date: 2025-01-18T11:31:30.155Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -938,6 +938,10 @@ Ce protocole à été développé par Intel en 1998 et est supporté par plus de
 Les systèmes utilisant IPMI 2.0 peuvent être administrés via "Serial over LAN" (mécanisme qui permet de rediriger l'entrée et la sortie du port série sur un système IP).
 Ce qui offre aux administrateurs la possibilité de voir la sortie de la console série en mode "in-band" (l'accès se fait via les canaux normaux, comme le réseau IP).
 
-
-
+Pour fonctionner, IPMI nécéssite:
+- Un "Baseboard Management Controller" (BMC) : Un micro-contrôlleur, composant essentiel.
+- Un "Intelligent Chassis Management Bus" (ICMB) : Une interface permettant la communication d'un châssis à un autre.
+- Un "Intelligent Platform Management Bus" (IPMB) : Une extension du BMC.
+- La mémoire IPMI : Stocke des informations comme les logs d'évenements système, données dépôt...
+- Les interfaces de communication : interfaces systèmes locales, en série et LAN, bus de management ICMB et PCI.
 
