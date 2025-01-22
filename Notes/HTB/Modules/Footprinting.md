@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:46:30.541Z
+date: 2025-01-22T17:51:51.566Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1140,3 +1140,11 @@ Il est possible d'utiliser l'option "--packet-trace" pour voir les paquets et in
 
 Le script perl [rdp-sec-check.pl](https://github.com/CiscoCXSecurity/rdp-sec-check) développé par [CiscoCXSecurity](https://github.com/CiscoCXSecurity) (branche sécurité de Cisco) peut être utilisé pour identifier les paramètres de sécurité des serveurs RDP via les handshakes, tout en étant non authentifié. 
 
+[CPAN (Comprehensive Perl Archive Network)](https://www.cpan.org/) peut être utilisé pour installer des modules Perl sur Linux:
+`cpan`
+
+Il faut ensuite installer le module "Encoding::BER",
+```
+cpan
+cpan[1]> install Encoding::BER
+```
