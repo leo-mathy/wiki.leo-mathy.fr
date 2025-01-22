@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:40:46.397Z
+date: 2025-01-22T17:42:27.387Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1136,6 +1136,8 @@ Par défaut, le service est configuré pour accepter uniquement les connexions e
 Pour scanner le service avec nmap (avec tous les scripts nmap commençant par "rdp"), et récupérer entre autres, la version, si le NLA est actif, le nom de l'hôte, etc... :
 `nmap -sV -sC <adresse IP> -p3389 --script rdp*`
 
-Il est possible d'utiliser l'option "--packet-trace" pour inspecter les paquets et inspecter leur contenu manuellement, par exemple, lors de l'exécution de la commande ci-dessus, le cookie rdp était "nmap", cela peut être détecté par de nombreux services de sécurité (par exemple EDR)
+Il est possible d'utiliser l'option "--packet-trace" pour voir les paquets et inspecter leur contenu manuellement, par exemple, lors de l'exécution de la commande ci-dessus, le cookie rdp était "nmap", cela peut être détecté par de nombreux services de sécurité (par exemple des EDR) ou bien des threat hunters, et nous enfermer dehors.
+
+
 
 
