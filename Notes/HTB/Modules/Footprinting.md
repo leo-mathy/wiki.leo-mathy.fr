@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:53:19.719Z
+date: 2025-01-22T17:54:53.328Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1154,4 +1154,8 @@ Il est maintenant possible d'exécuter le script:
 git clone https://github.com/CiscoCXSecurity/rdp-sec-check.git && cd rdp-sec-check
 ./rdp-sec-check.pl <adresse IP>
 ```
+
+xfreerdp, rdesktop, ou Remmina sont des clients RDP qui peuvent être utilisés sur Linux pour se connecter aux serveurs RDP.
+Par exemple avec xfreerdp:
+`xfreerdp /u:<utilisateur> /p:<mot de passe> /v:<adresse IP>`
 
