@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T18:22:26.260Z
+date: 2025-01-22T18:24:32.984Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1117,11 +1117,12 @@ Par défaut, depuis Windows Server 2016, l'administration à distance est activ�
 Ces fonctionnalités d'administration à distance incluent un service implémentant le protocole WS-Management, les diagnostics matériels et le contrôle à travers les BMC (Baseboard Management Controller) ainsi qu'une API COM et des objets de script qui nous permettent d'écrire des applications qui communiquent à distance via le protocole WS-Management.
 
 Les composants principaux utilisés pour l'administration à distance de Windows et Windows Serveur sont:
+
 - Remote Desktop Protocol (RDP)
 - Windows Remote Management (WinRM)
 - Windows Management Instrumentation (WMI)
 
-Le [protocole RDP](https://docs.microsoft.com/en-us/troubleshoot/windows-server/remote/understanding-remote-desktop-protocol) est un protocole développé par Microsoft pourr l'accès à distance à un système d'exploitation Windows. Ce protocole permet de transmettre de manière chiffrée, des commandes d'affichage et de contrôle via l'interface graphique.
+Le [protocole RDP](https://docs.microsoft.com/en-us/troubleshoot/windows-server/remote/understanding-remote-desktop-protocol) est un protocole développé par Microsoft pour l'accès à distance à un système d'exploitation Windows. Ce protocole permet de transmettre de manière chiffrée, des commandes d'affichage et de contrôle via l'interface graphique.
 
 C'est un protocole de couche 7 utilisant le port TCP 3389 par défaut. Cependant ce protocole peut aussi fonctionner avec UDP comme protocole de transport.
 
@@ -1130,7 +1131,7 @@ RDP prend en charge le chiffrement SSL/TLS depuis Windows Vista, cependant certa
 Même avec un chiffrement SSL/TLS, des risques sont toujours présents, effectivement les certificats fournissant l'identité sont simplement auto-signés par défaut.
 Cela signifie que le client ne peut pas distinguer un certificat authentique d'un certificat forgé, et génère un message d'avertissement concernant le certificat.
 
-Par défaut, le service RDP (Remote Desktop) est installé par défaut sur tous les serveurs Windows et ne nécéssite aucune application externe additionnelle. Le service peut ensuite être activé depuis le gestionnaire de serveur.
+Par défaut, le service RDP (Remote Desktop) est installé par défaut sur tous les serveurs Windows et ne nécessite aucune application externe additionnelle. Le service peut ensuite être activé depuis le gestionnaire de serveur.
 Par défaut, le service est configuré pour accepter uniquement les connexions effectués via la fonctionnalité [Network level authentication (NLA)](https://en.wikipedia.org/wiki/Network_Level_Authentication).
 
 Pour scanner le service avec nmap (avec tous les scripts nmap commençant par "rdp"), et récupérer entre autres, la version, si le NLA est actif, le nom de l'hôte, etc... :
@@ -1138,18 +1139,20 @@ Pour scanner le service avec nmap (avec tous les scripts nmap commençant par "r
 
 Il est possible d'utiliser l'option "--packet-trace" pour voir les paquets et inspecter leur contenu manuellement, par exemple, lors de l'exécution de la commande ci-dessus, le cookie rdp était "nmap", cela peut être détecté par de nombreux services de sécurité (par exemple des EDR) ou bien des threat hunters, et nous enfermer dehors sur des réseaux renforcés.
 
-Le script perl [rdp-sec-check.pl](https://github.com/CiscoCXSecurity/rdp-sec-check) développé par [CiscoCXSecurity](https://github.com/CiscoCXSecurity) (branche sécurité de Cisco) peut être utilisé pour identifier les paramètres de sécurité des serveurs RDP via les handshakes, tout en étant non authentifié. 
+Le script perl [rdp-sec-check.pl](https://github.com/CiscoCXSecurity/rdp-sec-check) développé par [CiscoCXSecurity](https://github.com/CiscoCXSecurity) (branche sécurité de Cisco) peut être utilisé pour identifier les paramètres de sécurité des serveurs RDP via les handshakes, tout en étant non authentifié.
 
 [CPAN (Comprehensive Perl Archive Network)](https://www.cpan.org/) peut être utilisé pour installer des modules Perl sur Linux:
 `cpan`
 
-Il faut ensuite installer le module "Encoding::BER", nécéssaire au script:
+Il faut ensuite installer le module "Encoding::BER", nécessaire au script:
+
 ```
 cpan
 cpan[1]> install Encoding::BER
 ```
 
 Il est maintenant possible d'exécuter le script:
+
 ```
 git clone https://github.com/CiscoCXSecurity/rdp-sec-check.git && cd rdp-sec-check
 ./rdp-sec-check.pl <adresse IP>
@@ -1164,7 +1167,7 @@ Ce protocole n'est plus actif par défaut à partir de Windows 10.
 
 Il utilise les ports 5985 (HTTP)et 5986 (HTTPS) pour communiquer, le port 5986 et 5985 utilisent HTTP/S (80 et 443 étant réservés).
 
-Un autre composant de WinRM est Windows Remote Shell (WinRS), qui permet l'exécution de commandes sur les systèmes distants. 
+Un autre composant de WinRM est Windows Remote Shell (WinRS), qui permet l'exécution de commandes sur les systèmes distants.
 
 Les services comme les sessions distantes PowerShell ou Windows Event Forwarding (WEF) requièrent WinRM. WinRM est activé par défaut à partir de Windows Server 2012.
 
@@ -1175,13 +1178,13 @@ Pour voir si les serveurs sont accessibles avec WinRM, il est possible d'utilise
 Ou de passer par [evil-winrm](https://github.com/Hackplayers/evil-winrm) (disponible sur Linux):
 `evil-winrm -i <adresse IP> -u <utilisateur> -p <mot de passe>`
 
-Windows Management Instrumentation (WMI) est l'implémentation Microsoft et aussi une extension du Common Information Model (CIM), Foncfonctionnalité principale du Web-Based Enterprise Management (WBEM) pour la plateforme Windows.
+Windows Management Instrumentation (WMI) est l'implémentation Microsoft et aussi une extension du Common Information Model (CIM), fonctionnalité principale du Web-Based Enterprise Management (WBEM) pour la plateforme Windows.
 
-WMI perrmet un accès en lecture/écriture à presque tous les paramètres sur les systèmes Windows, ce qui en fait une des interfaces les plus critique sur les systèmes Windows (serveur ou non). Il est possible d'accéder à WMI via PowerShell,depuis des scripts VBS ou depuis la console WMIC (Windows Management Instrumentation Console).
+WMI permet un accès en lecture/écriture à presque tous les paramètres sur les systèmes Windows, ce qui en fait une des interfaces les plus critique sur les systèmes Windows (serveur ou non). Il est possible d'accéder à WMI via PowerShell,depuis des scripts VBS ou depuis la console WMIC (Windows Management Instrumentation Console).
 
-WMI n'est pas un programme unique mais est composé de plusieurs programmes et de multiples bases de données (appellées dépôts).
+WMI n'est pas un programme unique mais est composé de plusieurs programmes et de multiples bases de données (appelées dépôts).
 
 WMI utilise toujours le port TCP 135, une fois la connexion établie, celle-ci est déplacée vers un port aléatoire.
 
-Le script [wmiexec.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/wmiexec.py) de la suite Impacket peut `être utilisé pour intéragir avec WMI:
+Le script [wmiexec.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/wmiexec.py) de la suite Impacket peut `être utilisé pour interagir avec WMI:
 /usr/share/doc/python3-impacket/examples/wmiexec.py <utilisateur>:<mot de passe>@<adressse IP> <commande>`
