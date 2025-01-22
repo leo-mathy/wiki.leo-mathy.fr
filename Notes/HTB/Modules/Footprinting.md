@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:54:53.328Z
+date: 2025-01-22T17:59:13.005Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1159,3 +1159,7 @@ xfreerdp, rdesktop, ou Remmina sont des clients RDP qui peuvent être utilisés 
 Par exemple avec xfreerdp:
 `xfreerdp /u:<utilisateur> /p:<mot de passe> /v:<adresse IP>`
 
+Windows Remote Management (WinRM) est un protocole Windows d'administration à distance en ligne de commandes, WinRM utilise le Simple Object Access Protocol (SOAP) pour établir une connexion vers les hôtes distants et leurs applications.
+Ce protocole n'est plus actif par défaut à partir de Windows 10.
+
+Il utilise les ports 5985 et 5986 pour communiquer, le port 5986 utilisant HTTPS (80 et 443 étant réservés).
