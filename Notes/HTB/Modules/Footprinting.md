@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:37:33.965Z
+date: 2025-01-22T17:39:15.454Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1133,6 +1133,9 @@ Cela signifie que le client ne peut pas distinguer un certificat authentique d'u
 Par défaut, le service RDP (Remote Desktop) est installé par défaut sur tous les serveurs Windows et ne nécéssite aucune application externe additionnelle. Le service peut ensuite être activé depuis le gestionnaire de serveur.
 Par défaut, le service est configuré pour accepter uniquement les connexions effectués via la fonctionnalité [Network level authentication (NLA)](https://en.wikipedia.org/wiki/Network_Level_Authentication).
 
-Pour scanner le service avec tous les scripts commençant par rdp, et récupérer entre autres, la version, si le NLA est actif, le nom de l'hôte, etc... :
+Pour scanner le service avec nmap (avec tous les scripts nmap commençant par "rdp"), et récupérer entre autres, la version, si le NLA est actif, le nom de l'hôte, etc... :
 `nmap -sV -sC <adresse IP> -p3389 --script rdp*`
+
+Il est possible d'utiliser l'option "--packet-trace" pour inspecter les paquets et inspecter leur contenu manuellement.
+
 
