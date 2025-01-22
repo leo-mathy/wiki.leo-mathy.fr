@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T18:18:48.500Z
+date: 2025-01-22T18:18:55.203Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1179,4 +1179,5 @@ Windows Management Instrumentation (WMI) est l'implémentation Microsoft et auss
 
 WMI perrmet un accès en lecture/écriture à presque tous les paramètres sur les systèmes Windows, ce qui en fait une des interfaces les plus critique sur les systèmes Windows (serveur ou non). Il est possible d'accéder à WMI via PowerShell,depuis des scripts VBS ou depuis la console WMIC (Windows Management Instrumentation Console).
 
-WMI n'est pas un programme unique mais est composé de plusieurs programmes et de multiples bases de données (appellées dépôt).
+WMI n'est pas un programme unique mais est composé de plusieurs programmes et de multiples bases de données (appellées dépôts).
+
