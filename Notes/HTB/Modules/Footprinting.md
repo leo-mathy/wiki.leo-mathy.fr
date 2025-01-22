@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:10:03.870Z
+date: 2025-01-22T17:11:47.527Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1115,3 +1115,9 @@ Commande rusers (afficher une liste des utilisateurs authentifiés):
 
 Par défaut, depuis Windows Server 2016, l'administration à distance est activé par défaut.
 Ces fonctionnalités d'administration à distance incluent un service implémentant le protocole WS-Management, les diagnostics matériels et le contrôle à travers les BMC (Baseboard Management Controller) ainsi qu'une API COM et des objets de script qui nous permettent d'écrire des applications qui communiquent à distance via le protocole WS-Management.
+
+Les composants principaux utilisés pour l'administration à distance de Windows et Windows Serveur sont:
+- Remote Desktop Protocol (RDP)
+- Windows Remote Management (WinRM)
+- Windows Management Instrumentation (WMI)
+
