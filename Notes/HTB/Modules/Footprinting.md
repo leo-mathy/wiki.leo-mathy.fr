@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T18:11:20.680Z
+date: 2025-01-22T18:15:10.568Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1174,3 +1174,6 @@ Pour scanner le service avec nmap (en désactivant le ping arp et la résolution
 Pour voir si les serveurs sont accessibles avec WinRM, il est possible d'utiliser l'applet PowerShell [test-wsman](https://docs.microsoft.com/en-us/powershell/module/microsoft.wsman.management/test-wsman).
 Ou de passer par [evil-winrm](https://github.com/Hackplayers/evil-winrm) (disponible sur Linux):
 `evil-winrm -i <adresse IP> -u <utilisateur> -p <mot de passe>`
+
+Windows Management Instrumentation (WMI) est l'implémentation Microsoft et aussi une extension du Common Information Model (CIM), Foncfonctionnalité principale du Web-Based Enterprise Management (WBEM) pour la plateforme Windows.
+
