@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:53:10.100Z
+date: 2025-01-22T17:53:19.719Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1149,7 +1149,7 @@ cpan
 cpan[1]> install Encoding::BER
 ```
 
-Il est maintenant possible d'exécuté le script:
+Il est maintenant possible d'exécuter le script:
 ```
 git clone https://github.com/CiscoCXSecurity/rdp-sec-check.git && cd rdp-sec-check
 ./rdp-sec-check.pl <adresse IP>
