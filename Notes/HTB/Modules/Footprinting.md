@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:27:42.857Z
+date: 2025-01-22T17:30:01.602Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1128,4 +1128,7 @@ C'est un protocole de couche 7 utilisant le port TCP 3389 par défaut. Cependant
 RDP prend en charge le chiffrement SSL/TLS depuis Windows Vista, cependant certains systèmes Windows acceptent encore un chiffrement inadéquat via la [sécurité RDP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rdpbcgr/8e8b2cca-c1fa-456c-8ecb-a82fc60b2322).
 
 Même avec un chiffrement SSL/TLS, des risques sont toujours présents, effectivement les certificats fournissant l'identité sont simplement auto-signés par défaut.
+Cela signifie que le client ne peut pas distinguer un certificat authentique d'un certificat forgé, et génère un message d'avertissement concernant le certificat.
+
+
 
