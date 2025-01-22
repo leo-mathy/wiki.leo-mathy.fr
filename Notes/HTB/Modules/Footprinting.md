@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:33:28.630Z
+date: 2025-01-22T17:35:48.532Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1131,5 +1131,6 @@ Même avec un chiffrement SSL/TLS, des risques sont toujours présents, effectiv
 Cela signifie que le client ne peut pas distinguer un certificat authentique d'un certificat forgé, et génère un message d'avertissement concernant le certificat.
 
 Par défaut, le service RDP (Remote Desktop) est installé par défaut sur tous les serveurs Windows et ne nécéssite aucune application externe additionnelle. Le service peut ensuite être activé depuis le gestionnaire de serveur.
-Par défaut, le service est configuré pour accepter uniquement les connexions effectués via une [authentification de niveau réseau](https://en.wikipedia.org/wiki/Network_Level_Authentication) (NLA / Network level authentication).
+Par défaut, le service est configuré pour accepter uniquement les connexions effectués via la fonctionnalité [Network level authentication (NLA)](https://en.wikipedia.org/wiki/Network_Level_Authentication).
+
 
