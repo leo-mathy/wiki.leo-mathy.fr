@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:08:49.499Z
+date: 2025-01-22T17:10:03.870Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1114,4 +1114,4 @@ Commande rusers (afficher une liste des utilisateurs authentifiés):
 ## Windows Remote Management Protocols
 
 Par défaut, depuis Windows Server 2016, l'administration à distance est activé par défaut.
-Ces fonctionnalités d'administration à distance incluent un service implémentant le protocole WS-Management, les diagnostics matériels et le contrôle à travers les BMC (Baseboard Management Controller).
+Ces fonctionnalités d'administration à distance incluent un service implémentant le protocole WS-Management, les diagnostics matériels et le contrôle à travers les BMC (Baseboard Management Controller) ainsi qu'une API COM et des objets de script qui nous permettent d'écrire des applications qui communiquent à distance via le protocole WS-Management.
