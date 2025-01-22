@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:59:13.005Z
+date: 2025-01-22T18:05:51.294Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1163,3 +1163,8 @@ Windows Remote Management (WinRM) est un protocole Windows d'administration à d
 Ce protocole n'est plus actif par défaut à partir de Windows 10.
 
 Il utilise les ports 5985 et 5986 pour communiquer, le port 5986 utilisant HTTPS (80 et 443 étant réservés).
+
+Un autre composant de WinRM est Windows Remote Shell (WinRS), qui permet l'exécution de commandes sur les systèmes distants. 
+
+Les services comme les sessions distantes PowerShell ou Windows Event Forwarding (WEF) requièrent WinRM. WinRM est activé par défaut à partir de Windows Server 2012.
+
