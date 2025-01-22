@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T18:18:55.203Z
+date: 2025-01-22T18:22:26.260Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1181,3 +1181,7 @@ WMI perrmet un accès en lecture/écriture à presque tous les paramètres sur l
 
 WMI n'est pas un programme unique mais est composé de plusieurs programmes et de multiples bases de données (appellées dépôts).
 
+WMI utilise toujours le port TCP 135, une fois la connexion établie, celle-ci est déplacée vers un port aléatoire.
+
+Le script [wmiexec.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/wmiexec.py) de la suite Impacket peut `être utilisé pour intéragir avec WMI:
+/usr/share/doc/python3-impacket/examples/wmiexec.py <utilisateur>:<mot de passe>@<adressse IP> <commande>`
