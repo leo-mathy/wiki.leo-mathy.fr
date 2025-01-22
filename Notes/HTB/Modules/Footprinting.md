@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T18:17:52.245Z
+date: 2025-01-22T18:18:48.500Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1178,3 +1178,5 @@ Ou de passer par [evil-winrm](https://github.com/Hackplayers/evil-winrm) (dispon
 Windows Management Instrumentation (WMI) est l'implémentation Microsoft et aussi une extension du Common Information Model (CIM), Foncfonctionnalité principale du Web-Based Enterprise Management (WBEM) pour la plateforme Windows.
 
 WMI perrmet un accès en lecture/écriture à presque tous les paramètres sur les systèmes Windows, ce qui en fait une des interfaces les plus critique sur les systèmes Windows (serveur ou non). Il est possible d'accéder à WMI via PowerShell,depuis des scripts VBS ou depuis la console WMIC (Windows Management Instrumentation Console).
+
+WMI n'est pas un programme unique mais est composé de plusieurs programmes et de multiples bases de données (appellées dépôt).
