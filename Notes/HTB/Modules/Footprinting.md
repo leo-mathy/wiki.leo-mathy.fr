@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:11:47.527Z
+date: 2025-01-22T17:14:47.239Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1120,4 +1120,6 @@ Les composants principaux utilisés pour l'administration à distance de Windows
 - Remote Desktop Protocol (RDP)
 - Windows Remote Management (WinRM)
 - Windows Management Instrumentation (WMI)
+
+Le protocole RDP est un protocole développé par Microsoft pourr l'accès à distance à un système d'exploitation Windows. Ce protocole permet de transmettre de manière chiffrée, des commandes d'affichage et de contrôle via l'interface graphique.
 
