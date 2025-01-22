@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:42:40.600Z
+date: 2025-01-22T17:46:30.541Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1138,6 +1138,5 @@ Pour scanner le service avec nmap (avec tous les scripts nmap commençant par "r
 
 Il est possible d'utiliser l'option "--packet-trace" pour voir les paquets et inspecter leur contenu manuellement, par exemple, lors de l'exécution de la commande ci-dessus, le cookie rdp était "nmap", cela peut être détecté par de nombreux services de sécurité (par exemple des EDR) ou bien des threat hunters, et nous enfermer dehors sur des réseaux renforcés.
 
-
-
+Le script perl [rdp-sec-check.pl](https://github.com/CiscoCXSecurity/rdp-sec-check) développé par [CiscoCXSecurity](https://github.com/CiscoCXSecurity) (branche sécurité de Cisco) peut être utilisé pour identifier les paramètres de sécurité des serveurs RDP via les handshakes, tout en étant non authentifié. 
 
