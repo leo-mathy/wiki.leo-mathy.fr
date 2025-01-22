@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T17:51:51.566Z
+date: 2025-01-22T17:52:13.035Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1143,7 +1143,7 @@ Le script perl [rdp-sec-check.pl](https://github.com/CiscoCXSecurity/rdp-sec-che
 [CPAN (Comprehensive Perl Archive Network)](https://www.cpan.org/) peut être utilisé pour installer des modules Perl sur Linux:
 `cpan`
 
-Il faut ensuite installer le module "Encoding::BER",
+Il faut ensuite installer le module "Encoding::BER", nécéssaire au script:
 ```
 cpan
 cpan[1]> install Encoding::BER
