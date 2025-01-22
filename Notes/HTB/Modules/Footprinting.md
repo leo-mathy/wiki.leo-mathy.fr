@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-22T18:09:15.814Z
+date: 2025-01-22T18:09:45.693Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1171,4 +1171,4 @@ Les services comme les sessions distantes PowerShell ou Windows Event Forwarding
 Pour scanner le service avec nmap (en désactivant le ping arp et la résolution dns):
 `nmap -sV -sC <adresse IP> -p5985,5986 --disable-arp-ping -n`
 
-Pour voir si les serveurs ont WinRM d'actif et qu'il est possible de les joindre, il est possible d'utiliser l'applet PowerShell [test-wsman](https://docs.microsoft.com/en-us/powershell/module/microsoft.wsman.management/test-wsman).
+Pour voir si les serveurs sont accessibles avec WinRM, il est possible d'utiliser l'applet PowerShell [test-wsman](https://docs.microsoft.com/en-us/powershell/module/microsoft.wsman.management/test-wsman).
