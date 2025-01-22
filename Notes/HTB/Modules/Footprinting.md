@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-01-18T16:40:14.475Z
+date: 2025-01-22T17:08:49.499Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z
@@ -1112,3 +1112,6 @@ Commande rusers (afficher une liste des utilisateurs authentifiés):
 `rusers -al <adresse IP>`
 
 ## Windows Remote Management Protocols
+
+Par défaut, depuis Windows Server 2016, l'administration à distance est activé par défaut.
+Ces fonctionnalités d'administration à distance incluent un service implémentant le protocole WS-Management, les diagnostics matériels et le contrôle à travers les BMC (Baseboard Management Controller).
