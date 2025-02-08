@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-08T16:10:34.397Z
+date: 2025-02-08T16:20:02.859Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -38,4 +38,10 @@ Dans une reconnaissance active, l'attaquant intérragi directement avec le syst�
 
 Dans une reconnaissance passive, l'attaquant n'intéragi pas directement avec la cible pour récupérer des informations. Cela se base sur l'analyse des informations et ressources disponibles publiquement (Moteurs de recherche,WHOIS,DNS,Archives web, Réseaux sociaux, repos de code...).
 La reconnaissance passive est donc plus discrète.
+
+## WHOIS
+
+WHOIS est un protocole créé pour acceder aux bases de données stockant les informations concernant les ressources Internet enregistrées. En plus d'être associé aux noms de domaines, WHOIS peut aussi fournir les détails sur les blocks d'IP et les systèmes autonomes.
+
+WHOIS peut être représenté comme un annuaire pour Internet, qui permet de voir qui est responsable ou propriétaire pour de nombreux types de ressources en ligne.
 
