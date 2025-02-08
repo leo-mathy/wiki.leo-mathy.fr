@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-08T16:20:17.798Z
+date: 2025-02-08T16:34:19.253Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -45,5 +45,12 @@ WHOIS est un protocole créé pour acceder aux bases de données stockant les in
 
 WHOIS peut être représenté comme un annuaire pour Internet, qui permet de voir qui est responsable ou propriétaire pour de nombreux types de ressources en ligne.
 
+WHOIS est apparu dans les années 70 pour surveiller et administrer les ressources sur le réseau Arpanet. Le successeur de WHOIS est RDAP.
+
 `whois <domaine.tld>`
+
+WHOIS est important dans la reconnaissance web, il permet de:
+- Identifier le personnel clé: les enregistrements WHOIS révèlent souvent des informations sur le personnel clé (nom, adresses mail, numéros de téléphone...) qui est responsable de l'administration du domaine.
+- Découvrir l'infrastructure réseau: des détails techniques comme les serveurs DNS et adresses IP donnent des indices sur le réseau de la cible.
+- Analyse des données historiques: Les anciens enregistrements WHOIS peuvent être consultés sur des services comme [WhoisFreaks](https://whoisfreaks.com/). Les anciens enregistrements peuvent être utilisés pour voir les changement de propriétaires, informations de contact ou détails techniques, dans le temps (permet de voir l'évolution de la présence en ligne de la cible).
 
