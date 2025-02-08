@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-08T15:52:36.953Z
+date: 2025-02-08T16:09:52.830Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -12,16 +12,16 @@ dateCreated: 2025-02-08T15:33:50.601Z
 
 Date de complétion: XX/XX/2025
 
+[information_gathering_web_edition_module_cheat_sheet.pdf](/cheat_sheet/information_gathering_web_edition_module_cheat_sheet.pdf)
+
 # Notes
 
 ## Introduction
 
-La reconaissance web est la fondation d'une évaluation de sécurité complète.
-Ce prrocessus doit systématiquement et de manière méticuleuse, collecter des informations sur une application ou un site web.
+La reconnaissance web est une partie de la phase de collecte d'information lors du processus de pentest.
+Ce processus doit systématiquement et de manière méticuleuse, collecter des informations sur une application ou un site web.
 
 C'est la phase préparatoire avant l'analyse poussée et l'exploitation.
-
-La reconnaissance web est une partie de la phase de collecte d'information lors du processus de pentest.
 
 Le but de la reconnaissance web est:
 - D'identifier les actifs: Définir les composants de la cible accessibles publiquement (pages web, domaines, adresses, technologies...), ce qui permet d'avoir une vue globale de la présence en ligne de la cible.
@@ -30,5 +30,12 @@ Le but de la reconnaissance web est:
 - Collecter les renseignements (Intelligence gathering): Collecter les informations qui peuvent être utilisées pour l'exploitation ou les attaques sociales. Cela correspond à l'identification du personnel clé, adresses mail... ou encore des modèles ou comportements pouvant être exploités.
 
 Toutes ces informations sont utilisées par les attaquants pour façonner leurs attaques en ciblant des faiblesses spécifiques et en contournant les mesures de sécurité.
-En revanches, les défenseurs utilisent ces informations pour proactivement identifier et corriger les vulnérabilitées avant leurs exploitation.
+En revanche, les défenseurs utilisent ces informations pour proactivement identifier et corriger les vulnérabilitées avant leurs exploitation.
+
+Il y a deux types de méthodologies de reconnaissance, active et passive.
+
+Dans une reconnaissance active, l'attaquant intérragi directement avec le système cible pour récupérer des informations (scan de ports/vulnérabilités, cartographie réseau, banner grabing, OS fingerprinting, spidering), dans la pluspart des cas, la reconnaissance active est associée à un risque de détection plus grand.
+
+Dans une reconnaissance passive, l'attaquant n'intéragi pas directement avec la cible pour récupérer des informations. Cela se base sur l'analyse des informations et ressources disponibles publiquement (Moteurs de recherche,WHOIS,DNS,Archives web, Réseaux sociaux, repos de code...).
+La reconnaissance passive est donc plus discrète.
 
