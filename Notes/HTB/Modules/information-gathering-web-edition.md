@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T14:22:47.825Z
+date: 2025-02-09T14:26:32.288Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -190,5 +190,10 @@ Voici le fonctionnement d'un transfert de zone:
 	Le serveur secondaire initie le processus en envoyant une requète de transfert de zone au serveur primarie. Cette requète utilise normalement le type AXFR (Full ZOne Transfer).
 2. **Transfert de l'enregistrement SOA**:
 	Après avoir reçu la requète (et peut être authentifié le serveur secondaire), le serveur primaire réponds en envoyant son enregistrement SOA (Start of Authority). L'enregistrement SOA contient l'information vitale à propos de la zone comme le numéro de série (qui permet au serveur secondaire de déterminer si les données sont à jour).
-3. ** ransmission des enregistrements**: Le serveur primaire envoi tous les enregistrements un par un au serveur secondaire.
-4. 
+3. **Transmission des enregistrements**:
+	Le serveur primaire envoi tous les enregistrements un par un au serveur secondaire.
+4. **Transmission des enregistrements terminé**:
+	Le serveur primaire signale la fin du transert de zone. Ce qui indique au serveur secondaire qu'il a bien reçu une copie complète des données de la zone.
+5. **Validation (ACK)**:
+	Le serveur secondaire informe le serveur primaire de la bonne réception et du traitement des données de zone. Cela complète le processus de transfert de zone.
+
