@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T10:02:46.491Z
+date: 2025-02-09T10:13:00.954Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -84,4 +84,14 @@ Voici le fonctionnement basique de la résolution d'un nom:
 
 Le fichier host permet de mapper les domaines et les adresses IP manuellement.
 Il est situé dans` C:\Windows\System32\drivers\etc\hosts` sur Windows et dans` /etc/hosts` sur Linux.
+
+Par exemple, la ligne suivante indique que le nom `localhost` correspond à l'adresse `127.0.0.1`:
+`127.0.0.1       localhost`
+
+Ce fichier peut être utilisé pour effectuer des tests (lors d'un développement par exemple) mais aussi pour bloquer certains domaines.
+Par exemple pour rediriger le domaine google.com vers une adresse non existante:
+`0.0.0.0       google.com`
+
+Une zone est une partie distincte de l'espace de nom du domaine. Par exemple: example.com ou test.example.com.
+Une zone correspond à un fichier situé sur le serveur DNS, dans une zone il est possible de trouver de nombreux enregistrements (A,NS,SOA,MX...).
 
