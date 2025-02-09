@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T10:28:28.739Z
+date: 2025-02-09T10:32:49.014Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -110,5 +110,16 @@ De nombreux outils et techniques sont disponibles pour tirer parti du DNS pour l
 - `fierce`: Outil de reconnaissance DNS et d'énumération de sous-domaines avec recherche récursive et détection de caractères génériques.
 - `dnsrecon`: Combine plusieurs techniques de reconnaissance DNS et prend en charge divers formats de sortie.
 - `theHarvester`: Outil OSINT qui rassemble des informations provenant de diverses sources, y compris les enregistrements DNS (adresses e-mail).
-- `Services de résolution en ligne`: Interface simple pour la résolution DNS.
+- `Services de recherche en ligne`: Interface simple pour la résolution DNS.
+
+Dig (Domain Information Groper) est un puissant outil pour les requètes DNS. IL est très flexible et personnalisable.
+
+Recherche de l'enregistrement A du domaine (par défaut):
+`dig <domaine>`	
+Recherche un enreigstrement spécifique pour un domaine:
+`dig <domaine> <enregistrement>`
+Recherche de l'enregistrement en spécifiant le serveur de résolution de noms.
+`dig @<résolveur> <domaine>`
+Recherche de l'enregistrement A du domaine (par défaut)
+`dig +trace domaine
 
