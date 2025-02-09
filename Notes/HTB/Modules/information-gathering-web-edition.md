@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-08T16:55:01.190Z
+date: 2025-02-09T10:00:21.490Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -70,3 +70,15 @@ WHOIS permet de récupérer les informations principales suivantes:
 - les propriétaire du domaine
 - les statuts du domaine
 - les serveurs de noms
+
+## DNS
+
+Voici le fonctionnement de la résolution d'un nom:
+- Le système va vérifier son cache DNS à la recherche de l'adresse correspondante.
+- Si l'adresse correspondante n'est pas trouvée dans celui-ci, alors il va contacter un résolveur DNS, le résolveur DNS va ensuite aussi vérifier son cache à la recherche de l'adresse correspondante.
+- Si l'adresse correspondante n'est pas trouvée dans celui-ci, alors il va contacter un serveur DNS racine.
+- Le serveur DNS racine va indiquer où trouver le serveur responsable du TLD.
+- Le serveur TLD indique ensuite le serveur DNS faisant authorité pour le domaine.
+- Le DNS serveur faisant authorité retourne ensuite l'adresse correspondante au résolveur DNS.
+- Le résolveur DNS retourne l'information au système.
+
