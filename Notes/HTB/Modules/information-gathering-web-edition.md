@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T14:11:23.615Z
+date: 2025-02-09T14:22:47.825Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -179,5 +179,16 @@ Effectue un brute-force de sous-domaine récursivement avec Dnsenum:
 
 ## DNS Zone Transfers
 
-Le mécanisme de transfert de zones DNS permet de répliquer les enregistrements DNS entre les serveurs DNS. Il est possible d'exploiter ce mécanisme si il est mal configuré pour récupérer de nombreuses informations.
+Le mécanisme de transfert de zones DNS permet de répliquer les enregistrements entre les serveurs DNS. Il est possible d'exploiter ce mécanisme si il est mal configuré pour récupérer de nombreuses informations.
 
+Un transfert de zone correspond à une copie entière de tous les enregistrements DNS d'une zone d'un serveur à un autre.
+Ce processus est esentiel pour maintenir la conssistance et la redondance entre les serveurs DNS. 
+En revanche, si le transfert de zone n'est pas correctement configuré, il est possible de récupérer le fichier de zone au complet, révélant ainsi la liste complète des sous-domaines ainsi que les adresses IP et d'autres informations sensibles.
+
+Voici le fonctionnement d'un transfert de zone:
+1. **Requète de transfert de zone (AXFR)**:
+	Le serveur secondaire initie le processus en envoyant une requète de transfert de zone au serveur primarie. Cette requète utilise normalement le type AXFR (Full ZOne Transfer).
+2. **Transfert de l'enregistrement SOA**:
+	Après avoir reçu la requète (et peut être authentifié le serveur secondaire), le serveur primaire réponds en envoyant son enregistrement SOA (Start of Authority). L'enregistrement SOA contient l'information vitale à propos de la zone comme le numéro de série (qui permet au serveur secondaire de déterminer si les données sont à jour).
+3. ** ransmission des enregistrements**: Le serveur primaire envoi tous les enregistrements un par un au serveur secondaire.
+4. 
