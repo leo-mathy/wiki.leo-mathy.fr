@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T10:13:00.954Z
+date: 2025-02-09T10:20:59.404Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -94,4 +94,9 @@ Par exemple pour rediriger le domaine google.com vers une adresse non existante:
 
 Une zone est une partie distincte de l'espace de nom du domaine. Par exemple: example.com ou test.example.com.
 Une zone correspond à un fichier situé sur le serveur DNS, dans une zone il est possible de trouver de nombreux enregistrements (A,NS,SOA,MX...).
+
+Le DNS est important dans une reconnaissance web pour:
+- Récupérer des informations (domaines,sous-domaines,serveurs mail...).
+- Cartographier l'infrastructure de la cible.
+- Surveiller les changements.
 
