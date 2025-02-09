@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T10:32:49.014Z
+date: 2025-02-09T10:35:57.755Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -114,12 +114,13 @@ De nombreux outils et techniques sont disponibles pour tirer parti du DNS pour l
 
 Dig (Domain Information Groper) est un puissant outil pour les requètes DNS. IL est très flexible et personnalisable.
 
-Recherche de l'enregistrement A du domaine (par défaut):
-`dig <domaine>`	
-Recherche un enreigstrement spécifique pour un domaine:
-`dig <domaine> <enregistrement>`
-Recherche de l'enregistrement en spécifiant le serveur de résolution de noms.
-`dig @<résolveur> <domaine>`
-Recherche de l'enregistrement A du domaine (par défaut)
-`dig +trace domaine
+| Commande                                     | Description |
+|----------------------------------------------|-------------|
+| `dig <domaine>`                              | Recherche de l'enregistrement A du domaine (par défaut). |
+| `dig <domaine> ANY`                          | Recherche tous les enregistrements DNS pour un domaine (peut être désactivé par mesure de sécurité). |
+| `dig <domaine> <enregistrement>`             | Recherche un enregistrement spécifique pour un domaine. |
+| `dig @<résolveur> <domaine>`                 | Recherche de l'enregistrement en spécifiant le serveur de résolution de noms. |
+| `dig +trace <domaine>`                       | Recherche en affichant le chemin complet de la résolution DNS. |
+| `dig -x <adresse IP>`                        | Recherche DNS inverse. |
+| `dig +short <domaine>`                       | Affiche un résumé de la réponse. |
 
