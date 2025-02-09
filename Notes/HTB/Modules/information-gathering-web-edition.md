@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T10:00:21.490Z
+date: 2025-02-09T10:02:46.491Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -73,7 +73,7 @@ WHOIS permet de récupérer les informations principales suivantes:
 
 ## DNS
 
-Voici le fonctionnement de la résolution d'un nom:
+Voici le fonctionnement basique de la résolution d'un nom:
 - Le système va vérifier son cache DNS à la recherche de l'adresse correspondante.
 - Si l'adresse correspondante n'est pas trouvée dans celui-ci, alors il va contacter un résolveur DNS, le résolveur DNS va ensuite aussi vérifier son cache à la recherche de l'adresse correspondante.
 - Si l'adresse correspondante n'est pas trouvée dans celui-ci, alors il va contacter un serveur DNS racine.
@@ -81,4 +81,7 @@ Voici le fonctionnement de la résolution d'un nom:
 - Le serveur TLD indique ensuite le serveur DNS faisant authorité pour le domaine.
 - Le DNS serveur faisant authorité retourne ensuite l'adresse correspondante au résolveur DNS.
 - Le résolveur DNS retourne l'information au système.
+
+Le fichier host permet de mapper les domaines et les adresses IP manuellement.
+Il est situé dans` C:\Windows\System32\drivers\etc\hosts` sur Windows et dans` /etc/hosts` sur Linux.
 
