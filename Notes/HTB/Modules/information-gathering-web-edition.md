@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T15:30:05.695Z
+date: 2025-02-09T15:34:18.118Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -261,4 +261,14 @@ Ces journaux sont utiles pour:
 - **Détecter des certificats rogue**: En surveillant ces logs, les propriétaires de sites web peuvent rapidement identifier les certificats suspets ou mal émis. Cela permet de révoquer ces certificats avant leurs utilisation malveillante.
 - **Rendre responsable les authoritées de certification**: Les journaux de transparence des certificats rendent responsable les authoritées de certification en cas de non respect des standards ou des règles.
 - **Renforcement de l'infrastructure à clé Publique du web**: Les journaux de Transparence des Certificats améliorent la sécurité et l'intégrité de l'infrastructure à clé Publique du web en offrant un mécanisme de surveillance et de vérification publique des certificats.
+
+Les logs de Certificate Transparency (CT) assurent la transparence et l'intégrité des certificats SSL/TLS grâce à des techniques cryptographiques et à une surveillance publique :
+
+1. **Émission du certificat** : Une Autorité de Certification (CA) vérifie le propriétaire du site et émet un pré-certificat.
+2. **Enregistrement dans les logs** : Le pré-certificat est soumis à plusieurs logs CT, immuables et décentralisés.
+3. **Signature cryptographique (SCT)** : Chaque log génère une preuve (SCT) confirmant l’enregistrement du certificat.
+4. **Vérification par le navigateur** : Lorsqu'un utilisateur visite un site, le navigateur vérifie les SCT pour s’assurer de la validité du certificat.
+5. **Surveillance et audit** : Des acteurs surveillent les logs pour détecter d’éventuels certificats frauduleux.
+
+Les logs CT utilisent une **structure de Merkle Tree** pour garantir leur intégrité. Chaque certificat est un nœud feuille, et des hachages intermédiaires permettent une vérification rapide sans nécessiter l’ensemble du log. Toute modification entraînerait un changement du hachage racine, révélant immédiatement toute tentative de falsification.
 
