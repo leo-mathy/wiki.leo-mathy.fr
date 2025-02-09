@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T14:48:17.622Z
+date: 2025-02-09T14:54:42.857Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -219,3 +219,12 @@ Si une entrée DNS n'est pas créée pour le vhost, il est toujours possible de 
 Pour rappel:
 - **Sous domaines** : Extensions d’un domaine principal utilisées pour organiser un site et pouvant pointer vers des adresses IP différentes.  
 - **Virtual Hosts (VHosts)** : Configurations d’un serveur web permettant d’héberger plusieurs sites ou sous-domaines sur un même serveur avec des paramètres distincts.
+
+Le fuzzing VHost est une technique permettant de découvrir des sous-domaines et des VHosts publics et non publics en testant divers header "host" par rapport à une adresse IP connue.
+
+Voici comment le serveur web détermine quel contenu servir en fonction du header Host:
+1. Le navigateur envoie une requête HTTP au serveur du site.
+2. Le domaine est précisé dans l’en-tête Host.
+3. Le serveur identifie le site correspondant via sa configuration.
+4. Il envoie les fichiers appropriés au navigateur.
+
