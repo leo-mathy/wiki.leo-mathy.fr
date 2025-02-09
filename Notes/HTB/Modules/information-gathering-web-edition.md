@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T14:27:39.815Z
+date: 2025-02-09T14:34:21.233Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -160,19 +160,20 @@ Il est nécessaire de combiner ces deux approches pour obtenir des résultats co
 ## Subdomain Bruteforcing
 
 Dans un premier temps, il faut avoir la wordlist adéquate:
+
 - Générale: une wordlist avec des noms communs de sous-domaines.
 - Spécifique: une wordlist spécifique à une industrie,secteur ou avec des modèles.
 - Personnalisée: une wordlist créée spécifiquement pour la cible.
 
 Plusieurs outils peuvent être utilisés pour brute-force les sous-domaines:
-| Outil      | Description |
+| Outil | Description |
 |------------|------------|
-| [dnsenum](https://github.com/fwaeytens/dnsenum)    | Outil complet d'énumération DNS prenant en charge les attaques par dictionnaire et force brute pour découvrir des sous-domaines. |
-| [fierce](https://github.com/mschwager/fierce)     | Outil convivial pour la découverte récursive de sous-domaines, avec détection de caractères génériques et une interface facile à utiliser. |
-| [dnsrecon](https://github.com/darkoperator/dnsrecon)   | Outil polyvalent combinant plusieurs techniques de reconnaissance DNS et offrant des formats de sortie personnalisables. |
-| [amass](https://github.com/owasp-amass/amass)      | Outil activement maintenu axé sur la découverte de sous-domaines, connu pour son intégration avec d'autres outils et ses nombreuses sources de données. |
+| [dnsenum](https://github.com/fwaeytens/dnsenum) | Outil complet d'énumération DNS prenant en charge les attaques par dictionnaire et force brute pour découvrir des sous-domaines. |
+| [fierce](https://github.com/mschwager/fierce) | Outil convivial pour la découverte récursive de sous-domaines, avec détection de caractères génériques et une interface facile à utiliser. |
+| [dnsrecon](https://github.com/darkoperator/dnsrecon) | Outil polyvalent combinant plusieurs techniques de reconnaissance DNS et offrant des formats de sortie personnalisables. |
+| [amass](https://github.com/owasp-amass/amass) | Outil activement maintenu axé sur la découverte de sous-domaines, connu pour son intégration avec d'autres outils et ses nombreuses sources de données. |
 | [assetfinder](https://github.com/tomnomnom/assetfinder)| Outil simple mais efficace pour trouver des sous-domaines en utilisant diverses techniques, idéal pour des analyses rapides et légères. |
-| [puredns](https://github.com/d3mondev/puredns)    | Outil puissant et flexible de force brute DNS, capable de résoudre et de filtrer efficacement les résultats. |
+| [puredns](https://github.com/d3mondev/puredns) | Outil puissant et flexible de force brute DNS, capable de résoudre et de filtrer efficacement les résultats. |
 
 Effectue un brute-force de sous-domaine récursivement avec Dnsenum:
 `dnsenum --enum <domaine> -f <wordlist> -r`
@@ -182,20 +183,23 @@ Effectue un brute-force de sous-domaine récursivement avec Dnsenum:
 Le mécanisme de transfert de zones DNS permet de répliquer les enregistrements entre les serveurs DNS. Il est possible d'exploiter ce mécanisme si il est mal configuré pour récupérer de nombreuses informations.
 
 Un transfert de zone correspond à une copie entière de tous les enregistrements DNS d'une zone d'un serveur à un autre.
-Ce processus est esentiel pour maintenir la conssistance et la redondance entre les serveurs DNS. 
+Ce processus est essentiel pour maintenir la consistance et la redondance entre les serveurs DNS.
 
 Voici le fonctionnement d'un transfert de zone:
-1. **Requète de transfert de zone (AXFR)**:
-	Le serveur secondaire initie le processus en envoyant une requète de transfert de zone au serveur primarie. Cette requète utilise normalement le type AXFR (Full ZOne Transfer).
+
+1. **Requête de transfert de zone (AXFR)**:
+   Le serveur secondaire initie le processus en envoyant une requête de transfert de zone au serveur primaire. Cette requête utilise normalement le type AXFR (Full ZOne Transfer).
 2. **Transfert de l'enregistrement SOA**:
-	Après avoir reçu la requète (et peut être authentifié le serveur secondaire), le serveur primaire réponds en envoyant son enregistrement SOA (Start of Authority). L'enregistrement SOA contient l'information vitale à propos de la zone comme le numéro de série (qui permet au serveur secondaire de déterminer si les données sont à jour).
+   Après avoir reçu la requête (et peut être authentifié le serveur secondaire), le serveur primaire réponds en envoyant son enregistrement SOA (Start of Authority). L'enregistrement SOA contient l'information vitale à propos de la zone comme le numéro de série (qui permet au serveur secondaire de déterminer si les données sont à jour).
 3. **Transmission des enregistrements**:
-	Le serveur primaire envoi tous les enregistrements un par un au serveur secondaire.
+   Le serveur primaire envoi tous les enregistrements un par un au serveur secondaire.
 4. **Transmission des enregistrements terminé**:
-	Le serveur primaire signale la fin du transert de zone. Ce qui indique au serveur secondaire qu'il a bien reçu une copie complète des données de la zone.
+   Le serveur primaire signale la fin du transfert de zone. Ce qui indique au serveur secondaire qu'il a bien reçu une copie complète des données de la zone.
 5. **Validation (ACK)**:
-	Le serveur secondaire informe le serveur primaire de la bonne réception et du traitement des données de zone. Cela complète le processus de transfert de zone.
+   Le serveur secondaire informe le serveur primaire de la bonne réception et du traitement des données de zone. Cela complète le processus de transfert de zone.
 
 En revanche, si le transfert de zone n'est pas correctement configuré, il est possible de récupérer le fichier de zone au complet, révélant ainsi la liste complète des sous-domaines ainsi que les adresses IP et d'autres informations sensibles.
+C'est pour cela que les Administrateurs doivent autoriser le transfert de zone uniquement pour des serveurs secondaires de confiance.
 
-
+Pour effectuer une requête de transfert de zone avec dig:
+`dig axfr @<serveur faisant autorité pour le domaine> <domaine>`
