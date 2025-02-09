@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T13:56:46.466Z
+date: 2025-02-09T14:10:17.160Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -176,3 +176,6 @@ Plusieurs outils peuvent être utilisés pour brute-force les sous-domaines:
 
 Effectue un brute-force de sous-domaine récursivement avec Dnsenum:
 `dnsenum --enum <domaine> -f <wordlist> -r`
+
+## DNS Zone Transfers
+
