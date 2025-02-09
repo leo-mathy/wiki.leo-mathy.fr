@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T13:50:29.364Z
+date: 2025-02-09T13:56:04.031Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -167,10 +167,12 @@ Dans un premier temps, il faut avoir la wordlist adéquate:
 Plusieurs outils peuvent être utilisés pour brute-force les sous-domaines:
 | Outil      | Description |
 |------------|------------|
-| dnsenum    | Outil complet d'énumération DNS prenant en charge les attaques par dictionnaire et force brute pour découvrir des sous-domaines. |
-| fierce     | Outil convivial pour la découverte récursive de sous-domaines, avec détection de caractères génériques et une interface facile à utiliser. |
-| dnsrecon   | Outil polyvalent combinant plusieurs techniques de reconnaissance DNS et offrant des formats de sortie personnalisables. |
-| amass      | Outil activement maintenu axé sur la découverte de sous-domaines, connu pour son intégration avec d'autres outils et ses nombreuses sources de données. |
-| assetfinder| Outil simple mais efficace pour trouver des sous-domaines en utilisant diverses techniques, idéal pour des analyses rapides et légères. |
-| puredns    | Outil puissant et flexible de force brute DNS, capable de résoudre et de filtrer efficacement les résultats. |
+| [dnsenum](https://github.com/fwaeytens/dnsenum)    | Outil complet d'énumération DNS prenant en charge les attaques par dictionnaire et force brute pour découvrir des sous-domaines. |
+| [fierce](https://github.com/mschwager/fierce)     | Outil convivial pour la découverte récursive de sous-domaines, avec détection de caractères génériques et une interface facile à utiliser. |
+| [dnsrecon](https://github.com/darkoperator/dnsrecon)   | Outil polyvalent combinant plusieurs techniques de reconnaissance DNS et offrant des formats de sortie personnalisables. |
+| [amass](https://github.com/owasp-amass/amass)      | Outil activement maintenu axé sur la découverte de sous-domaines, connu pour son intégration avec d'autres outils et ses nombreuses sources de données. |
+| [assetfinder](https://github.com/tomnomnom/assetfinder)| Outil simple mais efficace pour trouver des sous-domaines en utilisant diverses techniques, idéal pour des analyses rapides et légères. |
+| [puredns](https://github.com/d3mondev/puredns)    | Outil puissant et flexible de force brute DNS, capable de résoudre et de filtrer efficacement les résultats. |
 
+Effectue un brute-force récursivement sur un domaine avec une wordlist ave Dnsenum:
+`dnsenum --enum <domaine> -f <wordlist> -r`
