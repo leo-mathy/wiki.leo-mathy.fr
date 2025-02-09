@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T15:34:18.118Z
+date: 2025-02-09T15:38:33.085Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -271,4 +271,8 @@ Les logs de Certificate Transparency (CT) assurent la transparence et l'intégri
 5. **Surveillance et audit** : Des acteurs surveillent les logs pour détecter d’éventuels certificats frauduleux.
 
 Les logs CT utilisent une **structure de Merkle Tree** pour garantir leur intégrité. Chaque certificat est un nœud feuille, et des hachages intermédiaires permettent une vérification rapide sans nécessiter l’ensemble du log. Toute modification entraînerait un changement du hachage racine, révélant immédiatement toute tentative de falsification.
+
+Pour effectuer une recherche dans les CT logs, voici deux options populaires:
+- [crt.sh](https://crt.sh/) (Gratuit, facile à utiliser, aucune inscription requise)
+- [censys](https://search.censys.io/) (Données étendues et options de filtrage, accès API)
 
