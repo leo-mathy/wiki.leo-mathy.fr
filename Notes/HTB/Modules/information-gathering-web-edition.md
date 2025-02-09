@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T14:54:42.857Z
+date: 2025-02-09T15:03:35.763Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -223,8 +223,24 @@ Pour rappel:
 Le fuzzing VHost est une technique permettant de découvrir des sous-domaines et des VHosts publics et non publics en testant divers header "host" par rapport à une adresse IP connue.
 
 Voici comment le serveur web détermine quel contenu servir en fonction du header Host:
-1. Le navigateur envoie une requête HTTP au serveur du site.
+1. Le navigateur envoie une requête HTTP au serveur web.
 2. Le domaine est précisé dans l’en-tête Host.
 3. Le serveur identifie le site correspondant via sa configuration.
 4. Il envoie les fichiers appropriés au navigateur.
+
+Il existe trois types d’**hébergement virtuel** :  
+1. **Hébergement virtuel par nom** : Utilise l'en-tête HTTP Host pour distinguer les sites. Il est flexible, économique, mais a des limites avec SSL/TLS.  
+2. **Hébergement virtuel par IP** : Chaque site a une IP dédiée, offrant une meilleure isolation mais nécessitant plusieurs IPs, ce qui peut être coûteux.  
+3. **Hébergement virtuel par port** : Différents sites utilisent différents ports sur la même IP, mais cela oblige souvent les utilisateurs à spécifier le port dans l'URL.
+
+Pour découvrir les hébergements virtuels, de nombreux outils existent:
+| Outil        | Description                                                                          |
+|-------------|--------------------------------------------------------------------------------------|
+| gobuster    | Outil polyvalent souvent utilisé pour le brute-force de fichiers/répertoires, mais aussi efficace pour la découverte d’hôtes virtuels. |
+| Feroxbuster | Similaire à Gobuster, mais implémenté en Rust, connu pour sa rapidité et sa flexibilité. |
+| ffuf        | Fuzzer web rapide pouvant être utilisé pour découvrir des hôtes virtuels en testant l’en-tête Host. |
+
+Avec gobuster, brute force les Vhosts:
+`gobuster vhost -u http[s]://<adresse IP> -w <wordlist> --append-domain`
+(`--append-domain` permet d'ajouter le nom du domaine à la fin de chaque mot de la wordlist)
 
