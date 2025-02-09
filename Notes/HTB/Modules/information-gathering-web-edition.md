@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T13:56:04.031Z
+date: 2025-02-09T13:56:46.466Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -174,5 +174,5 @@ Plusieurs outils peuvent être utilisés pour brute-force les sous-domaines:
 | [assetfinder](https://github.com/tomnomnom/assetfinder)| Outil simple mais efficace pour trouver des sous-domaines en utilisant diverses techniques, idéal pour des analyses rapides et légères. |
 | [puredns](https://github.com/d3mondev/puredns)    | Outil puissant et flexible de force brute DNS, capable de résoudre et de filtrer efficacement les résultats. |
 
-Effectue un brute-force récursivement sur un domaine avec une wordlist ave Dnsenum:
+Effectue un brute-force de sous-domaine récursivement avec Dnsenum:
 `dnsenum --enum <domaine> -f <wordlist> -r`
