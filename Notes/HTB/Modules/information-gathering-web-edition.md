@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T10:35:57.755Z
+date: 2025-02-09T10:39:24.186Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -124,3 +124,4 @@ Dig (Domain Information Groper) est un puissant outil pour les requètes DNS. IL
 | `dig -x <adresse IP>`                        | Recherche DNS inverse. |
 | `dig +short <domaine>`                       | Affiche un résumé de la réponse. |
 
+Lors d'une réponse, la section "opt" peut être présente, elle est lié au mécanisme d'extension DNS (EDNS), qui ajoute des fonctionnalités comme DNSSEC ou des messages de taille plus grande.
