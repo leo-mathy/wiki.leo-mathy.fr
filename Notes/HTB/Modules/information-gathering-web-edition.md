@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T10:39:24.186Z
+date: 2025-02-09T10:42:53.870Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -35,7 +35,7 @@ En revanche, les défenseurs utilisent ces informations pour proactivement ident
 
 Il y a deux types de méthodologies de reconnaissance, active et passive.
 
-Dans une reconnaissance active, l'attaquant interagi directement avec le système cible pour récupérer des informations (scan de ports/vulnérabilités, cartographie réseau, banner grabing, OS fingerprinting, spidering), dans la pluspart des cas, la reconnaissance active est associée à un risque de détection plus grand.
+Dans une reconnaissance active, l'attaquant interagi directement avec le système cible pour récupérer des informations (scan de ports/vulnérabilités, cartographie réseau, banner grabing, OS fingerprinting, spidering), dans la plupart des cas, la reconnaissance active est associée à un risque de détection plus grand.
 
 Dans une reconnaissance passive, l'attaquant n'interagi pas directement avec la cible pour récupérer des informations. Cela se base sur l'analyse des informations et ressources disponibles publiquement (Moteurs de recherche,WHOIS,DNS,Archives web, Réseaux sociaux, repos de code...).
 La reconnaissance passive est donc plus discrète.
@@ -74,12 +74,13 @@ WHOIS permet de récupérer les informations principales suivantes:
 ## DNS
 
 Voici le fonctionnement basique de la résolution d'un nom:
+
 - Le système va vérifier son cache DNS à la recherche de l'adresse correspondante.
 - Si l'adresse correspondante n'est pas trouvée dans celui-ci, alors il va contacter un résolveur DNS, le résolveur DNS va ensuite aussi vérifier son cache à la recherche de l'adresse correspondante.
 - Si l'adresse correspondante n'est pas trouvée dans celui-ci, alors il va contacter un serveur DNS racine.
 - Le serveur DNS racine va indiquer où trouver le serveur responsable du TLD.
-- Le serveur TLD indique ensuite le serveur DNS faisant authorité pour le domaine.
-- Le DNS serveur faisant authorité retourne ensuite l'adresse correspondante au résolveur DNS.
+- Le serveur TLD indique ensuite le serveur DNS faisant autorité pour le domaine.
+- Le DNS serveur faisant autorité retourne ensuite l'adresse correspondante au résolveur DNS.
 - Le résolveur DNS retourne l'information au système.
 
 Le fichier host permet de mapper les domaines et les adresses IP manuellement.
@@ -96,6 +97,7 @@ Une zone est une partie distincte de l'espace de nom du domaine. Par exemple: ex
 Une zone correspond à un fichier situé sur le serveur DNS, dans une zone il est possible de trouver de nombreux enregistrements (A,NS,SOA,MX...).
 
 Le DNS est important dans une reconnaissance web pour:
+
 - Récupérer des informations (domaines,sous-domaines,serveurs mail...).
 - Cartographier l'infrastructure de la cible.
 - Surveiller les changements.
@@ -103,6 +105,7 @@ Le DNS est important dans une reconnaissance web pour:
 ## Digging DNS
 
 De nombreux outils et techniques sont disponibles pour tirer parti du DNS pour la reconnaissance web:
+
 - `dig (Domain Information Groper)`: Outil de recherche DNS polyvalent prenant en charge différents types de requêtes (A, MX, NS, TXT, etc.) et une sortie détaillée.
 - `nslookup`: Outil de recherche DNS plus simple, principalement pour les enregistrements A, AAAA et MX.
 - `host`: Outil de recherche DNS rationalisé avec une sortie concise.
@@ -112,16 +115,16 @@ De nombreux outils et techniques sont disponibles pour tirer parti du DNS pour l
 - `theHarvester`: Outil OSINT qui rassemble des informations provenant de diverses sources, y compris les enregistrements DNS (adresses e-mail).
 - `Services de recherche en ligne`: Interface simple pour la résolution DNS.
 
-Dig (Domain Information Groper) est un puissant outil pour les requètes DNS. IL est très flexible et personnalisable.
+Dig (Domain Information Groper) est un puissant outil pour les requêtes DNS. IL est très flexible et personnalisable.
 
-| Commande                                     | Description |
-|----------------------------------------------|-------------|
-| `dig <domaine>`                              | Recherche de l'enregistrement A du domaine (par défaut). |
-| `dig <domaine> ANY`                          | Recherche tous les enregistrements DNS pour un domaine (peut être désactivé par mesure de sécurité). |
-| `dig <domaine> <enregistrement>`             | Recherche un enregistrement spécifique pour un domaine. |
-| `dig @<résolveur> <domaine>`                 | Recherche de l'enregistrement en spécifiant le serveur de résolution de noms. |
-| `dig +trace <domaine>`                       | Recherche en affichant le chemin complet de la résolution DNS. |
-| `dig -x <adresse IP>`                        | Recherche DNS inverse. |
-| `dig +short <domaine>`                       | Affiche un résumé de la réponse. |
+| Commande                         | Description                                                                                          |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `dig <domaine>`                  | Recherche de l'enregistrement A du domaine (par défaut).                                             |
+| `dig <domaine> ANY`              | Recherche tous les enregistrements DNS pour un domaine (peut être désactivé par mesure de sécurité). |
+| `dig <domaine> <enregistrement>` | Recherche un enregistrement spécifique pour un domaine.                                              |
+| `dig @<résolveur> <domaine>`     | Recherche de l'enregistrement en spécifiant le serveur de résolution de noms.                        |
+| `dig +trace <domaine>`           | Recherche en affichant le chemin complet de la résolution DNS.                                       |
+| `dig -x <adresse IP>`            | Recherche DNS inverse.                                                                               |
+| `dig +short <domaine>`           | Affiche un résumé de la réponse.                                                                     |
 
 Lors d'une réponse, la section "opt" peut être présente, elle est lié au mécanisme d'extension DNS (EDNS), qui ajoute des fonctionnalités comme DNSSEC ou des messages de taille plus grande.
