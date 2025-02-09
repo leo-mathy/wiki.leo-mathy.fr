@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T15:38:33.085Z
+date: 2025-02-09T15:40:13.524Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -206,39 +206,42 @@ Pour effectuer une requête de transfert de zone avec dig:
 
 ## Virtual Hosts
 
-Une fois la résolution de nom effectuée, le traffic est redirigé avec le serveur web. La configuration du serveur web est cruciale pour déterminer comment les requètes entrantes sont traitées.
+Une fois la résolution de nom effectuée, le Traffic est redirigé avec le serveur web. La configuration du serveur web est cruciale pour déterminer comment les requêtes entrantes sont traitées.
 
 Les serveurs comme Apache,Nginx ou IIS sont conçus pour hébergé de nombreux sites web ou applications sur un même serveur. Il y arrivent grâce aux hébergements virtuels (virtual hosting), ce qui leurs permet de faire la différence entre les domaines, sous-domaines ou même des sites web distints.
 
 Cela permet aux serveurs Web de faire la distinction entre plusieurs sites Web ou applications partageant la même adresse IP.
 
-Il arrivent à cela en utilisant le header HTTP "Host", une information incluse dans chaque requète HTTP envoyée par un navigateur web.
+Il arrivent à cela en utilisant le header HTTP "Host", une information incluse dans chaque requête HTTP envoyée par un navigateur web.
 
-Si une entrée DNS n'est pas créée pour le vhost, il est toujours possible de modifier la requète avant son envoi ou de modifier le fichier host.
+Si une entrée DNS n'est pas créée pour le vhost, il est toujours possible de modifier la requête avant son envoi ou de modifier le fichier host.
 
 Pour rappel:
-- **Sous domaines** : Extensions d’un domaine principal utilisées pour organiser un site et pouvant pointer vers des adresses IP différentes.  
+
+- **Sous domaines** : Extensions d’un domaine principal utilisées pour organiser un site et pouvant pointer vers des adresses IP différentes.
 - **Virtual Hosts (VHosts)** : Configurations d’un serveur web permettant d’héberger plusieurs sites ou sous-domaines sur un même serveur avec des paramètres distincts.
 
 Le fuzzing VHost est une technique permettant de découvrir des sous-domaines et des VHosts publics et non publics en testant divers header "host" par rapport à une adresse IP connue.
 
 Voici comment le serveur web détermine quel contenu servir en fonction du header Host:
+
 1. Le navigateur envoie une requête HTTP au serveur web.
 2. Le domaine est précisé dans l’en-tête Host.
 3. Le serveur identifie le site correspondant via sa configuration.
 4. Il envoie les fichiers appropriés au navigateur.
 
-Il existe trois types d’**hébergement virtuel** :  
-1. **Hébergement virtuel par nom** : Utilise l'en-tête HTTP Host pour distinguer les sites. Il est flexible, économique, mais a des limites avec SSL/TLS.  
-2. **Hébergement virtuel par IP** : Chaque site a une IP dédiée, offrant une meilleure isolation mais nécessitant plusieurs IPs, ce qui peut être coûteux.  
+Il existe trois types d’**hébergement virtuel** :
+
+1. **Hébergement virtuel par nom** : Utilise l'en-tête HTTP Host pour distinguer les sites. Il est flexible, économique, mais a des limites avec SSL/TLS.
+2. **Hébergement virtuel par IP** : Chaque site a une IP dédiée, offrant une meilleure isolation mais nécessitant plusieurs IPs, ce qui peut être coûteux.
 3. **Hébergement virtuel par port** : Différents sites utilisent différents ports sur la même IP, mais cela oblige souvent les utilisateurs à spécifier le port dans l'URL.
 
 Pour découvrir les hébergements virtuels, de nombreux outils existent:
-| Outil        | Description                                                                          |
+| Outil | Description |
 |-------------|--------------------------------------------------------------------------------------|
-| gobuster    | Outil polyvalent souvent utilisé pour le brute-force de fichiers/répertoires, mais aussi efficace pour la découverte d’hôtes virtuels. |
+| gobuster | Outil polyvalent souvent utilisé pour le brute-force de fichiers/répertoires, mais aussi efficace pour la découverte d’hôtes virtuels. |
 | Feroxbuster | Similaire à Gobuster, mais implémenté en Rust, connu pour sa rapidité et sa flexibilité. |
-| ffuf        | Fuzzer web rapide pouvant être utilisé pour découvrir des hôtes virtuels en testant l’en-tête Host. |
+| ffuf | Fuzzer web rapide pouvant être utilisé pour découvrir des hôtes virtuels en testant l’en-tête Host. |
 
 Avec gobuster, brute force les Vhosts:
 `gobuster vhost -u http[s]://<adresse IP> -w <wordlist> --append-domain`
@@ -247,9 +250,9 @@ Avec gobuster, brute force les Vhosts:
 ## Certificate Transparency Logs
 
 SSL/TLS est un protocole qui chiffre la communication entre un navigateur et un site web.
-Au coeur de SSL/TLS, il y a le certificat digital, un fichier qui vérifie l'identitée du site web et permet la communication chiffrée.
+Au cœur de SSL/TLS, il y a le certificat digital, un fichier qui vérifie l'identité du site web et permet la communication chiffrée.
 
-Cependant le processus d'administration des certificfats n'est pas sans failles, un attaquant pourrait exploiter un certificat rogue ou mal émis pour se faire passer pour un site web légitime.
+Cependant le processus d'administration des certificats n'est pas sans failles, un attaquant pourrait exploiter un certificat rogue ou mal émis pour se faire passer pour un site web légitime.
 
 C'est pour cela que les journaux de transparence des certificats (CT Logs) existent.
 Ces journaux sont publics et en ajout unique (impossible de supprimer des entrées).
@@ -258,8 +261,9 @@ Ces journaux contiennent la liste des certificats SSL/TLS émis.
 Quand une autorité de certification émet un nouveau certificat, elle doit l'envoyer vers de multiples journaux de transparence de certificats. Diverses organisations maintiennent ces journaux ouverts à tous.
 
 Ces journaux sont utiles pour:
-- **Détecter des certificats rogue**: En surveillant ces logs, les propriétaires de sites web peuvent rapidement identifier les certificats suspets ou mal émis. Cela permet de révoquer ces certificats avant leurs utilisation malveillante.
-- **Rendre responsable les authoritées de certification**: Les journaux de transparence des certificats rendent responsable les authoritées de certification en cas de non respect des standards ou des règles.
+
+- **Détecter des certificats rogue**: En surveillant ces logs, les propriétaires de sites web peuvent rapidement identifier les certificats suspects ou mal émis. Cela permet de révoquer ces certificats avant leurs utilisation malveillante.
+- **Rendre responsable les autorités de certification**: Les journaux de transparence des certificats rendent responsable les autorités de certification en cas de non respect des standards ou des règles.
 - **Renforcement de l'infrastructure à clé Publique du web**: Les journaux de Transparence des Certificats améliorent la sécurité et l'intégrité de l'infrastructure à clé Publique du web en offrant un mécanisme de surveillance et de vérification publique des certificats.
 
 Les logs de Certificate Transparency (CT) assurent la transparence et l'intégrité des certificats SSL/TLS grâce à des techniques cryptographiques et à une surveillance publique :
@@ -273,6 +277,8 @@ Les logs de Certificate Transparency (CT) assurent la transparence et l'intégri
 Les logs CT utilisent une **structure de Merkle Tree** pour garantir leur intégrité. Chaque certificat est un nœud feuille, et des hachages intermédiaires permettent une vérification rapide sans nécessiter l’ensemble du log. Toute modification entraînerait un changement du hachage racine, révélant immédiatement toute tentative de falsification.
 
 Pour effectuer une recherche dans les CT logs, voici deux options populaires:
+
 - [crt.sh](https://crt.sh/) (Gratuit, facile à utiliser, aucune inscription requise)
 - [censys](https://search.censys.io/) (Données étendues et options de filtrage, accès API)
 
+## Fingerprinting
