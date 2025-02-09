@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T10:42:53.870Z
+date: 2025-02-09T10:51:22.992Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -128,3 +128,14 @@ Dig (Domain Information Groper) est un puissant outil pour les requêtes DNS. IL
 | `dig +short <domaine>`           | Affiche un résumé de la réponse.                                                                     |
 
 Lors d'une réponse, la section "opt" peut être présente, elle est lié au mécanisme d'extension DNS (EDNS), qui ajoute des fonctionnalités comme DNSSEC ou des messages de taille plus grande.
+
+## Subdomains
+
+Le sous-domaines servent d'extension au domaine principal, les sous-domaines sont souvent utilisés pour représenter des fonctionnalités ou sections différentes du site, par exemple `blog.example.com`, `shop.example.com`...
+
+Dans le cadre de la reconnaissance web, les sous-domaines sont importants puisqu'ils peuvent contenir:
+- Des environements de tests (qui manquent souvent de mesures de sécurité et peuvent conteir des vulnérabilitées)
+- Des portails de connexion (pages d'administration...)
+- Applications spécifiques (vielles applications, applications contenant des failles...)
+- Informations sensibles (documents internes, fichiers de configuration...)
+
