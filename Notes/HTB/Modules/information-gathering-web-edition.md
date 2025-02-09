@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T11:01:44.275Z
+date: 2025-02-09T11:06:17.475Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -134,22 +134,25 @@ Lors d'une réponse, la section "opt" peut être présente, elle est lié au mé
 Le sous-domaines servent d'extension au domaine principal, les sous-domaines sont souvent utilisés pour représenter des fonctionnalités ou sections différentes du site, par exemple `blog.example.com`, `shop.example.com`...
 
 Dans le cadre de la reconnaissance web, les sous-domaines sont importants puisqu'ils peuvent contenir:
-- Des environements de tests (qui manquent souvent de mesures de sécurité et peuvent conteir des vulnérabilitées)
+
+- Des environnements de tests (qui manquent souvent de mesures de sécurité et peuvent contenir des vulnérabilités)
 - Des portails de connexion (pages d'administration...)
 - Applications spécifiques (vielles applications, applications contenant des failles...)
 - Informations sensibles (documents internes, fichiers de configuration...)
 
 Pour énumérer les sous-domaines, il est possible d'utiliser des techniques passives et actives.
 
-Lors de l'utilisation de techniques actives, il faut directement intéragir avec le serveur DNS.
+- Lors de l'utilisation de techniques actives, il faut directement interagir avec le serveur DNS.
 
-Une méthode pourrait être d'essayer d'effectuer un transfert de zone, si le serveur est mal configuré la liste complète des sous-domaine serait disponible. Cette méthode est rarement réussie due aux mesures de sécurité renforcées.
+  - Une méthode pourrait être d'essayer d'effectuer un transfert de zone, si le serveur est mal configuré la liste complète des sous-domaine serait disponible. Cette méthode est rarement réussie due aux mesures de sécurité renforcées.
+  - Une autre méthode est l'énumération par force-brute, ce qui signifie le test de potentiels sous-domaines sur le domaine cible. Des outils comme dnsenum, ffuf ou gobuster peuvent accomplir cela.
 
-Une autre méthode est l'énumération par force-brute, ce qui signifie le test de potentiels sous-domaines sur le domaine cible. Des outils comme dnsenum, ffuf ou gobuster peuvent accomplir cela.
+- Lors de l'utilisation de techniques passives, la découverte de sous-domaines est effectuée sans interagir directement avec le serveur DNS cible.
 
-Lors de l'utilisation de techniques passives, la découverte de sous-domaines est effectuée sans intéragir directement avec le serveur DNS cible.
+  - Une méthode est la récupération des logs de transparence des certificats (CT Logs), qui contiennent souvent une liste des domaines associés aux certificats (dans les champs CN/SAN des certificats par exemple).
 
-Une méthode est la récupération des logs de transparence des certificats (CT Logs), qui contiennent souvent une liste des domaines associés aux certificats (dans les champs CN/SAN des certificats par exemple).
+  - Il est aussi possible de passer par les moteurs de recherche pour essayer de découvrir les sous-domaines (avec les Google Dorks par exemple).
 
-Il est aussi possible de passer par les moteurs de recherche pour essayer de découvrir les sous-domaines (avec les Google Dorks par exemple).
-
+Les techniques passives sont plus discrète, mais peuvent ne pas découvrir tous les sous-domaines.
+Les techniques actives offrent plus de contrôle et de résultats compréhensibles mais sont plus bruyantes.
+Il est nécessaire de combiner ces deux approches pour obtenir des résultats complets.
