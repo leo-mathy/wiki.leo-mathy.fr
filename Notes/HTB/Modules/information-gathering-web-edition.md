@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T15:14:45.867Z
+date: 2025-02-09T15:30:05.695Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -248,4 +248,17 @@ Avec gobuster, brute force les Vhosts:
 
 SSL/TLS est un protocole qui chiffre la communication entre un navigateur et un site web.
 Au coeur de SSL/TLS, il y a le certificat digital, un fichier qui vérifie l'identitée du site web et permet la communication chiffrée.
+
+Cependant le processus d'administration des certificfats n'est pas sans failles, un attaquant pourrait exploiter un certificat rogue ou mal émis pour se faire passer pour un site web légitime.
+
+C'est pour cela que les journaux de transparence des certificats (CT Logs) existent.
+Ces journaux sont publics et en ajout unique (impossible de supprimer des entrées).
+Ces journaux contiennent la liste des certificats SSL/TLS émis.
+
+Quand une autorité de certification émet un nouveau certificat, elle doit l'envoyer vers de multiples journaux de transparence de certificats. Diverses organisations maintiennent ces journaux ouverts à tous.
+
+Ces journaux sont utiles pour:
+- **Détecter des certificats rogue**: En surveillant ces logs, les propriétaires de sites web peuvent rapidement identifier les certificats suspets ou mal émis. Cela permet de révoquer ces certificats avant leurs utilisation malveillante.
+- **Rendre responsable les authoritées de certification**: Les journaux de transparence des certificats rendent responsable les authoritées de certification en cas de non respect des standards ou des règles.
+- **Renforcement de l'infrastructure à clé Publique du web**: Les journaux de Transparence des Certificats améliorent la sécurité et l'intégrité de l'infrastructure à clé Publique du web en offrant un mécanisme de surveillance et de vérification publique des certificats.
 
