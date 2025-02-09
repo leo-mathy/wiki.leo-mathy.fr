@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T14:26:32.288Z
+date: 2025-02-09T14:27:39.815Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -183,7 +183,6 @@ Le mécanisme de transfert de zones DNS permet de répliquer les enregistrements
 
 Un transfert de zone correspond à une copie entière de tous les enregistrements DNS d'une zone d'un serveur à un autre.
 Ce processus est esentiel pour maintenir la conssistance et la redondance entre les serveurs DNS. 
-En revanche, si le transfert de zone n'est pas correctement configuré, il est possible de récupérer le fichier de zone au complet, révélant ainsi la liste complète des sous-domaines ainsi que les adresses IP et d'autres informations sensibles.
 
 Voici le fonctionnement d'un transfert de zone:
 1. **Requète de transfert de zone (AXFR)**:
@@ -196,4 +195,7 @@ Voici le fonctionnement d'un transfert de zone:
 	Le serveur primaire signale la fin du transert de zone. Ce qui indique au serveur secondaire qu'il a bien reçu une copie complète des données de la zone.
 5. **Validation (ACK)**:
 	Le serveur secondaire informe le serveur primaire de la bonne réception et du traitement des données de zone. Cela complète le processus de transfert de zone.
+
+En revanche, si le transfert de zone n'est pas correctement configuré, il est possible de récupérer le fichier de zone au complet, révélant ainsi la liste complète des sous-domaines ainsi que les adresses IP et d'autres informations sensibles.
+
 
