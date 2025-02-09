@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T15:03:35.763Z
+date: 2025-02-09T15:14:45.867Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -243,4 +243,9 @@ Pour découvrir les hébergements virtuels, de nombreux outils existent:
 Avec gobuster, brute force les Vhosts:
 `gobuster vhost -u http[s]://<adresse IP> -w <wordlist> --append-domain`
 (`--append-domain` permet d'ajouter le nom du domaine à la fin de chaque mot de la wordlist)
+
+## Certificate Transparency Logs
+
+SSL/TLS est un protocole qui chiffre la communication entre un navigateur et un site web.
+Au coeur de SSL/TLS, il y a le certificat digital, un fichier qui vérifie l'identitée du site web et permet la communication chiffrée.
 
