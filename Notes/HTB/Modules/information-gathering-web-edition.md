@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T10:20:59.404Z
+date: 2025-02-09T10:28:28.739Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -99,4 +99,16 @@ Le DNS est important dans une reconnaissance web pour:
 - Récupérer des informations (domaines,sous-domaines,serveurs mail...).
 - Cartographier l'infrastructure de la cible.
 - Surveiller les changements.
+
+## Digging DNS
+
+De nombreux outils et techniques sont disponibles pour tirer parti du DNS pour la reconnaissance web:
+- `dig (Domain Information Groper)`: Outil de recherche DNS polyvalent prenant en charge différents types de requêtes (A, MX, NS, TXT, etc.) et une sortie détaillée.
+- `nslookup`: Outil de recherche DNS plus simple, principalement pour les enregistrements A, AAAA et MX.
+- `host`: Outil de recherche DNS rationalisé avec une sortie concise.
+- `dnsenum`: Outil d'énumération DNS automatisé, attaques par dictionnaire, force brute, transferts de zone (si autorisé).
+- `fierce`: Outil de reconnaissance DNS et d'énumération de sous-domaines avec recherche récursive et détection de caractères génériques.
+- `dnsrecon`: Combine plusieurs techniques de reconnaissance DNS et prend en charge divers formats de sortie.
+- `theHarvester`: Outil OSINT qui rassemble des informations provenant de diverses sources, y compris les enregistrements DNS (adresses e-mail).
+- `Services de résolution en ligne`: Interface simple pour la résolution DNS.
 
