@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T14:34:21.233Z
+date: 2025-02-09T14:48:17.622Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -203,3 +203,19 @@ C'est pour cela que les Administrateurs doivent autoriser le transfert de zone u
 
 Pour effectuer une requête de transfert de zone avec dig:
 `dig axfr @<serveur faisant autorité pour le domaine> <domaine>`
+
+## Virtual Hosts
+
+Une fois la résolution de nom effectuée, le traffic est redirigé avec le serveur web. La configuration du serveur web est cruciale pour déterminer comment les requètes entrantes sont traitées.
+
+Les serveurs comme Apache,Nginx ou IIS sont conçus pour hébergé de nombreux sites web ou applications sur un même serveur. Il y arrivent grâce aux hébergements virtuels (virtual hosting), ce qui leurs permet de faire la différence entre les domaines, sous-domaines ou même des sites web distints.
+
+Cela permet aux serveurs Web de faire la distinction entre plusieurs sites Web ou applications partageant la même adresse IP.
+
+Il arrivent à cela en utilisant le header HTTP "Host", une information incluse dans chaque requète HTTP envoyée par un navigateur web.
+
+Si une entrée DNS n'est pas créée pour le vhost, il est toujours possible de modifier la requète avant son envoi ou de modifier le fichier host.
+
+Pour rappel:
+- **Sous domaines** : Extensions d’un domaine principal utilisées pour organiser un site et pouvant pointer vers des adresses IP différentes.  
+- **Virtual Hosts (VHosts)** : Configurations d’un serveur web permettant d’héberger plusieurs sites ou sous-domaines sur un même serveur avec des paramètres distincts.
