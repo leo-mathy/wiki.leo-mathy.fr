@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T10:51:22.992Z
+date: 2025-02-09T11:01:44.275Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -138,4 +138,18 @@ Dans le cadre de la reconnaissance web, les sous-domaines sont importants puisqu
 - Des portails de connexion (pages d'administration...)
 - Applications spécifiques (vielles applications, applications contenant des failles...)
 - Informations sensibles (documents internes, fichiers de configuration...)
+
+Pour énumérer les sous-domaines, il est possible d'utiliser des techniques passives et actives.
+
+Lors de l'utilisation de techniques actives, il faut directement intéragir avec le serveur DNS.
+
+Une méthode pourrait être d'essayer d'effectuer un transfert de zone, si le serveur est mal configuré la liste complète des sous-domaine serait disponible. Cette méthode est rarement réussie due aux mesures de sécurité renforcées.
+
+Une autre méthode est l'énumération par force-brute, ce qui signifie le test de potentiels sous-domaines sur le domaine cible. Des outils comme dnsenum, ffuf ou gobuster peuvent accomplir cela.
+
+Lors de l'utilisation de techniques passives, la découverte de sous-domaines est effectuée sans intéragir directement avec le serveur DNS cible.
+
+Une méthode est la récupération des logs de transparence des certificats (CT Logs), qui contiennent souvent une liste des domaines associés aux certificats (dans les champs CN/SAN des certificats par exemple).
+
+Il est aussi possible de passer par les moteurs de recherche pour essayer de découvrir les sous-domaines (avec les Google Dorks par exemple).
 
