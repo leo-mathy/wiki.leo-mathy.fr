@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T13:45:17.308Z
+date: 2025-02-09T13:48:48.232Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -156,3 +156,11 @@ Pour énumérer les sous-domaines, il est possible d'utiliser des techniques pas
 Les techniques passives sont plus discrète, mais peuvent ne pas découvrir tous les sous-domaines.
 Les techniques actives offrent plus de contrôle et de résultats compréhensibles mais sont plus bruyantes.
 Il est nécessaire de combiner ces deux approches pour obtenir des résultats complets.
+
+## Subdomain Bruteforcing
+
+Dans un premier temps, il faut avoir la wordlist adéquate:
+- Générale: une wordlist avec des noms communs de sous-domaines.
+- Spécifique: une wordlist spécifique à une industrie,secteur ou avec des modèles.
+- Personnalisée: une wordlist créée spécifiquement pour la cible.
+
