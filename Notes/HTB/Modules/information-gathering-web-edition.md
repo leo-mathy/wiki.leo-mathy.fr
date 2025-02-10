@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-10T18:37:03.273Z
+date: 2025-02-10T18:38:45.506Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -313,7 +313,7 @@ Voici des outils permettant d'automatiser le processus de fingerprint en combina
 Récupérer uniquement les headers HTTP avec curl:
 `curl -I <adresse>`
 
-Nikto est un scanner de serveurs web open-source, de plus il peut 
+Nikto est un outil open-source de scan et d’évaluation des vulnérabilités des serveurs web.
 
 Utiliser Nikto pour exécuter uniquement les modules d’identification logiciel:
 `nikto -h <adresse> -Tuning b`
