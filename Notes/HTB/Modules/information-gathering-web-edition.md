@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-10T18:38:45.506Z
+date: 2025-02-10T18:40:29.324Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -317,3 +317,6 @@ Nikto est un outil open-source de scan et d’évaluation des vulnérabilités d
 
 Utiliser Nikto pour exécuter uniquement les modules d’identification logiciel:
 `nikto -h <adresse> -Tuning b`
+
+Nikto va effectuer une série de tests pour essayer d'identifier des logiciels obsolètes, fichiers non sécurisés, fichiers de configuration et risques potentiels de sécurité.
+
