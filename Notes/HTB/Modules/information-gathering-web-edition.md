@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-10T19:04:55.318Z
+date: 2025-02-10T19:05:45.648Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -330,24 +330,25 @@ Nikto va effectuer une série de tests pour essayer d'identifier des logiciels o
 Le crawling (ou spidering) est le processus automatisé de systématiquement parcourir le web.
 Un web crawler va suivre les liens d'une page à l'autre, collectant l'information.
 
-Les crawlers sont essentiellements des robots qui utilisent des algorithmes pré-définis pour découvrir et indéxer les pages web. Cela permet de les rendre accessibles au travers d'un moteur de recherche, d'analyser les données ou d'effectuer une reconnaissance web.
+Les crawlers sont essentiellement des robots qui utilisent des algorithmes pré-définis pour découvrir et indexer les pages web. Cela permet de les rendre accessibles au travers d'un moteur de recherche, d'analyser les données ou d'effectuer une reconnaissance web.
 
 Le robot explore une page, analyse son contenu, extrait les liens, puis les visite à leur tour, répétant le processus pour explorer un site ou une grande partie du web.
 
 Cela le différencie du fuzzing, qui consiste à deviner des liens possibles.
 
 Il y a deux types de crawling:
+
 - **Le Breadth-First Crawling (Exploration en largeur d'abord)**: Explore tous les liens de la page initiale, puis ceux des pages suivantes, et ainsi de suite. Utile pour obtenir une vue d'ensemble de la structure et du contenu d'un site.
 - **Le depth-first crawling (Exploration en profondeur d'abord)**: Suit un chemin de liens jusqu'au bout avant de revenir en arrière pour explorer d'autres chemins, utile pour trouver du contenu précis ou explorer en profondeur la structure d'un site.
 
-Les crawlers peuvent extrairent divers types de données, chaque type servant un but spécifique dans le processus de reconnaissance:
-- **Liens internes et externes** : Cartographient la structure d’un site et ses relations avec d’autres ressources.  
-- **Commentaires** : Peuvent contenir des fuites d’informations sensibles ou des indices sur des vulnérabilités.  
-- **Métadonnées** : Fournissent des informations sur le contenu, l’auteur et la pertinence des pages.  
+Les crawlers peuvent extraire divers types de données, chaque type servant un but spécifique dans le processus de reconnaissance:
+
+- **Liens internes et externes** : Cartographient la structure d’un site et ses relations avec d’autres ressources.
+- **Commentaires** : Peuvent contenir des fuites d’informations sensibles ou des indices sur des vulnérabilités.
+- **Métadonnées** : Fournissent des informations sur le contenu, l’auteur et la pertinence des pages.
 - **Fichiers sensibles** : Incluent des sauvegardes, fichiers de configuration ou journaux pouvant exposer des données confidentielles.
 
 Une information seule peut sembler insignifiante, mais combinée à d’autres, elle peut révéler une vulnérabilité critique. Relier les données permet de mieux comprendre l’environnement cible.
 Une approche globale est essentielle pour tirer des conclusions pertinentes et affiner l’analyse.
 
 ## robots.txt
-
