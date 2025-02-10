@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-10T18:42:11.226Z
+date: 2025-02-10T18:42:42.301Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -166,14 +166,15 @@ Dans un premier temps, il faut avoir la wordlist adéquate:
 - Personnalisée: une wordlist créée spécifiquement pour la cible.
 
 Plusieurs outils peuvent être utilisés pour brute-force les sous-domaines:
-| Outil | Description |
-|------------|------------|
-| [dnsenum](https://github.com/fwaeytens/dnsenum) | Outil complet d'énumération DNS prenant en charge les attaques par dictionnaire et force brute pour découvrir des sous-domaines. |
-| [fierce](https://github.com/mschwager/fierce) | Outil convivial pour la découverte récursive de sous-domaines, avec détection de caractères génériques et une interface facile à utiliser. |
-| [dnsrecon](https://github.com/darkoperator/dnsrecon) | Outil polyvalent combinant plusieurs techniques de reconnaissance DNS et offrant des formats de sortie personnalisables. |
-| [amass](https://github.com/owasp-amass/amass) | Outil activement maintenu axé sur la découverte de sous-domaines, connu pour son intégration avec d'autres outils et ses nombreuses sources de données. |
-| [assetfinder](https://github.com/tomnomnom/assetfinder)| Outil simple mais efficace pour trouver des sous-domaines en utilisant diverses techniques, idéal pour des analyses rapides et légères. |
-| [puredns](https://github.com/d3mondev/puredns) | Outil puissant et flexible de force brute DNS, capable de résoudre et de filtrer efficacement les résultats. |
+
+| Outil                                                   | Description                                                                                                                                             |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [dnsenum](https://github.com/fwaeytens/dnsenum)         | Outil complet d'énumération DNS prenant en charge les attaques par dictionnaire et force brute pour découvrir des sous-domaines.                        |
+| [fierce](https://github.com/mschwager/fierce)           | Outil convivial pour la découverte récursive de sous-domaines, avec détection de caractères génériques et une interface facile à utiliser.              |
+| [dnsrecon](https://github.com/darkoperator/dnsrecon)    | Outil polyvalent combinant plusieurs techniques de reconnaissance DNS et offrant des formats de sortie personnalisables.                                |
+| [amass](https://github.com/owasp-amass/amass)           | Outil activement maintenu axé sur la découverte de sous-domaines, connu pour son intégration avec d'autres outils et ses nombreuses sources de données. |
+| [assetfinder](https://github.com/tomnomnom/assetfinder) | Outil simple mais efficace pour trouver des sous-domaines en utilisant diverses techniques, idéal pour des analyses rapides et légères.                 |
+| [puredns](https://github.com/d3mondev/puredns)          | Outil puissant et flexible de force brute DNS, capable de résoudre et de filtrer efficacement les résultats.                                            |
 
 Effectue un brute-force de sous-domaine récursivement avec Dnsenum:
 `dnsenum --enum <domaine> -f <wordlist> -r`
@@ -237,11 +238,12 @@ Il existe trois types d’**hébergement virtuel** :
 3. **Hébergement virtuel par port** : Différents sites utilisent différents ports sur la même IP, mais cela oblige souvent les utilisateurs à spécifier le port dans l'URL.
 
 Pour découvrir les hébergements virtuels, de nombreux outils existent:
-| Outil | Description |
-|-------------|--------------------------------------------------------------------------------------|
-| gobuster | Outil polyvalent souvent utilisé pour le brute-force de fichiers/répertoires, mais aussi efficace pour la découverte d’hôtes virtuels. |
-| Feroxbuster | Similaire à Gobuster, mais implémenté en Rust, connu pour sa rapidité et sa flexibilité. |
-| ffuf | Fuzzer web rapide pouvant être utilisé pour découvrir des hôtes virtuels en testant l’en-tête Host. |
+
+| Outil       | Description                                                                                                                            |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| gobuster    | Outil polyvalent souvent utilisé pour le brute-force de fichiers/répertoires, mais aussi efficace pour la découverte d’hôtes virtuels. |
+| Feroxbuster | Similaire à Gobuster, mais implémenté en Rust, connu pour sa rapidité et sa flexibilité.                                               |
+| ffuf        | Fuzzer web rapide pouvant être utilisé pour découvrir des hôtes virtuels en testant l’en-tête Host.                                    |
 
 Avec gobuster, brute force les Vhosts:
 `gobuster vhost -u http[s]://<adresse IP> -w <wordlist> --append-domain`
@@ -303,14 +305,15 @@ Il existe de nombreuses techniques utilisées pour fingeprint les serveurs web e
 - **Analyse du contenu de la page**: Le contenu, la structure, les scripts ou autres éléments d'une page peuvent donner des indices sur les technologies utilisées (un message de copyright par exemple).
 
 Voici des outils permettant d'automatiser le processus de fingerprint en combinant plusieurs techniques pour identifier les serveurs Web, systèmes d'exploitation, CMS et autres technologies:
-| Outil | Description |
-|-----------|-----------------------------------------------------------------|
-| Wappalyzer | Extension de navigateur et service en ligne. Identifie de nombreuses technologies Web. |
-| BuiltWith | Outil de génération de rapports détaillés sur les technologies d’un site web. |
-| WhatWeb | Outil en ligne de commande pour le fingerprinting des sites web. Utilise une grande base de signatures pour identifier diverses technologies. |
-| Nmap | Outil permettant le fingerprinting des services et systèmes d’exploitation. |
-| Netcraft | Fournit divers services de sécurité web, notamment le fingerprinting des sites web et la génération de rapports de sécurité. |
-| wafw00f | Outil en ligne de commande spécialement conçu pour identifier les pare-feu applicatifs web (WAF). Permet d'identifier son type et sa configuration. |
+
+| Outil      | Description                                                                                                                                         |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Wappalyzer | Extension de navigateur et service en ligne. Identifie de nombreuses technologies Web.                                                              |
+| BuiltWith  | Outil de génération de rapports détaillés sur les technologies d’un site web.                                                                       |
+| WhatWeb    | Outil en ligne de commande pour le fingerprinting des sites web. Utilise une grande base de signatures pour identifier diverses technologies.       |
+| Nmap       | Outil permettant le fingerprinting des services et systèmes d’exploitation.                                                                         |
+| Netcraft   | Fournit divers services de sécurité web, notamment le fingerprinting des sites web et la génération de rapports de sécurité.                        |
+| wafw00f    | Outil en ligne de commande spécialement conçu pour identifier les pare-feu applicatifs web (WAF). Permet d'identifier son type et sa configuration. |
 
 Récupérer uniquement les headers HTTP avec curl:
 `curl -I <adresse>`
