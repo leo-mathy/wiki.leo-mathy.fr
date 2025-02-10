@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-09T15:40:13.524Z
+date: 2025-02-10T17:56:49.842Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -282,3 +282,9 @@ Pour effectuer une recherche dans les CT logs, voici deux options populaires:
 - [censys](https://search.censys.io/) (Données étendues et options de filtrage, accès API)
 
 ## Fingerprinting
+
+Le fingerprinting (ou prise d'empreinte) correspond à l'extraction de détails techniques à propos des technologies utilisées par un site ou une application web.
+
+Les signatures digitales des systèmes d'exploitation et composants logiciels peuvent réveler des informations critiques sur l'infrastructure de la cible et de potentielles faiblesses.
+Cela permet aussi aux attaquants de façonner leurs attaques et d'exploiter des vulnérabilitées spécifiques aux technologies identifiées.
+
