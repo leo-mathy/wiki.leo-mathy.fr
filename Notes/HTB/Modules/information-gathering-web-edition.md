@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-10T18:27:29.457Z
+date: 2025-02-10T18:28:50.802Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -309,3 +309,7 @@ Voici des outils permettant d'automatiser le processus de fingerprint en combina
 | Nmap       | Outil permettant le fingerprinting des services et systèmes d’exploitation. |
 | Netcraft   | Fournit divers services de sécurité web, notamment le fingerprinting des sites web et la génération de rapports de sécurité. |
 | wafw00f    | Outil en ligne de commande spécialement conçu pour identifier les pare-feu applicatifs web (WAF). Permet d'identifier son type et sa configuration. |
+
+Récupérer uniquement les headers HTTP avec curl:
+`curl -I <adresse>`
+
