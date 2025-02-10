@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-10T18:42:42.301Z
+date: 2025-02-10T18:43:00.620Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -324,3 +324,5 @@ Utiliser Nikto pour exécuter uniquement les modules d’identification logiciel
 `nikto -h <adresse> -Tuning b`
 
 Nikto va effectuer une série de tests pour essayer d'identifier des logiciels obsolètes, fichiers non sécurisés, fichiers de configuration et risques potentiels de sécurité.
+
+## Crawling
