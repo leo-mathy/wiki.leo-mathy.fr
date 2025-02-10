@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-10T18:26:58.602Z
+date: 2025-02-10T18:27:29.457Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -303,7 +303,7 @@ Il existe de nombreuses techniques utilisées pour fingeprint les serveurs web e
 Voici des outils permettant d'automatiser le processus de fingerprint en combinant plusieurs techniques pour identifier les serveurs Web, systèmes d'exploitation, CMS et autres technologies:
 | Outil      | Description                                                     |
 |-----------|-----------------------------------------------------------------|
-| Wappalyzer | Extension de navigateur et service en ligne. |
+| Wappalyzer | Extension de navigateur et service en ligne. Identifie de nombreuses technologies Web. |
 | BuiltWith  | Outil de génération de rapports détaillés sur les technologies d’un site web. |
 | WhatWeb    | Outil en ligne de commande pour le fingerprinting des sites web. Utilise une grande base de signatures pour identifier diverses technologies. |
 | Nmap       | Outil permettant le fingerprinting des services et systèmes d’exploitation. |
