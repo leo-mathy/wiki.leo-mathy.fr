@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-10T17:56:49.842Z
+date: 2025-02-10T18:07:29.421Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -288,3 +288,8 @@ Le fingerprinting (ou prise d'empreinte) correspond à l'extraction de détails 
 Les signatures digitales des systèmes d'exploitation et composants logiciels peuvent réveler des informations critiques sur l'infrastructure de la cible et de potentielles faiblesses.
 Cela permet aussi aux attaquants de façonner leurs attaques et d'exploiter des vulnérabilitées spécifiques aux technologies identifiées.
 
+Le fingerprinting est pilier de la reconnaissance web:
+- attaques ciblées: permet de cibler des technologies spécifiques avec des exploits ou vulnérabilitées connues pour affecter ces systèmes.
+- Identifier les mauvaises configurations: permet d'exposer les mauvaises configurations, logiciels dépassés, paramètres par défaut ou autres faiblesses.
+- Prioriser les cibles: Permet de prioriser les efforts en identifiant les systèmes pouvant être les plus vulnérables ou comportants des informations de valeur.
+- Créer un profil compréhensif: Combiner les données de fingerprint avec d'autres découvertes permet de créer une vue complète de l'infrastructure cible, d'aider dans la compréhension globale de la posture en termes de sécurité et les vecteurs d'attaques potentiels.
