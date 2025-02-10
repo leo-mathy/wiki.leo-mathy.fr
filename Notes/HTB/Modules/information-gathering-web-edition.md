@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-10T18:40:29.324Z
+date: 2025-02-10T18:42:11.226Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -285,30 +285,32 @@ Pour effectuer une recherche dans les CT logs, voici deux options populaires:
 
 Le fingerprinting (ou prise d'empreinte) correspond à l'extraction de détails techniques à propos des technologies utilisées par un site ou une application web.
 
-Les signatures digitales des systèmes d'exploitation et composants logiciels peuvent réveler des informations critiques sur l'infrastructure de la cible et de potentielles faiblesses.
-Cela permet aussi aux attaquants de façonner leurs attaques et d'exploiter des vulnérabilitées spécifiques aux technologies identifiées.
+Les signatures digitales des systèmes d'exploitation et composants logiciels peuvent révéler des informations critiques sur l'infrastructure de la cible et de potentielles faiblesses.
+Cela permet aussi aux attaquants de façonner leurs attaques et d'exploiter des vulnérabilités spécifiques aux technologies identifiées.
 
 Le fingerprinting est pilier de la reconnaissance web:
-- **Attaques ciblées**: permet de cibler des technologies spécifiques avec des exploits ou vulnérabilitées connues pour affecter ces systèmes.
+
+- **Attaques ciblées**: permet de cibler des technologies spécifiques avec des exploits ou vulnérabilités connues pour affecter ces systèmes.
 - **Identifier les mauvaises configurations**: permet d'exposer les mauvaises configurations, logiciels dépassés, paramètres par défaut ou autres faiblesses.
-- **Prioriser les cibles**: Permet de prioriser les efforts en identifiant les systèmes pouvant être les plus vulnérables ou comportants des informations de valeur.
+- **Prioriser les cibles**: Permet de prioriser les efforts en identifiant les systèmes pouvant être les plus vulnérables ou comportant des informations de valeur.
 - **Créer un profil compréhensif**: Combiner les données de fingerprint avec d'autres découvertes permet de créer une vue complète de l'infrastructure cible, d'aider dans la compréhension globale de la posture en termes de sécurité et les vecteurs d'attaques potentiels.
 
-Il existe de nombreuses techniques utilisées pour fingeprint les serveurs web et technlogies:
+Il existe de nombreuses techniques utilisées pour fingeprint les serveurs web et technologies:
+
 - **Banner Grabbing**: Analyser les bannières présentées par les serveurs web et autres services. Ces bannières révèlent souvent le logiciel, la version et d'autres détails.
-- **Analyse en-têtes HTTP (HTTP Headers)**: Les en-têtes HTTP sont transmises avec chaque requète/reponse et peuvent contenir de nombreuses informations (logiciels,technologies...).
-- **Rechercher des réponses spécifiques (Probing)**: Envoyer des requètes spécialement forgées vers la cible peut retourner des résultats uniques qui révèlent des technologies spécifiques ou versions. Par exemple, certains messages d'erreurs ou comportements sont caractéristiques d'un serveur ou logiciel particulier.
-- **Analyse du contenu de la page**: Le contenu, la structure, les scripts ou autres élements d'une page peuvent donner des indices sur les technologies utilisées (un message de copyright par exemple).
+- **Analyse en-têtes HTTP (HTTP Headers)**: Les en-têtes HTTP sont transmises avec chaque requête/réponse et peuvent contenir de nombreuses informations (logiciels,technologies...).
+- **Rechercher des réponses spécifiques (Probing)**: Envoyer des requêtes spécialement forgées vers la cible peut retourner des résultats uniques qui révèlent des technologies spécifiques ou versions. Par exemple, certains messages d'erreurs ou comportements sont caractéristiques d'un serveur ou logiciel particulier.
+- **Analyse du contenu de la page**: Le contenu, la structure, les scripts ou autres éléments d'une page peuvent donner des indices sur les technologies utilisées (un message de copyright par exemple).
 
 Voici des outils permettant d'automatiser le processus de fingerprint en combinant plusieurs techniques pour identifier les serveurs Web, systèmes d'exploitation, CMS et autres technologies:
-| Outil      | Description                                                     |
+| Outil | Description |
 |-----------|-----------------------------------------------------------------|
 | Wappalyzer | Extension de navigateur et service en ligne. Identifie de nombreuses technologies Web. |
-| BuiltWith  | Outil de génération de rapports détaillés sur les technologies d’un site web. |
-| WhatWeb    | Outil en ligne de commande pour le fingerprinting des sites web. Utilise une grande base de signatures pour identifier diverses technologies. |
-| Nmap       | Outil permettant le fingerprinting des services et systèmes d’exploitation. |
-| Netcraft   | Fournit divers services de sécurité web, notamment le fingerprinting des sites web et la génération de rapports de sécurité. |
-| wafw00f    | Outil en ligne de commande spécialement conçu pour identifier les pare-feu applicatifs web (WAF). Permet d'identifier son type et sa configuration. |
+| BuiltWith | Outil de génération de rapports détaillés sur les technologies d’un site web. |
+| WhatWeb | Outil en ligne de commande pour le fingerprinting des sites web. Utilise une grande base de signatures pour identifier diverses technologies. |
+| Nmap | Outil permettant le fingerprinting des services et systèmes d’exploitation. |
+| Netcraft | Fournit divers services de sécurité web, notamment le fingerprinting des sites web et la génération de rapports de sécurité. |
+| wafw00f | Outil en ligne de commande spécialement conçu pour identifier les pare-feu applicatifs web (WAF). Permet d'identifier son type et sa configuration. |
 
 Récupérer uniquement les headers HTTP avec curl:
 `curl -I <adresse>`
@@ -319,4 +321,3 @@ Utiliser Nikto pour exécuter uniquement les modules d’identification logiciel
 `nikto -h <adresse> -Tuning b`
 
 Nikto va effectuer une série de tests pour essayer d'identifier des logiciels obsolètes, fichiers non sécurisés, fichiers de configuration et risques potentiels de sécurité.
-
