@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-11T16:54:11.169Z
+date: 2025-02-11T17:00:33.974Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -359,10 +359,16 @@ Ce fichier est placé à la racine des sites web et adhère à la norme d'exclus
 
 Ce fichier contient des instructions sous forme de directives qui indiquent les parties d'un site que les crawlers peuvent ou ne peuvent pas naviguer.
 
-Exemple de fichier robots.txt qui indique à tous les user-agents (identifiant pour différents types de robots) qu'ils ne sont pas autorisés à accéder aux URLs qui commences par `/private/`:
+Exemple de fichier robots.txt qui indique à tous les user-agents qu'ils ne sont pas autorisés à accéder aux URLs qui commences par `/private/`:
 ```
 User-agent: *
 Disallow: /private/
 ```
 
 D'autres directives peuvent autoriser l'accès à des répertoires ou à des fichiers spécifiques, définir des délais de crawling pour éviter de surcharger un serveur ou fournir des liens vers des plans de site (sitemaps) pour une exploration efficace.
+
+Le fichier robots.txt est composé d'enregistrements (plusieurs instructions), chaque enregistrement est principalement composé par:
+- Une instruction **user-agent**: identifiant pour différents types de robots, par exemple Googlebot pour le robot de google et Bingbot pour celui de Microsoft.
+- Des **Directives**: instructions spécifiques pour le user-agent défini.
+
+
