@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-11T17:08:49.765Z
+date: 2025-02-11T17:13:40.122Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -375,4 +375,9 @@ Même si les crawlers ne sont pas obligés de suivre les instructions de ce fich
 - **Prévenir le traffic excessif**
 - **Protéger les informations sensibles** de l'indexation des moteurs de recherches.
 - **La conformité juridique et éthique**: parfois ignorer ce fichier peut être considéré comme une violation des termes de service ou même un problème juridique. Surtout pour des données privées ou protégé par le droit d'auteur.
+
+Dans le cadre de la reconnaissance web, le fichier robots.txt peut être une source importante d'information pour:
+- **Découvrir les répertoires cachés** : Les chemins interdits de robots.txt peuvent révéler des fichiers sensibles ou des panneaux d’administration.  
+- **Cartographier la structure du site** : L’analyse des chemins aide à repérer des sections cachées du site.
+- **Détecter les pièges à crawlers** : Certains sites ajoutent des répertoires « honeypot » pour attirer les crawlers malveillants.
 
