@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-11T17:00:33.974Z
+date: 2025-02-11T17:08:49.765Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -371,4 +371,8 @@ Le fichier robots.txt est composé d'enregistrements (plusieurs instructions), c
 - Une instruction **user-agent**: identifiant pour différents types de robots, par exemple Googlebot pour le robot de google et Bingbot pour celui de Microsoft.
 - Des **Directives**: instructions spécifiques pour le user-agent défini.
 
+Même si les crawlers ne sont pas obligés de suivre les instructions de ce fichier, la pluspart des crawlers légitimes respectent ces directives. Cela est important pour:
+- **Prévenir le traffic excessif**
+- **Protéger les informations sensibles** de l'indexation des moteurs de recherches.
+- **La conformité juridique et éthique**: parfois ignorer ce fichier peut être considéré comme une violation des termes de service ou même un problème juridique. Surtout pour des données privées ou protégé par le droit d'auteur.
 
