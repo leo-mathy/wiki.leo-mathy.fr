@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-10T19:05:45.648Z
+date: 2025-02-11T16:54:11.169Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -352,3 +352,17 @@ Une information seule peut sembler insignifiante, mais combinée à d’autres, 
 Une approche globale est essentielle pour tirer des conclusions pertinentes et affiner l’analyse.
 
 ## robots.txt
+
+Le fichier robots.txt agit comme un guide pour les robots, définissant les zones d'un site web autorisées ou hors limite.
+
+Ce fichier est placé à la racine des sites web et adhère à la norme d'exclusion des robots (lignes directrices sur la manière dont les crawlers doivent se comporter lors de la visite d'un site).
+
+Ce fichier contient des instructions sous forme de directives qui indiquent les parties d'un site que les crawlers peuvent ou ne peuvent pas naviguer.
+
+Exemple de fichier robots.txt qui indique à tous les user-agents (identifiant pour différents types de robots) qu'ils ne sont pas autorisés à accéder aux URLs qui commences par `/private/`:
+```
+User-agent: *
+Disallow: /private/
+```
+
+D'autres directives peuvent autoriser l'accès à des répertoires ou à des fichiers spécifiques, définir des délais de crawling pour éviter de surcharger un serveur ou fournir des liens vers des plans de site (sitemaps) pour une exploration efficace.
