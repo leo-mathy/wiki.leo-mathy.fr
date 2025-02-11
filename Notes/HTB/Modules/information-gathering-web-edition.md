@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-11T17:56:12.972Z
+date: 2025-02-11T18:13:14.728Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -360,6 +360,7 @@ Ce fichier est placé à la racine des sites web et adhère à la norme d'exclus
 Ce fichier contient des instructions sous forme de directives qui indiquent les parties d'un site que les crawlers peuvent ou ne peuvent pas naviguer.
 
 Exemple de fichier robots.txt qui indique à tous les user-agents qu'ils ne sont pas autorisés à accéder aux URLs qui commences par `/private/`:
+
 ```
 User-agent: *
 Disallow: /private/
@@ -368,16 +369,19 @@ Disallow: /private/
 D'autres directives peuvent autoriser l'accès à des répertoires ou à des fichiers spécifiques, définir des délais de crawling pour éviter de surcharger un serveur ou fournir des liens vers des plans de site (sitemaps) pour une exploration efficace.
 
 Le fichier robots.txt est composé d'enregistrements (plusieurs instructions), chaque enregistrement est principalement composé par:
+
 - Une instruction **user-agent**: identifiant pour différents types de robots, par exemple Googlebot pour le robot de google et Bingbot pour celui de Microsoft.
 - Des **Directives**: instructions spécifiques pour le user-agent défini.
 
-Même si les crawlers ne sont pas obligés de suivre les instructions de ce fichier, la pluspart des crawlers légitimes respectent ces directives. Cela est important pour:
-- **Prévenir le traffic excessif**
+Même si les crawlers ne sont pas obligés de suivre les instructions de ce fichier, la plupart des crawlers légitimes respectent ces directives. Cela est important pour:
+
+- **Prévenir le trafic excessif**
 - **Protéger les informations sensibles** de l'indexation des moteurs de recherches.
 - **La conformité juridique et éthique**: parfois ignorer ce fichier peut être considéré comme une violation des termes de service ou même un problème juridique. Surtout pour des données privées ou protégé par le droit d'auteur.
 
 Dans le cadre de la reconnaissance web, le fichier robots.txt peut être une source importante d'information pour:
-- **Découvrir les répertoires cachés** : Les chemins interdits de robots.txt peuvent révéler des fichiers sensibles ou des panneaux d’administration.  
+
+- **Découvrir les répertoires cachés** : Les chemins interdits de robots.txt peuvent révéler des fichiers sensibles ou des panneaux d’administration.
 - **Cartographier la structure du site** : L’analyse des chemins aide à repérer des sections cachées du site.
 - **Détecter les pièges à crawlers** : Certains sites ajoutent des répertoires « honeypot » pour attirer les crawlers malveillants.
 
@@ -388,7 +392,7 @@ Le standard .well-known (défini dans la [RFC 8615](https://datatracker.ietf.org
 En établissant un emplacement contant de telles données, .well-known simplifie la découverte et l'accès aux parties prenantes, navigateurs, applications ou outils de sécurité.
 
 Cela permet aux clients de automatiquement localiser et récupérer des fichiers de configuration spécifiques en construisant l'URL appropriée.
-Par exemple pour consulter la politique de sécurité d'un site web, un client effectuera une requète vers `<site web>/.well-known/security.txt`.
+Par exemple pour consulter la politique de sécurité d'un site web, un client effectuera une requête vers `<site web>/.well-known/security.txt`.
 
 L'IANA (Internet Assigned Numbers Authority) maintient un [registre](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml) des toutes les URI .well-known, chacune servant un but spécifique.
 
@@ -400,7 +404,8 @@ Par exemple l’URI `openid-configuration` de `.well-known` permet d’accéder 
 
 Le web crawling est un vaste sujet, de nombreux outils existent.
 Les outils les plus populaires sont:
-- **Burp Suite Spider** : Un puissant crawler intégré à Burp Suite, utilisé pour cartographier les applications web et détecter des vulnérabilités.  
-- **OWASP ZAP** : Un scanner de sécurité open-source avec un mode manuel et automatique, incluant un spider pour explorer les applications web.  
-- **Scrapy** : Un framework Python flexible et évolutif pour créer des web crawlers, idéal pour extraire des données structurées et gérer des scénarios complexes.  
+
+- **Burp Suite Spider** : Un puissant crawler intégré à Burp Suite, utilisé pour cartographier les applications web et détecter des vulnérabilités.
+- **OWASP ZAP** : Un scanner de sécurité open-source avec un mode manuel et automatique, incluant un spider pour explorer les applications web.
+- **Scrapy** : Un framework Python flexible et évolutif pour créer des web crawlers, idéal pour extraire des données structurées et gérer des scénarios complexes.
 - **Apache Nutch** : Un crawler open-source en Java, conçu pour des explorations web à grande échelle, nécessitant une configuration avancée.
