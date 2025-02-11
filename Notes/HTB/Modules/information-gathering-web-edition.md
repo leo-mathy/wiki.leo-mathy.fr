@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-11T17:13:40.122Z
+date: 2025-02-11T17:56:12.972Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -381,3 +381,26 @@ Dans le cadre de la reconnaissance web, le fichier robots.txt peut être une sou
 - **Cartographier la structure du site** : L’analyse des chemins aide à repérer des sections cachées du site.
 - **Détecter les pièges à crawlers** : Certains sites ajoutent des répertoires « honeypot » pour attirer les crawlers malveillants.
 
+## Well-Known URIs
+
+Le standard .well-known (défini dans la [RFC 8615](https://datatracker.ietf.org/doc/html/rfc8615)) sert de répertoire standardisé dans le domaine racine d'un site web. Ce répertoire normalement accessible via `/.well-known/`, contient les métadonnées critiques d'un site web, incluant les fichiers de configuration et les informations, relatives au services, protocoles et mécanismes de sécurité.
+
+En établissant un emplacement contant de telles données, .well-known simplifie la découverte et l'accès aux parties prenantes, navigateurs, applications ou outils de sécurité.
+
+Cela permet aux clients de automatiquement localiser et récupérer des fichiers de configuration spécifiques en construisant l'URL appropriée.
+Par exemple pour consulter la politique de sécurité d'un site web, un client effectuera une requète vers `<site web>/.well-known/security.txt`.
+
+L'IANA (Internet Assigned Numbers Authority) maintient un [registre](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml) des toutes les URI .well-known, chacune servant un but spécifique.
+
+Lors de la reconnaissance web, les URIs .well-known sont une source importante d'informations.
+
+Par exemple l’URI `openid-configuration` de `.well-known` permet d’accéder à la configuration d’un fournisseur OpenID Connect. Cet endpoint (`<site web>/.well-known/openid-configuration`) renvoie un JSON contenant les endpoints, méthodes d’authentification et informations sur l’émission de tokens.
+
+## Creepy Crawlies
+
+Le web crawling est un vaste sujet, de nombreux outils existent.
+Les outils les plus populaires sont:
+- **Burp Suite Spider** : Un puissant crawler intégré à Burp Suite, utilisé pour cartographier les applications web et détecter des vulnérabilités.  
+- **OWASP ZAP** : Un scanner de sécurité open-source avec un mode manuel et automatique, incluant un spider pour explorer les applications web.  
+- **Scrapy** : Un framework Python flexible et évolutif pour créer des web crawlers, idéal pour extraire des données structurées et gérer des scénarios complexes.  
+- **Apache Nutch** : Un crawler open-source en Java, conçu pour des explorations web à grande échelle, nécessitant une configuration avancée.
