@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-12T17:47:52.460Z
+date: 2025-02-12T18:16:31.941Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -457,4 +457,13 @@ Cela est important dans le cas d'une reconnaissance web pour:
 - **La reconnaissance discrète**
 
 ## Automating Recon
+
+L'automatisation de la reconnaissance web améliore énormément l'efficacité et la précision. Ce qui permet de collecter l'information sur une échelle plus grande et d'identifier les vulnérabilités potentielles plus rapidement.
+
+L'automatisation offre de nombreux avantages dans le cadre de la reconnaissance web:
+- **Efficacité**: Les outils automatisés effectuent les tâches répétitives plus rapidement, ce qui permet de libérer du temps pour l'analyse et la prise de décisions.
+- **Extensibilité**: Permet de dimensionner les efforts sur un grand nombre de cibles ou domaines.
+- **Consistance**: Les outils automatisés suivent des règles et procédures définies, ce qui assure la consistance et la reproductibilité des résultats tout en diminuant le risque d'erreur humaine.
+- **Couverture complète** : Possibilité d'effectuer un large éventail de tâches de reconnaissance (DNS,Découverte de sous-domaines,crawling,scan de ports...) garantissant ainsi une couverture complète des vecteurs d'attaque potentiels.
+- **Intégration**: Intégration avec d'autres outils ou plateformes.
 
