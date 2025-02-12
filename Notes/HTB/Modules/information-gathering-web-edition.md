@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-12T17:18:07.235Z
+date: 2025-02-12T17:47:52.460Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -455,3 +455,6 @@ Cela est important dans le cas d'une reconnaissance web pour:
 - **Suivre les évolutions** (Changements de structure, contenu et technologies)
 - **La collecte OSINT** (Infos sur activités, stratégies, employés...)
 - **La reconnaissance discrète**
+
+## Automating Recon
+
