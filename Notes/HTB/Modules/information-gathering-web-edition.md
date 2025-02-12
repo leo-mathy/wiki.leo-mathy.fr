@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-11T18:13:14.728Z
+date: 2025-02-12T17:18:07.235Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -409,3 +409,49 @@ Les outils les plus populaires sont:
 - **OWASP ZAP** : Un scanner de sécurité open-source avec un mode manuel et automatique, incluant un spider pour explorer les applications web.
 - **Scrapy** : Un framework Python flexible et évolutif pour créer des web crawlers, idéal pour extraire des données structurées et gérer des scénarios complexes.
 - **Apache Nutch** : Un crawler open-source en Java, conçu pour des explorations web à grande échelle, nécessitant une configuration avancée.
+
+## Search Engine Discovery
+
+Les moteurs de recherches servent de guides sur Internet, en plus de leurs fonction primaire, ils contiennent d'énormes quantités de données utilisables lors de la reconnaissance web ou du rassemblement d'information.
+
+Cette pratique connue sous le nom de OSINT Gathering ou Search Engine Discovery, implique l'utilisation des moteurs de recherches comme outils pour récupérer et découvrir des informations concernant les sites web cibles, les organisations ou individus.
+
+La découverte d’informations via les moteurs de recherche est un élément clé de la reconnaissance
+web pour plusieurs raisons :
+
+- **Accessible publiquement**
+- **Grande couverture** (Indexation d’une large partie du web)
+- **Facilité d’utilisation**
+- **Économique**
+
+Les informations récupérés peuvent être utilisées de différentes manières :
+
+- **Sécurité** : Détection de vulnérabilités et de données exposées.
+- **Intelligence concurrentielle** : Analyse des concurrents.
+- **Journalisme d’investigation** : Recherche de liens cachés ou pratiques douteuses.
+- **Cybermenaces** : Surveillance des menaces émergentes.
+
+Cette pratique comporte aussi des limites, certains contenus ne sont pas indexés ou sont protégés.
+
+Les moteurs de recherches permettent l'utilisation d'opérateurs, commandes et modificateurs qui permettent de cibler des types d'informations spécifiques. (site,inurl,filetype,intitle,cache,OR,AND,NOT...)
+
+Le Google Dorking est la technique se basant sur les opérateurs pour découvrir des informations sensibles, vulnérabilités et contenu caché à l'aide de la recherche Google.
+
+Pour plus d'exemples et cas d'usage du Google Dork, il est possible de se référer à la [Google Hacking Database](https://www.exploit-db.com/google-hacking-database).
+
+## Web Archives
+
+Les archives web permettent de revisiter un site à un moment donné dans le passé.
+L'archive web la plus connue étant l'[Internet Archive's Wayback Machine](https://web.archive.org/) qui archive des sites web depuis 1996.
+
+La Wayback Machine permet de visualiser les snapshots d'un site dans le temps.
+Elle fonctionne avec des crawlers qui enregistrent le contenu entier des pages (images,scripts...).
+
+La fréquence d’archivage d’un site par la Wayback Machine varie selon sa popularité, son évolution et les ressources disponibles. Tous les sites ne sont pas capturés, la priorité étant donnée aux contenus ayant une valeur culturelle, historique ou de recherche. Les propriétaires peuvent demander l’exclusion de leur site, mais ce n’est pas toujours garanti.
+
+Cela est important dans le cas d'une reconnaissance web pour:
+
+- **Détecter des actifs cachés** (Anciennes pages, fichiers ou sous-domaines accessibles)
+- **Suivre les évolutions** (Changements de structure, contenu et technologies)
+- **La collecte OSINT** (Infos sur activités, stratégies, employés...)
+- **La reconnaissance discrète**
