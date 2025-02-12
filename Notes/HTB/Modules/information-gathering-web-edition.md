@@ -2,7 +2,7 @@
 title: Information Gathering - Web Edition
 description: 
 published: true
-date: 2025-02-12T18:16:31.941Z
+date: 2025-02-12T18:23:35.793Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-02-08T15:33:50.601Z
@@ -10,7 +10,7 @@ dateCreated: 2025-02-08T15:33:50.601Z
 
 # Information Gathering - Web Edition
 
-Date de complétion: XX/XX/2025
+Date de complétion: 12/02/2025
 
 [information_gathering_web_edition_module_cheat_sheet.pdf](/cheat_sheet/information_gathering_web_edition_module_cheat_sheet.pdf)
 
@@ -461,9 +461,19 @@ Cela est important dans le cas d'une reconnaissance web pour:
 L'automatisation de la reconnaissance web améliore énormément l'efficacité et la précision. Ce qui permet de collecter l'information sur une échelle plus grande et d'identifier les vulnérabilités potentielles plus rapidement.
 
 L'automatisation offre de nombreux avantages dans le cadre de la reconnaissance web:
+
 - **Efficacité**: Les outils automatisés effectuent les tâches répétitives plus rapidement, ce qui permet de libérer du temps pour l'analyse et la prise de décisions.
 - **Extensibilité**: Permet de dimensionner les efforts sur un grand nombre de cibles ou domaines.
 - **Consistance**: Les outils automatisés suivent des règles et procédures définies, ce qui assure la consistance et la reproductibilité des résultats tout en diminuant le risque d'erreur humaine.
 - **Couverture complète** : Possibilité d'effectuer un large éventail de tâches de reconnaissance (DNS,Découverte de sous-domaines,crawling,scan de ports...) garantissant ainsi une couverture complète des vecteurs d'attaque potentiels.
 - **Intégration**: Intégration avec d'autres outils ou plateformes.
 
+Voici quelques frameworks qui proposent une suite complète d'outils pour la reconnaissance web:
+
+| Outil               | Description                                                                                                                 |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **FinalRecon**      | Outil Python modulaire pour l’analyse SSL, Whois, en-têtes HTTP et crawling.                                                |
+| **Recon-ng**        | Framework Python pour l'énumération DNS, découverte de sous-domaines, scan de ports et exploitation de vulnérabilités.      |
+| **theHarvester**    | Outil CLI pour collecter les emails, sous-domaines, hôtes, noms d'employés, ports ouverts et bannières.                     |
+| **SpiderFoot**      | Outil automatisé open-source pour la collecte des IP, domaines, emails, réseaux sociaux, scan de ports...                   |
+| **OSINT Framework** | Collection de ressources et outils d'OSINT couvrant les réseaux sociaux, moteurs de recherche, enregistrements publiques... |
