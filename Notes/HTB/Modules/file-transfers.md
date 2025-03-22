@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-22T14:05:34.195Z
+date: 2025-03-22T14:11:15.342Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -37,5 +37,26 @@ Voici les étapes de l'attaque Astaroth:
 Pour plus d'informations sur les fileless threats:
 [now-you-see-me-exposing-fileless-malware](https://www.microsoft.com/en-us/security/blog/2018/01/24/now-you-see-me-exposing-fileless-malware/)
 
-### Download Operations
+### PowerShell Base64 Encode & Decode
+
+Selon la taille du fichier à transférer, différentes méthodes sans communication réseau peuvent être utilisées.
+
+Avec un terminal, on peut encoder un fichier en base64, copier son contenu, puis le décoder pour retrouver le fichier d'origine.
+
+Il est essentiel de vérifier l'intégrité du fichier avant et après le transfert. Pour cela, on peut utiliser md5sum, qui génère et vérifie des sommes de contrôle MD5 de 128 bits.
+
+Récupérer le hash du fichier
+```
+md5sum myfile
+```
+
+Encoder le fichier en base64
+```
+cat myfile | base64 -w 0; echo
+```
+
+Une fois sur la cible, il est possible d'écrire le contenu décodé dans un fichier
+```
+[IO.File]::WriteAllBytes("C:\temp\fichier", [Convert]::FromBase64String("<contenu>"))
+```
 
