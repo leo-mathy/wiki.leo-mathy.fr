@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-22T14:04:32.548Z
+date: 2025-03-22T14:05:34.195Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -15,7 +15,6 @@ Date de complétion: XX/XX/XX
 # Notes
 
 ## Windows File Transfer Methods
-
 
 ### Introduction
 
@@ -37,4 +36,6 @@ Voici les étapes de l'attaque Astaroth:
 
 Pour plus d'informations sur les fileless threats:
 [now-you-see-me-exposing-fileless-malware](https://www.microsoft.com/en-us/security/blog/2018/01/24/now-you-see-me-exposing-fileless-malware/)
+
+### Download Operations
 
