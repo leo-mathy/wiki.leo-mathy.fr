@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-22T14:29:43.799Z
+date: 2025-03-22T14:31:11.635Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -102,5 +102,13 @@ Invoke-WebRequest <URL> -OutFile <fichier>
 
 Une petite liste de "cradles" (technique utilisée pour télécharger et exécuter du code malveillant directement en mémoire) est disponible [ici](https://gist.github.com/HarmJ0y/bb48307ffa663256e239)
 
+### Common Errors with PowerShell
+
 Parfois Internet Explorer doit être lancé au moins une première fois avant d'exécuter Invoke-WebRequest.
 Pour résoudre ce problème il est possible d'utiliser l'option "-UseBasicParsing"
+
+Avec Net.WebClient, pour ne pas vérifier le certificat SSL: 
+```
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
+```
+
