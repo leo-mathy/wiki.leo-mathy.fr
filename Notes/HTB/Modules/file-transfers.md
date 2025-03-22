@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-22T14:12:23.229Z
+date: 2025-03-22T14:12:51.790Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -60,8 +60,11 @@ Une fois sur la cible, il est possible d'écrire le contenu décodé dans un fic
 [IO.File]::WriteAllBytes("C:\temp\fichier", [Convert]::FromBase64String("<contenu>"))
 ```
 
-Il est maintenant possible de vérifier que le hash correspond bien à l'original avec [Get-FileHash](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7.2).
+Il est maintenant possible de vérifier que le hash MD5 correspond bien à l'original avec [Get-FileHash](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7.2).
 
+```
+Get-FileHash C:\temp\fichier -Algorithm md5
+```
 
 
 
