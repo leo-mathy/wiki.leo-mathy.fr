@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-22T14:25:15.719Z
+date: 2025-03-22T14:25:35.004Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -96,6 +96,8 @@ IEX (New-Object Net.WebClient).DownloadString('<URL>')
 ### PowerShell Invoke-WebRequest
 
 À partir de PowerShell 3.0, la commande Invoke-WebRequest (alias de curl,iwr,wget) permet de télécharger des fichiers, mais elle est relativement lente.
-
+```
+Invoke-WebRequest <URL> -OutFile <fichier>
+```
 
 
