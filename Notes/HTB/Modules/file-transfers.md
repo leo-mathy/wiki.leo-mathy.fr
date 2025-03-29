@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T12:52:13.799Z
+date: 2025-03-29T12:52:50.655Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -221,3 +221,4 @@ Pour récupérer le hash MS d'un fichier sur Linux:
 md5sum <fichier>
 ```
 
+### PowerShell Web Uploads
