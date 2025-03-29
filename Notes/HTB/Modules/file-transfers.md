@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T12:52:50.655Z
+date: 2025-03-29T12:54:25.747Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -123,22 +123,21 @@ Avec Net.WebClient, pour ne pas vérifier le certificat SSL:
 
 ### SMB Downloads
 
-Le protocole SMB (Server Message Block) tourne sur le port TCP 445. C'est un protocole commun sur les réseaux composés de services Windows. Il permet entre autres aux applications et utilisateurs de transferer des fichiers vers et depuis des serveurs SMB.
+Le protocole SMB (Server Message Block) tourne sur le port TCP 445. C'est un protocole commun sur les réseaux composés de services Windows. Il permet entre autres aux applications et utilisateurs de transférer des fichiers vers et depuis des serveurs SMB.
 
-
-Il est possible d'utiliser [smbserver.py](https://github.com/fortra/impacket/blob/master/examples/smbserver.py) de la suite Impacket pour créer un parrtage SMB.
+Il est possible d'utiliser [smbserver.py](https://github.com/fortra/impacket/blob/master/examples/smbserver.py) de la suite Impacket pour créer un partage SMB.
 
 ```
 impacket-smbserver share -smb2support /tmp/smbshare
 ```
 
-Il est possible d'utiliser des commandes comme [Copy-item](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.5), ou [Move-Item](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/move-item?view=powershell-7.5) ou encore [copy](https://learn.microsoft.com/fr-fr/windows-server/administration/windows-commands/copy) pour intéragir avec le partage. 
+Il est possible d'utiliser des commandes comme [Copy-item](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.5), ou [Move-Item](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/move-item?view=powershell-7.5) ou encore [copy](https://learn.microsoft.com/fr-fr/windows-server/administration/windows-commands/copy) pour interagir avec le partage.
 
 ```
 copy \\<adresse>\<partage>\<fichier>
 ```
 
-Parfois la politique Windows peut empécher l'accès aux partages ne nécéssitant aucune authentification.
+Parfois la politique Windows peut empêcher l'accès aux partages ne nécessitant aucune authentification.
 Pour contourner cela il est possible de créer un serveur SMB avec authentification:
 
 ```
@@ -153,7 +152,7 @@ net use <lettre>: \\<adresse>\<partage> /user:<utilisateur> <nom>
 
 ### FTP Downloads
 
-Un autre moyen de transferer des fichiers est FTP (File Transfer Protocol), FTP utilise le port TCP 21 et TCP 20.
+Un autre moyen de transférer des fichiers est FTP (File Transfer Protocol), FTP utilise le port TCP 21 et TCP 20.
 Il est possible d'utiliser un client FTP ou la classe PowerShell [Net.WebClient](https://learn.microsoft.com/fr-fr/dotnet/api/system.net.webclient?view=net-8.0).
 
 Pour créer un serveur FTP, il est possible d'utiliser le module Python [pyftpdlib](https://pypi.org/project/pyftpdlib/)
@@ -172,7 +171,7 @@ python3 -m pyftpdlib --port 21
 
 Si aucun identifiant et mot de passe n'est précisé, l'authentification anonyme est activée.
 
-Transferer des fichiers depuis le serveur FTP avec la classe PowerShell Net.WebClient:
+Transférer des fichiers depuis le serveur FTP avec la classe PowerShell Net.WebClient:
 
 ```
 (New-Object Net.WebClient).DownloadFile('ftp://<adresse>/<fichier>', '<fichier de sortie>')
@@ -191,12 +190,11 @@ ftp -v -n -s:ftpcommand.txt
 
 ### Upload Operations
 
-Pour transferer des fichiers depuis la cible vers la machine attaquante, il est possible d'utiliser les mêmes méthodes que vue précédemment.
+Pour transférer des fichiers depuis la cible vers la machine attaquante, il est possible d'utiliser les mêmes méthodes que vue précédemment.
 
 ### PowerShell Base64 Encode & Decode
 
 Nous avons vu précédemment comment encoder un fichier en base64.
-
 
 Pour encoder un fichier en base64 avec PowerShell:
 
@@ -217,6 +215,7 @@ echo <châine encodée> | base64 -d > <fichier de sortie>
 ```
 
 Pour récupérer le hash MS d'un fichier sur Linux:
+
 ```
 md5sum <fichier>
 ```
