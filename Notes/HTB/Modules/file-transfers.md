@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T12:31:15.549Z
+date: 2025-03-29T12:32:47.119Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -137,3 +137,8 @@ Il est possible d'utiliser des commandes comme [Copy-item](https://learn.microso
 copy \\<ip>\<partage>\<fichier>
 ```
 
+Parfois la politique Windows peut empécher l'accès aux partages ne nécéssitant aucune authentification. Pour contourner cela il est possible de créer un serveur SMB avec authentification.
+
+```
+impacket-smbserver share -smb2support /tmp/smbshare -user test -password test
+```
