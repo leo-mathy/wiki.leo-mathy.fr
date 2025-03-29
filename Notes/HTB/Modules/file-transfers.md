@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T12:35:20.930Z
+date: 2025-03-29T12:35:37.991Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -145,10 +145,11 @@ Pour contourner cela il est possible de créer un serveur SMB avec authentificat
 impacket-smbserver share -smb2support /tmp/smbshare -user test -password test
 ```
 
-Pour monter le partage sur un lecteur:
+Pour monter le partage sur un lecteur (parfois obligatoire pour certaines commandes):
 
 ```
 net use <lettre>: \\<adresse>\<partage> /user:<utilisateur> <nom>
 ```
 
+FTP Downloads
 
