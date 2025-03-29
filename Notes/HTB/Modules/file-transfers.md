@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T13:27:18.487Z
+date: 2025-03-29T13:29:00.431Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -306,4 +306,11 @@ copy <fichier> \\192.168.49.129\Shared\
 ```
 
 ### FTP Uploads
+
+L'envoi de fichier vers un serveur FTP est similaire au téléchargement.
+Au niveau du démarrage du serveur FTP, il faut aussi préciser que les clients sont autorisés à envoyer des fichiers vers celui-ci:
+
+```
+python3 -m pyftpdlib --port 21 --write
+```
 
