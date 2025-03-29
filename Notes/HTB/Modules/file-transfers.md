@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T12:32:47.119Z
+date: 2025-03-29T12:35:06.148Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -125,6 +125,7 @@ Avec Net.WebClient, pour ne pas vérifier le certificat SSL:
 
 Le protocole SMB (Server Message Block) tourne sur le port TCP 445. C'est un protocole commun sur les réseaux composés de services Windows. Il permet entre autres aux applications et utilisateurs de transferer des fichiers vers et depuis des serveurs SMB.
 
+
 Il est possible d'utiliser [smbserver.py](https://github.com/fortra/impacket/blob/master/examples/smbserver.py) de la suite Impacket pour créer un parrtage SMB.
 
 ```
@@ -134,7 +135,7 @@ impacket-smbserver share -smb2support /tmp/smbshare
 Il est possible d'utiliser des commandes comme [Copy-item](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.5), ou [Move-Item](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/move-item?view=powershell-7.5) ou encore [copy](https://learn.microsoft.com/fr-fr/windows-server/administration/windows-commands/copy) pour intéragir avec le partage. 
 
 ```
-copy \\<ip>\<partage>\<fichier>
+copy \\<adresse>\<partage>\<fichier>
 ```
 
 Parfois la politique Windows peut empécher l'accès aux partages ne nécéssitant aucune authentification. Pour contourner cela il est possible de créer un serveur SMB avec authentification.
@@ -142,3 +143,9 @@ Parfois la politique Windows peut empécher l'accès aux partages ne nécéssita
 ```
 impacket-smbserver share -smb2support /tmp/smbshare -user test -password test
 ```
+
+Pour monter le partage sur un lecteur
+```
+net use <lettre>: \\<adresse>\<partage> /user:<utilisateur> <nom>
+```
+
