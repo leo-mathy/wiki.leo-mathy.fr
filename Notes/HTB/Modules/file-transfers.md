@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T12:39:26.528Z
+date: 2025-03-29T12:40:26.709Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -169,3 +169,5 @@ Démarrer le serveur FTP sur le port 21 (par défaut, le port 2121 est utilisé)
 ```
 python3 -m pyftpdlib --port 21
 ```
+
+Si aucun identifiant et mot de passe n'est précisé, l'authentification anonyme est activée.
