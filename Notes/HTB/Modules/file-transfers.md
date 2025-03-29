@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T13:13:07.392Z
+date: 2025-03-29T13:20:26.265Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -266,3 +266,17 @@ Pour plus d'informations vous pouvez consulter le post Microsoft "[Preventing SM
 
 Pour contourner cela, il est possible d'utiliser SMB over HTTP avec [WebDAV](https://datatracker.ietf.org/doc/html/rfc4918).
 WebDAV est une extension du protocole HTTP qui permet aux serveurs web de se comporter comme des serveurs de fichiers (supportant la création de contenu collaboratif). WebDAV peut aussi utiliser HTTPS.
+
+Par défaut lors de l'utilisation d'un client SMB, lors d'une tentative de connexion à un partage SMB et si aucun partage SMB n'est disponbile alors le client va essayer de se connecter en utilisant HTTP.
+
+Pour mettre en place un serveur WebDAV, il faut utiliser les modules python [wsgidav](https://github.com/mar10/wsgidav) et [cheroot](https://pypi.org/project/cheroot/)
+
+```
+pip3 install wsgidav cheroot
+```
+
+Démarrer le serrveur WebDAV sur le port 80 et en écoute sur toutes les adresses et avec une authentification Anonyme:
+
+```
+wsgidav --host=0.0.0.0 --port=80 --root=/tmp --auth=anonymous
+```
