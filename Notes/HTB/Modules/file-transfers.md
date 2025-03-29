@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-22T14:32:14.475Z
+date: 2025-03-29T12:31:15.549Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -122,3 +122,18 @@ Avec Net.WebClient, pour ne pas vérifier le certificat SSL:
 ```
 
 ### SMB Downloads
+
+Le protocole SMB (Server Message Block) tourne sur le port TCP 445. C'est un protocole commun sur les réseaux composés de services Windows. Il permet entre autres aux applications et utilisateurs de transferer des fichiers vers et depuis des serveurs SMB.
+
+Il est possible d'utiliser [smbserver.py](https://github.com/fortra/impacket/blob/master/examples/smbserver.py) de la suite Impacket pour créer un parrtage SMB.
+
+```
+impacket-smbserver share -smb2support /tmp/smbshare
+```
+
+Il est possible d'utiliser des commandes comme [Copy-item](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.5), ou [Move-Item](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.management/move-item?view=powershell-7.5) ou encore [copy](https://learn.microsoft.com/fr-fr/windows-server/administration/windows-commands/copy) pour intéragir avec le partage. 
+
+```
+copy \\<ip>\<partage>\<fichier>
+```
+
