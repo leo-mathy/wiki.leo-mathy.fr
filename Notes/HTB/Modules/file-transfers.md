@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T12:35:44.465Z
+date: 2025-03-29T12:37:51.073Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -153,5 +153,6 @@ net use <lettre>: \\<adresse>\<partage> /user:<utilisateur> <nom>
 
 ### FTP Downloads
 
-
+Un autre moyen de transferer des fichiers est FTP (File Transfer Protocol), FTP utilise le port TCP 21 et TCP 20.
+Il est possible d'utiliser un client FTP ou la classe PowerShell [Net.WebClient](https://learn.microsoft.com/fr-fr/dotnet/api/system.net.webclient?view=net-8.0).
 
