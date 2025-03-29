@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T13:20:26.265Z
+date: 2025-03-29T13:26:41.863Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -271,6 +271,7 @@ Par défaut lors de l'utilisation d'un client SMB, lors d'une tentative de conne
 
 Pour mettre en place un serveur WebDAV, il faut utiliser les modules python [wsgidav](https://github.com/mar10/wsgidav) et [cheroot](https://pypi.org/project/cheroot/)
 
+Télécharger les modules python nécéssaires:
 ```
 pip3 install wsgidav cheroot
 ```
@@ -280,3 +281,27 @@ Démarrer le serrveur WebDAV sur le port 80 et en écoute sur toutes les adresse
 ```
 wsgidav --host=0.0.0.0 --port=80 --root=/tmp --auth=anonymous
 ```
+
+Se connecter au partage WebDAV:
+
+```
+dir \\192.168.49.128\DavWWWRoot
+```
+
+Le mot-clé `DavWWWRoot` est un mot spécial reconnu par Windows.
+Effectivement aucun dossier avec ce nom n'est présent sur le serveur WebDAV. Ce mot clé indique au driver qui gère les requètes WebDAV que la requète concerne la racine du serveur WebDAV.
+
+Si un dossier spécifique éxiste, alors il est possible de l'entrer à la place de ce mot-clé pour s'y rendre.
+
+Pour copier un fichier vers la racine du serveur WebDAV:
+
+```
+copy <fichier> \\192.168.49.129\DavWWWRoot\
+```
+
+Pour copier un fichier vers le dossier Shared du serveur WebDAV:
+
+```
+copy <fichier> \\192.168.49.129\Shared\
+```
+
