@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T12:38:20.038Z
+date: 2025-03-29T12:39:26.528Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -158,3 +158,14 @@ Il est possible d'utiliser un client FTP ou la classe PowerShell [Net.WebClient]
 
 Pour créer un serveur FTP, il est possible d'utiliser le module Python [pyftpdlib](https://pypi.org/project/pyftpdlib/)
 
+Installer pyftpdlib:
+
+```
+pip3 install pyftpdlib
+```
+
+Démarrer le serveur FTP sur le port 21 (par défaut, le port 2121 est utilisé):
+
+```
+python3 -m pyftpdlib --port 21
+```
