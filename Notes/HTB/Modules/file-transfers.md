@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T12:56:46.386Z
+date: 2025-03-29T13:00:15.933Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -225,4 +225,17 @@ md5sum <fichier>
 
 PowerShell ne dispose pas des fonctionnalités d'envoi intégrés.
 Cependant il est possible d'utiliser [Invoke-WebRequest](/Commandes/Windows/PowerShell/Invoke-WebRequest) ou [Invoke-RestMethod](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.5) pour créer cette fonctionnalitée.
+
+De plus, il faut un serveur Web qui supporte les upload.
+[uploadserver](https://github.com/Densaugeo/uploadserver) (une extension du modue http.server) permet cela.
+
+Télécharger le module python:
+```
+pip3 install uploadserver
+```
+
+Démarrer le serveur web:
+```
+python3 -m uploadserver
+```
 
