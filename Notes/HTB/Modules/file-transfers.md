@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:26:40.284Z
+date: 2025-04-20T16:33:31.153Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -424,3 +424,28 @@ SSH inclut l'outil SCP (Secure Copy), une commande en ligne permettant de transf
 scp <utilisateur>@<adresse>:<fichier> <destination>
 scp <source> <utilisateur>@<adresse>:<destination>
 ```
+
+### Web Upload
+
+Nous allons maintenant voir comment envoyer des fichiers.
+
+Comme vu dans la partie Windows, il est possible d'utiliser l'extension du module Python HTTP.Server, [uploadserver](https://github.com/Densaugeo/uploadserver). Cette fois-ci HTTPS sera utilisé.
+
+Télécharger et installer le module python:
+
+```
+sudo python3 -m pip install --user uploadserver
+```
+
+Générer un certificat auto-signé.
+
+```
+openssl req -x509 -out server.pem -keyout server.pem -newkey rsa:2048 -nodes -sha256 -subj '/CN=server'
+```
+
+Démarrer le serveur web:
+
+```
+python3 -m uploadserver
+```
+
