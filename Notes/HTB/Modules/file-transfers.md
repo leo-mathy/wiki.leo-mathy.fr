@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:22:37.736Z
+date: 2025-04-20T16:22:42.535Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -411,7 +411,7 @@ Exemple d'envoi d'une requète HTTP GET:
 echo -e "GET <chemin> HTTP/1.1\n\n">&3
 ```
 
-Récupérer la réponse.
+Récupérer la réponse:
 ```
 cat <&3
 ```
