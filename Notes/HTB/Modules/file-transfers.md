@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:05:53.784Z
+date: 2025-04-20T16:06:51.465Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -361,6 +361,10 @@ Une fois sur la machine cible, pour décoder la châine vers un fichier:
 echo -n <chaine> | base64 -d > <fichier>
 ```
 
+Il est ensuite possible de recalculer le hash MD pour s'assurer de l'intégrité du fichier:
 
+```
+md5sum <fichier>
+```
 
 
