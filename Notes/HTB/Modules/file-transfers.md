@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-03-29T13:32:20.534Z
+date: 2025-04-20T16:00:53.442Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -336,3 +336,11 @@ ftp -v -n -s:ftpcommand.txt
 ```
 
 ## Linux File Transfer Methods
+
+La pluspart des malwares utilisent HTTP/HTTPS pour communiquer.
+
+### Base64 Encoding / Decoding
+
+Selon la taille du fichier, on peut le transférer sans réseau. Avec un accès terminal, il suffit de l'encoder en base64, copier/coller son contenu, puis le décoder.
+
+
