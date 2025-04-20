@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:18:46.417Z
+date: 2025-04-20T16:19:52.989Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -400,3 +400,8 @@ Il peut arriver qu'aucun outil de transfert de fichiers classique ne soit dispon
 Si Bash version 2.04 ou supérieure (avec l'option --enable-net-redirections) est installé, il est possible d'utiliser le fichier [/dev/tcp](https://acc3ssp0int.com/2023/10/15/back-2-basics-dev-tcp/) pour télécharger des fichiers simplement.
 
 [Guide pour effectuer des requètes HTTP avec /dev/tcp](https://rednafi.com/misc/http_requests_via_dev_tcp/)
+
+Établir une connexion TCP:
+```
+exec 3<>/dev/tcp/<adresse>/<port>
+```
