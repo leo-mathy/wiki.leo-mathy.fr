@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:42:44.264Z
+date: 2025-04-20T16:55:07.371Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -500,3 +500,5 @@ Créer un serveur web avec Ruby:
 ```
 ruby -run -ehttpd . -p8000
 ```
+
+### Transferring Files with Code
