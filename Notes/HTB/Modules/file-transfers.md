@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:22:42.535Z
+date: 2025-04-20T16:23:16.425Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -415,3 +415,5 @@ Récupérer la réponse:
 ```
 cat <&3
 ```
+
+### SSH Downloads
