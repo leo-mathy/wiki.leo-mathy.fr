@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:23:16.425Z
+date: 2025-04-20T16:25:12.225Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -417,3 +417,6 @@ cat <&3
 ```
 
 ### SSH Downloads
+
+SSH inclut l'outil SCP (Secure Copy), une commande en ligne permettant de transférer des fichiers et dossiers entre un hôte local et un hôte distant via SSH.
+
