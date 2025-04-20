@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:19:52.989Z
+date: 2025-04-20T16:22:37.736Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -404,4 +404,14 @@ Si Bash version 2.04 ou supérieure (avec l'option --enable-net-redirections) es
 Établir une connexion TCP:
 ```
 exec 3<>/dev/tcp/<adresse>/<port>
+```
+
+Exemple d'envoi d'une requète HTTP GET:
+```
+echo -e "GET <chemin> HTTP/1.1\n\n">&3
+```
+
+Récupérer la réponse.
+```
+cat <&3
 ```
