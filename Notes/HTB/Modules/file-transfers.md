@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:06:51.465Z
+date: 2025-04-20T16:07:07.884Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -356,7 +356,7 @@ cat <fichier> |base64 -w 0;echo
 `-w 0` permet d'avoir la sortie sur une ligne unique et `echo` permet de créer une nouvelle ligne pour copier plus facilement le chaîne.
 
 
-Une fois sur la machine cible, pour décoder la châine vers un fichier:
+Une fois sur la machine de destination, pour décoder la châine vers un fichier:
 ```
 echo -n <chaine> | base64 -d > <fichier>
 ```
