@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:38:38.163Z
+date: 2025-04-20T16:40:05.097Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -464,16 +464,27 @@ curl -X POST https://<adresse>/upload -F 'files=@<fichier>' --insecure
 
 Comme les distributions Linux ont souvent Python ou PHP installés, démarrer un serveur web pour transférer des fichiers est simple. Si le serveur compromis est déjà un serveur web, on peut déplacer les fichiers souhaités dans le répertoire web et y accéder via une page web.
 
-Il est possible de lancer un serveur web avec plusieurs langages. Si la machine compromise n'a pas de serveur web installé, on peut utiliser un mini serveur web. Bien qu'ils soient moins sécurisés, ils offrent une grande flexibilité, notamment pour changer rapidement le dossier racine (webroot) et le port d'écoute.
+Il est possible de lancer un serveur web avec plusieurs langages. Si la machine compromise n'a pas de serveur web installé, on peut utiliser un mini serveur web. Bien qu'ils soient moins sécurisés, ils offrent une grande flexibilité, notamment pour changer rapidement le dossier racine (webroot) et le port d'écoute. Cependant il est possible que le traffic entrant ne soit pas autorisé.
 
-Créer un serveur web avec Python3
+Créer un serveur web avec Python3:
 ```
 python3 -m http.server
 ```
 
-Créer un serveur web avec Python 2.7
+Créer un serveur web avec Python 2.7:
 ```
 python2.7 -m SimpleHTTPServer
 ```
+
+Créer un serveur web avec Php:
+```
+php -S 0.0.0.0:8000
+```
+
+Créer un serveur web avec Ruby:
+```
+ruby -run -ehttpd . -p8000
+```
+
 
 
