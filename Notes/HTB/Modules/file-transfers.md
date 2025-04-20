@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:40:05.097Z
+date: 2025-04-20T16:41:28.532Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -418,7 +418,7 @@ cat <&3
 
 ### SSH Downloads
 
-SSH inclut l'outil SCP (Secure Copy), une commande en ligne permettant de transférer des fichiers et dossiers entre un hôte local et un hôte distant via SSH.
+SSH inclut l'outil SCP (Secure Copy), une commande en ligne permettant de transférer des fichiers et dossiers entre un hôte local et un hôte distant via SSH. Dans les deux sens.
 
 ```
 scp <utilisateur>@<adresse>:<fichier> <destination>
@@ -427,7 +427,7 @@ scp <source> <utilisateur>@<adresse>:<destination>
 
 ### Web Upload
 
-Nous allons maintenant voir comment envoyer des fichiers.
+Nous allons maintenant voir comment envoyer des fichiers vers un serveur HTTP.
 
 Comme vu dans la partie Windows, il est possible d'utiliser l'extension du module Python HTTP.Server, [uploadserver](https://github.com/Densaugeo/uploadserver). Cette fois-ci HTTPS sera utilisé.
 
@@ -485,6 +485,5 @@ Créer un serveur web avec Ruby:
 ```
 ruby -run -ehttpd . -p8000
 ```
-
 
 
