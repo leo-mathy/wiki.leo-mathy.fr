@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:17:54.428Z
+date: 2025-04-20T16:18:32.722Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -397,6 +397,6 @@ wget -qO- https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/
 ### Download with Bash (/dev/tcp)
 
 Il peut arriver qu'aucun outil de transfert de fichiers classique ne soit disponible.
-Si Bash version 2.04 ou supérieure (avec l'option --enable-net-redirections) est installé, il est possible d'utiliser le fichier /dev/TCP pour télécharger des fichiers simplement.
+Si Bash version 2.04 ou supérieure (avec l'option --enable-net-redirections) est installé, il est possible d'utiliser le fichier [/dev/TCP](https://acc3ssp0int.com/2023/10/15/back-2-basics-dev-tcp/) pour télécharger des fichiers simplement.
 
 [Guide pour effectuer des requètes HTTP avec /dev/tcp](https://rednafi.com/misc/http_requests_via_dev_tcp/)
