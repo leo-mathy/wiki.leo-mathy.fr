@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:07:07.884Z
+date: 2025-04-20T16:11:36.974Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -367,4 +367,18 @@ Il est ensuite possible de recalculer le hash MD pour s'assurer de l'intégrité
 md5sum <fichier>
 ```
 
+### Web Downloads with Wget and cURL
+
+Télécharger un fichier avec wget:
+```
+wget <URI> -O <fichier de sortie>
+```
+Télécharger un fichier avec curl:
+```
+curl <URI> -o <fichier de sortie>
+```
+
+### Fileless Attacks Using Linux
+
+Il est possible d'utiliser la fonction de [piping](https://www.geeksforgeeks.org/piping-in-unix-or-linux/) sur Linux pour effectuer des opérations sans fichiers. Cela signifie qu'aucun fichier n'est écrit sur le disque, et par conséquent plus discret.
 
