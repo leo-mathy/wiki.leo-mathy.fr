@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:00:53.442Z
+date: 2025-04-20T16:04:17.366Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -342,5 +342,21 @@ La pluspart des malwares utilisent HTTP/HTTPS pour communiquer.
 ### Base64 Encoding / Decoding
 
 Selon la taille du fichier, on peut le transférer sans réseau. Avec un accès terminal, il suffit de l'encoder en base64, copier/coller son contenu, puis le décoder.
+
+Pour calculer le hash MD5 du fichier:
+```
+md5sum <fichier>
+```
+
+Pour encoder le fichier en base64:
+```
+cat <fichier> |base64 -w 0;echo
+```
+
+`-w 0` permet d'avoir la sortie sur une ligne unique. `echo` permet de créer une nouvelle ligne pour copier plus facilement le chaîne.
+
+
+
+
 
 
