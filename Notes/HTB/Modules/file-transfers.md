@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T12:15:34.691Z
+date: 2025-04-21T12:15:59.193Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -609,4 +609,6 @@ Il est ensuite possible d'utiliser cscript.exe pour executer le script:
 ```
 cscript.exe /nologo <fichier vbs> <uri> fichier>
 ```
+
+### Upload Operations using Python3
 
