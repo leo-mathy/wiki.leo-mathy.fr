@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T11:43:47.843Z
+date: 2025-04-21T11:45:44.551Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -508,4 +508,6 @@ Il est courant que différents langages de programmation soient présents sur le
 Sur Windows, il est possible d'utiliser des applications natives comme [cscript](https://learn.microsoft.com/fr-fr/windows-server/administration/windows-commands/cscript) ou [mshta](https://www.malekal.com/mshta-exe-fichier-hta-malwares/) pour exécuter du code JavaScript ou VBScript.
 
 ### Python
+
+Python est populaire et peut exécuter des commandes en une ligne avec `-c`.
 
