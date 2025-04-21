@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T11:45:44.551Z
+date: 2025-04-21T11:47:23.024Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -511,3 +511,12 @@ Sur Windows, il est possible d'utiliser des applications natives comme [cscript]
 
 Python est populaire et peut exécuter des commandes en une ligne avec `-c`.
 
+Télécharger un fichier avec urllib et Python 2.7 (Anciens environements):
+```
+python2.7 -c 'import urllib; urllib.urlretrieve("<uri>", "<fichier>")'
+```
+
+Télécharger un fichier avec urllib et Python 3:
+```
+python3 -c 'import urllib.request; urllib.request.urlretrieve("<uri>", "<fichier>")'
+```
