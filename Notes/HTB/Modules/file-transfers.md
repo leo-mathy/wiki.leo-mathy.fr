@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T11:56:34.999Z
+date: 2025-04-21T11:58:17.144Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -533,6 +533,10 @@ Exemple de commande pour télécharger un fichier avec la fonction php `File_get
 php -r '$file = file_get_contents("<uri>"); file_put_contents("<fichier>",$file);'
 ```
 
+Comme alternative il est possible d'utiliser [Fopen()](https://www.php.net/manual/en/function.fopen.php).
+
 Exemple de commande pour télécharger un fichier avec la fonction php `Fopen()`:
 ```
+php -r 'const BUFFER = 1024; $fremote = fopen("<uri>", "rb"); $flocal = fopen("<fichier>", "wb"); while ($buffer = fread($fremote, BUFFER)) { fwrite($flocal, $buffer); } fclose($flocal); fclose($fremote);'
 ```
+
