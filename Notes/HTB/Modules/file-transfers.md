@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T11:58:17.144Z
+date: 2025-04-21T11:59:25.514Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -539,4 +539,6 @@ Exemple de commande pour télécharger un fichier avec la fonction php `Fopen()`
 ```
 php -r 'const BUFFER = 1024; $fremote = fopen("<uri>", "rb"); $flocal = fopen("<fichier>", "wb"); while ($buffer = fread($fremote, BUFFER)) { fwrite($flocal, $buffer); } fclose($flocal); fclose($fremote);'
 ```
+
+Il est aussi possible d'utiliser la fonction de piping comme vu précedemment pour effectuer une opération sans écrire sur le disque (sans-fichier/fileless).
 
