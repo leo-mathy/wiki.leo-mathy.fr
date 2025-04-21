@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T12:01:52.480Z
+date: 2025-04-21T12:09:35.251Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -559,5 +559,28 @@ ruby -e 'require "net/http"; File.write("<fichier>", Net::HTTP.get(URI.parse("<u
 Exemple avec Perl:
 ```
 perl -e 'use LWP::Simple; getstore("<uri>", "<fichier>");'
+```
+
+### JavaScript
+
+JavaScript est un langage de script qui permet d'ajouter des fonctionnalités complexes aux pages web.
+
+Le code suivant (basé sur ce [post](https://superuser.com/questions/25538/how-to-download-files-from-command-line-in-windows-like-wget-or-curl/373068)) peut être utilisé pour télécharger un fichier.
+
+Créer un fichier avec une extension .js contenant:
+```
+var WinHttpReq = new ActiveXObject("WinHttp.WinHttpRequest.5.1");
+WinHttpReq.Open("GET", WScript.Arguments(0), /*async=*/false);
+WinHttpReq.Send();
+BinStream = new ActiveXObject("ADODB.Stream");
+BinStream.Type = 1;
+BinStream.Open();
+BinStream.Write(WinHttpReq.ResponseBody);
+BinStream.SaveToFile(WScript.Arguments(1));
+```
+
+Il est ensuite possible d'utiliser cscript.exe pour executer le code Javascript:
+```
+cscript.exe /nologo <fichier de code Javascript> <uri> <fichier>
 ```
 
