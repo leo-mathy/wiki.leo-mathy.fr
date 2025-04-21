@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T11:42:36.509Z
+date: 2025-04-21T11:42:55.735Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -505,5 +505,5 @@ ruby -run -ehttpd . -p8000
 
 Il est courant que différents langages de programmation soient présents sur les cibles. Certains langages comme Python, php, perl ou ruby sont souvent présents sur les distributions Linux, mais peuvent aussi être installés dans des environements Windows (bien que cela soit moins probable).
 
-Sur Windows, il est possible d'utiliser des applications natives comme [cscript](https://learn.microsoft.com/fr-fr/windows-server/administration/windows-commands/cscript) ou [mshta](https://www.malekal.com/mshta-exe-fichier-hta-malwares/) pour exécuter du JavaScript ou du VBScript.
+Sur Windows, il est possible d'utiliser des applications natives comme [cscript](https://learn.microsoft.com/fr-fr/windows-server/administration/windows-commands/cscript) ou [mshta](https://www.malekal.com/mshta-exe-fichier-hta-malwares/) pour exécuter du code JavaScript ou VBScript.
 
