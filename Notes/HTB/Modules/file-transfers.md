@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T12:00:39.014Z
+date: 2025-04-21T12:01:52.480Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -548,4 +548,16 @@ php -r '$lines = @file("<uri>"); foreach ($lines as $line_num => $line) { echo $
 ```
 
 ### Other Languages
+
+Ruby et Perl permettent aussi d'exécuter des commandes en une ligne avec -e et de transférer des fichiers.
+
+Exemple avec Ruby:
+```
+ruby -e 'require "net/http"; File.write("<fichier>", Net::HTTP.get(URI.parse("<uri>")))'
+```
+
+Exemple avec Perl:
+```
+perl -e 'use LWP::Simple; getstore("<uri>", "<fichier>");'
+```
 
