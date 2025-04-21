@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T11:47:23.024Z
+date: 2025-04-21T11:55:27.457Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -520,3 +520,14 @@ Télécharger un fichier avec urllib et Python 3:
 ```
 python3 -c 'import urllib.request; urllib.request.urlretrieve("<uri>", "<fichier>")'
 ```
+
+### PHP
+
+La grande majoritée des sites internet utilisent PHP ([source](https://w3techs.com/technologies/details/pl-php)).
+
+Il est possible d'utiliser [File_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php) pour télécharger le contenu depuis un serveur web et [file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php) pour écrire le fichier sur le disque.
+Php peut être utilisé pour exécuter des one-liners depuis la ligne de commande avec l'option `-r`
+
+Télécharger un fichier avec la fonction php `File_get_contents()`:
+
+Télécharger un fichier avec la fonction php `Fopen()`:
