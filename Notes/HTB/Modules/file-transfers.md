@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T16:17:01.601Z
+date: 2025-04-26T16:20:06.388Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -727,6 +727,24 @@ Pour tester la connexion distante avec WinRM il est possible d'utiliser `Test-Ne
 ```
 Test-NetConnection -ComputerName <ordinateur> -Port <port (5985/5986 par défaut)>
 ```
+
+Pour créer une session WinRM il est possible d'utiliser `New-PSSession`:
+Dans notre cas, la session sera stockée dans une variable pour un accès ultérieur.
+```
+$Session = New-PSSession -ComputerName <ordinateur>
+```
+
+Pour copier un fichier vers un ordinateur distant à l'aide d'une session:
+```
+Copy-Item -Path <fichier> -ToSession $Session -Destination <répertoire>
+```
+
+Pour copier un fichier depuis un ordinateur distant à l'aide d'une session:
+```
+Copy-Item -Path <fichier> -FromSession $Session -Destination <répertoire>
+```
+
+### RDP
 
 
 
