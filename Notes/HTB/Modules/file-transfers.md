@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T15:45:20.881Z
+date: 2025-04-26T15:48:28.405Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -660,9 +660,18 @@ Avec **Ncat**, Écoute sur le port spécifié et envoi la sortie vers un fichier
 ncat -l -p <port> --recv-only > <fichier>
 ```
 
-Pour envoyer le fichier avec Netcat:
+Pour envoyer le fichier avec **Netcat**:
 (l'option `-q 0` indique de terminer la connexion directement lorsque la fin du fichier est atteinte)
 
 ```
 nc -q 0 <adresse> <port> < <fichier>
 ```
+
+Pour envoyer le fichier avec **Ncat**:
+
+```
+ncat --send-only <adresse> <port> < <fichier>
+```
+
+Avec l'option `--send-only`, la connexion se termine automatiquement une fois son envoi terminé, sans attendre de réponse du réseau, contrairement au comportement normal où il resterait ouvert jusqu'à la fermeture de la connexion.
+
