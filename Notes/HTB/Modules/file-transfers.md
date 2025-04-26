@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T16:25:32.360Z
+date: 2025-04-26T16:26:43.578Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -759,6 +759,9 @@ Pour monter un répertoire Linux dans la session avec xfreerdp:
 ```
 xfreerdp /v:<adresse> /d:<domaine> /u:<utilisateur> /p:'<mot de passe>' /drive:<nom disque>,<répertoire local>
 ```
+
+Ces répertoires sont désormais accessibles depuis `\\tsclient\`.
+
 
 
 
