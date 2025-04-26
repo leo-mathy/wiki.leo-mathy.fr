@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T15:51:27.901Z
+date: 2025-04-26T15:58:31.760Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -647,28 +647,28 @@ La version originale de Netcat à été [publié](http://seclists.org/bugtraq/19
 la cible ou la machine attaquante peuvent initier la connexion.
 Nous allons voir comment la machine attaquante peut initier la connexion.
 
-Avec **Netcat**, Écoute sur le port spécifié et envoi la sortie vers un fichier:
+Avec **Netcat**, Écoute sur le port spécifié et envoi la réponse vers un fichier:
 
 ```
 nc -l -p <port> > <fichier>
 ```
 
 
-Avec **Ncat**, Écoute sur le port spécifié et envoi la sortie vers un fichier:
-(l'option `--recv-only` termine la connexion une fois le fichier transféré)
+Avec **Ncat**, Écoute sur le port spécifié et envoi la réponse vers un fichier:
+(l'option `--recv-only` termine la connexion une fois la réponse reçue)
 
 ```
 ncat -l -p <port> --recv-only > <fichier>
 ```
 
-Pour envoyer le fichier avec **Netcat**:
-(l'option `-q 0` indique de terminer la connexion directement lorsque la fin du fichier est atteinte)
+Pour envoyer le contenu fichier avec **Netcat**:
+(l'option `-q 0` indique de terminer la connexion directement lorsque la réponse est reçue.)
 
 ```
 nc -q 0 <adresse> <port> < <fichier>
 ```
 
-Pour envoyer le fichier avec **Ncat**:
+Pour envoyer le contenu du fichier avec **Ncat**:
 
 ```
 ncat --send-only <adresse> <port> < <fichier>
@@ -680,4 +680,15 @@ Avec l'option `--send-only`, la connexion se termine automatiquement une fois so
 
 Nous allons voir comment la machine cible peut initier la connexion.
 
-Au lieu d'écouter sur la machine compromise, on peut se connecter à un port de la machine d'attaque pour transférer un fichier, ce qui est utile si un pare-feu bloque les connexions entrantes.
+Au lieu d'écouter sur la machine compromise, on peut se connecter à un port de la machine d'attaque pour transférer le contenu du fichier, ce qui est utile si un pare-feu bloque les connexions entrantes.
+
+Avec **Netcat**, Écoute sur le port spécifié et envoi le contenu du fichier lors des connexions:
+```
+sudo nc -l -p <port> -q 0 < <fichier>
+```
+
+Avec **Netcat**, se connecter et envoi la réponse dans un fichier:
+```
+nc <adresse> <port> > <fichier>
+```
+
