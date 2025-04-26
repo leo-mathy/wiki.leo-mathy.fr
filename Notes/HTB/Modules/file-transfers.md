@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T15:48:28.405Z
+date: 2025-04-26T15:51:27.901Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -645,6 +645,7 @@ La version originale de Netcat à été [publié](http://seclists.org/bugtraq/19
 ### File Transfer with Netcat and Ncat
 
 la cible ou la machine attaquante peuvent initier la connexion.
+Nous allons voir comment la machine attaquante peut initier la connexion.
 
 Avec **Netcat**, Écoute sur le port spécifié et envoi la sortie vers un fichier:
 
@@ -675,3 +676,8 @@ ncat --send-only <adresse> <port> < <fichier>
 
 Avec l'option `--send-only`, la connexion se termine automatiquement une fois son envoi terminé, sans attendre de réponse du réseau, contrairement au comportement normal où il resterait ouvert jusqu'à la fermeture de la connexion.
 
+---
+
+Nous allons voir comment la machine cible peut initier la connexion.
+
+Au lieu d'écouter sur la machine compromise, on peut se connecter à un port de la machine d'attaque pour transférer un fichier, ce qui est utile si un pare-feu bloque les connexions entrantes.
