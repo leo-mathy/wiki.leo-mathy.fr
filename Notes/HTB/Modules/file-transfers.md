@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T16:20:06.388Z
+date: 2025-04-26T16:25:32.360Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -745,6 +745,20 @@ Copy-Item -Path <fichier> -FromSession $Session -Destination <répertoire>
 ```
 
 ### RDP
+
+Il est possible de copier/coller des fichiers et dossiers une fois une session rdp établie (avec le client officiel, xfreerdp ou encore rdesktop).
+
+Si jamais cette fonctionnalité ne fonctionne pas, il est possible d'exposer des dossiers locaux dans la session rdp.
+
+Pour monter un répertoire Linux dans la session avec rdesktop:
+```
+rdesktop <adresse> -d <domaine> -u <utilisateur> -p '<mot de passe>' -r disk:<nom disque>='<répertoire local>'
+```
+
+Pour monter un répertoire Linux dans la session avec xfreerdp:
+```
+xfreerdp /v:<adresse> /d:<domaine> /u:<utilisateur> /p:'<mot de passe>' /drive:<nom disque>,<répertoire local>
+```
 
 
 
