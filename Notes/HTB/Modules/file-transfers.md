@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T15:58:31.760Z
+date: 2025-04-26T16:00:44.436Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -690,5 +690,15 @@ sudo nc -l -p <port> -q 0 < <fichier>
 Avec **Netcat**, se connecter et envoi la réponse dans un fichier:
 ```
 nc <adresse> <port> > <fichier>
+```
+
+Avec **Ncat**, Écoute sur le port spécifié et envoi le contenu du fichier lors des connexions:
+```
+sudo ncat -l -p <port> --send-only < <fichier>
+```
+
+Avec **Ncat**, se connecter et envoi la réponse dans un fichier:
+```
+ncat <adresse> <port> --recv-only > <fichier>
 ```
 
