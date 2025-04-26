@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T16:26:43.578Z
+date: 2025-04-26T16:29:05.182Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -746,7 +746,7 @@ Copy-Item -Path <fichier> -FromSession $Session -Destination <répertoire>
 
 ### RDP
 
-Il est possible de copier/coller des fichiers et dossiers une fois une session rdp établie (avec le client officiel, xfreerdp ou encore rdesktop).
+Il est possible de copier/coller des fichiers et dossiers une fois une session rdp établie (avec le [client officiel](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mstsc), xfreerdp ou encore rdesktop).
 
 Si jamais cette fonctionnalité ne fonctionne pas, il est possible d'exposer des dossiers locaux dans la session rdp.
 
@@ -761,6 +761,10 @@ xfreerdp /v:<adresse> /d:<domaine> /u:<utilisateur> /p:'<mot de passe>' /drive:<
 ```
 
 Ces répertoires sont désormais accessibles depuis `\\tsclient\`.
+
+Avec le client officiel [mstsc](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mstsc), il est aussi possible de partager des répertoires (Local Ressources > Drives > disque souhaité).
+
+
 
 
 
