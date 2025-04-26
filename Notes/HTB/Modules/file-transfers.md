@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-21T12:21:17.434Z
+date: 2025-04-26T15:45:20.881Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -632,3 +632,37 @@ python3 -c 'import requests;requests.post("<uri>",files={"files":open("<fichier>
 ```
 
 ## Miscellaneous File Transfer Methods
+
+Cette partie va présenter les méthodes de transfert alternatives.
+
+### Netcat
+
+Netcat (abrégé nc) est un outil qui permet de lire et d'écrire vers des connexions réseau avec TCP ou UDP.
+Il peut donc aussi être utilisé pour transferer des fichiers.
+
+La version originale de Netcat à été [publié](http://seclists.org/bugtraq/1995/Oct/0028.html) par Hobbit en 1995, mais n'a pas été maintenue. L'utilité de cet outil a poussé le projet Nmap à produire un outil appellé [Ncat](https://nmap.org/ncat/), cet outil présente une implémentation moderne de Netcat, avec un support pour le SSL, IPv6, SOCKS, proxy HTTP, etc.
+
+### File Transfer with Netcat and Ncat
+
+la cible ou la machine attaquante peuvent initier la connexion.
+
+Avec **Netcat**, Écoute sur le port spécifié et envoi la sortie vers un fichier:
+
+```
+nc -l -p <port> > <fichier>
+```
+
+
+Avec **Ncat**, Écoute sur le port spécifié et envoi la sortie vers un fichier:
+(l'option `--recv-only` termine la connexion une fois le fichier transféré)
+
+```
+ncat -l -p <port> --recv-only > <fichier>
+```
+
+Pour envoyer le fichier avec Netcat:
+(l'option `-q 0` indique de terminer la connexion directement lorsque la fin du fichier est atteinte)
+
+```
+nc -q 0 <adresse> <port> < <fichier>
+```
