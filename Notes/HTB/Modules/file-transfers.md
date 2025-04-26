@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T16:05:41.803Z
+date: 2025-04-26T16:06:30.818Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -705,6 +705,7 @@ ncat <adresse> <port> --recv-only > <fichier>
 ---
 
 Si Ncat ou Netcat n'est pas disponible, Bash supporte les opérations en lecture/écriture vers [/dev/tcp](https://tldp.org/LDP/abs/html/devref1.html).
+Cela permet aussi d'envoyer ou de transferer des fichiers.
 
 Écrire vers ce fichier permet au shell d'ouvrir une connection TCP vers `hôte:port`.
 
