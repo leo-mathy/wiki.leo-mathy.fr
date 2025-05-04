@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:20:21.004Z
+date: 2025-05-04T15:22:35.714Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -822,5 +822,12 @@ En plus du chhiffrement, il est conseillé de transferer les données via un can
 ## Catching Files over HTTP/S
 
 Le transfert de fichiers via HTTP/HTTPS estcourant, car ces protocoles sont souvent autorisés sur les pare-feu. De plus, les données sont souvent chiffrés en transit. Transférer un fichier sensible en clair peut déclencher des alertes IDS/IPS. On peut utiliser `uploadserver` en Python, mais aussi Apache ou Nginx pour créer un serveur web sécurisé pour les uploads.
+
+### Nginx - Enabling PUT
+
+Nginx est une bonne alternative à Apache pour le transfert de fichiers, car sa configuration est plus simple et son système de modules présente moins de risques de sécurité.
+
+Lorsqu’on autorise les uploads via HTTP, il est crucial d’empêcher l’exécution de web shells. Apache, avec son module PHP, peut facilement exécuter des fichiers `.php` uploadés, ce qui le rend risqué. Nginx, en revanche, rend la configuration de PHP plus complexe, réduisant ce danger.
+
 
 
