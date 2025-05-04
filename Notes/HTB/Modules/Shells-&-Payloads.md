@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-04T16:31:15.419Z
+date: 2025-05-04T16:35:10.756Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -32,5 +32,12 @@ Le terme de shell possède plusieurs perspectives:
 | **Sécurité** | Un shell peut être obtenu en exploitant une vulnérabilité pour obtenir un accès interactif à un hôte (ex: EternalBlue).                   |
 | **Web**                 | Un shell web exploite des vulnérabilités, comme le téléchargement d'un fichier ou script, pour permettre à l'attaquant de donner des instructions via des requètes HTTP. |
 
+### Payloads Deliver us Shells
 
+Le terme "payload" peut être défini de différentes manières:
+
+- Réseau : La partie contenant les données d'un paquet.
+- Général: La partie d'un jeu d'instructions qui définit l'action à entreprendre.
+- Programation: La portion de données transportée par une instruction dans un langage de programmation.
+- Sécurité: Le code créé pour exploiter une vulnérabilité dans un système informatique, incluant différents types de malwares.
 
