@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:16:19.433Z
+date: 2025-05-04T15:20:21.004Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -820,4 +820,7 @@ openssl enc -d -aes256 -iter 100000 -pbkdf2 -in passwd.enc -out passwd
 En plus du chhiffrement, il est conseillé de transferer les données via un canal sécurisé (openssl,https,sftp,ssh...).
 
 ## Catching Files over HTTP/S
+
+Le transfert de fichiers via HTTP/HTTPS estcourant, car ces protocoles sont souvent autorisés sur les pare-feu. De plus, les données sont souvent chiffrés en transit. Transférer un fichier sensible en clair peut déclencher des alertes IDS/IPS. On peut utiliser `uploadserver` en Python, mais aussi Apache ou Nginx pour créer un serveur web sécurisé pour les uploads.
+
 
