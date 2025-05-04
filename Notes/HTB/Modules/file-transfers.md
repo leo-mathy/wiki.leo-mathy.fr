@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T14:42:53.295Z
+date: 2025-05-04T14:58:41.796Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -790,7 +790,3 @@ Par exemple:
 ```
 Invoke-AESEncryption -Mode Encrypt -Key <clé> -Path <fichier>
 ```
-
-
-
-
