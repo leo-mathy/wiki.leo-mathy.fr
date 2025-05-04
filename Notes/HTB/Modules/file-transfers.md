@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:40:23.607Z
+date: 2025-05-04T15:41:02.245Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -875,7 +875,7 @@ curl -T /etc/passwd http://localhost:9001/SecretUploadDirectory/users.txt
 
 Par défaut avec Apache, le listage des répertoires est activé (si aucun fichier index.html n'est présent), ce qui permet à n'importe qui de voir le contenu du répertoire (risque de confidentialité). Sur Nginx, cela n'est pas activé par défaut grâce aux fonctionnalitées minimales.
 
-### Living off The Land
+## Living off The Land
 
 L'expression "Living off the land" a été inventée par Christopher Campbell (@obscuresec) et Matt Graeber (@mattifestation) lors de la DerbyCon 3.
 
@@ -894,6 +894,7 @@ Les binaires **Living off the Land** peuvent être utilisés pour effectuer des 
 - Contournement de sécurité (bypass)
 
 
+### Using the LOLBAS and GTFOBins Project
 
 
 
