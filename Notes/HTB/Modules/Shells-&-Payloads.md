@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-04T16:58:27.496Z
+date: 2025-05-04T17:04:18.159Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -14,7 +14,7 @@ Date de complétion: XX/XX/XXXX
 
 # Shells Jack Us In, Payloads Deliver Us Shells
 
-Un shell est un programme qui fournit à un utilisateur une interface où entrer des instructions et voir la sortie texte. Les shell les plus connus étant Bash, Zsh, Powershell ou encore cmd.
+Un shell est un programme qui fournit à un utilisateur une interface où entrer des instructions et voir la sortie texte. Les shell les plus connus étant Bash, Zsh, PowerShell ou encore cmd.
 
 ## Why Get a Shell?
 
@@ -24,11 +24,11 @@ Avoir un shell permet aussi de maintenir une persistance sur le système, offran
 
 Le terme de shell possède plusieurs perspectives:
 
-| **Perspective**        | **Description**                                                                                                                                                       |
-|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Général**           | Environnement en ligne de commande utilisé pour administrer des tâches sur un PC (ex : Bash, PowerShell).                                                              |
-| **Sécurité** | Un shell peut être obtenu en exploitant une vulnérabilité pour obtenir un accès interactif à un hôte (ex: EternalBlue).                   |
-| **Web**                 | Un shell web exploite des vulnérabilités, comme le téléchargement d'un fichier ou script, pour permettre à l'attaquant de donner des instructions via des requètes HTTP. |
+| **Perspective** | **Description**                                                                                                                                                          |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Général**     | Environnement en ligne de commande utilisé pour administrer des tâches sur un PC (ex : Bash, PowerShell).                                                                |
+| **Sécurité**    | Un shell peut être obtenu en exploitant une vulnérabilité pour obtenir un accès interactif à un hôte (ex: EternalBlue).                                                  |
+| **Web**         | Un shell web exploite des vulnérabilités, comme le téléchargement d'un fichier ou script, pour permettre à l'attaquant de donner des instructions via des requêtes HTTP. |
 
 ## Payloads Deliver us Shells
 
@@ -36,7 +36,7 @@ Le terme "payload" peut être défini de différentes manières:
 
 - Réseau : La partie contenant les données d'un paquet.
 - Général: La partie d'un jeu d'instructions qui définit l'action à entreprendre.
-- Programation: La portion de données transportée par une instruction dans un langage de programmation.
+- Programmation: La portion de données transportée par une instruction dans un langage de programmation.
 - Sécurité: Le code créé pour exploiter une vulnérabilité dans un système informatique, incluant différents types de malwares.
 
 # Anatomy of a Shell
@@ -45,19 +45,19 @@ Chaque système d'exploitation dispose d'un ou plusieurs shell. Pour intéragir 
 
 Voici quelques émulateurs de terminaux:
 
-| **Émulateur de terminal** | **Système d'exploitation**         |
-|-----------------------|------------------------------|
-| Windows Terminal      | Windows                      |
-| cmder                 | Windows                      |
-| PuTTY                 | Windows                      |
-| kitty                 | Windows, Linux et MacOS     |
-| Alacritty             | Windows, Linux et MacOS     |
-| xterm                 | Linux                        |
-| GNOME Terminal        | Linux                        |
-| MATE Terminal         | Linux                        |
-| Konsole               | Linux                        |
-| Terminal              | MacOS                        |
-| iTerm2                | MacOS                        |
+| **Émulateur de terminal** | **Système d'exploitation** |
+| ------------------------- | -------------------------- |
+| Windows Terminal          | Windows                    |
+| cmder                     | Windows                    |
+| PuTTY                     | Windows                    |
+| kitty                     | Windows, Linux et MacOS    |
+| Alacritty                 | Windows, Linux et MacOS    |
+| xterm                     | Linux                      |
+| GNOME Terminal            | Linux                      |
+| MATE Terminal             | Linux                      |
+| Konsole                   | Linux                      |
+| Terminal                  | MacOS                      |
+| iTerm2                    | MacOS                      |
 
 Cette liste ne recense pas tous les émulateurs de terminal existants, mais elle présente certains des plus utilisés.
 Beaucoup étant open source, il est possible de les installer sur d'autres systèmes d'exploitation que ceux prévus à l'origine. Le choix d’un émulateur de terminal dépend avant tout des préférences personnelles et du style de travail.
@@ -79,3 +79,4 @@ Lorsque du texte aléatoire est saisi, Bash répond qu’il ne reconnaît pas la
 
 Une autre manière d’identifier l’interpréteur utilisé est de consulter les processus en cours d'exécution sur la machine avec `ps` ou de regarder la variable d'environnement `SHELL`.
 
+Il est aussi possible d'ouvrir PowerShell avec l'application MATE Terminal, Cela montre qu'il est possible d'utiliser des interpréteurs de commandes différents pour un émulateur de terminal.
