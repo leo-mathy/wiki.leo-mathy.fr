@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T14:58:41.796Z
+date: 2025-05-04T15:12:47.925Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -790,3 +790,18 @@ Par exemple:
 ```
 Invoke-AESEncryption -Mode Encrypt -Key <clé> -Path <fichier>
 ```
+
+### File Encryption on Linux
+
+Pour chiffrer des fichiers et informations sur Linux, il est possible d'utiliser l'outil [OpenSSL](https://www.openssl.org/). OpenSSL est un outil souvent présent par défaut dans les distributions.
+
+La [documentation officielle](https://www.openssl.org/docs/man1.1.1/man1/openssl-enc.html) indique aussi les ciphers suportés.
+
+```
+openssl enc -aes256 -iter 100000 -pbkdf2 -in <fichier> -out <sortie>
+```
+- `aes255` : Indique le cipher (algorithme de chiffrement)
+- `enc` : indique l'opération de chiffrement
+- `pbkdf2` : applique PBKDF2 (basé sur HMAC-SHA256) pour dériver la clé depuis le mot de passe.
+- `iter 100000` : fixe le nombre d’itérations de la fonction de dérivation.
+
