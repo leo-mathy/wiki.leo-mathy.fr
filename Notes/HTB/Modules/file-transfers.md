@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T16:04:28.827Z
+date: 2025-05-04T16:06:14.160Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -969,5 +969,7 @@ Les agents utilisateurs ne servent pas seulement à identifier les navigateurs, 
 Les organisations peuvent créer une liste des user-agents légitimes, incluant ceux des processus système, des services de mise à jour (comme Windows Update), et des mises à jour antivirus. Ces listes peuvent être utilisées dans des outils SIEM pour la détection de menaces, afin de filtrer le trafic légitime et se concentrer sur les anomalies.
 
 Donc les transferts de fichiers malveillants peuvent également être détectés grâce aux user-agent, dont certains sont associés à des techniques courantes de transfert.
+
+le site [useragentstring.com](https://useragentstring.com/) permet d'identifier les user-agent communs et d'avoir une liste de ceux-ci.
 
 
