@@ -2,7 +2,7 @@
 title: Footprinting
 description: 
 published: true
-date: 2025-02-02T15:33:06.406Z
+date: 2025-05-04T14:56:55.479Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2024-12-04T07:54:51.478Z

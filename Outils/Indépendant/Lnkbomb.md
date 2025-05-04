@@ -2,7 +2,7 @@
 title: Lnkbomb
 description: Transfère automatiquement des fichiers raccourcis piégés (.lnk) vers des partages de fichiers. Permet de récupérer le hash NTLM de l'utilisateur quand il essaie d'accéder au raccourci.
 published: true
-date: 2024-10-26T08:48:28.545Z
+date: 2025-05-04T14:53:46.040Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-10-26T08:26:41.495Z

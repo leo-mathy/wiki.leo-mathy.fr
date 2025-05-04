@@ -2,7 +2,7 @@
 title: cmdkey
 description: Créer, lister et supprimer des mots de passe et noms d'utilisateurs enregistrés.
 published: true
-date: 2024-10-25T20:21:04.810Z
+date: 2025-05-04T14:52:36.369Z
 tags: windows, commande
 editor: markdown
 dateCreated: 2024-09-08T08:14:52.836Z

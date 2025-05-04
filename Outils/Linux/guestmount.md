@@ -2,7 +2,7 @@
 title: guestmount
 description: Monte des systèmes de fichiers de machines virtuelles ou des images sur l'hôte.
 published: true
-date: 2024-10-26T18:41:21.964Z
+date: 2025-05-04T14:54:42.378Z
 tags: outil, linux
 editor: markdown
 dateCreated: 2024-10-26T18:41:21.964Z

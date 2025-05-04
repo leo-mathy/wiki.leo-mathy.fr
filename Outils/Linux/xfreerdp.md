@@ -2,7 +2,7 @@
 title: xfreerdp
 description: xfreerdp est un client RDP (Remote Desktop Protocol), ce qui permet de se connecter sur des machines windows depuis des machines linux
 published: true
-date: 2024-07-16T17:15:41.806Z
+date: 2025-05-04T14:54:59.667Z
 tags: outil, linux
 editor: markdown
 dateCreated: 2024-04-14T16:36:19.842Z

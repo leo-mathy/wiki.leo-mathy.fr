@@ -2,7 +2,7 @@
 title: Get-DnsServerGlobalQueryBlockList
 description: Affiche la liste globale de requête bloquées sur un serveur DNS. Le serveur DNS ignore les requêtes dont le nom est dans la liste
 published: true
-date: 2024-10-25T20:31:20.727Z
+date: 2025-05-04T14:56:09.358Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-07-18T13:47:40.922Z

@@ -2,7 +2,7 @@
 title: psexec
 description: Outil de la suite Impacket. Ouvrir une connexion comme avec le psexec officiel...
 published: true
-date: 2024-10-26T16:06:48.972Z
+date: 2025-05-04T14:54:15.964Z
 tags: outil, rédaction incomplète, indépendant
 editor: markdown
 dateCreated: 2024-10-26T16:06:48.972Z

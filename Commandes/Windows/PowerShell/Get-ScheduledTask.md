@@ -2,7 +2,7 @@
 title: Get-ScheduledTask
 description: Récupère les tâches planifiées locales.
 published: true
-date: 2024-10-26T19:05:26.400Z
+date: 2025-05-04T14:56:24.521Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-10-26T19:05:26.400Z

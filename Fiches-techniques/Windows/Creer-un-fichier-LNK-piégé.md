@@ -2,7 +2,7 @@
 title: Créer un fichier LNK piégé
 description: Guide pour la création de fichier LNK piégé. Un fichier LNK peut être utilisé par un attaquant pour récupérer les hash des utilisateurs.
 published: true
-date: 2024-10-26T09:51:45.018Z
+date: 2025-05-04T14:53:26.625Z
 tags: windows, fiche technique
 editor: markdown
 dateCreated: 2024-10-26T09:51:45.018Z

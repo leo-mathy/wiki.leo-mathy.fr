@@ -2,7 +2,7 @@
 title: Snaffler
 description: Recherche des partages de fichiers sur les ordinateurs d'un domaine Active Directory et indique les permissions sur ceux-ci. De plus, Snaffler utilise des règles pour filtrer les fichiers pouvant être intéressants.
 published: true
-date: 2024-08-31T14:34:35.064Z
+date: 2025-05-04T14:55:28.101Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-08-30T17:08:08.063Z

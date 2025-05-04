@@ -2,7 +2,7 @@
 title: wevtutil
 description: Permet de voir, archiver, vider les journaux des événements Windows
 published: true
-date: 2024-10-25T20:27:45.399Z
+date: 2025-05-04T14:53:17.711Z
 tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-15T16:30:54.309Z

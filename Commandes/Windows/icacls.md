@@ -2,7 +2,7 @@
 title: icacls
 description: Affiche ou modifie les DACL (ACL d'accès) sur des fichiers ou répertoires
 published: true
-date: 2024-10-25T20:22:53.616Z
+date: 2025-05-04T14:52:47.204Z
 tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-14T20:04:15.570Z

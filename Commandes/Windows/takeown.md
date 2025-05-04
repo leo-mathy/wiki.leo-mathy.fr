@@ -2,7 +2,7 @@
 title: takeown
 description: Permet de devenir le propriétaire d'un fichier ou dossier
 published: true
-date: 2024-10-25T21:00:45.069Z
+date: 2025-05-04T14:53:13.247Z
 tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-14T19:26:54.028Z

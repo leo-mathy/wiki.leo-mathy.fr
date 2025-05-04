@@ -2,7 +2,7 @@
 title: Mount-VHD
 description: Monte un ou plusieurs disques virtuels au format vhd/vhdx.
 published: true
-date: 2024-10-26T18:52:46.124Z
+date: 2025-05-04T14:56:39.396Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-10-26T18:49:46.010Z

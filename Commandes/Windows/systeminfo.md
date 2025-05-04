@@ -2,7 +2,7 @@
 title: systeminfo
 description: Affiche les informations de configuration du système d’exploitation
 published: true
-date: 2024-10-25T20:26:50.159Z
+date: 2025-05-04T14:53:11.081Z
 tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-11T11:21:37.863Z

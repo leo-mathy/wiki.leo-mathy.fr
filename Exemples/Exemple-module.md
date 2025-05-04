@@ -2,7 +2,7 @@
 title: Page d'exemple - module
 description: 
 published: true
-date: 2024-12-04T09:37:27.568Z
+date: 2025-05-04T14:52:25.170Z
 tags: 
 editor: markdown
 dateCreated: 2024-12-04T09:33:20.645Z

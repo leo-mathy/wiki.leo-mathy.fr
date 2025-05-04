@@ -2,7 +2,7 @@
 title: PrintNightmare
 description: Permet à n'importe quel utilisateur sans le privilège SeLoadDriverPrivilege, d'ajouter des drivers d'impression à un système local ou distant, et par conséquent d'exécuter du code en tant que NT AUTHORITY\SYSTEM.
 published: true
-date: 2024-10-25T20:39:29.923Z
+date: 2025-05-04T14:53:48.285Z
 tags: outil, windows, indépendant
 editor: markdown
 dateCreated: 2024-08-23T14:57:38.073Z

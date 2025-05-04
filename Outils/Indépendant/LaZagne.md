@@ -2,7 +2,7 @@
 title: LaZagne
 description: Recherche et récupère de nombreux mots de passe stockés sur un ordinateur, dans différentes applications couramment utilisées ou stockés par des mécanismes internes.
 published: true
-date: 2024-09-26T17:22:45.914Z
+date: 2025-05-04T14:53:43.792Z
 tags: outil, indépendant
 editor: markdown
 dateCreated: 2024-09-26T16:44:07.624Z

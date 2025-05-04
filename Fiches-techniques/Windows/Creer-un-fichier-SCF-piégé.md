@@ -2,7 +2,7 @@
 title: Créer un fichier SCF piégé
 description: Guide pour la création de fichier SCF (Shell Command File) piégé. Un fichier SCF peut être utilisé par un attaquant pour récupérer les hash des utilisateurs.
 published: true
-date: 2024-10-26T09:52:37.534Z
+date: 2025-05-04T14:53:28.758Z
 tags: windows, fiche technique
 editor: markdown
 dateCreated: 2024-10-26T09:31:10.018Z

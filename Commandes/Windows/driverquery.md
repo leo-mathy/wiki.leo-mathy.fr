@@ -2,7 +2,7 @@
 title: driverquery
 description: Affiche la liste des pilotes installés et leurs propriétés
 published: true
-date: 2024-10-25T20:21:59.887Z
+date: 2025-05-04T14:52:40.623Z
 tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-19T10:48:29.657Z

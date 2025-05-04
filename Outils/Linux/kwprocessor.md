@@ -2,7 +2,7 @@
 title: kwprocessor
 description: Générateur de "keyboard-walk". C'est a dire de chaines de caractères qui sont tapés sur un clavier suivant un modèle.
 published: true
-date: 2024-11-19T18:37:59.751Z
+date: 2025-05-04T14:54:44.583Z
 tags: outil, linux, synthèse
 editor: markdown
 dateCreated: 2024-11-19T18:34:40.652Z

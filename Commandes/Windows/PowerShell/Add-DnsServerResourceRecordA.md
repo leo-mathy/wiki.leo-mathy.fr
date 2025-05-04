@@ -2,7 +2,7 @@
 title: Add-DnsServerResourceRecordA
 description: Ajoute un enregistrement de type A (Nom vers Ipv4) dans une zone DNS
 published: true
-date: 2024-10-25T20:29:26.372Z
+date: 2025-05-04T14:55:52.027Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-07-16T18:12:53.931Z

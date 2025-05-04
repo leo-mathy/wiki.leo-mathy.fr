@@ -2,7 +2,7 @@
 title: Get-Process
 description: Obtient les processus qui s’exécutent sur l’ordinateur local.
 published: true
-date: 2024-10-25T20:32:01.823Z
+date: 2025-05-04T14:56:22.415Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-08-28T14:01:30.958Z

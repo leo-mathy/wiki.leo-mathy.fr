@@ -2,7 +2,7 @@
 title: UACMe
 description: permet de contourner la fonctionnalité User Account Control pour obtenir un token avec des privilèges élevés en utilisant la fonctionnalité d'auto-élévation.
 published: true
-date: 2024-07-30T18:50:44.083Z
+date: 2025-05-04T14:55:30.287Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-30T18:50:41.911Z

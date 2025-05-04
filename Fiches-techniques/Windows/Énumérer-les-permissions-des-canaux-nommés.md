@@ -2,7 +2,7 @@
 title: Énumérer les permissions des canaux nommés
 description: Les canaux sont utilisés pour la communication entre deux applications ou processus en utilisant de la mémoire partagée.
 published: true
-date: 2024-10-25T20:36:45.026Z
+date: 2025-05-04T14:53:35.266Z
 tags: windows, fiche technique
 editor: markdown
 dateCreated: 2024-07-11T16:57:58.359Z

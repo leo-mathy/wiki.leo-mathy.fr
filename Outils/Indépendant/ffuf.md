@@ -2,7 +2,7 @@
 title: ffuf
 description: Puissant outil de fuzzing web. Permet la découverte de répertoires, et l'utilisation de diverses requêtes.
 published: true
-date: 2024-11-10T10:58:17.894Z
+date: 2025-05-04T14:53:58.938Z
 tags: outil, indépendant, synthèse
 editor: markdown
 dateCreated: 2024-11-09T18:29:59.210Z

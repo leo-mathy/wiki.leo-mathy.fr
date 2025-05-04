@@ -2,7 +2,7 @@
 title: Get-Service
 description: Obtient les services sur l’ordinateur.
 published: true
-date: 2024-10-25T20:32:28.779Z
+date: 2025-05-04T14:56:26.642Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-08-28T14:24:51.977Z

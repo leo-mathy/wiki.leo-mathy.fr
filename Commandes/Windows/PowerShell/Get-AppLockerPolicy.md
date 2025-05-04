@@ -2,7 +2,7 @@
 title: Get-AppLockerPolicy
 description: Voir la politique AppLocker locale, effective ou du domaine
 published: true
-date: 2024-10-25T20:30:23.571Z
+date: 2025-05-04T14:56:00.628Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-07-11T10:23:43.013Z

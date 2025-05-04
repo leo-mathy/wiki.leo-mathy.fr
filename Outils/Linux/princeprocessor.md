@@ -2,7 +2,7 @@
 title: princeprocessor
 description: Génère des candidats de mots de passe depuis une liste de mots en utilisant l'algorithme de Prince (PRobability INfinite Chained Elements).
 published: true
-date: 2024-11-19T18:50:40.930Z
+date: 2025-05-04T14:54:51.170Z
 tags: outil, linux, synthèse
 editor: markdown
 dateCreated: 2024-11-19T18:50:40.930Z

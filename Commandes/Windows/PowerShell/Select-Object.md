@@ -2,7 +2,7 @@
 title: Select-Object
 description: Sélectionne des objets ou des propriétés contenues dans les objets.
 published: true
-date: 2024-10-26T13:28:10.099Z
+date: 2025-05-04T14:56:43.648Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-10-26T13:28:10.099Z

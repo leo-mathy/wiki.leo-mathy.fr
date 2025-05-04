@@ -2,7 +2,7 @@
 title: Compare-Object
 description: Alias de diff et compare. Compare deux objets PowerShell.
 published: true
-date: 2024-10-25T20:29:39.477Z
+date: 2025-05-04T14:55:54.167Z
 tags: windows, commande, powershell
 editor: markdown
 dateCreated: 2024-10-06T10:37:17.555Z

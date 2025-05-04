@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-04-26T16:31:03.290Z
+date: 2025-05-04T14:42:53.295Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -776,3 +776,21 @@ Avec le client officiel [mstsc](https://docs.microsoft.com/en-us/windows-server/
 Ces lecteurs ne sont accessibles à aucun autre utilisateur sur la machine cible, même en cas de détournement de la session RDP.
 
 ## Protected File Transfers
+
+Parfois les pentesters ont accès à des données sensibles ou des informations d'énumération pouvant contenir des détails critiques. Il est donc essentiel de chiffrer ces données ou d'utiliser des connexions sécurisés.
+
+Sauf demande du client, il ne faut pas exfiltrer de vraies données sensibles. Pour tester les protections DLP (Data Loss Prevention), il est recommandé d’utiliser un fichier contenant de fausses données similaires.
+
+### File Encryption on Windows
+
+Pour chiffrer des fichiers et informations sur Windows, il est possible d'utiliser le script [Invoke-AESEncryption.ps1](https://www.powershellgallery.com/packages/DRTools/4.0.2.3/Content/Functions%5CInvoke-AESEncryption.ps1) disponible sur PowerShellGallery. Ce script permet de chiffrer un fichier ou une châine de caractères avec AES.
+
+Par exemple:
+
+```
+Invoke-AESEncryption -Mode Encrypt -Key <clé> -Path <fichier>
+```
+
+
+
+

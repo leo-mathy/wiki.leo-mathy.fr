@@ -2,7 +2,7 @@
 title: PsService
 description: Communique avec le Controlleur de Services et les services installés, permet d'interagir avec les services
 published: true
-date: 2024-07-23T13:34:25.744Z
+date: 2025-05-04T14:55:16.944Z
 tags: outil, windows
 editor: markdown
 dateCreated: 2024-07-23T13:34:23.492Z

@@ -2,7 +2,7 @@
 title: Diskshadow
 description: Commande permettant d'interagir avec le service VSS (Volume Shadow Copy Service), cela permet d'effectuer des sauvegardes de disques ou fichiers même si ils sont en cours d'utilisation
 published: true
-date: 2024-10-25T20:21:21.673Z
+date: 2025-05-04T14:52:27.695Z
 tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-15T11:23:06.422Z

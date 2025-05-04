@@ -2,7 +2,7 @@
 title: CeWL
 description: Puissant outil d'extraction de mots depuis un site web pour la création de liste de mots personnalisées.
 published: true
-date: 2024-11-19T19:10:27.607Z
+date: 2025-05-04T14:54:29.465Z
 tags: outil, linux, synthèse
 editor: markdown
 dateCreated: 2024-11-19T19:08:22.651Z

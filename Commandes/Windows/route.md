@@ -2,7 +2,7 @@
 title: route
 description: Permet d'afficher ou modifier la table de routage
 published: true
-date: 2024-10-25T20:25:30.210Z
+date: 2025-05-04T14:53:02.427Z
 tags: windows, commande
 editor: markdown
 dateCreated: 2024-07-11T09:57:49.944Z
