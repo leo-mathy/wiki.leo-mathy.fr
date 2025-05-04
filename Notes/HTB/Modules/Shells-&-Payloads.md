@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-04T16:43:36.954Z
+date: 2025-05-04T16:58:27.496Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -65,4 +65,17 @@ Sur les machines cibles, l’émulateur disponible dépendra généralement de c
 
 # Command Language Interpreters
 
+Un interpréteur de langage de commande (Command Language Interpreter) traduit en temps réel les instructions données par l'utilisateur pour les transmettre au système d'exploitation. Une interface en ligne de commande (CLI) fait donc référence au système d’exploitation, l’émulateur de terminal et l’interpréteur de commandes.
+
+Il en existe plusieurs types, aussi appelés langages de script shell (shell scripting languages) ou interpréteurs de commandes et de scripts (Command and Scripting interpreters).
+
+Connaître l’interpréteur utilisé sur un système donné nous aide aussi à savoir quelles commandes et quels scripts employer.
+
+# Hands-on with Terminal Emulators and Shells
+
+Dès l'ouverture de l'application MATE Terminal, celle-ci s'est ouverte avec un interpréteur de commandes préconfiguré.
+Le symbole `$`, visible dans l'invite de commande, indique l'utilisation probable de Bash (ou d’un shell similaire comme Ksh ou POSIX).
+Lorsque du texte aléatoire est saisi, Bash répond qu’il ne reconnaît pas la commande, ce qui montre que chaque interpréteur a ses propres commandes.
+
+Une autre manière d’identifier l’interpréteur utilisé est de consulter les processus en cours d'exécution sur la machine avec `ps` ou de regarder la variable d'environnement `SHELL`.
 
