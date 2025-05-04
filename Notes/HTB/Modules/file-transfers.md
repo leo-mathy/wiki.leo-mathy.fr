@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:27:00.782Z
+date: 2025-05-04T15:34:35.307Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -830,5 +830,49 @@ Nginx est une bonne alternative à Apache pour le transfert de fichiers, car sa 
 Lorsqu’on autorise les uploads via HTTP, il est crucial d’empêcher l’exécution de web shells. Apache, avec son module PHP, peut facilement exécuter des fichiers `.php` uploadés, ce qui le rend risqué.
 Nginx, en revanche, ne prends pas en charge php par défaut, réduisant ce danger.
 
+1. Créer le répertoire d'upload
+
+```
+sudo mkdir -p /var/www/uploads/SecretUploadDirectory
+```
+
+2. Attribuer les droits à l'utilisateur du service Nginx.
+
+```
+sudo chown -R www-data:www-data /var/www/uploads/SecretUploadDirectory
+```
+
+3. Créer un fichier de configuration Nginx `/etc/nginx/sites-available/upload.conf`. (fichier `default` pour la configuration par défaut de Nginx)
+
+```
+server {
+    listen 9001;
+    
+    location /SecretUploadDirectory/ {
+        root    /var/www/uploads;
+        dav_methods PUT;
+    }
+}
+```
+
+4. Ajouter le lien symbolique du fichier dans les sites activés.
+
+```
+sudo ln -s /etc/nginx/sites-available/upload.conf /etc/nginx/sites-enabled/
+```
+
+5. Redémarrer le service nginx.
+
+```
+sudo systemctl restart nginx.service
+```
+
+6. Envoyer le fichier vers le serveur.
+
+```
+curl -T /etc/passwd http://localhost:9001/SecretUploadDirectory/users.txt
+```
+
+Par défaut avec Apache, le listage des répertoires est activé (si aucun fichier index.html n'est présent), ce qui permet à n'importe qui de voir le contenu du répertoire. Sur Nginx, cela n'est pas activé par défaut.
 
 
