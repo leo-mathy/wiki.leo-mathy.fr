@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:15:01.703Z
+date: 2025-05-04T15:16:19.433Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -816,4 +816,8 @@ openssl enc -d -aes256 -iter 100000 -pbkdf2 -in passwd.enc -out passwd
 
 - `enc` : indique une opération de chiffrement/déchiffrement
 - `-d` : indique une opération de déchiffrement
+
+En plus du chhiffrement, il est conseillé de transferer les données via un canal sécurisé (openssl,https,sftp,ssh...).
+
+## Catching Files over HTTP/S
 
