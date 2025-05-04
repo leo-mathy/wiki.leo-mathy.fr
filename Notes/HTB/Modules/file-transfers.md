@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:22:35.714Z
+date: 2025-05-04T15:27:00.782Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -827,7 +827,8 @@ Le transfert de fichiers via HTTP/HTTPS estcourant, car ces protocoles sont souv
 
 Nginx est une bonne alternative à Apache pour le transfert de fichiers, car sa configuration est plus simple et son système de modules présente moins de risques de sécurité.
 
-Lorsqu’on autorise les uploads via HTTP, il est crucial d’empêcher l’exécution de web shells. Apache, avec son module PHP, peut facilement exécuter des fichiers `.php` uploadés, ce qui le rend risqué. Nginx, en revanche, rend la configuration de PHP plus complexe, réduisant ce danger.
+Lorsqu’on autorise les uploads via HTTP, il est crucial d’empêcher l’exécution de web shells. Apache, avec son module PHP, peut facilement exécuter des fichiers `.php` uploadés, ce qui le rend risqué.
+Nginx, en revanche, ne prends pas en charge php par défaut, réduisant ce danger.
 
 
 
