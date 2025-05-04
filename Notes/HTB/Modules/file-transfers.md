@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:34:35.307Z
+date: 2025-05-04T15:34:51.291Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -873,6 +873,6 @@ sudo systemctl restart nginx.service
 curl -T /etc/passwd http://localhost:9001/SecretUploadDirectory/users.txt
 ```
 
-Par défaut avec Apache, le listage des répertoires est activé (si aucun fichier index.html n'est présent), ce qui permet à n'importe qui de voir le contenu du répertoire. Sur Nginx, cela n'est pas activé par défaut.
+Par défaut avec Apache, le listage des répertoires est activé (si aucun fichier index.html n'est présent), ce qui permet à n'importe qui de voir le contenu du répertoire (risque de sécurité). Sur Nginx, cela n'est pas activé par défaut.
 
 
