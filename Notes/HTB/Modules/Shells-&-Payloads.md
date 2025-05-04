@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-04T16:40:15.326Z
+date: 2025-05-04T16:42:57.438Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -61,4 +61,7 @@ Voici quelques émulateurs de terminaux:
 | Terminal              | MacOS                        |
 | iTerm2                | MacOS                        |
 
+Cette liste ne recense pas tous les émulateurs de terminal existants, mais elle présente certains des plus utilisés.
+Beaucoup étant open source, il est possible de les installer sur d'autres systèmes d'exploitation que ceux prévus à l'origine. Le choix d’un émulateur de terminal dépend avant tout des préférences personnelles et du style de travail.
+Sur les machines cibles, l’émulateur disponible dépendra généralement de celui intégré nativement au système.
 
