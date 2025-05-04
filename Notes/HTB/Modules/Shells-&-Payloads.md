@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-04T16:35:10.756Z
+date: 2025-05-04T16:40:15.326Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -40,4 +40,25 @@ Le terme "payload" peut être défini de différentes manières:
 - Général: La partie d'un jeu d'instructions qui définit l'action à entreprendre.
 - Programation: La portion de données transportée par une instruction dans un langage de programmation.
 - Sécurité: Le code créé pour exploiter une vulnérabilité dans un système informatique, incluant différents types de malwares.
+
+## Anatomy of a Shell
+
+Chaque système d'exploitation dispose d'un ou plusieurs shell. Pour intéragir avec un shell il faut utiliser un programme appellé émulateur de terminal (Terminal Emulator).
+
+Voici quelques émulateurs de terminaux:
+
+| **Émulateur de terminal** | **Système d'exploitation**         |
+|-----------------------|------------------------------|
+| Windows Terminal      | Windows                      |
+| cmder                 | Windows                      |
+| PuTTY                 | Windows                      |
+| kitty                 | Windows, Linux et MacOS     |
+| Alacritty             | Windows, Linux et MacOS     |
+| xterm                 | Linux                        |
+| GNOME Terminal        | Linux                        |
+| MATE Terminal         | Linux                        |
+| Konsole               | Linux                        |
+| Terminal              | MacOS                        |
+| iTerm2                | MacOS                        |
+
 
