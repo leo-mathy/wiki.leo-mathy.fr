@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-04T16:19:33.360Z
+date: 2025-05-04T16:19:52.901Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -14,4 +14,6 @@ Date de complétion: XX/XX/XXXX
 
 # Notes
 
-## Windows File Transfer Methods
+## Shells Jack Us In, Payloads Deliver Us Shells
+
+
