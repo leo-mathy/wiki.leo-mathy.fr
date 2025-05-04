@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T16:06:14.160Z
+date: 2025-05-04T16:09:37.471Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -972,4 +972,14 @@ Donc les transferts de fichiers malveillants peuvent également être détectés
 
 le site [useragentstring.com](https://useragentstring.com/) permet d'identifier les user-agent communs et d'avoir une liste de ceux-ci.
 
+## Evading Detection
 
+Pour éviter de se faire détecter, plusieurs techniques sont possibles.
+
+### Changing User Agent
+
+Pour voir la liste des user-agents existants par défaut sur PowerShell (certaines versions uniquement):
+
+```
+[Microsoft.PowerShell.Commands.PSUserAgent].GetProperties()
+```
