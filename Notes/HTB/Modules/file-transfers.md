@@ -2,7 +2,7 @@
 title: File Transfers
 description: 
 published: true
-date: 2025-05-04T15:35:26.719Z
+date: 2025-05-04T15:36:26.626Z
 tags: notes, htb, module
 editor: markdown
 dateCreated: 2025-03-16T15:21:30.098Z
@@ -877,4 +877,21 @@ Par défaut avec Apache, le listage des répertoires est activé (si aucun fichi
 
 ### Living off The Land
 
+L'expression "Living off the land" a été inventée par Christopher Campbell (@obscuresec) et Matt Graeber (@mattifestation) lors de DerbyCon 3.
+
+Le terme **LOLBins** (Living off the Land binaries) provient d'une discussion sur Twitter concernant le nom à donner aux binaires qu'un attaquant peut utiliser pour effectuer des actions au-delà de leur fonction initiale. Il existe actuellement deux sites web qui agrègent des informations sur les binaires **Living off the Land** :
+
+* **LOLBAS Project** pour les binaires Windows
+* **GTFOBins** pour les binaires Linux
+
+Les binaires **Living off the Land** peuvent être utilisés pour effectuer des fonctions telles que :
+
+* Téléchargement
+* Téléversement
+* Exécution de commandes
+* Lecture de fichiers
+* Écriture de fichiers
+* Bypass de sécurité
+
+Cette section se concentrera sur l'utilisation des projets **LOLBAS** et **GTFOBins**, et fournira des exemples pour les fonctions de téléchargement et de téléversement sur les systèmes Windows et Linux.
 
