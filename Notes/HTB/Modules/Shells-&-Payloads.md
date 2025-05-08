@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-04T17:04:18.159Z
+date: 2025-05-08T12:50:02.242Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -63,7 +63,7 @@ Cette liste ne recense pas tous les émulateurs de terminal existants, mais elle
 Beaucoup étant open source, il est possible de les installer sur d'autres systèmes d'exploitation que ceux prévus à l'origine. Le choix d’un émulateur de terminal dépend avant tout des préférences personnelles et du style de travail.
 Sur les machines cibles, l’émulateur disponible dépendra généralement de celui intégré nativement au système.
 
-# Command Language Interpreters
+## Command Language Interpreters
 
 Un interpréteur de langage de commande (Command Language Interpreter) traduit en temps réel les instructions données par l'utilisateur pour les transmettre au système d'exploitation. Une interface en ligne de commande (CLI) fait donc référence au système d’exploitation, l’émulateur de terminal et l’interpréteur de commandes.
 
@@ -71,7 +71,7 @@ Il en existe plusieurs types, aussi appelés langages de script shell (shell scr
 
 Connaître l’interpréteur utilisé sur un système donné nous aide aussi à savoir quelles commandes et quels scripts employer.
 
-# Hands-on with Terminal Emulators and Shells
+## Hands-on with Terminal Emulators and Shells
 
 Dès l'ouverture de l'application MATE Terminal, celle-ci s'est ouverte avec un interpréteur de commandes préconfiguré.
 Le symbole `$`, visible dans l'invite de commande, indique l'utilisation probable de Bash (ou d’un shell similaire comme Ksh ou POSIX).
@@ -80,3 +80,5 @@ Lorsque du texte aléatoire est saisi, Bash répond qu’il ne reconnaît pas la
 Une autre manière d’identifier l’interpréteur utilisé est de consulter les processus en cours d'exécution sur la machine avec `ps` ou de regarder la variable d'environnement `SHELL`.
 
 Il est aussi possible d'ouvrir PowerShell avec l'application MATE Terminal, Cela montre qu'il est possible d'utiliser des interpréteurs de commandes différents pour un émulateur de terminal.
+
+# Bind Shells
