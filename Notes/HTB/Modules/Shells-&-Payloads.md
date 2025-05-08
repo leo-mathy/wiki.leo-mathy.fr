@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-08T14:31:06.346Z
+date: 2025-05-08T14:36:35.852Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -109,4 +109,10 @@ nc -lvnp 7777
 nc -nv <ip> 7777
 <message>
 ```
+
+## Establishing a Basic Bind Shell with Netcat
+
+Après avoir vu comment envoyer du texte entre le client et le serveur, nous allons voir comment servir un shell pour établir un vrai Bind Shell.
+
+
 
