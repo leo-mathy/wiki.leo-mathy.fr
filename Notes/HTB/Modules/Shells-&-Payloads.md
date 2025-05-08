@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-08T14:14:14.183Z
+date: 2025-05-08T14:25:14.378Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -90,8 +90,11 @@ Pour cela, on utilise le l'émulateur de terminal sur la machine attaquante pour
 
 Avec un Bind Shell, le système cible écoute les connexions entrantes.
 
-Cela pose de nombreux problèmes:
+Cela peut poser des problèmes:
 - Le listener doit être démarré 
 - Des règles strictes de pare-feu et du NAT en bordure de réseau, ce qui implique qu’il faut déjà être sur le réseau interne pour contourner ces protections.
 - Les Pare-feu logiciels peuvent bloquer rles connexions entrantes.
+
+## Practicing with GNU Netcat
+
 
