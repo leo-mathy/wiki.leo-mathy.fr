@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-08T14:25:14.378Z
+date: 2025-05-08T14:30:30.705Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -97,4 +97,15 @@ Cela peut poser des problèmes:
 
 ## Practicing with GNU Netcat
 
+Démarrer le listener pour écouter sur le port 7777.
+
+```
+nc -lvnp 7777
+```
+
+Établir une session TCP.
+
+```
+nc -nv <iu> 7777
+```
 
