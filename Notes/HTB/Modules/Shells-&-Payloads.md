@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-08T14:30:30.705Z
+date: 2025-05-08T14:30:34.416Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -106,6 +106,6 @@ nc -lvnp 7777
 Établir une session TCP.
 
 ```
-nc -nv <iu> 7777
+nc -nv <ip> 7777
 ```
 
