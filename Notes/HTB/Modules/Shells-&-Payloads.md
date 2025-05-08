@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-08T14:07:15.732Z
+date: 2025-05-08T14:14:14.183Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -86,4 +86,12 @@ Il est aussi possible d'ouvrir PowerShell avec l'application MATE Terminal, Cela
 Dans de nombreux cas, l’objectif est d’obtenir un accès à un shell sur un système local ou distant.
 Pour cela, on utilise le l'émulateur de terminal sur la machine attaquante pour controller le système distant à travers son shell. Cela est le plus souvent effectué via un Bind/Reverse shell.
 
+## What Is It?
+
+Avec un Bind Shell, le système cible écoute les connexions entrantes.
+
+Cela pose de nombreux problèmes:
+- Le listener doit être démarré 
+- Des règles strictes de pare-feu et du NAT en bordure de réseau, ce qui implique qu’il faut déjà être sur le réseau interne pour contourner ces protections.
+- Les Pare-feu logiciels peuvent bloquer rles connexions entrantes.
 
