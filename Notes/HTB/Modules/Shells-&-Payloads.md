@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-08T14:30:34.416Z
+date: 2025-05-08T14:31:06.346Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -103,9 +103,10 @@ Démarrer le listener pour écouter sur le port 7777.
 nc -lvnp 7777
 ```
 
-Établir une session TCP.
+Établir une session TCP et envoyer un message.
 
 ```
 nc -nv <ip> 7777
+<message>
 ```
 
