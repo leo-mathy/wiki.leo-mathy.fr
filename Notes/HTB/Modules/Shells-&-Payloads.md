@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T19:21:04.852Z
+date: 2025-05-17T19:21:13.415Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -168,7 +168,7 @@ Cependant, un pare-feu capable d'inspecter les paquets (Deep Packet Inspection),
 
 Il est possible d'utilise Netcat sur Windows pour initier le reverse shell, cependant Netcat n'est pas natif à Windows, facilement détectable comme un logiciel malveillant et le binaire doit être transféré sur la cible.
  
-Au moment de la tentative d'établissement d'un Reverse Shell, il est nécéssaire de regarder quels langages shell et applications sont présentes sur la cible. Ces outils peuvent parfois être utilisés pour initier le reverse shell.
+Au moment de la tentative d'établissement d'un Reverse Shell, il est recommandé de regarder quels langages shell et applications sont présentes sur la cible. Ces outils peuvent parfois être utilisés pour initier le reverse shell.
 
 
 
