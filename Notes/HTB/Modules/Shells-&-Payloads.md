@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T14:18:30.489Z
+date: 2025-05-17T14:21:00.176Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -149,5 +149,7 @@ Il ne faut pas oublier qu'il est plus facile de se défendre face à un Bind She
 
 Avec un Reverse Shell, le système cible initie les connexions.
 
+Il est conseillé d'utiliser un reverse shell lorsqu’on rencontre des systèmes vulnérables, car les connexions sortantes sont moins surveillées, ce qui augmente nos chances de passer inaperçus. Contrairement aux bind shells, qui nécessitent une connexion entrante (souvent bloquée par un pare-feu),
+
 De nombreux payload sont disponibles en ligne, comme le [Reverse Shell Cheat Sheet](
-https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/).
+https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/). Cependant les payloads génériques sont facilement détectables par des systèmes de défense.
