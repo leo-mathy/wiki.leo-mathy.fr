@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-08T14:49:27.174Z
+date: 2025-05-17T14:01:13.483Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -143,6 +143,9 @@ La commande ci-dessu est donc considérée comme le payload.
 
 Nous avons établi avec succès une session bind shell. Cela a été réalisé sans aucune mesure de sécurité en place (comme les routeurs avec NAT, pare-feux matériels, WAF, IDS/IPS, pare-feux système, antivirus, ou mécanismes d'authentification).
 
-Il ne faut pas oublier qu'il est plus facile de se défendre face à un Bind Shell puisque les connexions entrantes sont plus détectables.
+Il ne faut pas oublier qu'il est plus facile de se défendre face à un Bind Shell puisque les connexions entrantes sont d'avantage détectables.
 
 # Reverse Shells
+
+Avec un Reverse Shell, le système cible initie les connexions.
+
