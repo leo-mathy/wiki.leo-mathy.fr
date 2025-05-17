@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T14:03:07.222Z
+date: 2025-05-17T14:18:30.489Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -149,3 +149,5 @@ Il ne faut pas oublier qu'il est plus facile de se défendre face à un Bind She
 
 Avec un Reverse Shell, le système cible initie les connexions.
 
+De nombreux payload sont disponibles en ligne, comme le [Reverse Shell Cheat Sheet](
+https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/).
