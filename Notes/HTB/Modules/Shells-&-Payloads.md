@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T19:25:57.488Z
+date: 2025-05-17T19:26:55.088Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -151,8 +151,7 @@ Avec un Reverse Shell, le système cible initie les connexions.
 
 Il est conseillé d'utiliser un reverse shell lorsqu’on rencontre des systèmes vulnérables, car les connexions sortantes sont moins surveillées, ce qui augmente nos chances de passer inaperçus. Contrairement aux bind shells, qui nécessitent une connexion entrante (souvent bloquée par un pare-feu),
 
-De nombreux payload sont disponibles en ligne, comme le [Reverse Shell Cheat Sheet](
-https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/). Cependant les payloads génériques sont facilement détectables par des systèmes de défense.
+De nombreux payload sont disponibles en ligne, comme le [Reverse Shell Cheat Sheet](https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/). Cependant les payloads génériques sont facilement détectables par des systèmes de défense.
 
 ## Hands-on With A Simple Reverse Shell in Windows
 
@@ -164,10 +163,10 @@ sudo nc -lvnp 443
 
 Utiliser port courant permet parfois d'éviter que la connexion sortante vers notre machine soit bloquée par le pare-feu du système ou du réseau. Par exemple, il est rare que les connexions sortantes sur le port 443 soient bloquées, car il est essentiel pour accéder au web.
 
-Cependant, un pare-feu capable d'inspecter les paquets (Deep Packet Inspection), pourrait détecter et bloquer un reverse shell. 
+Cependant, un pare-feu capable d'inspecter les paquets (Deep Packet Inspection), pourrait détecter et bloquer un reverse shell.
 
 Il est possible d'utilise Netcat sur Windows pour initier le reverse shell, cependant Netcat n'est pas natif à Windows, facilement détectable comme un logiciel malveillant et le binaire doit être transféré sur la cible.
- 
+
 Au moment de la tentative d'établissement d'un Reverse Shell, il est recommandé de regarder quels langages shell et applications sont présentes sur la cible. Ces outils peuvent parfois être utilisés pour initier le reverse shell.
 
 Voici un exemple de client Powershell (ou payload) "One-liner" permettant d'initier le reverse shell:
@@ -183,3 +182,5 @@ Pour désactiver la protection en temps réel de Windows Defender:
 ```
 Set-MpPreference -DisableRealtimeMonitoring $true
 ```
+
+# Introduction to Payloads
