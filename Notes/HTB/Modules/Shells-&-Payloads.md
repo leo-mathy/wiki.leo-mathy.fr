@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T14:25:15.717Z
+date: 2025-05-17T19:11:35.574Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -165,4 +165,5 @@ sudo nc -lvnp 443
 Le port 443, généralement utilisé pour les connexions HTTPS. Utiliser ce type de port courant permet d'éviter que la connexion sortante vers notre machine soit bloquée par le pare-feu du système ou du réseau. En effet il est rare que les connexions sortantes sur le port 443 soient bloquées, car il est essentiel pour accéder au web.
 
 Cependant, un pare-feu capable d'inspecter les paquets (Deep Packet Inspection), pourrait détecter et bloquer un reverse shell, même sur un port courant.
+
 
