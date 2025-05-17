@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T19:11:35.574Z
+date: 2025-05-17T19:21:04.852Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -156,14 +156,19 @@ https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-che
 
 ## Hands-on With A Simple Reverse Shell in Windows
 
-Sur la machine attaquante:
+Sur la machine attaquante, lancer le listener:
 
 ```
 sudo nc -lvnp 443
 ```
 
-Le port 443, généralement utilisé pour les connexions HTTPS. Utiliser ce type de port courant permet d'éviter que la connexion sortante vers notre machine soit bloquée par le pare-feu du système ou du réseau. En effet il est rare que les connexions sortantes sur le port 443 soient bloquées, car il est essentiel pour accéder au web.
+Utiliser port courant permet parfois d'éviter que la connexion sortante vers notre machine soit bloquée par le pare-feu du système ou du réseau. Par exemple, il est rare que les connexions sortantes sur le port 443 soient bloquées, car il est essentiel pour accéder au web.
 
-Cependant, un pare-feu capable d'inspecter les paquets (Deep Packet Inspection), pourrait détecter et bloquer un reverse shell, même sur un port courant.
+Cependant, un pare-feu capable d'inspecter les paquets (Deep Packet Inspection), pourrait détecter et bloquer un reverse shell. 
+
+Il est possible d'utilise Netcat sur Windows pour initier le reverse shell, cependant Netcat n'est pas natif à Windows, facilement détectable comme un logiciel malveillant et le binaire doit être transféré sur la cible.
+ 
+Au moment de la tentative d'établissement d'un Reverse Shell, il est nécéssaire de regarder quels langages shell et applications sont présentes sur la cible. Ces outils peuvent parfois être utilisés pour initier le reverse shell.
+
 
 
