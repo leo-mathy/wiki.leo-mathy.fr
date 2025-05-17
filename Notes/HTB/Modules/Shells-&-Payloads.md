@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T19:31:31.621Z
+date: 2025-05-17T19:36:07.904Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -184,3 +184,8 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 ```
 
 # Introduction to Payloads
+
+La **payload** est le contenu principal d’un message. En informatique, c’est l’information utile transmise. En **cybersécurité**, elle désigne un code ou une commande exploitant une faille, souvent à des fins malveillantes.
+
+
+
