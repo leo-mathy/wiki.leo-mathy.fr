@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-17T14:21:00.176Z
+date: 2025-05-17T14:25:15.717Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -153,3 +153,16 @@ Il est conseillé d'utiliser un reverse shell lorsqu’on rencontre des système
 
 De nombreux payload sont disponibles en ligne, comme le [Reverse Shell Cheat Sheet](
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/). Cependant les payloads génériques sont facilement détectables par des systèmes de défense.
+
+## Hands-on With A Simple Reverse Shell in Windows
+
+Sur la machine attaquante:
+
+```
+sudo nc -lvnp 443
+```
+
+Le port 443, généralement utilisé pour les connexions HTTPS. Utiliser ce type de port courant permet d'éviter que la connexion sortante vers notre machine soit bloquée par le pare-feu du système ou du réseau. En effet il est rare que les connexions sortantes sur le port 443 soient bloquées, car il est essentiel pour accéder au web.
+
+Cependant, un pare-feu capable d'inspecter les paquets (Deep Packet Inspection), pourrait détecter et bloquer un reverse shell, même sur un port courant.
+
