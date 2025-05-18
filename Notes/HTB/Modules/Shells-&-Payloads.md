@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-18T14:43:42.464Z
+date: 2025-05-18T14:54:39.618Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -239,8 +239,37 @@ Il est essentiel de bien comprendre les outils et méthodes utilisés, car une m
 
 ## Practicing with Metasploit
 
-Lancer la console du framework Metasploit:
+Voici quelques commandes de base.
+
+Pour lancer la console du framework Metasploit:
 
 ```
 msfconsole
 ```
+
+Pour rechercher un module:
+
+```
+search <recherche>
+```
+
+Pour utiliser un module:
+
+```
+use <ID/Chemin>
+```
+
+Afficher les options du modules:
+
+```
+options
+```
+
+Lancer l'exploit:
+
+```
+exploit
+```
+
+Un shell Meterpreter permet d'avoir de nombreuses fonctionnalitées supplémentaires par rapport à un reverse shell classique.
+
