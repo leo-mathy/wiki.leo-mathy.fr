@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-18T14:54:39.618Z
+date: 2025-05-18T14:57:29.465Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -271,5 +271,5 @@ Lancer l'exploit:
 exploit
 ```
 
-Un shell Meterpreter permet d'avoir de nombreuses fonctionnalitées supplémentaires par rapport à un reverse shell classique.
+Un shell Meterpreter permet d'avoir de nombreuses fonctionnalitées supplémentaires par rapport à un reverse shell classique. Meterpreter est un payload qui utilise une injection de DLL en mémoire (no-file payload).
 
