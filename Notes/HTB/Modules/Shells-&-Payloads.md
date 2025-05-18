@@ -2,7 +2,7 @@
 title: Shells & Payloads
 description: 
 published: true
-date: 2025-05-18T14:40:45.148Z
+date: 2025-05-18T14:43:42.464Z
 tags: htb, module
 editor: markdown
 dateCreated: 2025-05-04T16:19:33.360Z
@@ -231,7 +231,7 @@ Il est possible d'avoir le même résultat en passant par un script PowerShell e
 
 # Automating Payloads & Delivery with Metasploit
 
-[Metasploit](https://www.metasploit.com/) est un framework d'attaque automatisé dévelloppé par Rapid7. Cela rationnalise le processus d'exploitation de vulnérabilités grâce aux modules préfrabriqués qui contiennent des options faciles d'utilisation pour exploiter les vulnérabilitées et délivrer des payloads.
+[Metasploit](https://www.metasploit.com/) est un framework d'attaque automatisé dévelloppé par Rapid7. Cela rationnalise le processus d'exploitation de vulnérabilités grâce aux modules préfrabriqués qui contiennent des options faciles d'utilisation pour exploiter les vulnérabilitées, délivrer des payloads ou encore scanner et énumérer les cibles.
 
 Une comparaison des éditions de Metasploit est disponible [ici](https://www.rapid7.com/products/metasploit/download/editions/).
 
@@ -239,3 +239,8 @@ Il est essentiel de bien comprendre les outils et méthodes utilisés, car une m
 
 ## Practicing with Metasploit
 
+Lancer la console du framework Metasploit:
+
+```
+msfconsole
+```
